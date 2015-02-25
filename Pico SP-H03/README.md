@@ -46,3 +46,22 @@ $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
 ./run.sh
 ./pico
 ```
+
+## Connectors
+
+Code | Description | Component
+-----|-------------|----------
+CN201| Connects to the keypad. A bad connection will disable the keypad. |
+CN701| Connects to the AV board. A bad connection will disable the PC, AUDIO and VIDEO inputs. |
+CN801| Downloads the sub-MICOM and is for technical service purpose only.|
+CN901| Connects to the speaker. A bad connection will disable the audio.|
+CN1002| Connects to a fan. A bad connection will disable the fan, causing a fan error. |
+CN1003| Connects to a fan. A bad connection will disable the fan, causing a fan error. |
+CN1101| Used for debugging, and is for technical service purpose only. | FPC 40 way, .50mm 
+CN1102| Connects to the DMD board and main board. A bad connection will cause a blank screen. |
+
+
+
+## Links
+
+ - http://www.cnx-software.com/2012/07/18/building-linux-kernel-3-0-8-for-telechips-tcc8925-mini-pcs-cx-01-z900-tizzbird-n1/
