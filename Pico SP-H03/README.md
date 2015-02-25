@@ -2,6 +2,26 @@ This is the pico projector for Samsung
 
 Product page: http://www.samsung.com/it/support/model/SP0351VBX/EN
 
+This is the ``/var/log/messages`` when attacched
+
+```
+Feb 10 15:07:37 pc kernel: [22312.063237] usb 3-9: new high-speed USB device number 4 using xhci_hcd
+Feb 10 15:07:53 pc kernel: [22327.372992] usb 3-9: new high-speed USB device number 5 using xhci_hcd
+Feb 10 15:07:53 pc kernel: [22327.502208] usb 3-9: New USB device found, idVendor=140e, idProduct=b058
+Feb 10 15:07:53 pc kernel: [22327.502211] usb 3-9: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Feb 10 15:07:53 pc kernel: [22327.502212] usb 3-9: Product: File-backed Storage Gadget
+Feb 10 15:07:53 pc kernel: [22327.502213] usb 3-9: Manufacturer: TELECHIPS
+Feb 10 15:07:53 pc kernel: [22327.502214] usb 3-9: SerialNumber: 0123456789ABCDEF0123456789ABCDEF
+Feb 10 15:07:53 pc mtp-probe: checking bus 3, device 5: "/sys/devices/pci0000:00/0000:00:14.0/usb3/3-9"
+Feb 10 15:07:53 pc mtp-probe: bus: 3, device: 5 was not an MTP device
+Feb 10 15:07:53 pc kernel: [22327.558831] usb-storage 3-9:1.0: USB Mass Storage device detected
+Feb 10 15:07:53 pc kernel: [22327.558888] scsi6 : usb-storage 3-9:1.0
+Feb 10 15:07:53 pc kernel: [22327.558941] usbcore: registered new interface driver usb-storage
+Feb 10 15:07:54 pc kernel: [22328.559490] scsi 6:0:0:0: Direct-Access     TELECHIP MASS STORAGE     03ff PQ: 0 ANSI: 0 CCS
+Feb 10 15:07:54 pc kernel: [22328.559739] sd 6:0:0:0: Attached scsi generic sg2 type 0
+Feb 10 15:07:54 pc kernel: [22328.560585] sd 6:0:0:0: [sdc] Attached SCSI removable disk
+```
+
 ## Firmware
 
 Seems from the firmware (downloaded from the site) named ``P-OBRNPWWC-1008.1.rom``
