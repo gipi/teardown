@@ -47,6 +47,10 @@ $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
 ./pico
 ```
 
+## SOC
+
+Seems the ``TCC9101G-0BX`` an ``ARM`` processor.
+
 ## Connectors
 
 Code | Description | Component
