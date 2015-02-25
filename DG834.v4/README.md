@@ -27,6 +27,13 @@ Verifying:    2957312/2957312 bytes
 Firmware updated/verified successfully!
 ```
 
+## JTAG
+
+The connector pad is named ``J201`` a 12 ways, 2 rows with 2mm pitch [board to board connector](http://it.rs-online.com/web/p/file-di-contatti-da-pcb/7656269/)
+to be used with an [IDC connector](http://it.rs-online.com/web/p/products/714-2448/).
+
+In order to use the JTAG maybe we have to use the ``buspirate_pullup`` configurations.
+
 Links
 -----
 
@@ -38,5 +45,3 @@ Links
  - http://dangerousprototypes.com/docs/Gonemad%27s_Bus_Pirate/OpenOCD_walk_through
  - http://dangerousprototypes.com/forum/viewtopic.php?t=295
  - https://tux4u.wordpress.com/tag/bus-pirate/
-
-In order to use the JTAG maybe we have to use the ``buspirate_pullup`` configurations.
