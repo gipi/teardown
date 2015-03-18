@@ -34,6 +34,15 @@ to be used with an [IDC connector](http://it.rs-online.com/web/p/products/714-24
 
 In order to use the JTAG maybe we have to use the ``buspirate_pullup`` configurations.
 
+Name signal	|Pin out	| Pin out	| Name signal
+------------|--------|---------|------------
+nTRST	|1	|2	|GND
+TDI	|3	|4	|GND
+TDO	|5	|6	|GND
+TMS	|7	|8	|GND
+TCK	|9	|10	|GND
+nSRST	|11	|12	|n/a
+
 Links
 -----
 
