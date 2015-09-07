@@ -1,4 +1,10 @@
 
+![front board](Images/front.jpg)
+![back board](Images/back.jpg)
+![chassis board](Images/chassis.jpg)
+
+The screw holes are presumibly connected to ground, so the three wires from the
+motor are the phases.
 
 ## Links
 
