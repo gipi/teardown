@@ -1,3 +1,5 @@
+Its SOC is a RockChip chip ``RK2818``.
+
 The model seems to be the ``MIDCF43PR001`` and the firmware should be [here](http://www.southerntelecom.com/polaroidsupport/firmware/)
 
 ```
@@ -103,3 +105,4 @@ $ tree system/ -L 1
 ## Link
 
  - http://linux-rockchip.info/
+ - Openembedded [layer page](http://layers.openembedded.org/layerindex/branch/master/layer/meta-rockchip/)
