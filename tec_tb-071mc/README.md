@@ -70,6 +70,20 @@ system.img: Linux rev 1.0 ext3 filesystem data, UUID=bb9e0a8d-c7b7-4c9a-81f9-802
 
 gives us an ``ext3`` filesystem.
 
+## Partitions
+
+```
+$ file *.img
+backup.img:   data
+boot.img:     data
+kernel.img:   data
+misc.img:     data
+recovery.img: Android bootimg, kernel (0x60408000), ramdisk (0x62000000), page size: 16384
+system.img:   Linux rev 1.0 ext3 filesystem data, UUID=bb9e0a8d-c7b7-4c9a-81f9-8021a9d7c625, volume name "system"
+userdata.img: Linux rev 1.0 ext4 filesystem data, UUID=413b91a2-7c6c-4395-87d3-0af6f2561341 (extents) (large files)
+user.img:     DOS/MBR boot sector, code offset 0x58+2, OEM-ID "NetBSD  ", sectors/cluster 16, sectors/track 57344, sectors 3923968 (volumes > 32 MB) , FAT (32 bit), sectors/FAT 1920, serial number 0x36560cf4, label: "ROCKCHIPS  "
+```
+
 ## Serial
 
 We need to find the serial: some info from [here](https://github.com/minghuascode/qemu120/blob/master/xternapp/tablet-rkflashtool/README-rk2926-2928-debug-serial.txt)
