@@ -1,6 +1,6 @@
 # TEC TB-071MC
 
-This is a table based on a **rockchip** [SOC](http://www.linux-rockchip.info/mw/index.php?title=Category:List_of_Rockchip_SoCs).
+This is a tablet based on a **rockchip** [SOC](http://www.linux-rockchip.info/mw/index.php?title=Category:List_of_Rockchip_SoCs).
 
 It's possible to use [rkflashtool](https://github.com/neo-technologies/rkflashtool)
 in order to flash this table once you have the *recovery mode*:
