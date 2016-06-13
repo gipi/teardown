@@ -88,6 +88,54 @@ userdata.img: Linux rev 1.0 ext4 filesystem data, UUID=413b91a2-7c6c-4395-87d3-0
 user.img:     DOS/MBR boot sector, code offset 0x58+2, OEM-ID "NetBSD  ", sectors/cluster 16, sectors/track 57344, sectors 3923968 (volumes > 32 MB) , FAT (32 bit), sectors/FAT 1920, serial number 0x36560cf4, label: "ROCKCHIPS  "
 ```
 
+Looking at the first bytes of the images we obtain the following:
+
+```
+head -c 10 tec_tb-071mc/*.img
+==> tec_tb-071mc/backup.img <==
+RKAFPrLT
+==> tec_tb-071mc/boot.img <==
+KRNL}�
+==> tec_tb-071mc/kernel.img <==
+KRNL$Pn��
+==> tec_tb-071mc/misc.img <==
+
+==> tec_tb-071mc/recovery.img <==
+ANDROID!$P
+==> tec_tb-071mc/system.img <==
+
+==> tec_tb-071mc/userdata.img <==
+
+==> tec_tb-071mc/user.img <==
+```
+
+Seems that ``KRNL`` is an image packed using ``rkcrc``, you can unsign with ``rkunsign``; after that
+``boot.img`` is seen as ``gzip compressed data, from Unix``, instead ``kernel`` is not recognized
+
+Looking inside the system image we see a pretty standard android filesystem:
+
+```
+$ sudo kpartx -av tec_tb-071mc/system.img
+$ sudo mount /dev/loop2 /tmp/rootfs
+$ ls /tmp/rootfs
+app  bin  build.prop  etc  fonts  framework  lib  lost+found  media  tts  usr  vendor  xbin
+```
+
+Seems not present a kernel module to load for the ``NAND`` memory like described [here](www.linux-rockchip.info/mw/index.php?title=Boot_Sequences)
+
+```
+$ find /tmp/rootfs -name '*.ko'
+/tmp/rootfs/lib/modules/8188eu.ko
+/tmp/rootfs/lib/modules/mali.ko
+/tmp/rootfs/lib/modules/vpu_service.ko
+/tmp/rootfs/lib/modules/8192cu.ko
+/tmp/rootfs/lib/modules/rt5370ap.ko
+/tmp/rootfs/lib/modules/rt5370sta.ko
+/tmp/rootfs/lib/modules/ump.ko
+/tmp/rootfs/lib/modules/wlan.ko
+/tmp/rootfs/lib/modules/rkwifi.ko
+```
+
 ## Serial
 
 We need to find the serial: some info from [here](https://github.com/minghuascode/qemu120/blob/master/xternapp/tablet-rkflashtool/README-rk2926-2928-debug-serial.txt)
