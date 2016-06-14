@@ -136,6 +136,46 @@ $ find /tmp/rootfs -name '*.ko'
 /tmp/rootfs/lib/modules/rkwifi.ko
 ```
 
+## Android
+
+Accessing the device after a fabric reset
+
+```
+root@android:/ # mount
+rootfs / rootfs ro,relatime 0 0
+tmpfs /dev tmpfs rw,nosuid,relatime,mode=755 0 0
+devpts /dev/pts devpts rw,relatime,mode=600 0 0
+proc /proc proc rw,relatime 0 0
+sysfs /sys sysfs rw,relatime 0 0
+none /acct cgroup rw,relatime,cpuacct 0 0
+tmpfs /mnt/asec tmpfs rw,relatime,mode=755,gid=1000 0 0
+tmpfs /mnt/obb tmpfs rw,relatime,mode=755,gid=1000 0 0
+none /dev/cpuctl cgroup rw,relatime,cpu 0 0
+/dev/block/mtdblock8 /system ext4 ro,noatime,nodiratime,barrier=1,data=ordered,noauto_da_alloc 0 0
+/dev/block/mtdblock6 /data ext4 rw,nosuid,nodev,noatime,nodiratime,barrier=1,data=ordered,noauto_da_alloc 0 0
+/dev/block/mtdblock5 /cache ext4 rw,nosuid,nodev,noatime,nodiratime,barrier=1,data=ordered,noauto_da_alloc 0 0
+/sys/kernel/debug /sys/kernel/debug debugfs rw,relatime 0 0
+/dev/block/vold/31:9 /mnt/sdcard vfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1000,gid=1015,fmask=0002,dmask=0002,allow_utime=0020,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 0
+/dev/block/vold/31:9 /mnt/secure/asec vfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1000,gid=1015,fmask=0002,dmask=0002,allow_utime=0020,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 0
+tmpfs /mnt/sdcard/.android_secure tmpfs ro,relatime,size=0k,mode=000 0 0
+```
+
+```
+root@android:/ # cat /proc/cpuinfo                                             
+Processor      : ARMv7 Processor rev 0 (v7l)
+BogoMIPS       : 431.85
+Features       : swp half thumb fastmult vfp edsp neon vfpv3 
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant    : 0x3
+CPU part       : 0xc09
+CPU revision   : 0
+
+Hardware       : RK2928board
+Revision       : 0000
+Serial         : 0000000000000000
+```
+
 ## Serial
 
 We need to find the serial: some info from [here](https://github.com/minghuascode/qemu120/blob/master/xternapp/tablet-rkflashtool/README-rk2926-2928-debug-serial.txt)
