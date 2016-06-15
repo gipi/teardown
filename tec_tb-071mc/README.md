@@ -180,6 +180,11 @@ Serial         : 0000000000000000
 
 We need to find the serial: some info from [here](https://github.com/minghuascode/qemu120/blob/master/xternapp/tablet-rkflashtool/README-rk2926-2928-debug-serial.txt)
 
+At the end we found the serial via the ``USB`` connector, it's 115200 baud and the boot
+log is [here](boot.txt). Also is accessible a shell, that is deactivate
+when the screen is put to sleep.
+
+This part below we don't know if it's of interest.
 ```
 http://wenku.baidu.com/view/431560365727a5e9856a6167.html
 

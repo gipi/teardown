@@ -1,0 +1,570 @@
+DDR Version 1.01 20121221
+In
+DDR3
+300MHz
+Bus Width=16 Col=10 Bank=8 Row=15 CS=1 Size=512MB
+Memory OK
+OUT
+BUILD=====6
+GetRemapTbl flag = 0
+OK! 95402
+unsigned!
+SecureBootEn = 0
+Boot ver: 2012-12-25#1.24
+start_linux=====109639
+ 1503362 Starting kernel...@0x60408000
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.0.36+ (EM2926-752A@V01M) (gcc version 4.4.3 (GCC) ) #138 PREEMPT Thu May 2 11:25:32 CST 2013
+[    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: RK2928board
+[    0.000000] memory reserve: Memory(base:0x7b000000 size:80M) reserved for <ion>
+[    0.000000] memory reserve: Memory(base:0x7a400000 size:12M) reserved for <fb0>
+[    0.000000] memory reserve: Memory(base:0x79c00000 size:8M) reserved for <camera_ipp_mem_0>
+[    0.000000] memory reserve: Memory(base:0x79c00000 size:0M) reserved for <camera_ipp_mem_1>
+[    0.000000] memory reserve: Total reserved 100M
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] bootconsole [earlycon0] enabled
+[    0.000000] CPU SRAM: copied sram code from c0aeb000 to fef00000 - fef01218
+[    0.000000] CPU SRAM: copied sram data from c0aec218 to fef01218 - fef0154c
+[    0.000000] rk2928_clock_data_init version:	2012-8-14
+[    0.000000] board_clock_init end
+[    0.000000] L310 cache controller enabled
+[    0.000000] l2x0: 8 ways, CACHE_ID 0x4100c0c8, AUX_CTRL 0x76020001, Cache size: 131072 B
+[    0.000000] DDR DEBUG: version 1.00 20121009 
+[    0.000000] DDR DEBUG: 1 CS, ROW=15, Bank=8, COL=10, Total Capability=512MB
+[    0.000000] DDR DEBUG: init success!!! freq=396MHz
+[    0.000000] DDR DEBUG: left channel:Dllsel=5, Ophsel=0, Cycsel=2
+[    0.000000] DDR DEBUG: right channel:Dllsel=5, Ophsel=0, Cycsel=2
+[    0.000000] DDR DEBUG: DRV Pull-Up=0x5, DRV Pull-Dwn=0x5
+[    0.000000] DDR DEBUG: ODT Pull-Up=0x1, ODT Pull-Dwn=0x1
+[    0.000000] rk2928_iomux_init
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 104448
+[    0.000000] Kernel command line: console=ttyFIQ0 androidboot.console=ttyFIQ0 init=/init initrd=0x62000000,0x00160000 mtdparts=rk29xxnand:0x00002000@0x00002000(misc),0x00004000@0x00004000(kernel),0x00008000@0x00008000(boot),0x00010000@0x00010000(recovery),0x00020000@0x00020000(backup),0x00040000@0x00040000(cache),0x00200000@0x00080000(userdata),0x00002000@0x00280000(kpanic),0x00130000@0x00282000(system),-@0x003b2000(user) bootver=2012-12-25#1.24 firmware_ver=4.1.1
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 412MB = 412MB total
+[    0.000000] Memory: 398024k/398024k available, 126264k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xfe800000   ( 480 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .init : 0xc0408000 - 0xc048b000   ( 524 kB)
+[    0.000000]       .text : 0xc048b000 - 0xc0a8ab64   (6143 kB)
+[    0.000000]       .data : 0xc0a8c000 - 0xc0aeadc0   ( 380 kB)
+[    0.000000]        .bss : 0xc0aed024 - 0xc157d740   (10818 kB)
+[    0.000000] SLUB: Genslabs=13, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:320
+[    0.000000] rk30_gpio_init: 128 gpio irqs in 4 banks
+[    0.000000] sched_clock: 32 bits at 148MHz, resolution 6ns, wraps every 28922ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.004689] Calibrating delay loop (skipped) preset value.. 1199.60 BogoMIPS (lpj=5998045)
+[    0.013093] pid_max: default: 32768 minimum: 301
+[    0.018048] Mount-cache hash table entries: 512
+[    0.023069] Initializing cgroup subsys debug
+[    0.027477] Initializing cgroup subsys cpuacct
+[    0.032050] Initializing cgroup subsys freezer
+[    0.036639] CPU: Testing write buffer coherency: ok
+[    0.042222] devtmpfs: initialized
+[    0.048705] NET: Registered protocol family 16
+[    0.053506] last_log: 0xd9480000 map to 0xe0804000 and copy to 0xc0aee4a0 (version 2.1)
+[    0.076268] store_boot_source >>>> __boot_from_source is 1 
+[    0.082897] rk29sdk_wifi_bt_gpio_control_init: init finished
+<hit enter to activate fiq debugger>
+[    0.093426] console [ttyFIQ0] enabled, bootconsole disabled
+[    0.093426] console [ttyFIQ0] enabled, bootconsole disabled
+[    0.099829] Registered FIQ tty driver d94236c0
+[    0.124950] bio: create slab <bio-0> at 0
+[    0.129652] SCSI subsystem initialized
+[    0.133705] usbcore: registered new interface driver usbfs
+[    0.139344] usbcore: registered new interface driver hub
+[    0.144832] usbcore: registered new device driver usb
+[    0.150219] rk30_i2c rk30_i2c.0: i2c-0: RK30 I2C adapter
+[    0.155881] rk30_i2c rk30_i2c.1: i2c-1: RK30 I2C adapter
+[    0.161482] rk30_i2c rk30_i2c.2: i2c-2: RK30 I2C adapter
+[    0.166995] rk30_i2c rk30_i2c.3: i2c-3: RK30 I2C adapter
+[    0.183296] rk30-adc rk30-adc: rk30 adc: driver initialized
+[    0.189856] >>>> first_adc_value is  612 
+[    0.465948] rk30_adc_battery: driver initialized
+[    0.470839] Advanced Linux Sound Architecture Driver Version 1.0.24.
+[    0.477704] Bluetooth: Core ver 2.16
+[    0.481383] NET: Registered protocol family 31
+[    0.485866] Bluetooth: HCI device and connection manager initialized
+[    0.492262] Bluetooth: HCI socket layer initialized
+[    0.497171] Bluetooth: L2CAP socket layer initialized
+[    0.502270] Bluetooth: SCO socket layer initialized
+[    0.507426] cfg80211: Calling CRDA to update world regulatory domain
+[    0.514922] rk fb probe ok!
+[    0.517853] Switching to clocksource timer1
+[    0.522712] Switched to NOHz mode on CPU #0
+[    0.532930] lcdc0:reg_phy_base = 0x1010e000,reg_vir_base:0xe0890000
+[    0.539289] fb0:win0
+[    0.539297] fb1:win1
+[    0.539302] fb2:win2
+[    0.545916] rk_output_lvttl>>connect to lcdc output interface0
+[    0.551872] RGB screen connect to rk2928 lcdc interface0
+[    0.557228] lcdc0: dclk:33000000>>fps:59 rk2928_load_screen for lcdc0 ok!
+[    0.581374] fb0:phy:7a400000>>vir:e1000000>>len:0xc00000
+[    0.586965] rk_fb_register>>>>>fb0
+[    0.590590] rk_fb_register>>>>>fb1
+[    0.594031] lcdc0 win0 open
+[    0.773870] ------------------>> 609,612 <<-----------------
+[    0.779600] rk2928 lcdc0 probe ok!
+[    0.783156] pwm_regulator_probe:n_voltages=21
+[    0.787730] pwm_regulator.0: driver initialized
+[    0.810657] NET: Registered protocol family 2
+[    0.815167] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.822438] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.830056] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.836819] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.843387] TCP reno registered
+[    0.846560] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.852445] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.859084] NET: Registered protocol family 1
+[    0.863684] RK29 Backlight Driver Initialized.
+[    0.868404] Unpacking initramfs...
+[    0.958494] Freeing initrd memory: 1408K
+[    0.962552] PMU: registered new PMU device of type 0
+[    0.967637] DVFS ERR:	gpu can't get regulator in clk_enable_dvfs
+[    0.973724] DVFS ERR:	ddr can't get regulator in clk_enable_dvfs
+[    0.979781] DVFS ERR:	aclk_vepu can't get regulator in clk_enable_dvfs
+[    0.987118] Loaded driver for PL330 DMAC--1 rk29-pl330
+[    0.992315] 	DBUFF-64x8bytes Num_Chans-8 Num_Peri-14 Num_Events-16
+[    0.999512] ashmem: initialized
+[    1.008817] fuse init (API version 7.16)
+[    1.014635] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.022138] io scheduler noop registered
+[    1.026092] io scheduler deadline registered
+[    1.030468] io scheduler cfq registered (default)
+[    1.043310] rga: Driver loaded succesfully
+[    1.048030] Rockchip ion module(version: 1.0) is successfully loaded
+[    1.057222] loop: module loaded
+[    1.060480] Android kernel panic handler initialized (bind=kpanic)
+[    1.067372] PPP generic driver version 2.4.2
+[    1.071910] PPP Deflate Compression module registered
+[    1.077012] PPP BSD Compression module registered
+[    1.082460] PPP MPPE Compression module registered
+[    1.087294] NET: Registered protocol family 24
+[    1.091866] usbcore: registered new interface driver asix
+[    1.097373] usbcore: registered new interface driver cdc_ether
+[    1.103321] usbcore: registered new interface driver dm9620
+[    1.108987] usbcore: registered new interface driver SR9700_android
+[    1.115350] usbcore: registered new interface driver net1080
+[    1.121094] usbcore: registered new interface driver cdc_subset
+[    1.127105] usbcore: registered new interface driver zaurus
+[    1.132731] cdc_ncm: 04-Aug-2011
+[    1.136043] usbcore: registered new interface driver cdc_ncm
+[    1.141739] Rockchip WiFi SYS interface (V1.00) ... 
+[    1.146785] Initializing USB Mass Storage driver...
+[    1.151782] usbcore: registered new interface driver usb-storage
+[    1.157831] USB Mass Storage support registered.
+[    1.162621] usbcore: registered new interface driver usbserial
+[    1.168541] USB Serial support registered for generic
+[    1.173848] usbcore: registered new interface driver usbserial_generic
+[    1.180422] usbserial: USB Serial Driver core
+[    1.184861] USB Serial support registered for GSM modem (1-port)
+[    1.190969] usbcore: registered new interface driver option
+[    1.196578] option: v0.7.2:USB Driver for GSM modems
+[    1.201651] ~~~~~~~~~~usb20otg_soft_reset
+[    1.418581] DWC_OTG: ^^^^^^^^^^^^^^^^^Device Mode
+[    1.423338] usb20_otg usb20_otg: DWC OTG Controller
+[    1.428318] usb20_otg usb20_otg: new USB bus registered, assigned bus number 1
+[    1.435623] usb20_otg usb20_otg: irq 42, io mem 0x00000000
+[    1.441145] DWC_OTG: dwc_otg_hcd_start controller in device mode,everest
+[    1.447948] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.454787] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.462053] usb usb1: Product: DWC OTG Controller
+[    1.466804] usb usb1: Manufacturer: Linux 3.0.36+ dwc_otg_hcd
+[    1.472585] usb usb1: SerialNumber: usb20_otg
+[    1.477524] hub 1-0:1.0: USB hub found
+[    1.481333] hub 1-0:1.0: 1 port detected
+[    1.485889] DWC_OTG: host20_driver_probe host2.0 reg addr: 0x101c0000 remap:0xe0a00000
+[    1.704389] DWC_OTG: ^^^^^^^^^^^^^^^^^^Host Mode
+[    1.709075] usb20_host usb20_host: DWC OTG Controller
+[    1.714221] usb20_host usb20_host: new USB bus registered, assigned bus number 2
+[    1.721700] usb20_host usb20_host: irq 43, io mem 0x00000000
+[    1.727433] DWC_OTG: Init: Port Power? op_state=1
+[    1.727473] DWC_OTG: Init: Power Port (0)
+[    1.736251] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.743088] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.750353] usb usb2: Product: DWC OTG Controller
+[    1.755088] usb usb2: Manufacturer: Linux 3.0.36+ host20_hcd
+[    1.760782] usb usb2: SerialNumber: usb20_host
+[    1.765809] hub 2-0:1.0: USB hub found
+[    1.769615] hub 2-0:1.0: 1 port detected
+[    1.775748] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    1.782695] android_usb gadget: Number of LUNs=2
+[    1.787348]  lun0: LUN: removable file: (no medium)
+[    1.792261]  lun1: LUN: removable file: (no medium)
+[    1.797534] android_usb gadget: android_usb ready
+[    1.802608] input: rk29-keypad as /devices/platform/rk29-keypad/input/input0
+[    1.810115] usbcore: registered new interface driver xpad
+[    1.815648] usbcore: registered new interface driver usb_acecad
+[    1.821611] acecad: v3.2:USB Acecad Flair tablet driver
+[    1.826938] usbcore: registered new interface driver aiptek
+[    1.832549] aiptek: v2.3 (May 2, 2007):Aiptek HyperPen USB Tablet Driver (Linux 2.6.x)
+[    1.840509] aiptek: Bryan W. Headley/Chris Atenasio/Cedric Brun/Rene van Paassen
+[    1.848013] usbcore: registered new interface driver gtco
+[    1.853449] GTCO usb driver version: 2.00.0006
+[    1.857809] usbcore: registered new interface driver hanwang
+[    1.863756] usbcore: registered new interface driver kbtab
+[    1.869280] kbtab: v0.0.2:USB KB Gear JamStudio Tablet driver
+[    1.875201] usbcore: registered new interface driver wacom
+[    1.880727] wacom: v1.52:USB Wacom tablet driver
+[    1.885835] sensor_register_slave:mma7660,id=14
+[    1.908738] using rtc device, rtc_hym8563, for alarms
+[    1.913695] rtc_hym8563 1-0051: rtc core: registered rtc_hym8563 as rtc0
+[    1.920667] i2c /dev entries driver
+[    1.924988] lirc_dev: IR Remote Control driver registered, major 250 
+[    1.931488] IR NEC protocol handler initialized
+[    1.936051] IR RC5(x) protocol handler initialized
+[    1.940873] IR RC6 protocol handler initialized
+[    1.945432] IR JVC protocol handler initialized
+[    1.949989] IR Sony protocol handler initialized
+[    1.954633] IR RC5 (streamzap) protocol handler initialized
+[    1.960237] IR LIRC bridge handler initialized
+[    1.964706] Linux video capture interface: v2.00
+[    1.969710] def_ref_volt: 3300mV, curr_ref_volt: 3658mV
+[    1.975483] device-mapper: uevent: version 1.0.3
+[    1.980558] device-mapper: ioctl: 4.20.0-ioctl (2011-02-02) initialised: dm-devel@redhat.com
+[    1.992327] Bluetooth: HCI UART driver ver 2.2
+[    1.996819] Bluetooth: HCI H4 protocol initialized
+[    2.001640] Bluetooth: HCILL protocol initialized
+[    2.006541] cpuidle: using governor ladder
+[    2.010680] cpuidle: using governor menu
+[    2.020072] .Line3978..The End of SDMMC-probe Ver.5.01 The last modify date is 2012-12-01.  [sd_mmc]
+[    2.029320] 
+[    2.029325] drivers/mmc/core/core.c...1824..  ===== mmc_rescan Begin....[mmc0]
+[    2.038097] 
+[    2.038104] =================
+[    2.038111] mmc_rescan..1831..  ====find no SDMMC host. [mmc0]
+[    2.054368] usbcore: registered new interface driver usbhid
+[    2.062117] usbhid: USB HID core driver
+[    2.072537] logger: created 256K log 'log_main'
+[    2.077293] logger: created 256K log 'log_events'
+[    2.082230] logger: created 256K log 'log_radio'
+[    2.087021] logger: created 256K log 'log_system'
+[    2.092642] RK2928 SoC init
+[    2.202901] asoc: rk2928-codec <-> rk29_i2s.0 mapping ok
+[    2.208844] ALSA device list:
+[    2.211850]   #0: RK2928
+[    2.214686] GACT probability NOT on
+[    2.218220] Mirror/redirect action on
+[    2.221910] u32 classifier
+[    2.224637]     Actions configured
+[    2.228066] Netfilter messages via NETLINK v0.30.
+[    2.232858] nf_conntrack version 0.5.0 (6241 buckets, 24964 max)
+[    2.239345] ctnetlink v0.93: registering with nfnetlink.
+[    2.244752] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    2.251759] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    2.258134] xt_time: kernel timezone is -0000
+[    2.272299] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    2.277864] arp_tables: (C) 2002 David S. Miller
+[    2.282589] TCP cubic registered
+[    2.285848] Initializing XFRM netlink socket
+[    2.290901] NET: Registered protocol family 10
+[    2.296460] Mobile IPv6
+[    2.298998] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    2.304646] IPv6 over IPv4 tunneling driver
+[    2.309959] NET: Registered protocol family 17
+[    2.314500] NET: Registered protocol family 15
+[    2.319232] Bluetooth: RFCOMM TTY layer initialized
+[    2.324166] Bluetooth: RFCOMM socket layer initialized
+[    2.329343] Bluetooth: RFCOMM ver 1.11
+[    2.333121] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.338468] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.344584] NET: Registered protocol family 35
+[    2.349323] [BT_RFKILL]: Enter rfkill_rk_init
+[    2.354063] VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+[    2.362607] i2c i2c-1: sensor_probe: gs_mma7660,0xd9468800
+[    2.368163] sensor_chip_init:gs_mma7660:devid=0x0,ops=0xc0ad0200
+[    2.374340] rk-camera-rk2928 version: v0.2.27  Zoom by arm
+[    2.379959] rk_sensor_io_init..nt99252_back_1..powerdown pin(241) init failed
+[    2.387980] input: gsensor as /devices/platform/rk30_i2c.1/i2c-1/1-004c/input/input1
+[    2.402266] sensor_irq_init:use irq=170
+[    2.406351] sensor_misc_device_register:miscdevice: mma8452_daemon
+[    2.412587] sensor_probe:initialized ok,sensor name:mma7660,type:1,id=14
+[    2.412602] 
+[    2.420873] sensor_init: Probe name sensors
+[    2.427482] rtc_hym8563 1-0051: setting system clock to 2011-01-01 13:23:46 UTC (1293888226)
+[    2.435980] start_charge_logo_display
+[    2.440162] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.449282] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.458392] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.467321] 
+[    2.467327]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.476095] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.485201] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.494306] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.503260] 
+[    2.503266]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.512033] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.521159] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.530265] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.539187] 
+[    2.539193]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.547956] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.557059] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.566161] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.575083] 
+[    2.575088]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.583849] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.592951] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.602051] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.611024] 
+[    2.611030]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.619793] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.628897] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.637999] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.646922] 
+[    2.646927]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.655689] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.664792] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.673893] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.682815] 
+[    2.682821]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.691582] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.700684] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.709815] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.718740] 
+[    2.718746]  nt99250 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.727325] soft reset nt99250 failed
+[    2.731145] camera 33-0-nt99250_back: Probe nt99250_back failed
+[    2.744635] i2c i2c-1: No ack, Maybe slave(addr: 0x21) not exist or abnormal power-on, retry 2...
+[    2.753763] i2c i2c-1: No ack, Maybe slave(addr: 0x21) not exist or abnormal power-on, retry 1...
+[    2.762880] i2c i2c-1: No ack, Maybe slave(addr: 0x21) not exist or abnormal power-on, retry 0...
+[    2.771805] 
+[    2.771810]  gc0308 read reg(0x0 val:0x0) failed, try to read again! 
+[    2.779780] gc0308 read chip id high byte failed
+[    2.784550] camera 33-1-gc0308_front: Probe gc0308_front failed
+[    2.804648] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.813768] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.822879] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.831805] 
+[    2.831810]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.840578] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.849685] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.858790] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.867714] 
+[    2.867719]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.876484] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.885587] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.894689] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.903643] 
+[    2.903649]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.912417] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.921521] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.930624] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.939547] 
+[    2.939553]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.948317] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.957421] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    2.966523] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    2.975446] 
+[    2.975451]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    2.984213] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    2.993315] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    3.002447] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    3.011371] 
+[    3.011376]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    3.020138] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    3.029257] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    3.038362] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    3.047286] 
+[    3.047291]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    3.056056] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 2...
+[    3.065159] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 1...
+[    3.074261] i2c i2c-1: No ack, Maybe slave(addr: 0x36) not exist or abnormal power-on, retry 0...
+[    3.083183] 
+[    3.083188]  nt99252 write reg(0x3021, val:0x61) failed, try to write again!
+[    3.091764] soft reset nt99252 failed
+[    3.095575] camera 33-2-nt99252_back_1: Probe nt99252_back_1 failed
+[    3.676400] enter gt801_chip_Init!!!!
+[    3.682844] gt801_chip_Init  ---- oKKKKKKKKKKKK!!!!
+[    3.687998] input: eboda Touchscreen as /devices/virtual/input/input2
+[    3.694501] cpufreq_interactive_input_connect: connect to eboda Touchscreen
+[    3.701923] Freeing init memory: 524K
+[    3.705640] DVFS ERR:	dvfs_reset_volt (clk:vd_cpu), try to reload arm_volt! arm_volt_correct = 1200000
+[    3.718511] init: /init.rk2928board.rc: 73: invalid command 'mknod'
+[    3.724958] init: /init.rk2928board.rc: 129: invalid option '-ip2p0'
+[    3.732007] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.
+[    3.781734] keychord: using input dev rk29-keypad for fevent
+[    3.787642] keychord: using input dev eboda Touchscreen for fevent
+[    3.794080] init: cannot open '/initlogo.rle'
+[    3.856648] gp_rknand_info = : 0xd945f800
+[    3.860878] request IRQ_NANDC irq , ret=0.........
+[    3.865816] FlashCopyProgBuf1=0xc1422000
+[    3.869784] ATime: 40 ns AHB: 148 timming: 1081
+[    3.874342] No.1 FLASH INFO:2c 68 4 4a a9
+[    3.878674] ATime: 32 ns AHB: 148 timming: 1061
+[    3.883373] ATime: 32 ns AHB: 148 timming: 1061
+[    3.887925] randomizer = 2 , EccBits = 18 pSpec->pReadRetrial = 0
+[    3.930802] FTL INFO:Version = 438,Date = 20121130
+[    3.935617] totalLogicBlkRaw  = 1904
+[    3.939226] gBootMedia = 1 gSdmmcFwPartOffset =0!
+[    3.943951] rknand_buffer.c version: 4.38 20121130!
+[    3.949082] 10 cmdlinepart partitions found on MTD device rk29xxnand
+[    3.955471] Creating 10 MTD partitions on "rk29xxnand":
+[    3.960725] 0x000000400000-0x000000800000 : "misc"
+[    3.966603] 0x000000800000-0x000001000000 : "kernel"
+[    3.972932] 0x000001000000-0x000002000000 : "boot"
+[    3.978901] 0x000002000000-0x000004000000 : "recovery"
+[    3.985307] 0x000004000000-0x000008000000 : "backup"
+[    3.991533] 0x000008000000-0x000010000000 : "cache"
+[    3.997772] 0x000010000000-0x000050000000 : "userdata"
+[    4.005074] 0x000050000000-0x000050400000 : "kpanic"
+[    4.011529] apanic: Bound to mtd partition 'kpanic'
+[    4.016563] apanic: No panic data available
+[    4.020785] 0x000050400000-0x000076400000 : "system"
+[    4.027415] 0x000076400000-0x0000ee000000 : "user"
+[    4.035090] startBlk = 76  sysProtAddr = 75 
+[    4.069791] EXT4-fs (mtdblock8): mounted filesystem with ordered data mode. Opts: noauto_da_alloc
+[    4.101555] EXT4-fs (mtdblock6): mounted filesystem with ordered data mode. Opts: noauto_da_alloc
+[    4.122030] EXT4-fs (mtdblock5): mounted filesystem with ordered data mode. Opts: noauto_da_alloc
+[    4.138771] UMP: ump_memory_backend_create,ump_memory_size = 0x10000000
+[    4.145551] UMP: UMP device driver  loaded
+[    4.165925] Mali: init_mali_clock mali_clock c0a9b554 
+[    4.172633] Mali: @@@@@@@Mali device driver loaded success@@@@@@@@
+[    4.208629] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[    4.403556] VPU_SERVICE: failed on clk_get aclk_ddr_vepu
+[    4.408983] VPU_SERVICE: failed on clk_get hclk_cpu_vcodec
+[    4.414509] vpu: power on
+[    4.417193] VPU_SERVICE: checking hw id 8270
+[    4.430391] vpu_service set to auto frequency mode
+[    4.435380] vpu: power off...done
+[    4.438759] VPU_SERVICE: init success
+[    4.444142] init: property 'ro.serialno' doesn't exist while expanding '${ro.serialno}'
+[    4.452221] init: cannot expand '${ro.serialno}' while writing to '/sys/class/android_usb/android0/iSerial'
+[    4.462611] init: using deprecated syntax for specifying property 'ro.product.usbfactory', use ${name} instead
+[    4.473690] android_usb: already disabled
+[    4.486739] adb_open
+shell@android:/ $ [    4.871622] .414.. MMC0 receive the message sd-No-Media from VOLD.[sd_mmc]
+[    4.878550] .445.. MMC0 receive the message No-Media from VOLD. waitTimes=0 [sd_mmc]
+[    5.070632] [rknand_sys_storage_ioctl:84] rknand_sys_storage_ioctl in
+[    5.077122] [rknand_sys_storage_ioctl:95] RKNAND_GET_DRM_KEY
+[    5.082813] [rknand_sys_storage_ioctl:300] return ret = 0
+[    6.422217] rk fb use 3 buffers
+[    9.802196] DWC_OTG: dwc_otg_hcd_enable, disable host controller
+[   10.192163] rk30_adc_battery_poweron_capacity_check: 1378: >>>> new_capacity = 94
+[   10.200284] >>>> load capacity is 91 
+[   10.204010] rk30_adc_battery_poweron_capacity_check: 1393: >>>>  old_capacity = 91
+[   10.211614] rk30_adc_battery_poweron_capacity_check: >>>> last bat_cap = 91
+[   10.218672] >>>> put capacity is 91 
+[   11.989445] warning: `zygote' uses 32-bit capabilities (legacy support in use)
+[   17.004151] =======================================================
+[   17.011141] ==== Launching Wi-Fi driver! (Powered by Rockchip) ====
+[   17.017486] =======================================================
+[   17.023927] Realtek 8188EU USB WiFi driver (Powered by Rockchip,Ver 1.11) init.
+[   17.031314] wifi_usb_init
+[   17.033952] wifi_activate_usb
+[   17.036958] rk29sdk_wifi_power: 1
+[   17.040302] rkusb_wifi_power: vccio_wl disable
+[   17.070543] acc_open
+[   17.072876] acc_release
+[   17.208199] rkusb_wifi_power: vccio_wl enable
+[   17.208314] wifi turn on power
+[   17.312800] usbcore: registered new interface driver rtl8188eu
+[   17.802218] DWC_OTG: dwc_otg_hcd_enable, enable host controller
+[   17.813308] DWC_OTG: Init: Port Power? op_state=1
+[   17.813340] DWC_OTG: Init: Power Port (1)
+[   18.292202] usb 2-1: new high speed USB device number 2 using usb20_host
+[   18.503128] usb 2-1: New USB device found, idVendor=0bda, idProduct=8179
+[   18.509893] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   18.517077] usb 2-1: Product: 802.11n NIC
+[   18.521116] usb 2-1: Manufacturer: Realtek
+[   18.525244] usb 2-1: SerialNumber: 00E04C0001
+[   19.718038] cfg80211_rtw_change_iface, old_iftype=6, new_iftype=2
+[   19.724727] ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   23.299275] init: sys_prop: permission denied uid:10065  name:sys.ghwui.version
+[   24.683706] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+[   45.253700] request_suspend_state: sleep (3->3) at 47601579810 (2011-01-01 13:24:29.314977869 UTC)
+[   45.263628] rk_output_disable: reg = 0x100
+[   45.278197] DDR DEBUG: init success!!! freq=396000000MHz
+[   45.561999] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[   45.584945] Freezing remaining freezable tasks ... (elapsed 0.63 seconds) done.
+[   46.225034] Suspending console(s) (use no_console_suspend to debug)
+GPIO0_INTEN: 0x00000001
+GPIO1_INTEN: 0x00000012
+GPIO2_INTEN: 0x00000080
+0123456776543210
+[   46.237870] pwdev->sme_state(b)=0
+[   46.237883] pwdev->sme_state(a)=0
+[   46.350748] DWC_OTG: usb20_host suspend, HPRT0:0x1005
+[   46.355900] DWC_OTG: dwc_otg_hcd_suspend, usb device mode
+[   46.356241] rknand_buffer_suspend done!!
+[   46.356332] PM: suspend of devices complete after 124.509 msecs
+[   46.356645] PM: late suspend of devices complete after 0.288 msecs
+[   46.364557] wakeup irq: 00000000 00000020 11000000
+[   46.364578] wakeup gpio1: 00000010
+[   46.364658] Suspended for 0.000 seconds
+[   46.365297] PM: early resume of devices complete after 0.492 msecs
+[   46.365506] wakeup wake lock: event0-264
+[   46.365938] ATime: 32 ns AHB: 148 timming: 1061
+[   46.365967] No.1 FLASH INFO:2c 68 4 4a a9
+[   46.365989] rknand_buffer_resume done!!
+[   46.366262] DWC_OTG: dwc_otg_hcd_resume, usb device mode
+[   46.380140] DWC_OTG: usb20_host resume, HPRT0:0x1485
+[   46.432217] PM: resume of devices complete after 66.544 msecs
+[   46.521883] Restarting tasks ... done.
+[   46.537390] suspend: exit suspend, ret = 0 (2011-01-01 13:24:32.107052371 UTC)
+[   46.563346] request_suspend_state: wakeup (3->0) at 48903326619 (2011-01-01 13:24:32.132997893 UTC)
+[   46.572509] DDR DEBUG: init success!!! freq=396000000MHz
+[   46.578003] rk_output_lvttl>>connect to lcdc output interface0
+[   46.590246] >>>> put capacity is 91 
+[   47.256413] ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[   63.074900] request_suspend_state: sleep (0->3) at 65414841872 (2011-01-01 13:24:48.644504547 UTC)
+[   63.085333] rk_output_disable: reg = 0x100
+[   63.109572] DDR DEBUG: init success!!! freq=396000000MHz
+[   63.237951] Freezing user space processes ... (elapsed 0.01 seconds) done.
+[   63.262912] Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done.
+[   63.282953] Suspending console(s) (use no_console_suspend to debug)
+GPIO0_INTEN: 0x00000001
+GPIO1_INTEN: 0x00000012
+GPIO2_INTEN: 0x00000080
+0123456776543210
+[   63.296561] pwdev->sme_state(b)=0
+[   63.296583] pwdev->sme_state(a)=0
+[   63.408969] DWC_OTG: usb20_host suspend, HPRT0:0x1005
+[   63.414276] DWC_OTG: dwc_otg_hcd_suspend, usb device mode
+[   63.415119] rknand_buffer_suspend done!!
+[   63.415315] PM: suspend of devices complete after 125.034 msecs
+[   63.415740] PM: late suspend of devices complete after 0.385 msecs
+[   63.423675] wakeup irq: 00000000 00000020 10000000
+[   63.423695] wakeup gpio1: 00000010
+[   63.423778] Suspended for 0.000 seconds
+[   63.424379] PM: early resume of devices complete after 0.461 msecs
+[   63.424575] wakeup wake lock: event0-264
+[   63.425179] ATime: 32 ns AHB: 148 timming: 1061
+[   63.425211] No.1 FLASH INFO:2c 68 4 4a a9
+[   63.425233] rknand_buffer_resume done!!
+[   63.425506] DWC_OTG: dwc_otg_hcd_resume, usb device mode
+[   63.438116] DWC_OTG: usb20_host resume, HPRT0:0x1485
+[   63.490089] PM: resume of devices complete after 65.330 msecs
+[   63.579785] Restarting tasks ... done.
+[   63.596016] suspend: exit suspend, ret = 0 (2011-01-01 13:24:59.107760774 UTC)
+[   63.622637] >>>> put capacity is 91 
+[   63.919351] request_suspend_state: wakeup (3->0) at 66251412692 (2011-01-01 13:24:59.431087650 UTC)
+[   63.928489] DDR DEBUG: init success!!! freq=396000000MHz
+[   63.933936] rk_output_lvttl>>connect to lcdc output interface0
+[   70.318857] SysRq : Emergency Remount R/O
+[   70.321126] EXT4-fs (mtdblock6): re-mounted. Opts: (null)
+[   70.323849] EXT4-fs (mtdblock5): re-mounted. Opts: (null)
+[   70.328123] RESTART_DEBUG : sys_reboot->468->cmd=4321fedc
+[   70.361574] Emergency Remount complete
+[   70.373336] rknand_buffer_shutdown pWriteQueue->count = 20!!
+[   70.450990] rknand_buffer_shutdown pReadQueue->count = 0!!
+[   70.456530] FtlCacheWriteBack
+[   70.471395] rknand_buffer_thread exit ... done
+[   70.476987] rknand_buffer_reboot_prepare exit!!
+[   70.477599] DWC_OTG: dwc_otg_driver_shutdown:: disconnect USB
+[   70.477632] rknand_shutdown...
+[   70.477664] rknand_buffer_shutdown exit !!
+[   71.272182] func rk29_backlight_pwm_suspend, line 160: request gpio fail
+[   71.279233] rk_output_disable: reg = 0x100
