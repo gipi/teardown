@@ -202,3 +202,59 @@ Serial debug connection:
       RK2926/2928 OTG_DN  --------  TXD serial board
       RK2926/2928 GND     --------  GND serial board
 ```
+
+With the **Bus Pirate** we have to enable the pullup resistor with ``P``
+
+```
+Select output type:
+ 1. Open drain (H=Hi-Z, L=GND)
+ 2. Normal (H=3.3V, L=GND)
+
+(1)>2
+Ready
+UART>P
+WARNING: pins not open drain (HiZ)
+Pull-up resistors ON
+--- Settings: /dev/ttyUSB0  115200,8,N,1
+--- RTS: active    DTR: active    BREAK: inactive
+--- CTS: inactive  DSR: inactive  RI: inactive  CD: inactive
+--- software flow control: inactive
+--- hardware flow control: inactive
+--- serial input encoding: UTF-8
+--- serial output encoding: UTF-8
+--- EOL: LF
+--- filters: default
+```
+
+### FIQ
+
+**this section has to be confirmed**
+
+Seems possible to activate the ``FIQ`` debugger using a resistor of 150k between the ``ID`` and
+``GND`` pin; the only thing strange is that the ``RX`` pin of the USB connector must be not connected
+otherwise the boot stops. With trial and error we found that we have to wait until
+the boot is completed and then connect that pin.
+
+```
+debug> fiq debugger mode
+debug> help
+FIQ Debugger commands:
+ pc            PC status
+ regs          Register dump
+ allregs       Extended Register dump
+ bt            Stack trace
+ reboot        Reboot
+ irqs          Interupt status
+ kmsg          Kernel log
+ version       Kernel version
+ last_kmsg     Last kernel log
+ sleep         Allow sleep while in FIQ
+ nosleep       Disable sleep while in FIQ
+ console       Switch terminal to console
+ cpu           Current CPU
+ cpu <number>  Switch to CPU<number>
+ ps            Process list
+ sysrq         sysrq options
+ sysrq <param> Execute sysrq with <param>
+```
+More info about FIQ can be found [here](http://www.linaro.org/blog/core-dump/debugging-arm-kernels-using-nmifiq/).
