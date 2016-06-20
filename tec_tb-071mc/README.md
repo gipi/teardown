@@ -110,9 +110,55 @@ ANDROID!$P
 ```
 
 Seems that ``KRNL`` is an image packed using ``rkcrc``, you can unsign with ``rkunsign``; after that
-``boot.img`` is seen as ``gzip compressed data, from Unix``, instead ``kernel`` is not recognized
+``boot.img`` is seen as ``gzip compressed data, from Unix``
 
-Looking inside the system image we see a pretty standard android filesystem:
+```
+$ rkunsign tec_tb-071mc/boot.img tec_tb-071mc/boot_unsigned.img
+$ zcat tec_tb-071mc/boot_unsigned.img > tec_tb-071mc/boot_unsigned_decompress.img
+$ cpio -t < tec_tb-071mc/boot_unsigned_decompress.img
+charger
+data
+default.prop
+dev
+init
+init.goldfish.rc
+init.rc
+init.rk2928board.rc
+init.rk2928board.usb.rc
+init.trace.rc
+init.usb.rc
+proc
+res
+res/images
+res/images/charger
+res/images/charger/battery_0.png
+res/images/charger/battery_1.png
+res/images/charger/battery_2.png
+res/images/charger/battery_3.png
+res/images/charger/battery_4.png
+res/images/charger/battery_5.png
+res/images/charger/battery_charge.png
+res/images/charger/battery_fail.png
+rk292xnand_ko.ko
+sbin
+sbin/adbd
+sbin/e2fsck
+sbin/mkdosfs
+sbin/mke2fs
+sbin/pcba_core
+sbin/resize2fs
+sbin/ueventd
+sys
+system
+ueventd.goldfish.rc
+ueventd.rc
+ueventd.rk2928board.rc
+3645 blocks
+```
+
+Instead ``kernel`` is not recognized
+
+Looking inside the ``system`` image we see a pretty standard android filesystem:
 
 ```
 $ sudo kpartx -av tec_tb-071mc/system.img
