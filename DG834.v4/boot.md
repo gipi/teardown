@@ -149,8 +149,9 @@ o ./cfe_delzma.raw 0x80401000
 
 ```
 
-The function of interest is the one at ``0x80407ec4``, I called it ``_download_callback`` that is execute when the download mode is
-activated
+The function of interest is the one at ``0x80407ec4``, I called it ``_download_callback`` that is execute when the download mode is activated
+
+**TODO:** try to resolve the string using [aae](https://github.com/radare/radare2/issues/4293)
 
 ```
 [0x80401000]> pdf @ _download_callback 
