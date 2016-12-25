@@ -1,6 +1,6 @@
 # read zignature
 . cfe.z
-.z/ 0x80401000 0x80501000
+.z/ 0x80401000 0x80421120
 
 afr @ 0x80407ec4
 afn download_mode @0x80407ec4
