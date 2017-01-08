@@ -37,6 +37,10 @@ $ make menuconfig  # choose Broadcom BCM63xx for ``Target System`` and ``Netgear
 $ make -j9         # Quad core FTW
 ```
 
+## UART
+
+Pinout (1)GND, TX, VCC, RX
+
 ## JTAG
 
 The connector pad is named ``J201`` a 12 ways, 2 rows with 2mm pitch [board to board connector](http://it.rs-online.com/web/p/file-di-contatti-da-pcb/7656269/)
