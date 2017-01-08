@@ -82,6 +82,14 @@ $ r2 -a mips -m 0x80013640  -e cfg.bigendian=true -c 'wx 8e020080 10400003 00000
             0x80013664      00000000       nop
 ```
 
+It's possible to dump the ``CFE`` directly from the memory
+from address ``0x80410000``
+
+```
+> dump_image HG553/cfe.raw 0x80401000 0x20000
+dumped 131072 bytes in 1161.769775s (0.110 KiB/s)
+```
+
 
 ## Links
 
