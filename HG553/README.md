@@ -30,7 +30,7 @@ The pinout is the following
 
 ```
  10 GND      9  TDI
- 8  nTRST??  7  (??)
+ 8  nTRST??  7  SRST (? seems to not work without)
  6  nSRTT??  5  TMS
  4  VCC      3  TDO
  2  GND      1  TCK
@@ -39,9 +39,16 @@ The pinout is the following
 The orientation of the pinout is found checkig the row with the
 two ``GND`` for contuinity.
 
+It doesn't work pain-free: using the ``bus pirate`` you have
+to connect after the board is booted (at least one led is on)
+otherwise does not halt correctly.
+
 It's possible to single stepping the CPU
 
 ```
+> halt
+target state: halted
+target halted in MIPS32 mode due to debug-request, pc: 0x00000000
 > targets
     TargetName         Type       Endian TapName            State       
 --  ------------------ ---------- ------ ------------------ ------------
@@ -71,3 +78,8 @@ $ r2 -a mips -m 0x80013640  -e cfg.bigendian=true -c 'wx 8e020080 10400003 00000
         `=< 0x80013660      1040fff7       beqz v0, 0x80013640
             0x80013664      00000000       nop
 ```
+
+
+## Links
+
+ - [OpenWRT related page](https://wiki.openwrt.org/toh/huawei/hg553)
