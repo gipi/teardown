@@ -14,7 +14,19 @@ a branch or jump instruction will always be executed (this instruction is
 sometimes referred to as the "branch delay slot").
 ```
 
+
+## Assembly
+
+### Build a 32-bit value
+
+It's possible in a two steps process: first use the ``lui`` instruction that loads
+the upper part of a register with a 16-bit value, zero extending the lsb.
+
+After that you can use the ``addi`` that has the problem of sign-extends so
+it's possible tu use ``ori`` for negative numbers.
+
 Links
 -----
 
  - http://shadow-file.blogspot.it/2013/05/running-debian-mips-linux-in-qemu.html
+ - https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/load32.html
