@@ -26,7 +26,7 @@ PERF->IrqMask1  = 0x00800000
 
 ## JTAG
 
-The pinout is the following
+The pinout (taken from the OpenWRT related page) is the following
 
 ```
  10 GND      9  TDI
@@ -41,7 +41,10 @@ two ``GND`` for contuinity.
 
 It doesn't work pain-free: using the ``bus pirate`` you have
 to connect after the board is booted (at least one led is on)
-otherwise does not halt correctly.
+otherwise does not halt correctly. Surfing the interwebz for
+informations, some broadcom chip has for example a pin to enable
+``JTAG`` (see [this](http://www.cypress.com/file/298756/download) at page 7
+or search for the ``JTAG_SEL`` pin).
 
 It's possible to single stepping the CPU
 
@@ -83,3 +86,4 @@ $ r2 -a mips -m 0x80013640  -e cfg.bigendian=true -c 'wx 8e020080 10400003 00000
 ## Links
 
  - [OpenWRT related page](https://wiki.openwrt.org/toh/huawei/hg553)
+ - [Debrick HG553](https://onetransistor.blogspot.it/2016/02/debrick-huawei-hg553-brcm6358-cfe.html)
