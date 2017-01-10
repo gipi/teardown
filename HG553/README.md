@@ -95,3 +95,4 @@ dumped 131072 bytes in 1161.769775s (0.110 KiB/s)
 
  - [OpenWRT related page](https://wiki.openwrt.org/toh/huawei/hg553)
  - [Debrick HG553](https://onetransistor.blogspot.it/2016/02/debrick-huawei-hg553-brcm6358-cfe.html)
+ - [Alternate Register Names in MIPS](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Mips/altReg.html)
