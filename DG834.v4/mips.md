@@ -1,6 +1,32 @@
-Reset entry: virtual``0xBFC00000`` physical ``0x1FC00000``, Usually has a branch there: ``0x1000xxxx``
+# MIPS
 
-The [memory layout](http://www.johnloomis.org/microchip/pic32/memory/memory.html) is pretty strange
+## Memory layout
+
+Reset entry: virtual``0xBFC00000`` physical ``0x1FC00000``, Usually has a branch there: ``0x1000xxxx`` (see [MIPS bootstrapping](http://www.nulltrace.org/2013/04/mips-bootstrapping.html))
+
+The [memory layout](http://www.johnloomis.org/microchip/pic32/memory/memory.html) is pretty strange: has four sections
+
+ - ``kseg2`` 0xc000.0000 - 0xffff.ffff
+ - ``kseg1`` 0xa000.0000 - 0xbfff.ffff
+ - ``kseg0`` 0x8000.0000 - 0x9fff.ffff
+ - ``kuseg`` 0x0000.0000 - 0x7fff.ffff
+
+There are logical reasons for the existence of the memory segments:
+
+ 1. Caches in MIPS need to be initialized by boot code, (unlike x86 caches which are initialized by the hardware).
+ 2. The memory management unit (MMU) in embedded systems is optional, so it is useful to have explicit physical memory regions reserved for the kernel, and not accessible by user mode code.
+
+Here is what the regions are used for:
+
+- KSEG1 addresses are uncached and are not translated by the MMU. KSEG1 is the only memory region that can be used at reset because the MMU and caches on MIPS CPUs must be configured by the boot code, which must be placed in KSEG1. 
+
+- KSEG0 provides an address region for the kernel that is cached, but not mapped by the MMU.
+
+- KSEG2 is used for kernel mode code that is mapped by the MMU and cached.
+
+- KUSEG is used for user mode code that is mapped by the MMU and cached.
+
+## Assembly
 
 The [assembly](http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm) [reference](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html).
 
