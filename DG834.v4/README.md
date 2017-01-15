@@ -108,7 +108,7 @@ target halted in MIPS32 mode due to debug-request, pc: 0x8004462c
 Links
 -----
 
- - http://wiki.openwrt.org/toh/netgear/dg834.v4#installation
+ - https://wiki.openwrt.org/toh/netgear/dg834g.v4
  - http://hexblog.com/files/recon%202010%20Skochinsky.pdf
  - http://www.ece.gatech.edu/academic/courses/ece2035/readings/embedded/MIPSvsARM.pdf
  - https://jaforeck.wordpress.com/2012/08/09/bricked-ebook-reader-bus-pirate-openocd-working-ebook-reader-14/
