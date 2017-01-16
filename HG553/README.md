@@ -90,6 +90,19 @@ from address ``0x80410000``
 dumped 131072 bytes in 1161.769775s (0.110 KiB/s)
 ```
 
+Also the bootloader
+
+```
+> dump_image HG553/bootloader.raw 0xbe000000 0x10000
+dumped 65536 bytes in 579.898376s (0.110 KiB/s)
+$ binwalk HG553/bootloader.raw 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+1288          0x508           CFE boot loader
+
+```
+
 
 ## Links
 
