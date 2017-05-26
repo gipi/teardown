@@ -32,7 +32,36 @@ Enter 'help' for a list of built-in commands.
 #
 ```
 
+## Processor
+
+[TNETD7300GDU AR7](https://www.linux-mips.org/wiki/AR7) chip.
+
+## UART
+
+It's the connector ``JP2``
+```
+1 RX
+2 GND
+3 3v3
+4 GND
+5 TX
+```
+
+## JTAG
+
+Connector ``JP1``
+```
+     14 1 GND
+     13 2 GND
+     12 3 GND
+     11 4 GND
+     10 5 GND
+      9 6 
+      8 7
+```
+
 ## Links
 
  - [DSL-302T demystified](http://www.webalice.it/andrea.usenet/dsl-302t.htm)
+ - [MIPS](https://www.linux-mips.org/wiki/DSL-xxxT)
 
