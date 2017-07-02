@@ -39,6 +39,7 @@ Enter 'help' for a list of built-in commands.
 ## UART
 
 It's the connector ``JP2``
+
 ```
 1 RX
 2 GND
@@ -47,18 +48,45 @@ It's the connector ``JP2``
 5 TX
 ```
 
+The baud rate is 38400.
+
+```
+Adam2_AR7DB > help
+         Commands               Description
+         --------               -----------
+         h/help Displays the commands supported
+           info Displays board information
+          memop Memory Optimization
+       setmfreq configures/dumps the system and cpu frequencies
+             dm Dump memory at <address>
+          erase Erase Flash except Adam2 Kernel and Env space
+       printenv Displays Env. Variables
+         setenv Sets Env. variable <var> with a value <val>
+       unsetenv Unsets the Env. variable <var>
+         fixenv Defragment for Env. space
+             go Loads the image starting at address <mtd1>
+Adam2_AR7DB > info
+Monitor Revision              0.22.02
+Monitor Compilation time      Oct 29 2003, 15:47:14
+Endianness                    Little
+External Memory rate          Full, 16 bit wide
+CPU Frequency                 150 MHz
+```
+
 ## JTAG
 
 Connector ``JP1``
 ```
-     14 1 GND
-     13 2 GND
-     12 3 GND
-     11 4 GND
-     10 5 GND
-      9 6 
-      8 7
+nTRST 1 14 GND
+TDI   2 13 GND
+TDO   3 12 GND
+TMS   4 11 GND
+TCK   5 10 GND
+nSRST 6  9 ?
+DINT  7  8 VCC
 ```
+
+remember that is a ``EJTAG`` so you need a pull-up resistor between ``nTRST`` and ``VCC``.
 
 ## Links
 
