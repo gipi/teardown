@@ -48,9 +48,20 @@ It's the connector ``JP2``
 5 TX
 ```
 
-The baud rate is 38400.
+The baud rate is 38400. This allows to access the bootloader (``ADAM2``)
 
 ```
+Warning!!
+Default IP address [10.8.8.8] maybe conflict with other device(s)!!
+Please Change IP by: setenv my_ipaddress <your ip address>
+
+ADAM2 Revision 0.22.02
+Usage: setmfreq [-d] [-s sys_freq, in MHz] [cpu_freq, in MHz]
+Memory optimization Complete!
+
+Adam2_AR7DB > 
+Press any key to abort OS load, or wait 5 seconds for OS to boot...
+
 Adam2_AR7DB > help
          Commands               Description
          --------               -----------
