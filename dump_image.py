@@ -69,7 +69,21 @@ if __name__ == '__main__':
 
     logger.debug(msg)
 
-    for idx in xrange(args.start, args.end + 1 if args.end else n):
+    running = True
+    errors_count = 0
+    it_idx = iter(xrange(args.start, args.end + 1 if args.end else n))
+
+    idx = 0
+
+    while running:
+    #for idx in xrange(args.start, args.end + 1 if args.end else n):
+        if errors_count == 0:
+            try:
+                idx = next(it_idx)
+            except StopIteration:
+                running = False
+                continue
+
         address = START_ADDRESS + idx*BLOCK_SIZE
         filepath = fmt_path % idx
         cmd = 'dump_image %s 0x%x 0x%x\n'  % (filepath, address, args.block)
@@ -82,7 +96,17 @@ if __name__ == '__main__':
 
         # check if the file isn't empty
         if os.stat(filepath).st_size == 0:
-            raise ValueError('dump of zero size') 
+            if errors_count == 5:
+                raise ValueError('dump of zero size') 
+            logger.info('dump of zero size, retry')
+            errors_count += 1
+
+            telnet.write('reset\n')
+            output = telnet.read_until('\n\r> ', timeout=1000)
+            logger.info(output)
+            continue
+        else:
+            errors_count = 0
 
         cmd = 'verify_image %s 0x%x\n' % (filepath, address)
         logger.info(cmd)
