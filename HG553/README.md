@@ -5,8 +5,8 @@
 The pinout is
 
  - TX
- - VCC
  - GND
+ - VCC
  - 
  - RX (near the capacitor)
 
@@ -29,11 +29,11 @@ PERF->IrqMask1  = 0x00800000
 The pinout (taken from the OpenWRT related page) is the following
 
 ```
- 10 GND      9  TDI
- 8  nTRST??  7  SRST (? seems to not work without)
- 6  nSRTT??  5  TMS
- 4  VCC      3  TDO
- 2  GND      1  TCK
+        GND  10  9  TDI (orange)
+   nTSRT(?)   8  7  N/C
+   nSRST(?)   6  5  TMS (red)
+        VCC   4  3  TDO (brown)
+(black) GND   2  1  TCK (yellow)
 ```
 
 The orientation of the pinout is found checkig the row with the
