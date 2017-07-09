@@ -99,6 +99,51 @@ DINT  7  8 VCC
 
 remember that is a ``EJTAG`` so you need a pull-up resistor between ``nTRST`` and ``VCC``.
 
+If I try to dump the flash
+
+```
+Adam2_AR7DB > dm 0x90000000
+
+90000000: 40809000 40809800 401a6000 241bfffe - ...@...@.`.@...$
+90000010: 035bd024 3c1b0040 035bd025 409a6000 - $.[.@..<%.[..`.@
+90000020: 3c1a0080 409a6800 3c029000 24420720 - ...<.h.@...< .B$
+90000030: 3c011fff 3421ffff 00411024 3c01a000 - ...<..!4$.A....<
+90000040: 00411025 0040f809 00000000 14400021 - %.A...@.....!.@.
+90000050: 00000000 3c029000 24420738 3c011fff - .......<8.B$...<
+90000060: 3421ffff 00411024 3c01a000 00411025 - ..!4$.A....<%.A.
+90000070: 0040f809 00000000 14400016 00000000 - ..@.......@....
+```
+
+I can dump it with ``dump_image.py`` and remount the pieces for the bootloader
+
+```
+$ ls DSL-302T/cfi.{0..15}.img -v1 | xargs cat > DSL-302T/ADAM2.img
+$ radare2 -a mips -m 0x90000000 DSL-302T/ADAM2.img
+[0x90000000]> pd 20
+/ (fcn) fcn.90000000 172
+|   fcn.90000000 ();
+|           0x90000000      00908040       mtc0 zero, s2, 0
+|           0x90000004      00988040       mtc0 zero, s3, 0
+|           0x90000008      00601a40       mfc0 k0, t4, 0
+|           0x9000000c      feff1b24       addiu k1, zero, -2
+|           0x90000010      24d05b03       and k0, k0, k1
+|           0x90000014      40001b3c       lui k1, 0x40
+|           0x90000018      25d05b03       or k0, k0, k1
+|           0x9000001c      00609a40       mtc0 k0, t4, 0
+|           0x90000020      80001a3c       lui k0, 0x80
+|           0x90000024      00689a40       mtc0 k0, t5, 0
+|           0x90000028      0090023c       lui v0, 0x9000
+|           0x9000002c      20074224       addiu v0, v0, 0x720
+|           0x90000030      ff1f013c       lui at, 0x1fff
+|           0x90000034      ffff2134       ori at, at, 0xffff
+|           0x90000038      24104100       and v0, v0, at
+|           0x9000003c      00a0013c       lui at, 0xa000
+|           0x90000040      25104100       or v0, v0, at
+|           0x90000044      09f84000       jalr v0
+|           0x90000048      00000000       nop
+|       ,=< 0x9000004c      21004014       bnez v0, fcn.900000d4
+```
+
 ## Links
 
  - [DSL-302T demystified](http://www.webalice.it/andrea.usenet/dsl-302t.htm)
