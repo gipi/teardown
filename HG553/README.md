@@ -115,6 +115,33 @@ Programming at 0xbe03ff00, count 0x00000100 bytes remaining
 wrote 262144 bytes from file HG553/cfe.bin in 34213.093750s (0.007 KiB/s)
 ```
 
+### With RPi zero as JTAG adapter
+
+``adapter_khz`` is set to 1000
+
+```
+$ telnet localhost 4444
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Open On-Chip Debugger
+> targets
+    TargetName         Type       Endian TapName            State       
+--  ------------------ ---------- ------ ------------------ ------------
+ 0* bcm6358.cpu        mips_m4k   big    bcm6358.cpu        halted
+> dump_image HG553/cfe_dumped_by_rpi.img 0xbe000000 0x10000
+dumped 65536 bytes in 69.205185s (0.925 KiB/s)
+> step
+Error writing unexpected address 0xff202004
+target state: halted
+target halted in MIPS32 mode due to single-step, pc: 0x800153d4
+> verify_image HG553/cfe_dumped_by_rpi.img 0xbe000000
+No working memory available. Specify -work-area-phys to target.
+not enough working area available(requested 92)
+verified 65536 bytes in 71.885208s (0.890 KiB/s
+```
+
 ## Links
 
  - [OpenWRT related page](https://wiki.openwrt.org/toh/huawei/hg553)
