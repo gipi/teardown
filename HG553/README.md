@@ -103,6 +103,17 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 ```
 
+```
+> flash write_image erase HG553/cfe_headerless/cfe.bin 0xbe000000 bin
+auto erase enabled
+No working memory available. Specify -work-area-phys to target.
+not enough working area available(requested 140)
+Programming at 0xbe000000, count 0x00040000 bytes remaining
+Programming at 0xbe000100, count 0x0003ff00 bytes remaining
+ ...
+Programming at 0xbe03ff00, count 0x00000100 bytes remaining
+wrote 262144 bytes from file HG553/cfe.bin in 34213.093750s (0.007 KiB/s)
+```
 
 ## Links
 
