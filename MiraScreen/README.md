@@ -1,8 +1,10 @@
 # MiraScreen
 
-It's a /wireless display/ that mimic the ``ChromeCast`` but without
+It's a wireless display that mimic the ``ChromeCast`` but without
 possibility to install applications. [This](https://www.mirascreen.com/prod?p_id=3)
 is the product page.
+
+There are some [vulnerabilities reported](https://blog.checkpoint.com/wp-content/uploads/2015/12/EZCast_Report_Check_Point.pdf).
 
 ## RLT8188ESU
 
@@ -84,6 +86,10 @@ Device Status:     0x0000
 same vendor id and product id referenced into the [Forensic analysis of Chromecast and
 Miracast devices](https://www.os3.nl/_media/2013-2014/courses/ccf/chromecast-cedric-peter.pdf)
 
+Also [here](https://ao2.it/en/blog/2012/01/18/usb-projectors-linux-and-libam7xxx) are talking
+about this family of chip and the possibility to access as mass storage devices: also exists
+a project called [libam7xxx](https://git.ao2.it/libam7xxx.git/) for it.
+
 ## Serial
 
 It's possible to reach an ``UART`` interface soldering some wires to the two
@@ -91,9 +97,26 @@ pads at the bottom of the board (see image below).
 
 ![](UART.jpg)
 
-This gives us a root shell to inspect the system
+This gives us a [boot log](mirascreen_boot.log) and a root shell to inspect the system
 
 ```
+# uname -ra
+Linux MiraScreen D281A14F 2.6.27.29 #7 PREEMPT Fri Apr 1 14:28:32 CST 2016 mips GNU/Linux
+# cat /proc/cpuinfo 
+system type             : MIPS AM7X
+processor               : 0
+cpu model               : MIPS 24K V4.12
+BogoMIPS                : 364.54
+wait instruction        : yes
+microsecond timers      : yes
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes
+ASEs implemented        : mips16 dsp
+shadow register sets    : 2
+core                    : 0
+VCED exceptions         : not available
+VCEI exceptions         : not available
 # cat /proc/partitions
 
 major minor  #blocks  name
@@ -175,8 +198,18 @@ brw-r--r--    1 root     root      93,   4 Jan  1 00:00 reserve
 brw-r--r--    1 root     root      93,   1 Jan  1 00:00 rootfs
 brw-r--r--    1 root     root      93,   2 Jan  1 00:00 user1
 brw-r--r--    1 root     root      93,   3 Jan  1 00:00 vram
+# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/nftla1              62.1M     56.6M      5.5M  91% /
+/dev/partitions/vram   1001.5K      8.0K    993.5K   1% /mnt/vram
+/dev/partitions/user1
+                          9.7M      7.9M      1.7M  82% /mnt/user1
+# free 
+              total         used         free       shared      buffers
+  Mem:        63536        31268        32268            0         3164
+ Swap:            0            0            0
+Total:        63536        31268        32268
 ```
-
 
 Here I'm trying to make sense of the partitions
 
@@ -204,6 +237,25 @@ blkdev_open
 000001f0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 4c 59  |..............LY|
 00000200  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
 ```
+
+To understand the ``nftl`` filesystem (?) there are some
+links [1](http://etutorials.org/Linux+systems/embedded+linux+systems/Chapter+7.+Storage+Device+Manipulation/7.1+MTD-Supported+Devices/)
+[2](http://www.tldp.org/HOWTO/Disk-on-Chip-HOWTO/intro.html)
+that talk about that.
+
+## Networking
+
+It seems to expose two wireless interfaces.
+
+It connects to the router's net only when put into ``Airplay`` mode.
+
+## Default root password
+
+```
+# cat /etc/shadow 
+root:$1$qsNdVNb0$U5HuLrYhZ6vbslIiyaQlA1:14610:0:99999:7:::
+```
+
 ## TODO
 
 Write a client application to flash firmware, use this [project](https://github.com/rounaksingh/faltu)
