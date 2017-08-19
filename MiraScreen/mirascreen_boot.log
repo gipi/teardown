@@ -1,0 +1,1220 @@
+test ddr
+msdly:0-----fail
+msdly:1-----fail
+msdly:2-----fail
+msdly:3-----fail
+msdly:4-----fail
+msdly:5-----fail
+msdly:6-----fail
+msdly:7-----fail
+msdly:8-----fail
+msdly:9-----fail
+msdly:a-----fail
+msdly:b-----fail
+msdly:c-----fail
+msdly:d-----fail
+msdly:e-----fail
+msdly:f-----fail
+msdly:10-----fail
+msdly:11-----fail
+msdly:12-----ok
+msdly:13-----ok
+msdly:14-----ok
+msdly:15-----ok
+msdly:16-----ok
+msdly:17-----ok
+msdly:18-----ok
+msdly:19-----ok
+msdly:1a-----ok
+msdly:1b-----ok
+msdly:1c-----ok
+msdly:1d-----ok
+msdly:1e-----fail
+final msdly:17
+msldyreg:51712
+Enter load_brec
+Wafer revision is 1,reg_value is 0x21989798
+Over ECC errors fc7f0219
+Found brec at block4...
+PAGESIZE=2048
+PAGE_CNT=64
+SECT_CNT=4
+Start block :4,ECCCTL:0x1
+------BREC OKAY--------
+USE_UART = 1
+
+
+***AL1213, AM0,brec.bin Ver Apr  1 2016 Tim:14:35:53,NAND***
+chipinfo: 0xb4045930
+MU_REG1:0x00002600
+MU_REG2:0x00000000
+MU_REG1:0x00003e00
+MU_REG2:0x00003e00
+MU_REG1:0x00003e00
+MU_REG2:0x00003e00
+CMU_COREPLL [b0010000]: 308d973
+CMU_BUSCLK [b001000c]: 29004388
+SDR_CTL [b0070000]: 30166
+SDR_CMD [b007000c]: 0
+SDR_TIMING [b0070030]: 25aa7377
+SDR_RFSH [b0070014]: d00
+SDR_EN [b0070008]: 1
+SDR_MODE [b0070018]: 521
+SDR_CLKDLY [b007005c]: 10a0000
+SDR_MSTDLY [b0070060]: 51712
+SDR_LATENCY [b0070058]: 8000605
+--------- getcorepll() COREPLL val:552
+##Set nand Flash:36800 Khz##
+##CMU_COREPLL:0x308d973 ,NAND_CTL: 0x48901
+###CMU_NANDCLK:0x50e,CLKCTL:0x9,NANDCTL48901###
+###NandDMAChannel:0 ###
+###4.User_Data_2Byte:0
+###5.EIP_IRQ_MODE:1
+###6.TEST_RB_CTL:0
+##7.SPECIAL_DMA_Test:0
+##8.PageBCH24 Read:0,Write:0
+##9.PageBCH8 Read:0,Write:0
+##10.pseudoNoise:0
+mode32:0x608401a4,mode8:0x608001a4
+mode32:0x1a46084,mode8:0x1a46080
+[INIT] INIT_CreateBlkTbls() enter.
+
+====22 boot nand Flash CHIPID:0x1580f198 ====
+Flash ChipNo:0 CHIPID:1580f198
+Flash ChipNo:1 CHIPID:0
+
+===Set:0x0, NAND_ECCCTL:0x1,
+AM1213 Set ECC type BCH8 
+NAND_ECCCTL:0x1 == 
+
+--------- getcorepll() COREPLL val:552
+CMU_COREPLL:0x308d973
+###8,9,552Mhz,20MHz,20444Khz ###
+###Set BMA:78Mhz###
+###CMU_NANDCLK:0x608,CLKCTL:0x9,NANDCTL48900###
+
+INIT_DBG: ================NAND STORAGE INFOR================
+INIT_DBG:     ChipEnableInfo is:0x1
+INIT_DBG:     ChipCnt        is:0x1
+INIT_DBG:     BankCntPerChip is:0x1
+INIT_DBG:     DieCntPerChip  is:0x1
+INIT_DBG:     PlaneCntPerDie is:0x1
+INIT_DBG:     SectorNumPerPage  is:0x4
+INIT_DBG:     PageNumPerPhyBlk  is:0x40
+INIT_DBG:     TotalBlkNumPerDie is:0x400
+INIT_DBG:     OperationOpt is:0x0
+INIT_DBG:     FrequencePar is:0x14
+INIT_DBG:     Reclaim is:6
+INIT_DBG:     SpareSize is:128
+INIT_DBG:     NandChipId   is:0x1580f198
+INIT_DBG: ====================================================
+
+INIT_DBG: ================LOGIC ORGANIZE INFO=================
+INIT_DBG:     DataBlkNumPerZone  is:0x3d8
+INIT_DBG:     PageNumPerLogicBlk is:0x40
+INIT_DBG:     SectorNumPerLogicPage is:0x4
+INIT_DBG:     ZoneNumPerDie      is:0x1
+INIT_DBG: ====================================================
+
+INIT_DBG: ===============SPECICAL CMMOND INFO=================
+INIT_DBG:     MultiProgCmd         is:0x11, 0x80
+INIT_DBG:     MultiCopyReadCmd     is:0x0, 0x0, 0x30
+INIT_DBG:     MultiCopyProgCmd     is:0x8c, 0x11, 0x8c
+INIT_DBG:     MultiBlkAddrOffset   is:0x0
+INIT_DBG:     BadBlkFlagPst        is:0x0
+INIT_DBG:     ReadMultiOpStatusCmd is:0x71
+INIT_DBG:     InterChip0StatusCmd  is:0x70
+INIT_DBG:     InterChip1StatusCmd  is:0x70
+INIT_DBG: =====================================================
+
+INIT_DBG: ===============Sector Bimmap=================
+INIT_DBG 1.===>Sector_BitmapBBF:0x3
+INIT_DBG 2.===>Sector_BitmapSpare:0x7
+INIT_DBG 3.===>USER_DataByte:0x2
+INIT_DBG 4.===>USER_SectorCnt:0x3
+INIT_DBG 5.===>TOTAL_SPAREDATA:6
+INIT_DBG 6.===>Single_BitmapSpare:7
+INIT_DBG: =====================================================
+
+TOTAL_BANKS          1
+DIENUM_IN_FLASH      1
+ZONENUM_PER_DIE      1
+SUBLK_PER_DIE        1024
+PAGES_PER_SUBLK      64
+MULTI_PLANE_SUPPORT  0
+DIE_FIRST_SUBLK_NUM  8
+###NandDevInfo.PhyCache :8081b7a0 ,size:2048
+###GPageBuf:0x8081a790
+[SCAN] ScanSearchZoneTbls: (DieNo: 0) enter.
+ZoneTblStartPage:60
+ScanSearchZoneTbls: [SCAN] Found valid zone table 0 for die 0 at block 8, page 60.
+[SCAN] ScanSearchZoneTbls: (DieNo: 0) out, ret 0
+[INIT] INIT_CreateBlkTbls() out, ret 0.
+##1.Reclaim: 6,6,brecsize:128KB
+##2.Read Super:1, Readclaim:1
+##3.Write Super:0, Wearleveling:1
+##4.ECC_reclaim,1,overecc:1
+##5.DataBlk:984,MultiPlane:0
+##6.PageCache:0x8081a790,4
+##7.NandDevInfo.PhyCache:0x8081b7a0:
+FlashReadBuf:0x8081d4b0,FlashReadFileBuf:0x8081d6b0
+FlashBuf_S:0x8081d8b0,D:0x8081f8b0
+
++++1> SystemSize:4f00, 1:0,2:0,3:0,4:7000, 5:0,6:0,7:0 +++
+
+DIRItemsCheckSum:0x1cc0d27b,0x1cc0d27b
+
+#get file :2,name:RECOVER BIN,res:1#
+USE_UART = 1
+---- bootdisplay test ddr cap 128M
+1280 720
+de input pixel format:5
+runto:301
+runto:304
+runto:309
+global_data.pic_data_addr:a5800000
+exit display boot pic
+1+:RECOVER BIN,      10,    7800, 9ce27ac +
+1+:FMCOVER BIN,      4c,    ea00, 445396e +
+1+:WELCOME BIN,      c1,  1c2200,4804164d +
+1+:COVER   BIN,     ed2,   ea800, 23daaeb +
+1+:FAILED  BIN,    1626,   ea800,5203d2d4 +
+1+:SUCCESS BIN,    1d7a,   ea800,68f22e7f +
+1+:LCM     BIN,    24ce,     200,96550729 +
+1+:BACKLIGHBIN,    24cf,     200,457a1265 +
+1+:GAMMA   BIN,    24d0,     600,3117a936 +
+1+:GPIO    BIN,    24d3,     200,3358a31a +
+1+:VERSION CON,    24d4,     200,681b8f07 +
+1+:SYSCFG  SYS,    24d5,  337200, b78d7c4 +
+1+:INITRD  DAT,    3e8e,  200000,c41b8e8b +
+1+:BOOTARG TXT,    4e8e,     200,a2db26f3 +
+system_code_check end 7742ms 0 
+system_code_check retrun 0
+CheckSum:$93d7,e,e
+###MBRC_Whole:14, code:13,55aa93d7!####
+CheckSum:$93d7,e,e
+CheckSum:$93d7,e,e
+CheckSum:$93d7,e,e
+mbrc_test_repair OK
+CheckSum:$7f3f,100,100
+CheckSum:$7f3f,100,100
+CheckSum:$7f3f,100,100
+CheckSum:$7f3f,100,100
+brec_test_repair OK
+SYSCFG  SYS
+0: Size:00337200 offset:000024d5
+INITRD  DAT
+1: Size:00200000 offset:00003e8e
+BOOTARG TXT
+2: Size:00000200 offset:00004e8e
+No any more files
+### new read mode fix ###
+Kernel command line: rd_start=0x80400000 rd_size=0x00200000 reserved_mem=61M root=/dev/ram0 rw init=/linuxrc AM7X_PARTS=rootfs,user1,vram,reserve AM7X_ROOTFS=ext2 console=ttyS1,115200n8
+
+Load 3371520 bytes (6585 sects) from 0x000024d5
+BREC#syscfg.sys is loaded at 80003000, checksum32=0x0b78d7c4
+Load 2097152 bytes (4096 sects) from 0x00003e8e
+BREC#initrd.dat is loaded at 80400000, checksum32=0xc41b8e8b
+./../../../brec/nand_driver_entry.c-89 Brec nand exit!! 
+KERNEL checksum: 0x0b78d7c4
+INITRD checksum: 0xc41b8e8b
+Kernel command line: rd_start=0x80400000 rd_size=0x00200000 reserved_mem=61M root=/dev/ram0 rw init=/linuxrc AM7X_PARTS=rootfs,user1,vram,reserve AM7X_ROOTFS=ext2 console=ttyS1,115200n8 
+Kernel command line length: 165
+rd_start: 0x80400000
+CHIP_INFO1: 0xb4045930
+CHIP_INFO2: 0xb4045930
+
+
+Starting linux kernel at 0x80003400
+board init
+@cmdline length: 165@chipinfo: 0xb4045930
+AM: external initramfs
+Linux version 2.6.27.29 (denny@srv-micro-sw) (gcc version 4.3.3 (Sourcery G++ Lite 4.3-154) ) #7 PREEMPT Fri Apr 1 14:28:32 CST 2016
+
+AM7X LINUX started...
+console [early0] enabled
+CPU revision is: 5501964c (MIPS 24K)
+Determined physical RAM map:
+ memory: 08000000 @ 00000000 (usable)
+Initial ramdisk at: 0x80400000 (2097152 bytes)
+Zone PFN ranges:
+  Normal   0x00000000 -> 0x00008000
+Movable zone start PFN for each node
+early_node_map[1] active PFN ranges
+    0: 0x00000000 -> 0x00008000
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 32512
+Kernel command line: rd_start=0x80400000 rd_size=0x00200000 reserved_mem=61M root=/dev/ram0 rw init=/linuxrc AM7X_PARTS=rootfs,user1,vram,reserve AM7X_ROOTFS=ext2 console=ttyS1,115200n8 
+Primary instruction cache 16kB, VIPT, 4-way, linesize 32 bytes.
+Primary data cache 16kB, 4-way, VIPT, no aliases, linesize 32 bytes
+Writing ErrCtl register=0007e3de
+Readback ErrCtl register=0007e3de
+PID hash table entries: 512 (order: 9, 2048 bytes)
+<3>am: membase@0xb0190020, irq19
+co1, baud=115200, parity=n, bits=8, flow=n
+console handover: boot [early0] -> real [ttyS1]
+printk okay!
+Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+Memory: 61284k/131072k available (2614k kernel code, 69736k reserved, 527k data, 152k init, 0k highmem)
+SLUB: Genslabs=6, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Calibrating delay loop... 364.54 BogoMIPS (lpj=729088)
+Mount-cache hash table entries: 512
+net_namespace: 588 bytes
+NET: Registered protocol family 16
+SCSI subsystem initialized
+usbcore: registered new device driver usb
+NET: Registered protocol family 2
+IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+TCP: Hash tables configured (established 4096 bind 4096)
+TCP reno registered
+NET: Registered protocol family 1
+checking if image is initramfs...it isn't (bad gzip magic numbers); looks like an initrd
+Freeing initrd memory: 2048k freed
+NTFS driver 2.1.29 [Flags: R/O].
+msgmni has been set to 123
+io scheduler noop registered
+io scheduler anticipatory registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+ActionsMicro AM7XXX serial driver version 0.14
+<3>am: membase@0xb0160000, irq20
+ttyS0 at MMIO 0x10160000 (irq = 20) is a AM
+<3>am: membase@0xb0190020, irq19
+ttyS1 at MMIO 0x10190020 (irq = 19) is a AM
+brd: module loaded
+loop: module loaded
+Driver 'sd' needs updating - please use bus_type methods
+Driver 'sr' needs updating - please use bus_type methods
+
+&&&& fun:init_mtd,  389&&&&
+
+&&&& fun:register_mtd_user,  141&&&&
+usbmon: debugfs is not available
+rtc-am7xxx rtc-am7xxx.0: rtc core: registered rtc-am7xxx as rtc0
+nf_conntrack version 0.5.0 (2048 buckets, 8192 max)
+ip_tables: (C) 2000-2006 Netfilter Core Team
+TCP cubic registered
+NET: Registered protocol family 17
+ieee80211: 802.11 data/management/control stack, git-1.1.13
+ieee80211: Copyright (C) 2004-2005 Intel Corporation <jketreno@linux.intel.com>
+rtc-am7xxx rtc-am7xxx.0: hctosys: invalid date/time
+blkdev_open
+RAMDISK: ext2 filesystem found at block 0
+RAMDISK: Loading 2048KiB [1 disk] into ram disk... done.
+VFS: Mounted root (ext2 filesystem).
+kernel_init:prepare_namespace ok 
+prom_free_prom_memory okay
+Freeing unused kernel memory: 152k freed
+write 48403 to b0190020
+COM1 start up!
+No such file: /bin/init
+init_post:ramdisk_execute_command:<NULL>
+init_post:execute_command:/linuxrc
+
+init_am7x_nftl: CHIPINFO:  0xb4045930
+MU_REG1:0x00003e00
+MU_REG2:0x00003e00
+--------- getcorepll() COREPLL val:552
+##Set nand Flash:36800 Khz##
+##CMU_COREPLL:0x308d973 ,NAND_CTL: 0x48901
+###CMU_NANDCLK:0x50e,CLKCTL:0x9,NANDCTL48901###
+###NandDMAChannel:0 ###
+###4.User_Data_2Byte:0
+###5.EIP_IRQ_MODE:1
+###6.TEST_RB_CTL:0
+##7.SPECIAL_DMA_Test:0
+##8.PageBCH24 Read:0,Write:0
+##9.PageBCH8 Read:0,Write:0
+##10.pseudoNoise:0
+mode32:0x608401a4,mode8:0x608001a4
+mode32:0x1a46084,mode8:0x1a46080
+
+====22 boot nand Flash CHIPID:0x1580f198 ====
+Flash ChipNo:0 CHIPID:1580f198
+Flash ChipNo:1 CHIPID:0
+
+===Set:0x0, NAND_ECCCTL:0x1,
+AM1213 Set ECC type BCH8 
+NAND_ECCCTL:0x1 == 
+
+--------- getcorepll() COREPLL val:552
+####run to :Set_TestBuf,83e9ec00###
+ScanSearchZoneTbls: [SCAN] Found valid zone table 0 for die 0 at block 8, page 60.
+##1.Reclaim: 6,6,brecsize:128KB
+##2.Read Super:1, Readclaim:1
+##3.Write Super:1, Wearleveling:1
+##4.ECC_reclaim,1,overecc:1
+##5.DataBlk:984,MultiPlane:0
+##6.PageCache:0xa3c0a000,4
+##7.NandDevInfo.PhyCache:0xa3c09000:
+
+===NO:    0,Read Zone : 0, Blk:8,Pge:60===
+kernel capacity is:0x7000 sectors
+Partinfo:AM7X_PARTS=rootfs,user1,vram,reserve
+NO:0,rootfs offset:80,Cap:20000 64MB
+NO:1,user1 offset:20080,Cap:5000 10MB
+NO:2,vram offset:25080,Cap:800 1MB
+NO:3,reserve offset:26800,Cap:10000 32MB
+==nand_get_cap:36800,109MB==
+NFTL: whole cap 0x36800
+NFTL: using C:54 H:128 S:32 (== 0x36000 sects)
+
+### CmpBuf:0x83c50000###
+==nand_get_cap:36800,109MB==
+ nand_block:<6>Enter My PARTITION PARSER
+sector_size=1
+start: 0x00000080, size:0x00020000
+ nand_block1<6>start: 0x00020080, size:0x00005000
+ nand_block2<6>start: 0x00025080, size:0x00000800
+ nand_block3<6>start: 0x00026800, size:0x00010000
+ nand_block4<6>start: 0x00000000, size:0x00000000
+
+***install ntfl block init OK***
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+mount: mounting /dev/partitions/udisk on /mnt/udisk failed: No such file or directory
+format udisk
+mkfs.vfat: can't open '/dev/partitions/udisk': No such file or directory
+mount: mounting /dev/partitions/udisk on /mnt/udisk failed: No such file or directory
+fsck.fat -a vram
+blkdev_open
+>>>>>>vram_check_result=/dev/partitions/vram: 14 files, 16/2003 clusters
+FAT: utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+Root filesystem on nand
+Start AM7531 Console
+>>>>>> check user1
+in child process
+ext2fs_check_if_mount: Can't check if filesystem is mounted due to missing mtab file while determining whether /dev/partitions/user1 is mounted.
+blkdev_open
+blkdev_open
+/dev/partitions/user1 was not cleanly unmounted, check forced.
+This is config.app'
+kernel.panic = 10
+kernel.panic_on_oops = 1
+[am_reg_init] start!
+[am_reg_init]major =250
+
+----------------graphics init
+----------probe graphics
+graph_major=30
+pRTask=0x836f0000
+graph_init
+module /lib/modules/2.6.27.29/am7x_graph inserted
+/lib/modules/2.6.27.29/am7x_graph major = 30
+node /dev/graph created
+set node access to 666
+
+set the tcp paragram
+set ok!
+
+hx170dec: module license 'Proprietary' taints kernel.
+7190 kernel module sw build: 2 
+hx170dec: base_port=0x10080000 irq=0
+hx170dec: Valid HW found at base 0x10080000 with ID# 0x72981010
+hx170dec: module inserted. Major = 249
+module /lib/modules/2.6.27.29/hx170dec inserted
+/lib/modules/2.6.27.29/hx170dec major = 249
+node /tmp/dev/hx170 created
+set node access to 666
+
+swtich usb otg state device --->host
+act_readl(GPIO_MFCTL3)=============0x3f924ca4
+lcm probe
+drivers/char/lcm/lcm.c:CMU_DEVCLKEN=0xb3f5c3f6
+stat config /mnt/vram/edid.bin fail -2
+@@@@@@@@@@@ret -2 v 0 h 0 0 0
+NOTICE:READ EDID CONFIG FILE ERROR
+/dev/partitions/user1: 672/2672 files (18.9% non-contiguous), 8481/10240 blocks
+mount: mounting /dev/partitions/cdrom on /mnt/cdrom failed: No such file or directory
+mount: mounting /dev/partitions/bak on /mnt/bak failed: No such file or directory
+
+Please press Enter to activate this console. i2c ack timeout, ctl = 84,stat = 84
+i2c-adapter i2c-0: unable to read EDID block.
+i2c ack timeout, ctl = 84,stat = 84
+i2c-adapter i2c-0: unable to read EDID block.
+i2c ack timeout, ctl = 84,stat = 84
+i2c-adapter i2c-0: unable to read EDID block.
+Actions LCM DRV: ddc i2c read error
+LCM Driver[HDMI Final] format= 5
+stat config /am7x/sdk/easy/card.bin fail -2
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+CardType:3
+CFCardType:1
+SDMulitPin:1
+MSMulitPin:1
+XDMulitPin:1
+MSStandardBus:1
+CF_DataBus:1
+
+mu_reg1:0x3e00
+mu_reg2:0x3e00
+**********slot:0  Card_info**********
+	 gpio Card_info
+		 det:255
+		 wp:255
+		 power:255
+	 slot empty:1
+	 slot change:0
+	 current card type :0
+**********slot:1  Card_info**********
+	 gpio Card_info
+		 det:255
+		 wp:255
+		 power:255
+	 slot empty:1
+	 slot change:0
+	 current card type :0
+aotg usb efuse reg value:0x21989798
+EZCast-0 disable disconn detect
+<am7x_uoc>@@--- am7x_uoc: probe success!
+EZCast-1 disable disconn detect
+am7x_uoc: probe success!
+*********am_key_init************
+input: AM Keyboard as /class/input/input0
+am7x_keycode_open
+line_pm:-1
+<am7x_uoc><HOST>plug in
+insmod: can't insert '/lib/modules/2.6.27.29/am7x_tp.ko': No such file or directory
+[am7x_uoc_next]<DEV>plug in
+battery charge mode
+dac init
+dac major=14, minor=0
+insmod: can't insert '/lib/modules/2.6.27.29/am7x_battery.ko': No such file or directory
+am7x-cipher: module inserted. Major = 248
+cat: can't open '/mnt/vram/time.txt': No such file or directory
+Thu Jan  1 00:00:00 UTC 1970
+GlobalValue width=1280,height=720,default_color=0x0,format=5,display_mode=2
+ds_conf.input.width = 1280 ds_conf.input.height = 720
+am_dac_open reg
+DACIO_SET_HDMI=17
+
+am7x_cec_init
+cec probe
+switched to unregistered logical address
+found physical address 1000
+physical address: 1.0.0.0
+querying logical address 4
+using logical address 4
+physical_address=0x1000 logical_address=4
+am7x-cec: module inserted. Major = 247
+physical_address=0x1000 logical_address=4
+net.core.rmem_max = 1024000
+normal termination
+message collector id : 721896656
+use default fui.app
+[SHELL][2906432898.644035] [main:61] read pipe: 5, write pipe: 6
+open touchpanel device failed
+application create err == 0, msgq_id=0
+read pipe: 5, write pipe: 6
+DACIO_SET_VOLUME=36
+
+Board Power Key OFF is 0x7, ON is 60
+IR Power Key OFF is 0x8, ON is 0x19
+MINF[set_back_light-604]:backlight length is 21
+
+MINF[_do_action-512]:Call do action to set env para  cmd=0
+the file is not exist,backlight can't be set
+mempool():node:0x834a1500 returning 0x84300000(size:0x3c82000),next: 0x88000000
+ ioctl  get :84300000
+  size:15490KB<7>mmap_mheap:961 pfnoff:0x0 mheap_start:0x84300000
+filepathname: /am7x/case/data/msyh.ttf
+stream->size: 4740948
+GRAPH_IOCGHBASE
+heap_base=0x36f0000
+heap_size=0x4000
+init_2d:pRTask=0x30708000
+init_2d ok
+cb_display.put_display_task==0x414ba8
+cb_display.get_current_display_addr==0x414c1c
+open calibrate file failed
+system resource init error
+swfext_album_register
+[0:0:6.212][ezFuiMain:880] Ok, thread(0x313474d0)!
+Put Msg wp=0,Msgtype=0x414d375c,subtype=0x12,dataload=0x4
+<media_hotplug.c 2083> reserved=a0
+Get Msg rp=0,Msgtype===0x414d375c,subtype=0x12 ,dataload=0x4 reserved=0xa0
+_do_process_usb,1596:<00> type=0x414d375c,subtype=12,dataload=4,usb_stat=2,reserved[0]=0xa0
+<_deal_usb_msg 1195>msg->subtype=====12,msg->dataload=====4 reserved:a0
+app_path =/am7x/case/scripts/usb_process.sh host_raw_in
+Unsupported Tag [77] Metadata
+[0:0:6.332][EZ_ConfigInit:1023] Get memory total(62 MB)!
+[0:0:6.336][EZ_ConfigInit:1038] Get product family(ezcast:1)!
+[0:0:6.352][EZ_ConfigInit:1078] Get product type(ezcast:0)!
+load hcd controller
+driver aotg-usb-am7x-, Version1.0-Apirl-2007
+The font[ID: 5] has layout information
+line_pm:-1
+EZCASTPRO_MODE==0[4]  
+MainSWF.language=0[4]  
+[0:0:6.733][EZ_ConfigLanguageSet:550] Set language(en)!
+[Multilanguage.as] [setLanguageSWFName]  _global.MainSWF.language_priv = -1[4]  
+setLanguage = en[4]  
+
+<     6.759> [load_language:134] ===================================================
+<     6.776> [load_language:135] 			AppName: ezcast
+<     6.779> [load_language:136] ===================================================
+
+[set_language_swf_name]name = ezcast,  ret = 1
+warnning_str: Wifi abnormality encountered, suggest to use external USB power adapter to guarantee power supply.[4]  
+warnning_str2: Auto reboot in [4]  
+warnning_str3:  seconds[4]  
+****ezcastprojector is 0[4]  
+EZCast-0 disable disconn detect
+[ezcast_pay.c] -- createTrialKeyUuid -- 25 -- Create a new trial key uuid
+sys_get_passcode_onoff val=0
+castCode: [4]  
+========= connectMode: 0[4]  
+[sysinfo_get_cpu_frequency][7558] -- Get cpu frequency
+[sysinfo_get_cpu_frequency][7560] -- reg: 0x308d973
+[sysinfo_get_cpu_frequency][7562] -- cpu frequency: 552
+>>>>[Main test] -- TEST_ENABLE: true, EZCAST_LITE_ENABLE: false, EZWILAN_ENABLE: false[4]  
+[sysinfo_check_ezmusic_flag][8600] -- ezmusic_flag: 0
+<     7.240> [ezCastGetAutoplayVal:641] GET_AUTOPLAY_ENABLE: 1
+to load main_customize.swf[4]  
+uoc  host irq
+apps_vram_store OK!
+MINF[sysinfo_read_edid_bin-5002]:read_index==============0 <am7x_uoc aotg_set_host >otgstatus=2e,otgstate=3,otgctrl=1 usbesta=c0
+debug:usb_get_configuration 560 confignum=1
+debug====usb_parse_configuration 336 cfgidx:0  bnuminterface:1
+debug====usb_parse_configuration 383 inum:0 intfclass=0x09
+
+
+de_info.screen_type= 1 5
+ MINF[sysinfo_read_edid_bin-5002]:read_index==============1
+
+de_info.screen_type= 1 5
+ AUTO_STANDBY_ENABLE: false, AUTO_STANDBY_TIME: 3600[4]  
+now time: 3[4]  
+load firstSWF@@@@@@@@@@[4]  
+
+	Last UI is 1
+            last_ui = 1[4]  
+currentSWF[4]  
+strezcast.swf[4]  
+index=null[4]  
+currentSWF=ezcast.swf[4]  
+hostname_from_mnt====================MY_DPF
+direction=====================0
+++++++++++++++++++++++++sysinfo_setgpio_for_usbswitch 4576
+sysinfo_get_disauto_status: 0
+check factory test status:[4]  
+Put Msg wp=1,Msgtype=0x414d375c,subtype=0x10,dataload=0x5
+Unsupported Tag [77] Metadata
+<am7x_hcd>@@@-- <HCD_PROBE> usb probe successfully!
+hcd mod ins ok
+<00> usb host  in process
+<media_hotplug.c 2083> reserved=a1
+Get Msg rp=1,Msgtype===0x414d375c,subtype=0x10 ,dataload=0x5 reserved=0xa1
+_do_process_usb_next,1811:<01> type=0x414d375c,subtype=10,dataload=5,usb_stat_next=2,reserved[0]=0xa1
+Unsupported Tag [77] Metadata
+Unsupported Tag [77] Metadata
+The font[ID: 3] has layout information
+Unsupported Tag [77] Metadata
+customization part!!![4]  
+custom_key_onoff 0[4]  
+to load ezcast_background.swf[4]  
+-->now is ezcast.swf[4]  
+MainSWF.start_concurren_clientap_mode========0[4]  
+MainSWF.start_concurrent_softap_mode========0[4]  
+********************  in wifi display ****************[4]  
+command from as is: EZCAST_SWITCH_TO
+send length is : -1
+Main_top_bar :: initialization[4]  
+::::::::::: iconMode: 1[4]  
+StorageSWF all hide[4]  
+Unsupported Tag [77] Metadata
+hub_port_connect_change 3078<<<<<<<<portstatus:0x0001
+The font[ID: 14] has layout information
+loadswf_callback, currentSWF: ezcast.swf[4]  
+connectMode: 0SystemInfo.ROUTER_ALLOW: 1[4]  
+<     8.086> [ezCastGetAutoplayVal:641] GET_AUTOPLAY_ENABLE: 1
+begin set loadcallback[4]  
+setLanguage = en[4]  
+
+<     8.095> [load_language:134] ===================================================
+<     8.102> [load_language:135] 			AppName: ezcast
+<     8.107> [load_language:136] ===================================================
+
+[set_language_swf_name]name = ezcast,  ret = 1
++++++++++++++++++localeCallback+++++++++++++++++++++++[4]  
+ae_set_file735:curr_file===/mnt/user1/ezdata/start.mp3
+[ae_set_file]824, audio_setfile_ok=0, err_set=0
+[ae_play]665, audio_status=0
+hub_port_init 2797<<<<<<<<send set address request
+hub_set_address 2591 >>>>>>>>>>>>>>[setup set address request] retval=0
+hub_port_connect_change 3146 acount_usbdevice:1
+debug:usb_get_configuration 560 confignum=1
+debug====usb_parse_configuration 336 cfgidx:0  bnuminterface:1
+debug====usb_parse_configuration 383 inum:0 intfclass=0xff
+usb 1-1: new usb device dev_num=2,product=802.11n NIC
+usb 1-1: New USB device found, idVendor=0bda, idProduct=8179
+usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1: New USB device configuration:ConfigurationsNum=1
+usb 1-1: Product: 802.11n NIC
+usb 1-1: Manufacturer: Realtek
+usb 1-1: SerialNumber: 00E04C0001
+<usb_idmatch >device speed:3
+HIGH SPEED DEVICE
+device config num=1
+<usb_idmatch 444>multi interface usb device interfaceNum:1
+interface Class[0] = 0xff
+interface subClass[0] = 0xff
+interface Protocol[0] = 0xff
+usb_idmatch: idx:21,msg:a
+usb_hotplug_msg 543  port_num:1 reserved[0]=a0
+usb_hotplug_msg subtype:12 msg:a
+Put Msg wp=2,Msgtype=0x414d375c,subtype=0x12,dataload=0xa
+<media_hotplug.c 2083> reserved=a0
+Get Msg rp=2,Msgtype===0x414d375c,subtype=0x12 ,dataload=0xa reserved=0xa0
+_do_process_usb,1596:<00> type=0x414d375c,subtype=12,dataload=a,usb_stat=1,reserved[0]=0xa0
+<_deal_usb_msg 1195>msg->subtype=====12,msg->dataload=====a reserved:a0
+function:dongle_in line:1527 vidpid=198869369
+dongle_type_divided=================1
+function:get_realtek_dongle_type,line:1626,vidpid_tmp:0xbda8179,dongle_tbl_length:29
+dongle_tbl[i].driver_name=======8188eu.ko
+function:dongle_in,line:1547,realtek_dongle_type_divided=============2
+function:insmod_ko line:1880
+koname=8188eu.ko,pos=9
+[wifi_get_channel_region] vram not store channel region
+[realtek_get_channel_plan 1866]=channel_plan:0c channel_2g_total:13 channel_5g_total:5
+RTL871X: module init start
+rtl8188eu v4.3.0.6_12167.20140828
+build time: Apr  1 2016 14:36:55
+bFWReady == _FALSE call reset 8051...
+RTL871X: rtw_ndev_init(wlan0)
+RTL871X: rtw_ndev_init(wlan1)
+RTL871X: module init ret=0
+-----topBarShowCheck[4]  
+==> rtl8188e_iol_efuse_patch 
+[ep_setup 581]ep_con:0x09
+first_change_flag==============1
+<     9.547> [change_wifi_softap_defalut_ssid:5095] ----------=================---------------+++++++++++++++==========--------------
+---the call is--- ifconfig wlan1	> /tmp/ifconfig.info to get mac addresss
+mac_address_info============36:C3:D2:81:A1:4F
+---address_info=D281A14F  ssid=MiraScreen D281A14F
+ssid end: D281A14F
+<     9.596> [ezremote_save_ssid:272] ssid: MiraScreen D281A14F
+<     9.601> [ezcastSetDevName:182] Set Hostname to Device name: 
+[0:0:9.607][EZ_ConfigAliasnameSet:512] Set alias-name(MiraScreen D281A14F)!
+<     9.613> [ezcastSetDevName:188] DLNA and Airplay ID: MiraScreen D281A14F
+[0:0:9.621][EZ_DlnaHostidSet:278] Set dlna-hostId(MiraScreen D281A14F)!
+[0:0:9.627][EZ_AirplayHostidSet:260] Set Airplay-hostId(MiraScreen D281A14F)!
+@@@@@@@@@@@@@@@@@@@ broadcast_version: 14838000
+the call is ifconfig wlan1 > /tmp/ifconfig.info
+function:get_mac_address_info line:347 ret:333
+mask_get_from_ifconfig============36:C3:D2:81:A1:4F  
+half_address_info============36:C3:D2:81:A1:4F
+mac_tmp: 36:C3:D2:81:A1:4F
+MAC address is: 36C3D281A14F
+<     9.680> [ota_get_vendor:530] name: 
+[ezCastGetVendor][319] -- vendor is: ezcast_am8252_keyswitch_mirascreen24g
+	[ota_conf_init] [409] vendor: ezcast_am8252_keyswitch_mirascreen24g
+the call is ifconfig wlan0 > /tmp/ifconfig.info
+function:get_mac_address_info line:347 ret:322
+mask_get_from_ifconfig============34:C3:D2:81:A1:4F  
+half_address_info============34:C3:D2:81:A1:4F
+<     9.738> [ezCastSetAutoplay:683] info.enable: 1
+<     9.741> [ezCastSetAutoplay:685] info.volume: 12
+<     9.746> [ezCastSetAutoplay:687] info.waitime: 30
+<     9.750> [ezCastSetAutoplay:689] info.playlist: 1
+<     9.755> [ezCastSetAutoplay:691] info.progressive: 1
+<     9.760> [ezCastSetAutoplay:693] info.host_ap: 1
+Algorithmics/MIPS FPU Emulator v1.5
+[ep_setup 581]ep_con:0x09
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+realtek_dongle_type_divided=2 5g_num:5 2g_num:13
+isMinFrameTotal====================1
+channelInfoEntry[channel_index].channelIndex====================8
+best_channel_get_from_proc ====================8
+function:best_channel_setting line:711 best_channel_get_from_proc:8
+channel_temp===============8
+8188 get bestchannel for p2p!!!
+channelInfoEntry[channel_index].channelIndex====================11
+best_channel_get_from_proc ====================11
+p2p_channel=11
+<inti_concurrent_mode_best_channel 1213>channel_int=8
+<inti_concurrent_mode_best_channel 1237> realtek wifi use 2.4GHZ band
+--ln softap to /etc--
+start softap at EZCast!!!
+cmd===============sh /am7x/case/scripts/wifi_softap_process.sh realtek_concurrent_softap_mode_EZCast
+[wifi_common.c]___pac system_________: sh /am7x/case/scripts/wifi_softap_process.sh realtek_concurrent_softap_mode_EZCast
+process  wifi client and softap mode server
+realtek_concurrent_softap_mode_EZCast
+killall: thttpd: no process killed
+Configuration file: /etc/rtl_hostapd_01.conf
+drv->ifindex=3
+l2_packet_init: ioctl[SIOCGIFINDEX]: No such device
+no br0 interface , let l2_sock_recv==l2_sock_xmit=0x0x478638
+Failed to request a scan of neighboring BSSes
+hostapd_drv_sta_deauth
++rtl871x_sta_deauth_ops, ff:ff:ff:ff:ff:ff is deauth, reason=2
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+Using interface wlan1 with hwaddr 36:c3:d2:81:a1:4f and ssid 'MiraScreen D281A14F'
+RTL871X: port switch - port0(wlan1), port1(wlan0)
+rtl871x_set_wps_assoc_resp_ie
+rtl871x_set_wps_beacon_ie
+rtl871x_set_wps_probe_resp_ie
+rtl871x_set_key_ops
+rtl871x_set_beacon_ops
+RTL871X: assoc success
+rtl871x_set_hidden_ssid ignore_broadcast_ssid:0, MiraScreen D281A14F,19
+rtl871x_set_acl
+killall: udhcpd: no process killed
+-----topBarShowCheck[4]  
+
+
+
+##########Init Wifi Remote Control thread not start##########
+
+
+wifi_common.c,5203!
+Save OK<    12.109> [htmlSettingStart:303] -- htmlSettingStart
+<    12.113> [htmlSettingStart:309] -- Create pthread htmlsettingCmdLooper
+app_path =/am7x/case/scripts/usb_process.sh host_sta_in
+host sta in do nothing
+##########info ap dongle in##&&&&&&
+function:_update_usb_status line:391
+[debug _update_usb_status 408] >>>>>>>>>>>wlan_in=1
+@@@@Key================0xd0[4]  
+debug sysinfo_check_port_one_status 2128 udisk1_in:0
+------------------ io_flag = 0[4]  
+debug sysinfo_check_port_one_status 2128 udisk1_in:0
+debug sysinfo_check_port_two_status 2136 udisk2_in:0
+io_flag_tmp10[4]  
+io_flag_tmp20[4]  
+oldusbsta12[4]  
+oldusbsta22[4]  
+------------------ io_flag = 0[4]  
+meidatype=5,plugtype=0,msg.type=0x414d3778,cardin_type=0
+sysinfo_accept_hotplug_info 2440=========type:414d3778 subtype:0x13 reserved:a0
+function:sysinfo_accept_hotplug_info,line:2441
+Put Msg wp=3,Msgtype=0x414d3778,subtype=0x13,dataload=0x0
+<media_hotplug.c 2083> reserved=a0
+----ezcast:get_key_code=0xd0[4]  
+Get Msg rp=3,Msgtype===0x414d3778,subtype=0x13 ,dataload=0x0 reserved=0xa0
+_do_process_usb,1596:<00> type=0x414d3778,subtype=13,dataload=0,usb_stat=0,reserved[0]=0xa0
+****** wifi dongle plug in******[4]  
+StorageSWF all hide[4]  
+-----topBarShowCheck[4]  
+[wifi_isLastRouterApExist][2479] -- config file name: 5e606c33.conf
+wifi_start_fun  308>>>>>>> wifi_client_thread_is_running:0
+dongle_get_device 1717 length:29
+WIFIINF[wifi_start_fun-328]:device is wlan0
+RTL871X: indicate disassoc
+the call is ifconfig wlan0 0.0.0.0 up
+[wifi_common.c]___pac system_________: ifconfig wlan0 0.0.0.0 up
+the call is ifconfig lo up
+[wifi_common.c]___pac system_________: ifconfig lo up
+net_interface=========wlan0
+conf_path=========/etc/wireless-tkip.conf
+--wlan_conf callbuf=wpa_supplicant -B -i wlan0 -c /etc/wireless-tkip.conf[wifi_common.c]___pac system_________: wpa_supplicant -B -i wlan0 -c /etc/wireless-tkip.conf
+rfkill: Cannot open RFKILL control device
+RTL871X: set bssid:83437e5a
+ioctl[SIOCSIWAP]: Operation not permitted
+dongle_get_device 1717 length:29
+--dongle_get_ctrl_iface device=wlan0openCtrlConnection,613 ctrl_iface=[/tmp/wpa_supplicant/wlan0]
+wifi_start_fun >>>>>>> wifi_client_thread_is_running:0
+wifi start OK
+WIFIINF[wifi_startscan-466]:now is in wifi startscan
+dongle_get_device 1717 length:29
+checkscanres_timer=1[4]  
+-----topBarShowCheck[4]  
+[0:0:14.560][HAL_NetworkUpdate:1038] Interface (wlan1) Info.
+[0:0:14.564][HAL_NetworkUpdate:1039] --
+[0:0:14.568][HAL_NetworkUpdate:1040]  HW addr. - 36c3.d281.a14f
+[0:0:14.573][HAL_NetworkUpdate:1041]  IP addr. - 192.168.203.1
+[0:0:14.585][HAL_NetworkUpdate:1042] --
+[0:0:14.588][EZ_SocketRxInit:350] EZ_Socket<fd:33> rx registered!
+[0:0:14.594][HAL_NetworkUpdate:1240] Wi-Fi hostAP(wlan1) Info.
+[0:0:14.599][HAL_NetworkUpdate:1241] --
+[0:0:14.602][HAL_NetworkUpdate:1242]  ESSID   - MiraScreen D281A14F
+[0:0:14.608][HAL_NetworkUpdate:1243]  PSK     - 38863350
+[0:0:14.613][HAL_NetworkUpdate:1244]  Channel - 8
+[0:0:14.618][HAL_NetworkUpdate:1245] --
+[0:0:14.622][EZ_ConfigDevidSet:176] Set devId(0x36C3.D281.A14F)!
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+
+****No:0x    0,Write_Zone  0 blk:8,Pge:60*****
+###time:10 ms####
+[debug filter:filter_sameSsid,830]
+<    17.004> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.019> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.026> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.035> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.043> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.052> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.060> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.069> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.077> [get_cur_channel:253] -- Get current channel: 8
+-----topBarShowCheck[4]  
+[debug filter:filter_sameSsid,830]
+<    17.108> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.115> [get_cur_channel:253] -- Get current channel: 8
+[debug filter:filter_sameSsid,830]
+<    17.126> [get_cur_channel:253] -- Get current channel: 8
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+-----topBarShowCheck[4]  
+[Debug Info:auto_connect,1138]:in the latest ap conf
+[Debug Info:auto_connect,1204]:temp_filename == /mnt/vram/wifi/5e606c33.conf
+WIFIERR[wifi_thread-3762]:WIFI_CMD_CONNECT
+[wifi_common.c]___pac system_________: killall udhcpc
+killall: udhcpc: no process killed
+_____the error no. is 2_______
+[wifi_common.c]___pac system_________: killall wpa_supplicant
+dongle_get_device 1717 length:29
+the call is ifconfig wlan0 0.0.0.0 up
+[wifi_common.c]___pac system_________: ifconfig wlan0 0.0.0.0 up
+RTL871X: set bssid:8343be5a
+RTL871X: indicate disassoc
+the call is ifconfig lo up
+[wifi_common.c]___pac system_________: ifconfig lo up
+net_interface=========wlan0
+conf_path=========/mnt/vram/wifi/5e606c33.conf
+--wlan_conf callbuf=wpa_supplicant -B -i wlan0 -c /mnt/vram/wifi/5e606c33.conf[wifi_common.c]___pac system_________: wpa_supplicant -B -i wlan0 -c /mnt/vram/wifi/5e606c33.conf
+-----topBarShowCheck[4]  
+rfkill: Cannot open RFKILL control device
+RTL871X: set bssid:83453e5a
+ioctl[SIOCSIWAP]: Operation not permitted
+dongle_get_device 1717 length:29
+--dongle_get_ctrl_iface device=wlan0openCtrlConnection,613 ctrl_iface=[/tmp/wpa_supplicant/wlan0]
+-----topBarShowCheck[4]  
+error num is 1
+[Main_net_common.as] [show_client_loading] connecting value: 2[4]  
+-----topBarShowCheck[4]  
+error num is 2
+<    25.376> [ezcastReadDevName:347] Read hostname for device name!!!
+devName=MiraScreen D281A14F
+connectMode: 0SystemInfo.ROUTER_ALLOW: 1[4]  
+<    25.615> [ezCastGetAutoplayVal:641] GET_AUTOPLAY_ENABLE: 1
+[Main_net_common.as] [show_client_loading] connecting value: 2[4]  
+-----topBarShowCheck[4]  
+::::::::::: iconMode: 1[4]  
+RTL871X: set ssid [obama is yet a comunist] fw_state=0x00000008
+RTL871X: set bssid:83461e5a
+error num is 3
+RTL871X: start auth
+RTL871X: auth success, start assoc
+RTL871X: assoc success
+RTL871X: send eapol packet
+[ep_setup 581]ep_con:0x0b
+----wifi display ON[4]  
+***************************** 1 *****************************[4]  
+<    26.338> [sysinfo_NetDisplay:3430] ------ Set neighbour disable!!!
+[0:0:26.344][EZ_NeighborAutocastSet:219] Set EZ_Neighbor-autocast(0)!
+Hello Wifi Subdisplay!
+[0:0:26.354][ezFuiWifiStart:392] Starting Wifi-display!
+[0:0:26.359][EZ_ConfigScreenSizeSet:674] Set screen(1280x720)!
+[0:0:26.364][HAL_MonitorInit:633] Monitor Info.
+[0:0:26.368][HAL_MonitorInit:634] --
+[0:0:26.372][HAL_MonitorInit:635]  Resolution   - 1280x720
+[0:0:26.377][HAL_MonitorInit:636]  Frame Rate   - 60 fps
+[0:0:26.382][HAL_MonitorInit:637]  Manufacturer - x
+[0:0:26.387][HAL_MonitorInit:638]  Model        - x
+[0:0:26.391][HAL_MonitorInit:639]  Year/Week    - 0/0
+[0:0:26.396][HAL_MonitorInit:640] --
+[0:0:26.413][HAL_8250MemInit:2320] HAL_Sysbuf (yuv420) memory size(41633600<46158400) Ok!
+[0:0:26.420][HAL_HantroInit:1223] Ok!
+[0:0:26.432][EZ_ManagerLoad:256] EZ_Manager <HAL_8250> init Ok!
+[0:0:26.436][EZ_ManagerLoad:256] EZ_Manager <COM_EZGraphics> init Ok!
+[0:0:26.443][EZ_ManagerLoad:256] EZ_Manager <COM_EZDpc> init Ok!
+[0:0:26.448][EZ_ManagerLoad:256] EZ_Manager <HAL_Osd> init Ok!
+[0:0:26.478][EZ_OsdInit:1640] EZ_Osd cdg oversize(300x216 > 1066x204), FIXME!
+[0:0:26.484][EZ_ManagerLoad:256] EZ_Manager <COM_EZOsd> init Ok!
+[0:0:26.583][EZ_ManagerLoad:256] EZ_Manager <COM_EZConfig> init Ok!
+[0:0:26.590][EZ_ManagerLoad:256] EZ_Manager <HAL_Wifi> init Ok!
+[0:0:26.596][EZ_ManagerLoad:256] EZ_Manager <HAL_Dac> init Ok!
+os_linux.c 268
+os_linux.c 413 tid:257, pt tid:375, pt ptid:257
+[0:0:26.646][EZ_ManagerLoad:256] EZ_Manager <HAL_Photo> init Ok!
+[0:0:26.654][EZ_ManagerLoad:256] EZ_Manager <COM_CDG> init Ok!
+[0:0:26.660][EZ_ManagerLoad:256] EZ_Manager <HAL_Subtitle> init Ok!
+[0:0:26.667][EZ_ManagerLoad:256] EZ_Manager <COM_EZScreen> init Ok!
+[0:0:26.675][EZ_ManagerLoad:256] EZ_Manager <COM_EZStream> init Ok!
+[0:0:26.683][EZ_ManagerLoad:256] EZ_Manager <COM_EZPlayer> init Ok!
+[0:0:26.690][EZ_ManagerLoad:256] EZ_Manager <COM_EZMedia> init Ok!
+[0:0:26.700][EZ_ManagerLoad:256] EZ_Manager <COM_EZScanner> init Ok!
+[0:0:26.707][EZ_ManagerLoad:256] EZ_Manager <COM_EZSchema> init Ok!
+[0:0:26.715][EZ_ManagerLoad:256] EZ_Manager <COM_EZSession> init Ok!
+[0:0:26.722][EZ_ManagerLoad:256] EZ_Manager <COM_EZSocket> init Ok!
+[0:0:26.743][EZ_AnalyticsPostScreenview:163] Analytics (screenview) post-fields(v=1&tid=UA-70708060-1&cid=36C3D281A14F&t=screenview&cd=main&av=14838000&an=ezcast-ezcast&aid=ezcast_am8252_keyswitch_mirascreen5g)!
+[0:0:26.836][EZ_ManagerLoad:256] EZ_Manager <COM_EZAnalytics> init Ok!
+[0:0:26.844][EZ_ManagerLoad:256] EZ_Manager <HAL_Hid> init Ok!
+[0:0:26.852][EZ_SocketRxInit:350] EZ_Socket<tcp:2425:47> rx registered!
+[0:0:26.857][EZ_SocketRxInit:350] EZ_Socket<udp:2425:32> rx registered!
+[0:0:26.866][EZ_ManagerLoad:256] EZ_Manager <APP_EZDisplay> init Ok!
+ [DMR MESSAGE]  (0:0:22) DMR_Init:2515: eth0: 192.168.203.1 .
+ [DMR MESSAGE]  (0:0:22) DMR_SendByeBye:8208: ========== DMR(UPNP) Send Bye Bye ========== .
+ [DMR MESSAGE]  (0:0:22) dlna_dmr_start:4793: 
+***** DLNA DMR started with title(MiraScreen D281A14F) ***** .
+[0:0:26.962][EZ_ManagerLoad:256] EZ_Manager <APP_DLNA> init Ok!
+[0:0:26.982][EZ_SocketRxInit:350] EZ_Socket<tcp:7000:53> rx registered!
+[0:0:26.987][EZ_SocketRxInit:350] EZ_Socket<tcp:7001:54> rx registered!
+[0:0:26.993][EZ_ManagerLoad:256] EZ_Manager <APP_Airplay> init Ok!
+[0:0:27.003][EZ_SocketRxInit:350] EZ_Socket<tcp:47000:57> rx registered!
+[0:0:27.008][EZ_SocketRxInit:350] EZ_Socket<tcp:5000:58> rx registered!
+[0:0:27.015][Airtunes_EventportStart:5078] Ok, event_port(55969)!
+[0:0:27.020][EZ_SocketRxInit:350] EZ_Socket<net:55969:59> rx registered!
+[0:0:27.027][EZ_ManagerLoad:256] EZ_Manager <APP_Airtunes> init Ok!
+[0:0:27.036][EZ_ManagerLoad:256] EZ_Manager <APP_Airmirror> init Ok!
+[0:0:27.056][EZ_ManagerLoad:256] EZ_Manager <COM_AVAHI> init Ok!
+[0:0:27.065][EZ_ManagerStart:335] Ok!
+[0:0:27.067][ezFuiWifiStart:394] Start Wifi-display done!
+command from as is: EZCAST_ON
+send length is : -1
+Joining mDNS multicast group on interface wlan1.IPv4 with address 192.168.203.1.
+New relevant interface wlan1.IPv4 for mDNS.
+Network interface enumeration completed.
+Registering new address record for 192.168.203.1 on wlan1.IPv4.
+[Main_net_common.as] [show_client_loading] connecting value: 3[4]  
+error num is 4
+<    27.281> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \
+		x=1543, y=73, w=49, h=47
+<    27.291> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \
+		x=1708, y=73, w=49, h=47
+<    27.302> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \
+		x=1551, y=127, w=64, h=32
+<    27.313> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \RTL871X: send eapol packet
+
+		x=1685, y=125, w=100, h=19
+RTL871X: send eapol packet
+<    27.493> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_1.png, x=1543, y=73, w=48, h=47
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:387, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:388, pt ptid:257
+[0:0:27.572][HAL_PhotoDecodePng:565] Get PNG image(45x45) -> output(45x45)!
+[0:0:27.606][UX_OverlayImageRepaint:360] EZ_BitmapResize(45x45 --> 31x31).
+<    27.612> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_1.png, x=1708, y=73, w=48, h=47
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:389, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:390, pt ptid:257
+[0:0:27.644][HAL_PhotoDecodePng:565] Get PNG image(45x45) -> output(45x45)!
+[0:0:27.678][UX_OverlayImageRepaint:360] EZ_BitmapResize(45x45 --> 31x31).
+<    27.685> [ezcastShowTextInDisplay:2034] show text in display, res_w = 1280, res_h = 720, \
+		extstring = ( 0 ), x=1551, y=127, fontsize=22, A=0, R=255, G=255, B=255
+<    27.715> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_connecting.png, x=1685, y=125, w=99, h=19
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:391, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:392, pt ptid:257
+[0:0:27.748][HAL_PhotoDecodePng:565] Get PNG image(96x17) -> output(96x17)!
+[0:0:27.777][UX_OverlayImageRepaint:360] EZ_BitmapResize(96x17 --> 65x12).
+[0:0:27.892][AVAHI_create_services:461] AVAHI adding service 'AVAHI_36C3D281A14F'!
+[Main_net_common.as] [show_client_loading] connecting value: 5[4]  
+error num is 5
+[debug info :wifi_status_check,2809]:connect completely!
+option dns 192.168.203.1 # appened to above DNS servers for a total of 3
+<    28.562> [restart_udhcpd_with_dns:443] Restart udhcpd!!
+[wifi_common.c]___pac system_________: killall -9 udhcpd
+[wifi_common.c]___pac system_________: udhcpd /tmp/udhcpd_01.conf
+RTL871X: port switch - port0(wlan0), port1(wlan1)
+RsvdPageNum: 8
+--ln softap to /etc--
+start softap at EZCast!!!
+cmd===============sh /am7x/case/scripts/wifi_softap_process.sh realtek_concurrent_softap_mode_EZCast
+[wifi_common.c]___pac system_________: sh /am7x/case/scripts/wifi_softap_process.sh realtek_concurrent_softap_mode_EZCast
+process  wifi client and softap mode server
+[0:0:28.698][AVAHI_group_callback:555] AVAHI service 'AVAHI_36C3D281A14F' successfully established.
+realtek_concurrent_softap_mode_EZCast
+Configuration file: /etc/rtl_hostapd_01.conf
+drv->ifindex=3
+l2_packet_init: ioctl[SIOCGIFINDEX]: No such device
+no br0 interface , let l2_sock_recv==l2_sock_xmit=0x0x478638
+Failed to request a scan of neighboring BSSes
+hostapd_drv_sta_deauth
++rtl871x_sta_deauth_ops, ff:ff:ff:ff:ff:ff is deauth, reason=2
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+rtl871x_set_key_ops
+Using interface wlan1 with hwaddr 36:c3:d2:81:a1:4f and ssid 'MiraScreen D281A14F'
+RTL871X: port switch - port0(wlan1), port1(wlan0)
+rtl871x_set_wps_assoc_resp_ie
+rtl871x_set_wps_beacon_ie
+rtl871x_set_wps_probe_resp_ie
+<    29.198> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \
+		x=1685, y=125, w=100, h=19
+WIFIINF[wifi_startscan-466]:now is in wifi startscan
+rtl871x_set_key_ops
+rtl871x_set_beacon_ops
+RTL871X: assoc success
+rtl871x_set_hidden_ssid ignore_broadcast_ssid:0, MiraScreen D281A14F,19
+rtl871x_set_acl
+udhcpd_dns_enable  call realtek_softap_func 
+[debug info :checkIPfileExist,5339]:
+[debug info:checkIPfileExist,5354]:the ip file  is  not exist!
+dongle_get_device 1717 length:29
+killall: udhcpc: no process killed
+the call is udhcpc -i wlan0 -t 10 -n
+udhcpc (v1.15.1) started
+copy dnsmasq configuration
+cmd is deconfig
+interface is wlan0
+ip is 
+router is 
+domain is 
+dns is 
+NETMASK is 
+BROADCAST is broadcast 255.255.255.255
+Setting IP address 0.0.0.0 on wlan0
+Sending discover...
+Sending select for 192.168.1.10...
+Lease of 192.168.1.10 obtained, lease time 86400
+copy dnsmasq configuration
+cmd is bound
+interface is wlan0
+ip is 192.168.1.10
+router is 192.168.1.1
+domain is 
+dns is 192.168.1.1
+NETMASK is netmask 255.255.255.0
+BROADCAST is broadcast 255.255.255.255
+Setting IP address 192.168.1.10 on wlan0
+Joining mDNS multicast group on interface wlan0.IPv4 with address 192.168.1.10.
+New relevant interface wlan0.IPv4 for mDNS.
+Registering new address record for 192.168.1.10 on wlan0.IPv4.
+Withdrawing address record for 192.168.1.10 on wlan0.
+Leaving mDNS multicast group on interface wlan0.IPv4 with address 192.168.1.10.
+Interface wlan0.IPv4 no longer relevant for mDNS.
+Joining mDNS multicast group on interface wlan0.IPv4 with address 192.168.1.10.
+New relevant interface wlan0.IPv4 for mDNS.
+Registering new address record for 192.168.1.10 on wlan0.IPv4.
+Deleting routers
+route: SIOCDELRT: No such process
+Adding router 192.168.1.1
+Recreating /mnt/vram/wifi/resolv.conf
+dns is 192.168.1.1
+ Adding DNS server 192.168.1.1
+[__get_kernel_gateway_info,3217] gateway ======== 192.168.1.1
+wlan_current_status.router=======192.168.1.1
+wlan_current_status.DNS_server=======192.168.1.1 
+wlan_current_status.ip_address  ========== 192.168.1.10
+debug getAutoIP 3439++++++++++++++++
+get auto ip address successfully
+[wifi_common.c]___pac system_________: sh /am7x/case/scripts/iptalbes_nat.sh wlan0 wlan1 192.168.203.1/24
+------------- clear ip talbes
+--------------- set ip tables
+[wifi_common.c]___pac system_________: sh /am7x/case/scripts/dns_forward.sh
+--- start DNS server
+killall: dnsmasq: no process killed
+[Debug Info:save_latestAPconf,2584]:selected_filename == /mnt/vram/wifi/5e606c33.conf
+[debug filter:filter_sameSsid,830]
+<    30.010> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.019> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.027> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.036> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.050> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.062> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.073> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.086> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.095> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.111> [get_cur_channel:253] -- Get current channel: 1
+[debug filter:filter_sameSsid,830]
+<    30.119> [get_cur_channel:253] -- Get current channel: 1
+dnsmasq: started, version 2.72 cachesize 1000
+dnsmasq: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+dnsmasq: using nameserver 192.168.1.1#53
+dnsmasq: cleared cache<    30.249> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_pop.png, x=1507, y=128, w=297, h=116
+
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:515, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:516, pt ptid:257
+[0:0:30.330][HAL_PhotoDecodePng:565] Get PNG image(294x114) -> output(294x114)!
+[0:0:30.688][HAL_NetworkUpdate:1038] Interface (wlan0) Info.
+[0:0:30.692][HAL_NetworkUpdate:1039] --
+[0:0:30.696][HAL_NetworkUpdate:1040]  HW addr. - 34c3.d281.a14f
+[0:0:30.701][HAL_NetworkUpdate:1041]  IP addr. - 192.168.1.10
+[0:0:30.707][HAL_NetworkUpdate:1042] --
+[0:0:30.711][EZ_SocketRxInit:350] EZ_Socket<udp:2425:70> rx registered!
+[0:0:30.725][HAL_NetworkUpdate:1297] Wi-Fi interface(wlan0) connected, ESSID(obama is yet a comunist)!
+[0:0:30.810][UX_OverlayImageRepaint:360] EZ_BitmapResize(294x114 --> 197x77).
+<    30.824> [ezcastShowTextInDisplay:2034] show text in display, res_w = 1280, res_h = 720, \
+		extstring = obama is yet a comunist, x=1517, y=169, fontsize=26, A=0, R=201, G=201, B=201
+::::::::::: popStartTime: 26[4]  
+<    30.910> [get_cur_channel:253] -- Get current channel: 1
+<    30.917> [get_cur_channel:253] -- Get current channel: 1
+<    30.923> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_24g.png, x=1630, y=109, w=39, h=27
+ [DMR WARNING]  (0:0:26) ILib_IPAddressMonitor:4219: detected Interface changed .
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:522, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:523, pt ptid:257
+[0:0:30.979][HAL_PhotoDecodePng:565] Get PNG image(36x25) -> output(36x25)!
+[0:0:30.985][EZ_DlnadmrTickDpc:892] EZ_Dlnadmr CLOSE, need restart (DMR)!
+ [DMR EXIT]     (0:0:26) dlna_dmr_exit:4909: pass pthread_join(tpool) .
+ [DMR EXIT]     (0:0:26) ILibStartChain:1139: Start to clean up the Chain .
+ [DMR MESSAGE]  (0:0:26) DMR_SendByeBye:8208: ========== DMR(UPNP) Send Bye Bye ========== .
+ [DMR EXIT]     (0:0:26) ILibStartChain:1156: After cleaning up the Chain .
+ [DMR EXIT]     (0:0:26) ILibStartChain:1178: Start to release the Chain .
+ [DMR EXIT]     (0:0:26) ILibStartChain:1185: After releasing the Chain .
+ [DMR EXIT]     (0:0:26) dlna_dmr_exit:4924: pass pthread_join(microstackchain_t) .
+ [DMR EXIT]     (0:0:26) dlna_dmr_exit:4958: ***** DLNA DMR finished *****
+ .
+[0:0:31.070][UX_OverlayImageRepaint:360] EZ_BitmapResize(36x25 --> 25x17).
+--------fla5gClean:ez5gDisplay()[4]  
+ [DMR WARNING]  (0:0:26) ILibGetStreamSocket:3984: 0th error during binding port (60099): (No such file or directory)
+ Try port (64109) .
+ [DMR MESSAGE]  (0:0:26) DMR_Init:2515: eth0: 192.168.1.10 .
+ [DMR MESSAGE]  (0:0:26) DMR_Init:2515: eth1: 192.168.203.1 .
+ [DMR MESSAGE]  (0:0:26) DMR_SendByeBye:8208: ========== DMR(UPNP) Send Bye Bye ========== .
+<    31.120> [ezcastCleanIconRect:2138] clean icon in display, res_w = 1280, res_h = 720, \
+		x=1708, y=73, w=49, h=47
+***************  check ota version, otaCheckDelayTime = null[4]  
+ [DMR MESSAGE]  (0:0:26) dlna_dmr_start:4793: 
+***** DLNA DMR started with title(MiraScreen D281A14F) ***** .
+[0:0:31.176][EZ_DlnadmrTickDpc:897] EZ_Dlnadmr CLOSE, restart (DMR) Ok!
+[0:0:31.184][EZ_DlnadmrTickDpc:945] EZ_Dlnadmr ticks over estimate(total=198) > 50 ms)!
+<    31.358> [ezcastShowIconInDisplay:2090] show icon in display, res_w = 1280, res_h = 720, \
+		path = /mnt/user1/ezdata/ezcast_icon_12.png, x=1708, y=73, w=48, h=47
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:526, pt ptid:257
+os_linux.c 268
+pthread_getschedparam: No such process
+os_linux.c 413 tid:257, pt tid:527, pt ptid:257
+[0:0:31.406][HAL_PhotoDecodePng:565] Get PNG image(45x45) -> output(45x45)!
+

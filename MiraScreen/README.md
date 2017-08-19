@@ -91,6 +91,119 @@ pads at the bottom of the board (see image below).
 
 ![](UART.jpg)
 
+This gives us a root shell to inspect the system
+
+```
+# cat /proc/partitions
+
+major minor  #blocks  name
+
+  93     0     111616 nand_block
+  93     1      65536 nand_block1
+  93     2      10240 nand_block2
+  93     3       1024 nand_block3
+  93     4      32768 nand_block4
+# mount
+rootfs on / type rootfs (rw)
+/dev/nftla1 on / type ext2 (rw,noatime,nodiratime,errors=continue,user_xattr,acl)
+dev on /dev type ramfs (rw)
+yan on /proc type proc (rw)
+tmpfs on /tmp type tmpfs (rw)
+sysfs on /sys type sysfs (rw)
+none on /proc/bus/usb type usbfs (rw)
+/dev/partitions/vram on /mnt/vram type vfat (rw,noatime,nodiratime,fmask=0022,dmask=0022,codepage=cp437,iocharset=utf8,shortname=mixed)
+/dev/partitions/user1 on /mnt/user1 type ext2 (rw,sync,noatime,nodiratime,errors=continue,user_xattr,acl)
+# ls -al /dev/miracast
+
+drwxr-xr-x    3 root     root            0 Jan  1 00:00 .
+drwxr-xr-x   18 100013   100001       1024 Jan  1 00:00 ..
+crw-r--r--    1 root     root      14,   0 Apr  1  2016 DAC
+crw-rw----    1 root     root     247,   0 Jan  1 00:00 am7x-cec
+crw-rw----    1 root     root     248,   0 Jan  1 00:00 am7x-cipher
+crw-rw----    1 root     root     250,   0 Jan  1 00:00 amreg
+crw-rw----    1 root     root       5,   1 Jan  1 00:01 console
+crw-rw----    1 root     root      10,  63 Jan  1 00:00 cpu_dma_latency
+brw-r--r--    1 root     root     249,   0 Apr  1  2016 emmc_block
+brw-r--r--    1 root     root     249,   1 Apr  1  2016 emmc_block1
+brw-r--r--    1 root     root     249,   2 Apr  1  2016 emmc_block2
+crw-rw----    1 root     root      13,  64 Jan  1 00:00 event0
+crw-rw----    1 root     root       1,   7 Jan  1 00:00 full
+crw-r--r--    1 root     root     253,   0 Apr  1  2016 gpio
+crw-rw-rw-    1 root     root      30,   0 Jan  1 00:00 graph
+crw-rw----    1 root     root       1,  11 Jan  1 00:00 kmsg
+crw-r--r--    1 root     root      28,   0 Apr  1  2016 lcm
+brw-rw----    1 root     root       7,   0 Apr  1  2016 loop0
+brw-rw----    1 root     root       7,   1 Jan  1 00:00 loop1
+brw-rw----    1 root     root       7,   2 Jan  1 00:00 loop2
+brw-rw----    1 root     root       7,   3 Jan  1 00:00 loop3
+brw-rw----    1 root     root       7,   4 Jan  1 00:00 loop4
+brw-rw----    1 root     root       7,   5 Jan  1 00:00 loop5
+brw-rw----    1 root     root       7,   6 Jan  1 00:00 loop6
+brw-rw----    1 root     root       7,   7 Jan  1 00:00 loop7
+crw-rw----    1 root     root       1,   1 Apr  1  2016 mem
+brw-rw----    1 root     root      93,   0 Jan  1 00:00 nand_block
+brw-rw----    1 root     root      93,   1 Jan  1 00:00 nand_block1
+brw-rw----    1 root     root      93,   2 Jan  1 00:00 nand_block2
+brw-rw----    1 root     root      93,   3 Jan  1 00:00 nand_block3
+brw-rw----    1 root     root      93,   4 Jan  1 00:00 nand_block4
+crw-rw----    1 root     root      10,  62 Jan  1 00:00 network_latency
+crw-rw----    1 root     root      10,  61 Jan  1 00:00 network_throughput
+brw-r--r--    1 root     root      93,   0 Apr  1  2016 nftla
+brw-r--r--    1 root     root      93,   1 Apr  1  2016 nftla1
+brw-r--r--    1 root     root      93,   2 Apr  1  2016 nftla2
+crw-rw----    1 root     root       1,   3 Apr  1  2016 null
+drwxr-xr-x    2 100013   100001          0 Jan  1 00:00 partitions
+crw-r--r--    1 root     root     251,   0 Apr  1  2016 pmu
+brw-rw----    1 root     root       1,   0 Apr  1  2016 ram0
+brw-r--r--    1 root     root       1,   1 Apr  1  2016 ram1
+crw-rw----    1 root     root       1,   8 Jan  1 00:00 random
+lrwxrwxrwx    1 root     root           11 Jan  1 00:00 root -> nand_block1
+crw-rw----    1 root     root     254,   0 Apr  1  2016 rtc0
+crw-rw----    1 root     root       1, 250 Apr  1  2016 sysbuf
+crw-r--r--    1 root     root     252,   0 Apr  1  2016 sysmsg
+crw-rw----    1 root     root       5,   0 Jan  1 00:00 tty
+crw-rw----    1 root     root       4,  64 Apr  1  2016 ttyS0
+crw-rw----    1 root     root       4,  65 Apr  1  2016 ttyS1
+crw-r--r--    1 root     root     240,   0 Apr  1  2016 upgrade
+crw-rw----    1 root     root       1,   9 Jan  1 00:00 urandom
+crw-rw----    1 root     root       1,   5 Apr  1  2016 zero
+# ls -al /dev/partitions/
+drwxr-xr-x    2 100013   100001          0 Jan  1 00:00 .
+drwxr-xr-x    3 root     root            0 Jan  1 00:00 ..
+-rw-r--r--    1 100013   100001          0 Apr  1  2016 1.txt
+brw-r--r--    1 root     root      93,   4 Jan  1 00:00 reserve
+brw-r--r--    1 root     root      93,   1 Jan  1 00:00 rootfs
+brw-r--r--    1 root     root      93,   2 Jan  1 00:00 user1
+brw-r--r--    1 root     root      93,   3 Jan  1 00:00 vram
+```
+
+
+Here I'm trying to make sense of the partitions
+
+```
+# dd if=/dev/nand_block | hexdump -C | head -n 20
+blkdev_open
+00000000  41 63 74 69 6f 6e 73 20  4d 69 63 72 6f 45 6c 65  |Actions MicroEle|
+00000010  74 72 6f 6e 69 63 73 20  4e 61 74 69 76 65 20 4d  |tronics Native M|
+00000020  42 52 20 66 6f 72 20 45  6d 62 65 64 64 65 64 20  |BR for Embedded |
+00000030  4c 69 6e 75 78 20 6f 6e  20 4e 61 6e 64 46 6c 61  |Linux on NandFla|
+00000040  73 68 0a 56 65 72 73 69  6f 6e 20 31 2e 30 2e 30  |sh.Version 1.0.0|
+00000050  0a 31 37 3a 33 37 3a 34  30 0a 41 75 67 20 31 30  |.17:37:40.Aug 10|
+00000060  20 32 30 31 35 0a 44 65  73 69 67 6e 65 64 20 62  | 2015.Designed b|
+00000070  79 20 50 61 6e 20 52 75  6f 63 68 65 6e 20 3c 69  |y Pan Ruochen <i|
+00000080  6a 6b 78 79 7a 40 6d 73  6e 2e 63 6f 6d 3e 0a 00  |jkxyz@msn.com>..|
+00000090  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000000f0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 83 72  |...............r|
+00000100  6f 6f 74 66 73 00 80 00  00 00 00 00 02 00 83 75  |ootfs..........u|
+00000110  73 65 72 31 00 00 80 00  02 00 00 50 00 00 0b 76  |ser1.......P...v|
+00000120  72 61 6d 00 00 00 80 50  02 00 00 08 00 00 00 72  |ram....P.......r|
+00000130  65 73 65 72 76 00 00 68  02 00 00 00 01 00 00 00  |eserv..h........|
+00000140  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000001f0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 4c 59  |..............LY|
+00000200  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+```
 ## TODO
 
 Write a client application to flash firmware, use this [project](https://github.com/rounaksingh/faltu)
