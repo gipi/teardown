@@ -256,7 +256,11 @@ It connects to the router's net only when put into ``Airplay`` mode.
 root:$1$qsNdVNb0$U5HuLrYhZ6vbslIiyaQlA1:14610:0:99999:7:::
 ```
 
+that corresponds to ``000000``.
+
 ## TODO
 
 Write a client application to flash firmware, use this [project](https://github.com/rounaksingh/faltu)
 as an example in writing a ``SCSI`` over ``USB`` app.
+
+ - [Universal Serial Bus Mass Storage Class](http://www.usb.org/developers/docs/devclass_docs/usbmassbulk_10.pdf)
