@@ -138,6 +138,21 @@ sysfs on /sys type sysfs (rw)
 none on /proc/bus/usb type usbfs (rw)
 /dev/partitions/vram on /mnt/vram type vfat (rw,noatime,nodiratime,fmask=0022,dmask=0022,codepage=cp437,iocharset=utf8,shortname=mixed)
 /dev/partitions/user1 on /mnt/user1 type ext2 (rw,sync,noatime,nodiratime,errors=continue,user_xattr,acl)
+# cat /proc/filesystems 
+nodev   sysfs
+nodev   rootfs
+nodev   bdev
+nodev   proc
+nodev   sockfs
+nodev   usbfs
+nodev   pipefs
+nodev   tmpfs
+        ext2
+nodev   ramfs
+        vfat
+        ntfs
+        exfat
+        romfs
 # ls -al /dev/miracast
 
 drwxr-xr-x    3 root     root            0 Jan  1 00:00 .
