@@ -90,6 +90,8 @@ Also [here](https://ao2.it/en/blog/2012/01/18/usb-projectors-linux-and-libam7xxx
 about this family of chip and the possibility to access as mass storage devices: also exists
 a project called [libam7xxx](https://git.ao2.it/libam7xxx.git/) for it.
 
+Probably the update process happens using a ``SCSI`` over ``USB`` protocol
+
 ## Serial
 
 It's possible to reach an ``UART`` interface soldering some wires to the two

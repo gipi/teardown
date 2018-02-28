@@ -78,7 +78,7 @@ static int perr(char const *format, ...)
 #define RETRY_MAX                     5
 #define REQUEST_SENSE_LENGTH          0x12
 #define INQUIRY_LENGTH                0x24
-#define READ_CAPACITY_LENGTH          0x08
+#define READ_CAPACITY_LENGTH          0x0a
 
 // HID Class-Specific Requests values. See section 7.2 of the HID specifications
 #define HID_GET_REPORT                0x01
@@ -353,7 +353,7 @@ static int send_mass_storage_command(libusb_device_handle *handle, uint8_t endpo
 	i = 0;
 	do {
 		// The transfer length must always be exactly 31 bytes.
-		r = libusb_bulk_transfer(handle, endpoint, (unsigned char*)&cbw, 31, &size, 1000);
+		r = libusb_bulk_transfer(handle, endpoint, (unsigned char*)&cbw, 31, &size, 10000);
 		if (r == LIBUSB_ERROR_PIPE) {
 			libusb_clear_halt(handle, endpoint);
 		}
@@ -484,7 +484,7 @@ static int test_mass_storage(libusb_device_handle *handle, uint8_t endpoint_in, 
 	cdb[4] = INQUIRY_LENGTH;
 
 	send_mass_storage_command(handle, endpoint_out, lun, cdb, LIBUSB_ENDPOINT_IN, INQUIRY_LENGTH, &expected_tag);
-	CALL_CHECK(libusb_bulk_transfer(handle, endpoint_in, (unsigned char*)&buffer, INQUIRY_LENGTH, &size, 1000));
+	CALL_CHECK(libusb_bulk_transfer(handle, endpoint_in, (unsigned char*)&buffer, INQUIRY_LENGTH, &size, 10000));
 	printf("   received %d bytes\n", size);
 	// The following strings are not zero terminated
 	for (i=0; i<8; i++) {
@@ -529,6 +529,8 @@ static int test_mass_storage(libusb_device_handle *handle, uint8_t endpoint_in, 
 	memset(cdb, 0, sizeof(cdb));
 
 	cdb[0] = 0x28;	// Read(10)
+    cdb[5] = 0x00;
+    printf("block number 0x%x\n", *(uint32_t*)&cdb[2]);
 	cdb[8] = 0x01;	// 1 block
 
 	send_mass_storage_command(handle, endpoint_out, lun, cdb, LIBUSB_ENDPOINT_IN, block_size, &expected_tag);
@@ -548,6 +550,14 @@ static int test_mass_storage(libusb_device_handle *handle, uint8_t endpoint_in, 
 	free(data);
 
 	return 0;
+}
+
+void mass_storage_command() {
+    /*
+     * 1. send the CBW
+     * 2. read the data
+     * 3. get the status
+     */
 }
 
 // HID

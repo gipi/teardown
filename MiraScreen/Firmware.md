@@ -38,3 +38,42 @@ struct af {
 ```
 
 this works up to ``FIRM`` section included (there are some discrepancies)
+
+[0x00000000]> pfzz[16]cn8n8[16]cn4n4n4n4[16]cxxxx[16]cxxxx[16]cxxxx[16]cxxxx[16]cxxxx
+[0x00000000]> pf.ac_section [16]zxxxx name offset size unknown0 unknown1
+[0x00000000]> pf [16]z[16]z[12]? magic version (ac_section)section
+
+```
+$ binwalk MiraScreen/mirawire_8252n_8M-16285000.gz
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+85423         0x14DAF         Copyright string: " 1995-2005 Mark Adler "
+122368        0x1DE00         gzip compressed data, has 5816 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+1615872       0x18A800        gzip compressed data, has 4072 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+2661376       0x289C00        gzip compressed data, has 4000 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+3688448       0x384800        gzip compressed data, has 4092 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+4739072       0x485000        gzip compressed data, has 4084 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+5787648       0x585000        gzip compressed data, has 3652 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+```
+
+The offset ``0x1de00`` seems promising since as value is present as offset in the header, indeed
+
+```
+$ dd if=MiraScreen/mirawire_8252n_8M-16285000.gz count=1507328c skip=122368 ibs=1c of=/tmp/firmware.gz
+$ gunzip /tmp/firmware.gz
+$ binwalk  /tmp/firmware
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+8192          0x2000          gzip compressed data, has 5788 bytes of extra data, from NTFS filesystem (NT), NULL date: Thu Jan  1 01:00:00 1970
+$ dd of=/tmp/firmware2.gz skip=8192 ibs=1c if=/tmp/firmware
+$ gunzip /tmp/firmware2.gz
+$ binwalk  /tmp/firmware2
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+2375712       0x244020        Linux kernel version "2.6.27.29 (jenkins_slave2@firmware-build) (gcc version 4.3.3 (Sare-build) (gcc version 4.3.3 (Sourcery G++ Lite 4.3-154) ) #1 "
+2546732       0x26DC2C        LZMA compressed data, properties: 0x48, dictionary size: 33554432 bytes, uncompressed size: 50331648 bytes
+2998272       0x2DC000        gzip compressed data, maximum compression, from Unix, last modified: Fri Jun 16 11:36:56 2017
+```

@@ -326,3 +326,52 @@ x-powered-by: PHP/5.5.9-1ubuntu4.21
 
 Another aspect of this app that is interesting is the ``USB`` protocol, at ``0x00402e90``
 seems to start the USB protocol.
+
+```
+[0x004dc2a4]> /c 55fb50
+0x00418882   # 5: push str.USB_Mass_Storage_Device
+0x0055fb4d   # 3: jb str.USB_Mass_Storage_Device
+0x0055fb4e   # 2: jb str.USB_Mass_Storage_Device
+```
+
+Lurking the code we can see that here seems to start the ``USB`` opening
+
+```
+.----------------------------------------------------------------.
+|  0x40ba4b ;[gg]                                               ||
+|      ; JMP XREF from 0x0040baec (sub.USER32.dll_wsprintfA_a10)||
+| push edi                                                      ||
+|    ; "@"                                                      ||
+| lea eax, [esp + 0x18]                                         ||
+|    ; 0x55e414                                                 ||
+|    ; "\\\\.\\HCD%d"                                           ||
+| push str.__._HCD_d                                            ||
+| push eax                                                      ||
+|    ; 0x4df734                                                 ||
+| call dword [sym.imp.USER32.dll_wsprintfA];[gd]                ||
+| add esp, 0xc                                                  ||
+| lea ecx, [esp + 0x14]                                         ||
+| push 0                                                        ||
+| push 0                                                        ||
+| push 3                                                        ||
+| push 0                                                        ||
+| push 2                                                        ||
+| push 0x40000000                                               ||
+| push ecx                                                      ||
+|    ; 0x4df0d8                                                 ||
+|    ; "H\xe0\x10"                                              ||
+| call dword [sym.imp.KERNEL32.dll_CreateFileA];[ge]            ||
+| mov esi, eax                                                  ||
+| cmp esi, 0xffffffffffffffff                                   ||
+| je 0x40bae4;[gf]                                              ||
+`----------------------------------------------------------------'
+```
+
+``\\.\HD0`` seems the [way to access USB](http://www.cplusplus.com/forum/beginner/14634/) in windows.
+
+## Note
+
+There are plenty of instruction like ``mov dword fs:[0], ecx``, this seems related
+to the [Win32 Thread Information Block](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block).
+
+In particular see this [answer](https://reverseengineering.stackexchange.com/questions/1911/whats-fs0-doing-and-how-can-i-execute-it-step-by-step).
