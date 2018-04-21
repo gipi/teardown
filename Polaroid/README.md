@@ -102,6 +102,14 @@ $ tree system/ -L 1
 ```
 
 
+## Components
+
+ - Audio [ALC5621](https://www.11h.net/blog/wp-content/uploads/2010/08/ALC5621.pdf)
+ - Power management [PT1502](https://www.icware.ru/pdf/0000945.pdf)
+ - [MMA7660FC](https://www.nxp.com/docs/en/data-sheet/MMA7660FC.pdf) accelerometer (labelling: three rows ``263``, ``7660``, ``3JSM``)
+ - [PCF8563](https://www.nxp.com/docs/en/data-sheet/PCF8563.pdf) real-time clock/calendar
+ - [XPT2046](https://www.buydisplay.com/download/ic/XPT2046.pdf) touch screen controller
+
 ## Link
 
  - http://linux-rockchip.info/
