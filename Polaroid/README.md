@@ -104,6 +104,8 @@ $ tree system/ -L 1
 
 ## Components
 
+ - [K9GAG08U0E](http://n2k1.com/n2k1/NB7/PDF/K9GAG08U0E.pdf) Flash memory
+ - 2x[H5PS1G63EFR](https://www.skhynix.com/eolproducts.view.do?pronm=DDR2+SDRAM&srnm=H5PS1G63EFR&rk=18&rc=graphics
  - Audio [ALC5621](https://www.11h.net/blog/wp-content/uploads/2010/08/ALC5621.pdf)
  - Power management [PT1502](https://www.icware.ru/pdf/0000945.pdf)
  - [MMA7660FC](https://www.nxp.com/docs/en/data-sheet/MMA7660FC.pdf) accelerometer (labelling: three rows ``263``, ``7660``, ``3JSM``)
