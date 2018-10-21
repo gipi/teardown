@@ -263,6 +263,7 @@ that corresponds to ``000000``.
 ## TODO
 
 Write a client application to flash firmware, use this [project](https://github.com/rounaksingh/faltu)
-as an example in writing a ``SCSI`` over ``USB`` app.
+as an example in writing a ``SCSI`` over ``USB`` app. There is a [question on SO about a similar thing](https://reverseengineering.stackexchange.com/questions/19602/scsi-interface-through-usb) that shows ``lsscsi``
+command.
 
  - [Universal Serial Bus Mass Storage Class](http://www.usb.org/developers/docs/devclass_docs/usbmassbulk_10.pdf)
