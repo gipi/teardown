@@ -89,6 +89,8 @@ OTG Descriptor:
         bInterval               1
  ...
 ```
+
+```
 $ sudo sginfo /dev/sg2
 INQUIRY response (cmd: 0x12)
 ----------------------------
