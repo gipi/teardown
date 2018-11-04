@@ -22,6 +22,93 @@ Feb 10 15:07:54 pc kernel: [22328.559739] sd 6:0:0:0: Attached scsi generic sg2 
 Feb 10 15:07:54 pc kernel: [22328.560585] sd 6:0:0:0: [sdc] Attached SCSI removable disk
 ```
 
+```
+$ lsusb -v
+ ...
+Bus 002 Device 010: ID 140e:b058 Telechips, Inc. 
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0 (Defined at Interface level)
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x140e Telechips, Inc.
+  idProduct          0xb058 
+  bcdDevice            3.ff
+  iManufacturer           1 TELECHIPS
+  iProduct                2 File-backed Storage Gadget
+  iSerial                 3 0123456789ABCDEF0123456789ABCDEF
+  bNumConfigurations      1
+OTG Descriptor:
+  bLength                 3
+  bDescriptorType         9
+  bmAttributes         0x03
+    SRP (Session Request Protocol)
+    HNP (Host Negotiation Protocol)
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           35
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          4 Self-powered
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower                2mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     80 Bulk-Only
+      iInterface              5 Mass Storage
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               1
+ ...
+```
+$ sudo sginfo /dev/sg2
+INQUIRY response (cmd: 0x12)
+----------------------------
+Device Type                        0
+Vendor:                    TELECHIP
+Product:                   MASS STORAGE
+Revision level:            03ff
+$ sudo sg_inq /dev/sg2
+standard INQUIRY:
+  PQual=0  Device_type=0  RMB=1  LU_CONG=0  version=0x00  [no conformance claimed]
+  [AERC=0]  [TrmTsk=0]  NormACA=0  HiSUP=0  Resp_data_format=1
+  SCCS=0  ACC=0  TPGS=0  3PC=0  Protect=0  [BQue=0]
+  EncServ=0  MultiP=0  [MChngr=0]  [ACKREQQ=0]  Addr16=0
+  [RelAdr=0]  WBus16=0  Sync=0  [Linked=0]  [TranDis=0]  CmdQue=0
+    length=36 (0x24)   Peripheral device type: disk
+ Vendor identification: TELECHIP
+ Product identification: MASS STORAGE    
+ Product revision level: 03ff
+```
+
 ## Firmware
 
 Seems from the firmware (downloaded from the site) named ``P-OBRNPWWC-1008.1.rom``
@@ -69,7 +156,24 @@ $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
 
 ## SOC
 
-Seems the ``TCC9101G-0BX`` an ``ARM`` processor.
+Seems the ``TCC9101G-0BX`` an [ARM946E-S](processor.https://static.docs.arm.com/ddi0201/d/DDI0201D_arm946es_r1p1_trm.pdf)
+
+https://en.wikipedia.org/wiki/List_of_applications_of_ARM_cores
+[ARM1176JZ(F)-S](https://en.wikipedia.org/wiki/ARM11)
+
+https://www.rockbox.org/wiki/TelechipsInfo
+https://downloadcustomromandroid.blogspot.com/2014/02/download-telechips-fwdn-v7-v222.html
+https://github.com/cnxsoft/tccutils/
+https://wenku.baidu.com/view/6545cb13a216147917112879.html
+https://wenku.baidu.com/view/4ae28f1655270722192ef7ec.html
+
+## Components
+
+ - Flash [K9G8G08U0A](http://www.image.micros.com.pl/_dane_techniczne_auto/pefnand08g08-025a.pdf)
+ - DDR2 SDRAM [K4T1G164](https://4donline.ihs.com/images/VipMasterIC/IC/SAMS/SAMSS11200/SAMSS11200-1.pdf)
+ - Battery charger [MAX8903A](https://datasheets.maximintegrated.com/en/ds/MAX8903A.pdf)
+ - LCD Flat Panel Processor [TW8816](https://www.deviationtx.com/media/kunena/attachments/1641/TW8816spec_10152007.pdf)
+ - Stereo CODEC Cirrus [42L52CNZ](https://pdf1.alldatasheet.com/datasheet-pdf/view/255532/CIRRUS/CS42L52-CNZ.html)
 
 ## Connectors
 
@@ -85,7 +189,79 @@ CN1101| Used for debugging, and is for technical service purpose only. | FPC 40 
 CN1102| Connects to the DMD board and main board. A bad connection will cause a blank screen. |
 
 
+## Boot mode
+
+It seems there is a boot mode via USB like described in the datasheet of [TCC760](https://www.bg-electronics.de/datenblaetter/Schaltkreise/TCC760.pdf)
+or that other people [have found](https://dreamlayers.blogspot.com/2013/03/telechips-tcc76x-usb-boot.html); it loads via the [tcctool](https://github.com/Rockbox/rockbox/blob/master/utils/tcctool/tcctool.c)
+some code in ``SDRAM`` and executes it
+
+## Driver
+
+```
+$ file Pico\ SP-H03/vtcdrv/x64/VTC\ Driver\ Installer\ v5.0.0.3\ for\ x64.EXE
+Pico SP-H03/vtcdrv/x64/VTC Driver Installer v5.0.0.3 for x64.EXE: PE32 executable (GUI) Intel 80386, for MS Windows, MS CAB-Installer self-extracting archive
+$ binwalk Pico\ SP-H03/vtcdrv/x64/VTC\ Driver\ Installer\ v5.0.0.3\ for\ x64.EXE 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Microsoft executable, portable (PE)
+73228         0x11E0C         PNG image, 256 x 256, 8-bit/color RGBA, non-interlaced
+73269         0x11E35         Zlib compressed data, default compression
+151900        0x2515C         Microsoft Cabinet archive data, 397310 bytes, 6 files
+551644        0x86ADC         XML document, version: "1.0"
+551706        0x86B1A         Copyright string: "Copyright (c) Microsoft Corporation -->"
+551755        0x86B4B         Copyright string: "Copyright (c) Microsoft Corporation.  All rights reserved."
+$ peres -a Pico\ SP-H03/vtcdrv/x64/VTC\ Driver\ Installer\ v5.0.0.3\ for\ x64.EXE
+$ find resources/ -type f -print0 | xargs --null file
+resources/icons/7.ico:         data
+resources/icons/1.ico:         data
+resources/icons/12.ico:        data
+resources/icons/6.ico:         dBase IV DBT of @.DBF, block length 1024, next free block index 40, next free block 15066613, next used block 15000828
+resources/icons/11.ico:        data
+resources/icons/5.ico:         data
+resources/icons/9.ico:         PNG image data, 256 x 256, 8-bit/color RGBA, non-interlaced
+resources/icons/8.ico:         GLS_BINARY_LSB_FIRST
+resources/icons/3.ico:         data
+resources/icons/10.ico:        data
+resources/icons/13.ico:        GLS_BINARY_LSB_FIRST
+resources/icons/4.ico:         GLS_BINARY_LSB_FIRST
+resources/icons/2.ico:         dBase IV DBT of @.DBF, block length 512, next free block index 40, next free block 2291109880, next used block 28872
+resources/manifests/1.xml:     XML 1.0 document, ASCII text, with CRLF line terminators
+resources/strings/83.rc:       data
+resources/strings/76.rc:       data
+resources/strings/63.rc:       data
+resources/strings/85.rc:       data
+resources/strings/77.rc:       data
+resources/strings/80.rc:       data
+resources/versions/1.rc:       data
+resources/groupicons/3000.ico: data
+resources/rcdatas/2486.rc:     ASCII text, with no line terminators
+resources/rcdatas/2336.rc:     data
+resources/rcdatas/2442.rc:     ASCII text, with no line terminators
+resources/rcdatas/2414.rc:     data
+resources/rcdatas/2398.rc:     ASCII text, with no line terminators
+resources/rcdatas/2530.rc:     ASCII text, with no line terminators
+resources/rcdatas/2320.rc:     Microsoft Cabinet archive data, many, 397310 bytes, 6 files, at 0x2c +A "dpinst.exe" +A "dpinst.xml", ID 6404, number 1, 39 datablocks, 0x1503 compression
+resources/rcdatas/2542.rc:     ASCII text, with no line terminators
+resources/rcdatas/2508.rc:     data
+resources/rcdatas/2558.rc:     ASCII text, with no line terminators
+resources/rcdatas/2358.rc:     data
+resources/rcdatas/2378.rc:     ASCII text, with no line terminators
+resources/rcdatas/2304.rc:     ASCII text, with no line terminators
+resources/rcdatas/2472.rc:     data
+resources/dialogs/2002.dlg:    data
+resources/dialogs/2005.dlg:    data
+resources/dialogs/2006.dlg:    data
+resources/dialogs/2003.dlg:    data
+resources/dialogs/2001.dlg:    data
+resources/dialogs/2004.dlg:    data
+resources/3001.bin:            RIFF (little-endian) data, AVI, 272 x 60, 10.00 fps, video: RLE 8bpp
+```
 
 ## Links
 
+ - [TCC 92/89xx Android Firmware Upgrade Guide](https://wenku.baidu.com/view/4ae28f1655270722192ef7ec.html)
  - http://www.cnx-software.com/2012/07/18/building-linux-kernel-3-0-8-for-telechips-tcc8925-mini-pcs-cx-01-z900-tizzbird-n1/
+ - [DDRAM guide](https://wenku.baidu.com/view/9bf64f6925c52cc58bd6be89.html)
+ - [TCC89xx-Android-ALL-1050-V1.07E-Quick Start Guide](https://wenku.baidu.com/view/6545cb13a216147917112879.html) indicates extensively (?) how to use USB boot mode
+ - [Guida italiana](https://images-eu.ssl-images-amazon.com/images/G/29/cutulle/BP59-00143A-04Ita._V169094134_.pdf)
