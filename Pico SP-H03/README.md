@@ -197,6 +197,11 @@ It seems there is a boot mode via USB like described in the datasheet of [TCC760
 or that other people [have found](https://dreamlayers.blogspot.com/2013/03/telechips-tcc76x-usb-boot.html); it loads via the [tcctool](https://github.com/Rockbox/rockbox/blob/master/utils/tcctool/tcctool.c)
 some code in ``SDRAM`` and executes it
 
+Maybe is activated pressing the button nearer the sdcard slot: when this happens the device has the red led on and the
+usb device has identifier ``140e:b077``: see the image below
+
+![](Images/boot.jpg)
+
 ## Driver
 
 ```
