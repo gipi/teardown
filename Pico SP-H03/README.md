@@ -156,18 +156,66 @@ $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
 ./pico
 ```
 
+Analysing the ``TCCKernel7.3.rom`` and ``TCCBoot4.2.rom`` that I assume are respectively the kernel
+and bootloader
+
+```
+$binwalk Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCBoot4.2.rom 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+$ binwalk Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCKernel7.3.rom 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+55177         0xD789          Certificate in DER format (x509 v3), header length: 4, sequence length: 1416
+59013         0xE685          Certificate in DER format (x509 v3), header length: 4, sequence length: 13588
+78208         0x13180         gzip compressed data, maximum compression, from Unix, last modified: 2010-07-27 01:42:34
+4720605       0x4807DD        Certificate in DER format (x509 v3), header length: 4, sequence length: 5376
+5024709       0x4CABC5        Certificate in DER format (x509 v3), header length: 4, sequence length: 1328
+5419085       0x52B04D        Certificate in DER format (x509 v3), header length: 4, sequence length: 4866
+5531093       0x5465D5        Certificate in DER format (x509 v3), header length: 4, sequence length: 1292
+5702529       0x570381        Certificate in DER format (x509 v3), header length: 4, sequence length: 13588
+6446763       0x625EAB        Linux kernel version 2.6.28
+6477872       0x62D830        CRC32 polynomial table, little endian
+6821729       0x681761        Unix path: /dev/vc/0
+6834593       0x6849A1        IMG0 (VxWorks) header, size: 1111564346
+```
+
+looking at the strings inside you can have some clues
+
+```
+$ strings Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCBoot4.2.rom | grep -i tele
+TELECHIPS01
+TELECHIPS02
+TELECHIPS03
+TELECHIPS04
+$ strings Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCBoot4.2.rom | grep -i boot
+    tcboot ver %s for %s Linux
+tcboot.rom
+Updating tcboot.rom -> 
+$ strings Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCKernel7.3.rom | grep -i samsung
+Samsung Oberon Board
+Samsung Info. Systems America, Inc.
+Samsung
+SAMSUNG
+$ strings Pico\ SP-H03/P-OBRNPWWC-1008.1/TCCBoot4.2.rom | grep -i usb
+SIGBYAHONG_USB_MANAGER_LINUX_TCC89XX_V2.000
+SIGBYAHONG_USBPHY_LINUX_TCC89XX_V2.000
+SIGBYAHONG_USB_DEVICE_LINUX_TCC89XX_V2.000
+MAX8903A: USB Input.
+```
+
+Lurking on github I find [code](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/a9790f6edf973d9e6b102f9be89c7b7f883f1cb2/bootable/bootloader/lk/platform/tcc_shared/update.c) that
+looks like the bootloader code.
+
 ## SOC
 
 Seems the ``TCC9101G-0BX`` an [ARM946E-S](processor.https://static.docs.arm.com/ddi0201/d/DDI0201D_arm946es_r1p1_trm.pdf)
 
 https://en.wikipedia.org/wiki/List_of_applications_of_ARM_cores
 [ARM1176JZ(F)-S](https://en.wikipedia.org/wiki/ARM11)
-
-https://www.rockbox.org/wiki/TelechipsInfo
-https://downloadcustomromandroid.blogspot.com/2014/02/download-telechips-fwdn-v7-v222.html
-https://github.com/cnxsoft/tccutils/
-https://wenku.baidu.com/view/6545cb13a216147917112879.html
-https://wenku.baidu.com/view/4ae28f1655270722192ef7ec.html
 
 ## Components
 
@@ -201,6 +249,9 @@ Maybe is activated pressing the button nearer the sdcard slot: when this happens
 usb device has identifier ``140e:b077``: see the image below
 
 ![](Images/boot.jpg)
+
+Maybe is possible to use a tool named ``tccbox`` to update the firmware from the command line **of the device**; the source code
+maybe is in this [repository](https://github.com/huangguojun/linux_drv/) under ``linux_test/tcc8925_test/firmupdate.c``
 
 ## Driver
 
@@ -272,3 +323,12 @@ resources/3001.bin:            RIFF (little-endian) data, AVI, 272 x 60, 10.00 f
  - [DDRAM guide](https://wenku.baidu.com/view/9bf64f6925c52cc58bd6be89.html)
  - [TCC89xx-Android-ALL-1050-V1.07E-Quick Start Guide](https://wenku.baidu.com/view/6545cb13a216147917112879.html) indicates extensively (?) how to use USB boot mode
  - [Guida italiana](https://images-eu.ssl-images-amazon.com/images/G/29/cutulle/BP59-00143A-04Ita._V169094134_.pdf)
+ - [Source code](http://www.pudn.com/Download/item/id/1269408.html) of the (probable) bootloader named ``tcboot``.
+ - ``f21b0242eac7f91090eaa949c699d2bc9252ca85`` is the hash of the torrent containing a lot of leaked materials about this family of chips
+ - https://www.rockbox.org/wiki/TelechipsInfo
+ - https://downloadcustomromandroid.blogspot.com/2014/02/download-telechips-fwdn-v7-v222.html
+ - https://github.com/cnxsoft/tccutils/
+ - https://wenku.baidu.com/view/6545cb13a216147917112879.html
+ - https://wenku.baidu.com/view/4ae28f1655270722192ef7ec.html
+
+
