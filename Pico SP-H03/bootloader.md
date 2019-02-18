@@ -83,3 +83,67 @@ Furthermore, if look at offset ``0x0000004c`` you see
 
 but ``0x10004000`` is the upper limit of the on-chip 16kB memory region: it makes sense, the stack grows downwards!
 
+As is possible to see, some piece are only there to be used as constant pool, you can use radare
+in visual mode and press ``dw`` to set them to data as 32bit value.
+
+Right now I'm pretty sure that this firmware it loaded at ``0x40000000`` so let's tell radare2 this
+in the project file with the line ``o "Pico SP-H03/tccboot42.bin" 0x40000000 r-x`` (this is a little
+tricky since using the standard command from the radare2 shell and saving doesn't work, so I did change
+manually the ``rc`` file to fix the issue).
+
+Diving into the code it's possible to see some address that are strings, so we can move to the address ``0x40091de8``
+and from the cursor mode press "ds" and define a string.
+
+## UART
+
+The most interesting part I want to find is the UART, from the specification I see that it is at address
+``0xf0532000`` depending from the channel
+
+```
+/x 002.53f0
+Searching 4 bytes in [0x40000000-0x400c25f4]
+hits: 3
+0x4002c440 hit1_0 002053f0
+0x40030bc0 hit1_1 002053f0
+0x40030cac hit1_2 002053f0
+:> pd 10 @@hit*
+            ;-- hit1_0:
+            0x4002c440   *  002053f0       invalid
+/ (fcn) interrupt_controller_something 188
+|   interrupt_controller_something ();
+|           ; var int local_ch @ fp-0xc
+|           ; var int local_8h @ fp-0x8
+|           0x4002c444      00482de9       push {fp, lr}
+|           0x4002c448      04b08de2       add fp, sp, 4               ; add two values
+|           0x4002c44c      08d04de2       sub sp, sp, 8               ; substract two values
+|           0x4002c450      a8309fe5       ldr r3, [0x4002c500]        ; [0x4002c500:4]=0xf0401000 ; load from memory to register
+|           0x4002c454      08300be5       str r3, [local_8h]          ; 8 ; store register into memory
+|           0x4002c458      08301be5       ldr r3, [local_8h]          ; 8 ; load from memory to register
+|           0x4002c45c      102093e5       ldr r2, [r3, 0x10]          ; load from memory to register
+|           0x4002c460      08301be5       ldr r3, [local_8h]          ; 8 ; load from memory to register
+|           0x4002c464      283093e5       ldr r3, [r3, 0x28]          ; load from memory to register
+            ;-- hit1_1:
+            0x40030bc0   *  002053f0       invalid
+            0x40030bc4      002010f0       invalid
+            0x40030bc8      04b02de5       str fp, [sp, -4]!           ; store register into memory
+            0x40030bcc      00b08de2       add fp, sp, 0               ; add two values
+            0x40030bd0      10309fe5       ldr r3, [0x40030be8]        ; [0x40030be8:4]=0x47e0ded8 ; load from memory to register
+            0x40030bd4      003093e5       ldr r3, [r3]                ; load from memory to register
+            0x40030bd8      0300a0e1       mov r0, r3                  ; move value between registers
+            0x40030bdc      00d08be2       add sp, fp, 0               ; add two values
+            0x40030be0      0008bde8       ldm sp!, {fp}
+            0x40030be4      1eff2fe1       bx lr                       ; branches and exchanges cpu mode to 16 bits (thumb mode)
+            ;-- hit1_2:
+            0x40030cac   *  002053f0       invalid
+            0x40030cb0      00482de9       push {fp, lr}
+            0x40030cb4      04b08de2       add fp, sp, 4               ; add two values
+            0x40030cb8      08d04de2       sub sp, sp, 8               ; substract two values
+            0x40030cbc      08000be5       str r0, [fp, -8]            ; 8 ; store register into memory
+        ,=< 0x40030cc0      060000ea       b 0x40030ce0                ; branches the program counter to dst (pc aka r15)
+        |   0x40030cc4      08301be5       ldr r3, [fp, -8]            ; 8 ; load from memory to register
+        |   0x40030cc8      0020d3e5       ldrb r2, [r3]               ; load byte from memory to register
+        |   0x40030ccc      08301be5       ldr r3, [fp, -8]            ; 8 ; load from memory to register
+        |   0x40030cd0      013083e2       add r3, r3, 1               ; add two values
+```
+
+and indeed the function just above have some operation with that register involved!

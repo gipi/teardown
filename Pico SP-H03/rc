@@ -1,0 +1,5998 @@
+# r2 rdb project file
+# flags
+fs functions
+f fcn.0000004c 96 0x0000004c 
+f fcn.0002e28c 16 0x0002e28c 
+f fcn.4002e28c 16 0x4002e28c 
+f fcn.4002e29c 60 0x4002e29c 
+f fcn.4002e2d8 60 0x4002e2d8 
+f fcn.4002e314 20 0x4002e314 
+f fcn.40030fd8 892 0x40030fd8 
+fs *
+f case.0x40031060.0 1 0x40031340 
+fs *
+f case.0x40031060.1 1 0x40031350 
+fs *
+f case.0x40031060.2 1 0x40031350 
+fs *
+f case.0x40031060.3 1 0x40031350 
+fs *
+f case.0x40031060.4 1 0x40031350 
+fs *
+f case.0x40031060.5 1 0x40031350 
+fs *
+f case.0x40031060.6 1 0x40031350 
+fs *
+f case.0x40031060.7 1 0x40031350 
+fs *
+f case.0x40031060.8 1 0x40031350 
+fs *
+f case.0x40031060.9 1 0x40031350 
+fs *
+f case.0x40031060.10 1 0x40031350 
+fs *
+f case.0x40031060.11 1 0x40031350 
+fs *
+f case.0x40031060.12 1 0x40031350 
+fs *
+f case.0x40031060.13 1 0x40031350 
+fs *
+f case.0x40031060.14 1 0x40031350 
+fs *
+f case.0x40031060.15 1 0x40031350 
+fs *
+f case.0x40031060.16 1 0x40031350 
+fs *
+f case.0x40031060.17 1 0x40031350 
+fs *
+f case.0x40031060.18 1 0x40031350 
+fs *
+f case.0x40031060.19 1 0x40031350 
+fs *
+f case.0x40031060.20 1 0x40031350 
+fs *
+f case.0x40031060.21 1 0x40031350 
+fs *
+f case.0x40031060.22 1 0x40031350 
+fs *
+f case.0x40031060.23 1 0x40031350 
+fs *
+f case.0x40031060.24 1 0x40031350 
+fs *
+f case.0x40031060.25 1 0x40031350 
+fs *
+f case.0x40031060.26 1 0x40031350 
+fs *
+f case.0x40031060.27 1 0x40031350 
+fs *
+f case.0x40031060.28 1 0x40031350 
+fs *
+f case.0x40031060.29 1 0x4003124c 
+fs *
+f case.0x40031060.30 1 0x40031350 
+fs *
+f case.0x40031060.31 1 0x40031350 
+fs *
+f case.0x40031060.32 1 0x40031350 
+fs *
+f case.0x40031060.33 1 0x40031350 
+fs *
+f case.0x40031060.34 1 0x40031350 
+fs *
+f case.0x40031060.35 1 0x40031270 
+fs *
+f case.0x40031060.36 1 0x40031350 
+fs *
+f case.0x40031060.37 1 0x40031350 
+fs *
+f case.0x40031060.38 1 0x40031350 
+fs *
+f case.0x40031060.39 1 0x40031350 
+fs *
+f case.0x40031060.40 1 0x40031350 
+fs *
+f case.0x40031060.41 1 0x40031350 
+fs *
+f case.0x40031060.42 1 0x40031350 
+fs *
+f case.0x40031060.43 1 0x40031350 
+fs *
+f case.0x40031060.44 1 0x40031350 
+fs *
+f case.0x40031060.45 1 0x40031350 
+fs *
+f case.0x40031060.46 1 0x40031350 
+fs *
+f case.0x40031060.47 1 0x40031350 
+fs *
+f case.0x40031060.48 1 0x40031350 
+fs *
+f case.0x40031060.49 1 0x40031350 
+fs *
+f case.0x40031060.50 1 0x40031350 
+fs *
+f case.0x40031060.51 1 0x40031294 
+fs *
+f case.0x40031060.52 1 0x40031350 
+fs *
+f case.0x40031060.53 1 0x40031350 
+fs *
+f case.0x40031060.54 1 0x40031350 
+fs *
+f case.0x40031060.55 1 0x40031350 
+fs *
+f case.0x40031060.56 1 0x40031350 
+fs *
+f case.0x40031060.57 1 0x40031350 
+fs *
+f case.0x40031060.58 1 0x40031350 
+fs *
+f case.0x40031060.59 1 0x40031350 
+fs *
+f case.0x40031060.60 1 0x40031350 
+fs *
+f case.0x40031060.61 1 0x40031350 
+fs *
+f case.0x40031060.62 1 0x4003134c 
+fs *
+f case.0x40031060.63 1 0x400312b8 
+fs *
+f case.0x40031060.64 1 0x40031350 
+fs *
+f case.0x40031060.65 1 0x40031350 
+fs *
+f case.0x40031060.66 1 0x40031350 
+fs *
+f case.0x40031060.67 1 0x40031350 
+fs *
+f case.0x40031060.68 1 0x40031350 
+fs *
+f case.0x40031060.69 1 0x40031350 
+fs *
+f case.0x40031060.70 1 0x40031350 
+fs *
+f case.0x40031060.71 1 0x40031350 
+fs *
+f case.0x40031060.72 1 0x40031350 
+fs *
+f case.0x40031060.73 1 0x40031350 
+fs *
+f case.0x40031060.74 1 0x40031350 
+fs *
+f case.0x40031060.75 1 0x40031350 
+fs *
+f case.0x40031060.76 1 0x40031350 
+fs *
+f case.0x40031060.77 1 0x40031350 
+fs *
+f case.0x40031060.78 1 0x40031320 
+fs *
+f case.0x40031060.79 1 0x40031350 
+fs *
+f case.0x40031060.80 1 0x40031300 
+fs *
+f case.0x40031060.81 1 0x40031350 
+fs *
+f case.0x40031060.82 1 0x40031350 
+fs *
+f case.0x40031060.83 1 0x40031228 
+fs *
+f switch.0x40031060 1 0x40031060 
+fs *
+f case.default.0x40031064 1 0x40031064 
+fs functions
+f init 76 0x4000004c 
+f fcn.4002c68c 16 0x4002c68c 
+f loc.4002c790 20 0x4002c790 
+f initialize_memory_maybe 196 0x400000b0 
+f interrupt_controller_something 188 0x4002c444 
+f fcn.4002c504 20 0x4002c504 
+f mmu_table_something 24 0x4002c518 
+f fcn.4002c5d0 68 0x4002c5d0 
+f fcn.4002c61c 40 0x4002c61c 
+f gpio_init 612 0x4002e00c 
+f fcn.4002df34 212 0x4002df34 
+f fcn.4002dc2c 192 0x4002dc2c 
+f fcn.4002ddd8 160 0x4002ddd8 
+f fcn.4002de84 96 0x4002de84 
+f fcn.4002dee8 72 0x4002dee8 
+f clock_init 1748 0x4007b32c 
+f pmu_init 1448 0x4007ad4c 
+f sdram_something 36 0x4002d120 
+f fcn.4002cfa4 328 0x4002cfa4 
+f fcn.40072988 60 0x40072988 
+f fcn.4002da34 460 0x4002da34 
+f fcn.4002c64c 188 0x4002c64c 
+f fcn.4002c7ac 408 0x4002c7ac 
+f fcn.4002e574 56 0x4002e574 
+f loc.4002e608 116 0x4002e608 
+f fcn.4008e024 492 0x4008e024 
+f loc.4008e470 16 0x4008e470 
+f fcn.4002e4e4 20 0x4002e4e4 
+f fcn.4002e688 520 0x4002e688 
+f fcn.4002e8a4 88 0x4002e8a4 
+f loc.4002e9bc 64 0x4002e9bc 
+f fcn.4002ef1c 544 0x4002ef1c 
+fs *
+f case.0x4002e5a4.0 1 0x4002e62c 
+fs *
+f case.0x4002e5a4.1 1 0x4002e640 
+fs *
+f case.0x4002e5a4.2 1 0x4002e654 
+fs *
+f case.0x4002e5a4.3 1 0x4002e668 
+fs *
+f switch.0x4002e5a4 1 0x4002e5a4 
+fs *
+f case.default.0x4002e5a8 1 0x4002e5a8 
+fs *
+f case.0x4002e73c.0 1 0x4002e7f4 
+fs *
+f case.0x4002e73c.1 1 0x4002e808 
+fs *
+f case.0x4002e73c.2 1 0x4002e81c 
+fs *
+f case.0x4002e73c.3 1 0x4002e830 
+fs *
+f case.0x4002e73c.4 1 0x4002e844 
+fs *
+f case.0x4002e73c.5 1 0x4002e874 
+fs *
+f case.0x4002e73c.6 1 0x4002e874 
+fs *
+f case.0x4002e73c.7 1 0x4002e874 
+fs *
+f case.0x4002e73c.8 1 0x4002e874 
+fs *
+f case.0x4002e73c.9 1 0x4002e874 
+fs *
+f case.0x4002e73c.10 1 0x4002e874 
+fs *
+f case.0x4002e73c.11 1 0x4002e874 
+fs *
+f case.0x4002e73c.12 1 0x4002e874 
+fs *
+f case.0x4002e73c.13 1 0x4002e850 
+fs *
+f case.0x4002e73c.14 1 0x4002e85c 
+fs *
+f case.0x4002e73c.15 1 0x4002e868 
+fs *
+f switch.0x4002e73c 1 0x4002e73c 
+fs *
+f case.default.0x4002e740 1 0x4002e740 
+fs *
+f case.0x4002e8f4.0 1 0x4002e9ac 
+fs *
+f case.0x4002e8f4.1 1 0x4002e9c0 
+fs *
+f case.0x4002e8f4.2 1 0x4002e9d4 
+fs *
+f case.0x4002e8f4.3 1 0x4002e9e8 
+fs *
+f case.0x4002e8f4.4 1 0x4002e9fc 
+fs *
+f case.0x4002e8f4.5 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.6 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.7 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.8 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.9 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.10 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.11 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.12 1 0x4002ea2c 
+fs *
+f case.0x4002e8f4.13 1 0x4002ea08 
+fs *
+f case.0x4002e8f4.14 1 0x4002ea14 
+fs *
+f case.0x4002e8f4.15 1 0x4002ea20 
+fs *
+f switch.0x4002e8f4 1 0x4002e8f4 
+fs *
+f case.default.0x4002e8f8 1 0x4002e8f8 
+fs *
+f case.0x4002f000.0 1 0x4002f08c 
+fs *
+f case.0x4002f000.1 1 0x4002f0a0 
+fs *
+f case.0x4002f000.2 1 0x4002f0b4 
+fs *
+f case.0x4002f000.3 1 0x4002f0c8 
+fs *
+f case.0x4002f000.4 1 0x4002f0dc 
+fs *
+f switch.0x4002f000 1 0x4002f000 
+fs *
+f case.default.0x4002f004 1 0x4002f004 
+fs functions
+f banner 104 0x4002c9d0 
+f fcn.40030a10 64 0x40030a10 
+f fcn.40030538 1224 0x40030538 
+fs *
+f str.TCC8900_WINCE_LINUX_DEMO 25 0x40091da4 
+fs *
+f str.____DATE:Aug__5_2010__TIME:15:14:23_4 37 0x40091dc0 
+fs *
+f str. 47 0x40091de8 
+fs *
+f str.CHIP_ID:_0x_X_X_7 17 0x40091e18 
+fs functions
+f fcn.400492b0 924 0x400492b0 
+f uart_something_bis 168 0x40030aec 
+f uart_something 212 0x40030aec 
+f fcn.40030a50 152 0x40030a50 
+f uart_something_tris 4 0x40030c54 
+f uart_something 120 0x4002c3c8 
+f fcn.40030bc8 32 0x40030bc8 
+f fcn.40030bec 96 0x40030bec 
+f fcn.40030cb0 4 0x40030cb0 
+f fcn.40030cf8 52 0x40030cf8 
+f fcn.40030d5c 88 0x40030d5c 
+f fcn.40030dc8 40 0x40030dc8 
+f fcn.40030df0 88 0x40030df0 
+f fcn.40030e4c 4 0x40030e4c 
+f fcn.40030efc 120 0x40030efc 
+f fcn.40030f78 96 0x40030f78 
+f fcn.40031398 112 0x40031398 
+f fcn.400314b4 132 0x400314b4 
+f fcn.40049690 132 0x40049690 
+f fcn.4008c934 2952 0x4008c934 
+f ddi_cache_something 52 0x40031544 
+f gpio_something 196 0x40031634 
+f fcn.40031770 1640 0x40031770 
+f fcn.40031e58 96 0x40031e58 
+f fcn.40031ec0 2384 0x40031ec0 
+f fcn.40032894 612 0x40032894 
+# eval
+"e anal.a2f = false"
+"e anal.afterjmp = true"
+"e anal.arch = arm"
+"e anal.armthumb = false"
+"e anal.autoname = true"
+"e anal.bb.maxsize = 1024"
+"e anal.brokenrefs = false"
+"e anal.calls = false"
+"e anal.cjmpref = false"
+"e anal.cpp.abi = itanium"
+"e anal.cpu = v8"
+"e anal.datarefs = false"
+"e anal.depth = 64"
+"e anal.endsize = true"
+"e anal.eobjmp = false"
+"e anal.esil = false"
+"e anal.fcnprefix = fcn"
+"e anal.from = 0xffffffffffffffff"
+"e anal.gp = 0"
+"e anal.gp2 = 0"
+"e anal.graph_depth = 256"
+"e anal.hasnext = false"
+"e anal.hpskip = false"
+"e anal.ijmp = false"
+"e anal.in = io.maps"
+"e anal.jmpabove = true"
+"e anal.jmpmid = true"
+"e anal.jmpref = true"
+"e anal.jmptbl = true"
+"e anal.limits = false"
+"e anal.maxreflines = 0"
+"e anal.noncode = false"
+"e anal.nopskip = true"
+"e anal.prelude = "
+"e anal.ptrdepth = 3"
+"e anal.pushret = false"
+"e anal.recont = false"
+"e anal.refstr = false"
+"e anal.rnr = false"
+"e anal.sleep = 0"
+"e anal.strings = false"
+"e anal.timeout = 0"
+"e anal.to = 0xffffffffffffffff"
+"e anal.types.constraint = false"
+"e anal.types.spec = gcc"
+"e anal.types.verbose = false"
+"e anal.vars = true"
+"e anal.vinfun = true"
+"e anal.vinfunrange = false"
+"e asm.anal = false"
+"e asm.arch = arm"
+"e asm.assembler = "
+"e asm.bb.middle = true"
+"e asm.bbline = false"
+"e asm.bits = 32"
+"e asm.bytes = true"
+"e asm.bytespace = false"
+"e asm.calls = true"
+"e asm.capitalize = false"
+"e asm.cmt.col = 71"
+"e asm.cmt.flgrefs = true"
+"e asm.cmt.fold = false"
+"e asm.cmt.off = nodup"
+"e asm.cmt.patch = false"
+"e asm.cmt.refs = false"
+"e asm.cmt.right = true"
+"e asm.comments = true"
+"e asm.cpu = v8"
+"e asm.cycles = false"
+"e asm.cyclespace = false"
+"e asm.decode = false"
+"e asm.decoff = false"
+"e asm.demangle = true"
+"e asm.describe = true"
+"e asm.dwarf = true"
+"e asm.dwarf.abspath = false"
+"e asm.dwarf.file = true"
+"e asm.emu = false"
+"e asm.esil = false"
+"e asm.family = false"
+"e asm.features = "
+"e asm.filter = true"
+"e asm.flags = true"
+"e asm.flags.inbytes = false"
+"e asm.flags.middle = 2"
+"e asm.flags.offset = false"
+"e asm.flags.real = false"
+"e asm.functions = true"
+"e asm.highlight = "
+"e asm.hint.cdiv = false"
+"e asm.hint.jmp = false"
+"e asm.hint.lea = true"
+"e asm.hint.pos = 1"
+"e asm.hints = true"
+"e asm.imm.arm = 0"
+"e asm.imm.str = true"
+"e asm.imm.trim = false"
+"e asm.indent = false"
+"e asm.indentspace = 2"
+"e asm.invhex = false"
+"e asm.jmpsub = false"
+"e asm.lbytes = true"
+"e asm.lines = true"
+"e asm.lines.bb = true"
+"e asm.lines.call = false"
+"e asm.lines.fcn = true"
+"e asm.lines.out = true"
+"e asm.lines.ret = false"
+"e asm.lines.right = false"
+"e asm.lines.wide = false"
+"e asm.lines.width = 7"
+"e asm.marks = true"
+"e asm.maxflags = 0"
+"e asm.meta = true"
+"e asm.midcursor = false"
+"e asm.middle = false"
+"e asm.minicols = false"
+"e asm.nbytes = 6"
+"e asm.nodup = false"
+"e asm.noisy = true"
+"e asm.offset = true"
+"e asm.os = linux"
+"e asm.parser = arm.pseudo"
+"e asm.payloads = false"
+"e asm.pcalign = 4"
+"e asm.pseudo = false"
+"e asm.reloff = false"
+"e asm.reloff.flags = false"
+"e asm.relsub = true"
+"e asm.section = false"
+"e asm.section.col = 20"
+"e asm.section.name = true"
+"e asm.section.perm = false"
+"e asm.section.sub = false"
+"e asm.seggrn = 4"
+"e asm.segoff = false"
+"e asm.size = false"
+"e asm.slow = true"
+"e asm.stackptr = false"
+"e asm.strenc = guess"
+"e asm.strip = "
+"e asm.symbol = false"
+"e asm.symbol.col = 40"
+"e asm.syntax = intel"
+"e asm.tabs = 0"
+"e asm.tabs.off = 0"
+"e asm.tabs.once = false"
+"e asm.tailsub = false"
+"e asm.trace = false"
+"e asm.tracespace = false"
+"e asm.ucase = false"
+"e asm.usercomments = false"
+"e asm.var = true"
+"e asm.var.access = false"
+"e asm.var.sub = true"
+"e asm.var.submin = 256"
+"e asm.var.subonly = true"
+"e asm.var.summary = 0"
+"e asm.xrefs = true"
+"e asm.xrefs.fold = 5"
+"e asm.xrefs.max = 20"
+"e bin.b64str = false"
+"e bin.baddr = 0"
+"e bin.classes = true"
+"e bin.dbginfo = true"
+"e bin.debase64 = false"
+"e bin.demangle = true"
+"e bin.demanglecmd = false"
+"e bin.filter = true"
+"e bin.force = "
+"e bin.laddr = 1073741824"
+"e bin.lang = "
+"e bin.libs = false"
+"e bin.maxstr = 0"
+"e bin.maxstrbuf = 0x00a00000"
+"e bin.minstr = 0"
+"e bin.prefix = "
+"e bin.rawstr = true"
+"e bin.relocs = true"
+"e bin.strfilter = "
+"e bin.strings = false"
+"e bin.strpurge = "
+"e bin.useldr = true"
+"e bin.usextr = true"
+"e bin.verbose = true"
+"e cfg.bigendian = false"
+"e cfg.corelog = false"
+"e cfg.debug = false"
+"e cfg.editor = vi"
+"e cfg.fortunes = true"
+"e cfg.fortunes.clippy = false"
+"e cfg.fortunes.tts = false"
+"e cfg.fortunes.type = tips,fun"
+"e cfg.hashlimit = 0x00a00000"
+"e cfg.log.colors = false"
+"e cfg.log.file = "
+"e cfg.log.level = 4"
+"e cfg.log.srcinfo = false"
+"e cfg.log.traplevel = 6"
+"e cfg.newtab = false"
+"e cfg.plugins = true"
+"e cfg.prefixdump = dump"
+"e cfg.r2wars = false"
+"e cfg.sandbox = false"
+"e cfg.user = pid16529"
+"e cfg.wseek = false"
+"e cmd.bp = "
+"e cmd.cprompt = "
+"e cmd.depth = 10"
+"e cmd.esil.intr = "
+"e cmd.esil.ioer = "
+"e cmd.esil.mdev = "
+"e cmd.esil.todo = "
+"e cmd.esil.trap = "
+"e cmd.fcn.delete = "
+"e cmd.fcn.new = "
+"e cmd.fcn.rename = "
+"e cmd.gprompt = "
+"e cmd.hexcursor = "
+"e cmd.hit = "
+"e cmd.hitinfo = 1"
+"e cmd.load = "
+"e cmd.log = "
+"e cmd.onsyscall = "
+"e cmd.open = "
+"e cmd.pdc = "
+"e cmd.prompt = "
+"e cmd.repeat = false"
+"e cmd.stack = "
+"e cmd.times = "
+"e cmd.visual = "
+"e cmd.vprompt = "
+"e cmd.xterm = xterm -bg black -fg gray -e"
+"e dbg.aftersyscall = true"
+"e dbg.args = "
+"e dbg.backend = native"
+"e dbg.bep = loader"
+"e dbg.bpinmaps = true"
+"e dbg.bpsize = 4"
+"e dbg.bpsysign = false"
+"e dbg.btalgo = fuzzy"
+"e dbg.btdepth = 128"
+"e dbg.clone = false"
+"e dbg.consbreak = false"
+"e dbg.exe.path = "
+"e dbg.execs = false"
+"e dbg.exitkills = true"
+"e dbg.follow = 64"
+"e dbg.follow.child = false"
+"e dbg.forks = false"
+"e dbg.funcarg = false"
+"e dbg.gdb.page_size = 0x00001000"
+"e dbg.gdb.retries = 10"
+"e dbg.glibc.fc_offset = 576"
+"e dbg.glibc.ma_offset = 0"
+"e dbg.glibc.tcache = true"
+"e dbg.hwbp = 0"
+"e dbg.libc.dbglib = "
+"e dbg.libs = "
+"e dbg.malloc = glibc"
+"e dbg.profile = "
+"e dbg.slow = false"
+"e dbg.status = false"
+"e dbg.swstep = false"
+"e dbg.threads = false"
+"e dbg.trace = false"
+"e dbg.trace.inrange = false"
+"e dbg.trace.libs = true"
+"e dbg.trace.tag = 0"
+"e dbg.unlibs = "
+"e dbg.verbose = true"
+"e diff.bare = false"
+"e diff.from = 0"
+"e diff.levenstein = false"
+"e diff.sort = addr"
+"e diff.to = 0"
+"e dir.dbgsnap = ."
+"e dir.depth = 10"
+"e dir.magic = /home/packz/bin/prefix/radare2/share/radare2/3.2.1/magic"
+"e dir.plugins = /home/packz/bin/prefix/radare2/lib/radare2/3.2.1"
+"e dir.prefix = /home/packz/bin/prefix/radare2"
+"e dir.projects = ~/.local/share/radare2/projects"
+"e dir.source = "
+"e dir.types = /usr/include"
+"e dir.zigns = ~/.local/share/radare2/zigns"
+"e emu.pre = false"
+"e emu.skip = ds"
+"e emu.ssa = false"
+"e emu.stack = false"
+"e emu.str = false"
+"e emu.strflag = true"
+"e emu.strinv = true"
+"e emu.stroff = false"
+"e emu.write = false"
+"e esil.addr.size = 64"
+"e esil.breakoninvalid = false"
+"e esil.exectrap = false"
+"e esil.fillstack = "
+"e esil.gotolimit = 0x00001000"
+"e esil.iotrap = true"
+"e esil.mdev.range = "
+"e esil.nonull = false"
+"e esil.prestep = true"
+"e esil.romem = false"
+"e esil.stack.addr = 0x00100000"
+"e esil.stack.depth = 32"
+"e esil.stack.pattern = 0"
+"e esil.stack.size = 0x000f0000"
+"e esil.stats = false"
+"e esil.verbose = 0"
+"e file.desc = "
+"e file.info = false"
+"e file.lastpath = "
+"e file.loadalign = 0x00000400"
+"e file.location = "
+"e file.md5 = 163c0f6ab62af12ba939ce71aab00d08"
+"e file.offset = "
+"e file.openmany = 1"
+"e file.path = "
+"e file.sha1 = ca8452e9363e1dbf9716d96258e0f363a662c77f"
+"e file.type = "
+"e fs.view = normal"
+"e graph.bytes = false"
+"e graph.cmtright = false"
+"e graph.comments = true"
+"e graph.dotted = false"
+"e graph.edges = 2"
+"e graph.font = Courier"
+"e graph.from = 0xffffffffffffffff"
+"e graph.gv.current = false"
+"e graph.gv.edge = "
+"e graph.gv.format = gif"
+"e graph.gv.graph = "
+"e graph.gv.node = "
+"e graph.gv.spline = "
+"e graph.hints = true"
+"e graph.invscroll = false"
+"e graph.json.usenames = true"
+"e graph.layout = 0"
+"e graph.linemode = 1"
+"e graph.nodejmps = true"
+"e graph.offset = false"
+"e graph.refs = false"
+"e graph.scroll = 5"
+"e graph.title = "
+"e graph.to = 0xffffffffffffffff"
+"e graph.web = false"
+"e hex.ascii = true"
+"e hex.bytes = true"
+"e hex.cols = 16"
+"e hex.comments = true"
+"e hex.compact = false"
+"e hex.depth = 5"
+"e hex.flagsz = 0"
+"e hex.hdroff = false"
+"e hex.header = true"
+"e hex.onechar = false"
+"e hex.pairs = true"
+"e hex.pcols = 40"
+"e hex.stride = 0"
+"e hex.style = false"
+"e http.allow = "
+"e http.bind = localhost"
+"e http.browser = xdg-open"
+"e http.cors = false"
+"e http.dietime = 0"
+"e http.dirlist = false"
+"e http.homeroot = ~/.local/share/radare2/www"
+"e http.log = true"
+"e http.logfile = "
+"e http.maxport = 9999"
+"e http.maxsize = 0"
+"e http.port = 9090"
+"e http.referer = "
+"e http.root = /home/packz/bin/prefix/radare2/share/radare2/3.2.1/www"
+"e http.sandbox = true"
+"e http.timeout = 3"
+"e http.ui = m"
+"e http.upget = false"
+"e http.upload = false"
+"e http.uproot = /tmp"
+"e http.uri = "
+"e http.verbose = true"
+"e hud.path = "
+"e io.0xff = 255"
+"e io.aslr = false"
+"e io.autofd = true"
+"e io.cache = false"
+"e io.cache.auto = false"
+"e io.cache.read = false"
+"e io.cache.write = false"
+"e io.exec = true"
+"e io.ff = true"
+"e io.pava = false"
+"e io.pcache = false"
+"e io.pcache.read = false"
+"e io.pcache.write = false"
+"e io.va = true"
+"e key.S = "
+"e key.f1 = "
+"e key.f10 = "
+"e key.f11 = "
+"e key.f12 = "
+"e key.f2 = "
+"e key.f3 = "
+"e key.f4 = "
+"e key.f5 = "
+"e key.f6 = "
+"e key.f7 = "
+"e key.f8 = "
+"e key.f9 = "
+"e key.s = "
+"e lines.abs = false"
+"e lines.from = 0"
+"e lines.to = $s"
+"e magic.depth = 100"
+"e pdb.autoload = 0"
+"e pdb.extract = 1"
+"e pdb.server = https://msdl.microsoft.com/download/symbols"
+"e pdb.symstore = /home/packz/.local/share/radare2/pdb"
+"e pdb.useragent = Microsoft-Symbol-Server/6.11.0001.402"
+"e prj.files = false"
+"e prj.git = false"
+"e prj.gpg = false"
+"e prj.name = pico"
+"e prj.simple = false"
+"e prj.zip = false"
+"e rap.loop = true"
+"e rop.comments = false"
+"e rop.conditional = false"
+"e rop.db = true"
+"e rop.len = 5"
+"e rop.sdb = false"
+"e rop.subchains = false"
+"e scr.breaklines = false"
+"e scr.breakword = "
+"e scr.color = 3"
+"e scr.color.args = true"
+"e scr.color.bytes = true"
+"e scr.color.grep = false"
+"e scr.color.ops = true"
+"e scr.color.pipe = false"
+"e scr.columns = 0"
+"e scr.dumpcols = false"
+"e scr.echo = false"
+"e scr.feedback = 1"
+"e scr.fgets = false"
+"e scr.fix.columns = 0"
+"e scr.fix.rows = 0"
+"e scr.flush = false"
+"e scr.fps = false"
+"e scr.highlight = "
+"e scr.highlight.grep = false"
+"e scr.histsave = true"
+"e scr.html = false"
+"e scr.interactive = true"
+"e scr.last = true"
+"e scr.linesleep = 0"
+"e scr.nkey = flag"
+"e scr.null = false"
+"e scr.pager = "
+"e scr.pagesize = 1"
+"e scr.prompt = true"
+"e scr.prompt.file = false"
+"e scr.prompt.flag = false"
+"e scr.prompt.sect = false"
+"e scr.rainbow = false"
+"e scr.randpal = false"
+"e scr.responsive = false"
+"e scr.rows = 0"
+"e scr.scrollbar = false"
+"e scr.seek = "
+"e scr.slow = true"
+"e scr.strconv = asciiesc"
+"e scr.tee = "
+"e scr.tts = false"
+"e scr.utf8 = false"
+"e scr.utf8.curvy = false"
+"e scr.wheel = true"
+"e scr.wheel.nkey = false"
+"e scr.wheel.speed = 4"
+"e scr.wideoff = false"
+"e scr.zoneflags = true"
+"e search.align = 0"
+"e search.chunk = 0"
+"e search.contiguous = true"
+"e search.distance = 0"
+"e search.esilcombo = 8"
+"e search.flags = true"
+"e search.from = 0xffffffffffffffff"
+"e search.in = io.maps"
+"e search.kwidx = 2"
+"e search.maxhits = 0"
+"e search.overlap = false"
+"e search.prefix = hit"
+"e search.show = true"
+"e search.to = 0xffffffffffffffff"
+"e stack.anotated = false"
+"e stack.bytes = true"
+"e stack.delta = 0"
+"e stack.reg = SP"
+"e stack.size = 64"
+"e str.escbslash = false"
+"e tcp.islocal = false"
+"e time.fmt = %Y-%m-%d %H:%M:%S %z"
+"e time.zone = 0"
+"e zign.autoload = false"
+"e zign.bytes = true"
+"e zign.graph = true"
+"e zign.hash = true"
+"e zign.maxsz = 500"
+"e zign.mincc = 10"
+"e zign.minsz = 16"
+"e zign.offset = true"
+"e zign.prefix = sign"
+"e zign.refs = true"
+"e zoom.byte = h"
+"e zoom.from = 0"
+"e zoom.in = io.map"
+"e zoom.maxsz = 512"
+"e zoom.to = 0"
+ofs Pico SP-H03/tccboot42.bin r-x
+om 3 0x40000000 0xc25f4 0x0 r-x
+# meta
+CCu base64:bG9vcA== @ 0x40000174
+CCu base64:c3dpdGNoIHRhYmxlICg0IGNhc2VzKSBhdCAweDQwMDJlNWFj @ 0x4002e5a4
+CCu base64:c3dpdGNoIHRhYmxlICgxNiBjYXNlcykgYXQgMHg0MDAyZTc0NA== @ 0x4002e73c
+CCu base64:c3dpdGNoIHRhYmxlICgxNiBjYXNlcykgYXQgMHg0MDAyZThmYw== @ 0x4002e8f4
+CCu base64:c3dpdGNoIHRhYmxlICg1IGNhc2VzKSBhdCAweDQwMDJmMDA4 @ 0x4002f000
+CCu base64:c3dpdGNoIHRhYmxlICg4NCBjYXNlcykgYXQgMHg0MDAzMTA2OA== @ 0x40031060
+CCu base64:c2VlIHBnOTQgQ0tDIFJlZ2lzdGVyIE1hcA== @ 0x4007b40c
+Cc 255 0x4002c5d0 # 
+Cd 4 @ 0x00000028
+Cd 4 @ 0x0000002c
+Cd 4 @ 0x00000030
+Cd 4 @ 0x00000034
+Cd 4 @ 0x00000038
+Cd 4 @ 0x0000003c
+Cd 4 @ 0x00000040
+Cd 4 @ 0x40000000
+Cd 4 @ 0x40000004
+Cd 4 @ 0x40000028
+Cd 4 @ 0x4000002c
+Cd 4 @ 0x40000030
+Cd 4 @ 0x40000034
+Cd 4 @ 0x40000038
+Cd 4 @ 0x4000003c
+Cd 4 @ 0x40000040
+Cd 4 @ 0x40000044
+Cd 4 @ 0x40000048
+Cd 4 @ 0x400000ac
+Cd 4 @ 0x4002c440
+Cd 4 @ 0x4002c500
+Cd 4 @ 0x4002c5b8
+Cd 4 @ 0x4002c5bc
+Cd 4 @ 0x4002c5c0
+Cd 4 @ 0x4002c5c4
+Cd 4 @ 0x4002c5c8
+Cd 4 @ 0x4002c5cc
+Cd 4 @ 0x4002c614
+Cd 4 @ 0x4002c618
+Cd 4 @ 0x4002c644
+Cd 4 @ 0x4002c648
+Cd 4 @ 0x4002c7a4
+Cd 4 @ 0x4002c7a8
+Cd 4 @ 0x4002c9a0
+Cd 4 @ 0x4002c9a4
+Cd 4 @ 0x4002c9a8
+Cd 4 @ 0x4002c9ac
+Cd 4 @ 0x4002c9b0
+Cd 4 @ 0x4002c9b4
+Cd 4 @ 0x4002c9b8
+Cd 4 @ 0x4002c9bc
+Cd 4 @ 0x4002c9c0
+Cd 4 @ 0x4002c9c4
+Cd 4 @ 0x4002c9c8
+Cd 4 @ 0x4002c9cc
+Cd 4 @ 0x4002e328
+Cd 4 @ 0x4002e5ac
+Cd 4 @ 0x4002e5b0
+Cd 4 @ 0x4002e5b4
+Cd 4 @ 0x4002e5b8
+Cd 4 @ 0x4002e744
+Cd 4 @ 0x4002e748
+Cd 4 @ 0x4002e74c
+Cd 4 @ 0x4002e750
+Cd 4 @ 0x4002e754
+Cd 4 @ 0x4002e758
+Cd 4 @ 0x4002e75c
+Cd 4 @ 0x4002e760
+Cd 4 @ 0x4002e764
+Cd 4 @ 0x4002e768
+Cd 4 @ 0x4002e76c
+Cd 4 @ 0x4002e770
+Cd 4 @ 0x4002e774
+Cd 4 @ 0x4002e778
+Cd 4 @ 0x4002e77c
+Cd 4 @ 0x4002e780
+Cd 4 @ 0x4002e8fc
+Cd 4 @ 0x4002e900
+Cd 4 @ 0x4002e904
+Cd 4 @ 0x4002e908
+Cd 4 @ 0x4002e90c
+Cd 4 @ 0x4002e910
+Cd 4 @ 0x4002e914
+Cd 4 @ 0x4002e918
+Cd 4 @ 0x4002e91c
+Cd 4 @ 0x4002e920
+Cd 4 @ 0x4002e924
+Cd 4 @ 0x4002e928
+Cd 4 @ 0x4002e92c
+Cd 4 @ 0x4002e930
+Cd 4 @ 0x4002e934
+Cd 4 @ 0x4002e938
+Cd 4 @ 0x4002f008
+Cd 4 @ 0x4002f00c
+Cd 4 @ 0x4002f010
+Cd 4 @ 0x4002f014
+Cd 4 @ 0x4002f018
+Cd 4 @ 0x40030ae8
+Cd 4 @ 0x40030bc0
+Cd 4 @ 0x40030bc4
+Cd 4 @ 0x40030be8
+Cd 4 @ 0x40030c4c
+Cd 4 @ 0x40030c50
+Cd 4 @ 0x40030cac
+Cd 4 @ 0x40030d54
+Cd 4 @ 0x40030d58
+Cd 4 @ 0x40030e48
+Cd 4 @ 0x40030f74
+Cd 4 @ 0x40031068
+Cd 4 @ 0x4003106c
+Cd 4 @ 0x40031070
+Cd 4 @ 0x40031074
+Cd 4 @ 0x40031078
+Cd 4 @ 0x4003107c
+Cd 4 @ 0x40031080
+Cd 4 @ 0x40031084
+Cd 4 @ 0x40031088
+Cd 4 @ 0x4003108c
+Cd 4 @ 0x40031090
+Cd 4 @ 0x40031094
+Cd 4 @ 0x40031098
+Cd 4 @ 0x4003109c
+Cd 4 @ 0x400310a0
+Cd 4 @ 0x400310a4
+Cd 4 @ 0x400310a8
+Cd 4 @ 0x400310ac
+Cd 4 @ 0x400310b0
+Cd 4 @ 0x400310b4
+Cd 4 @ 0x400310b8
+Cd 4 @ 0x400310bc
+Cd 4 @ 0x400310c0
+Cd 4 @ 0x400310c4
+Cd 4 @ 0x400310c8
+Cd 4 @ 0x400310cc
+Cd 4 @ 0x400310d0
+Cd 4 @ 0x400310d4
+Cd 4 @ 0x400310d8
+Cd 4 @ 0x400310dc
+Cd 4 @ 0x400310e0
+Cd 4 @ 0x400310e4
+Cd 4 @ 0x400310e8
+Cd 4 @ 0x400310ec
+Cd 4 @ 0x400310f0
+Cd 4 @ 0x400310f4
+Cd 4 @ 0x400310f8
+Cd 4 @ 0x400310fc
+Cd 4 @ 0x40031100
+Cd 4 @ 0x40031104
+Cd 4 @ 0x40031108
+Cd 4 @ 0x4003110c
+Cd 4 @ 0x40031110
+Cd 4 @ 0x40031114
+Cd 4 @ 0x40031118
+Cd 4 @ 0x4003111c
+Cd 4 @ 0x40031120
+Cd 4 @ 0x40031124
+Cd 4 @ 0x40031128
+Cd 4 @ 0x4003112c
+Cd 4 @ 0x40031130
+Cd 4 @ 0x40031134
+Cd 4 @ 0x40031138
+Cd 4 @ 0x4003113c
+Cd 4 @ 0x40031140
+Cd 4 @ 0x40031144
+Cd 4 @ 0x40031148
+Cd 4 @ 0x4003114c
+Cd 4 @ 0x40031150
+Cd 4 @ 0x40031154
+Cd 4 @ 0x40031158
+Cd 4 @ 0x4003115c
+Cd 4 @ 0x40031160
+Cd 4 @ 0x40031164
+Cd 4 @ 0x40031168
+Cd 4 @ 0x4003116c
+Cd 4 @ 0x40031170
+Cd 4 @ 0x40031174
+Cd 4 @ 0x40031178
+Cd 4 @ 0x4003117c
+Cd 4 @ 0x40031180
+Cd 4 @ 0x40031184
+Cd 4 @ 0x40031188
+Cd 4 @ 0x4003118c
+Cd 4 @ 0x40031190
+Cd 4 @ 0x40031194
+Cd 4 @ 0x40031198
+Cd 4 @ 0x4003119c
+Cd 4 @ 0x400311a0
+Cd 4 @ 0x400311a4
+Cd 4 @ 0x400311a8
+Cd 4 @ 0x400311ac
+Cd 4 @ 0x400311b0
+Cd 4 @ 0x400311b4
+Cd 4 @ 0x400314b0
+Cd 4 @ 0x40031538
+Cd 4 @ 0x4003153c
+Cd 4 @ 0x40031540
+Cd 4 @ 0x40031630
+Cd 4 @ 0x40031768
+Cd 4 @ 0x4003176c
+Cd 4 @ 0x40031e28
+Cd 4 @ 0x40031e2c
+Cd 4 @ 0x40031e30
+Cd 4 @ 0x40031e34
+Cd 4 @ 0x40031e38
+Cd 4 @ 0x40031e3c
+Cd 4 @ 0x40031e40
+Cd 4 @ 0x40031e44
+Cd 4 @ 0x40031e48
+Cd 4 @ 0x40031e4c
+Cd 4 @ 0x40031e50
+Cd 4 @ 0x40031e54
+Cd 4 @ 0x40031eb8
+Cd 4 @ 0x40031ebc
+Cd 4 @ 0x40032860
+Cd 4 @ 0x40032864
+Cd 4 @ 0x40032868
+Cd 4 @ 0x4003286c
+Cd 4 @ 0x40032870
+Cd 4 @ 0x40032874
+Cd 4 @ 0x40032878
+Cd 4 @ 0x4003287c
+Cd 4 @ 0x40032880
+Cd 4 @ 0x40032884
+Cd 4 @ 0x40032888
+Cd 4 @ 0x4003288c
+Cd 4 @ 0x40032890
+Cd 4 @ 0x400729c4
+Cd 4 @ 0x400729c8
+Cd 4 @ 0x00000044
+Cd 4 @ 0x00000048
+Cd 4 @ 0x000000ac
+Cs 25 @ 0x40091da4 # TCC8900_WINCE_LINUX_DEMO
+Cs 37 @ 0x40091dc0 #     DATE:Aug  5 2010, TIME:15:14:23\n4
+Cs 47 @ 0x40091de8 # =============================================\n
+Cs 17 @ 0x40091e18 # CHIP ID: 0x%X%X\n7
+Ct arg4 @ 0x40030ff8
+Ct arg4 @ 0x40031040
+Ct arg4 @ 0x40031234
+Ct arg4 @ 0x40031258
+Ct arg4 @ 0x400312a0
+Ct arg4 @ 0x400312c0
+Ct arg4 @ 0x400312f0
+Ct arg4 @ 0x40031328
+Ct arg4 @ 0x0000007c
+axd 0x4000025c 0x4000004c
+axd 0x40000260 0x40000050
+axC 0x4002e28c 0x4000006c
+axd 0x40000264 0x40000070
+axd 0x400000ac 0x400000a8
+axd 0x40000044 0x400000b4
+axd 0x40000048 0x400000b8
+axd 0x40000268 0x400000d0
+axd 0x4000026c 0x400000f8
+axd 0x40000270 0x4000010c
+axd 0x40000274 0x40000134
+axd 0x40000278 0x40000148
+axd 0x4000027c 0x4000015c
+axd 0x4002c440 0x4002c3d4
+axc 0x4002c420 0x4002c408
+axC 0x40030cf8 0x4002c41c
+axd 0x4002c500 0x4002c450
+axC 0x4008b118 0x4002c490
+axC 0x4002c3c8 0x4002c4d4
+axC 0x4006dd50 0x4002c4e8
+axd 0x4002c5b8 0x4002c524
+axd 0x4002c5bc 0x4002c530
+axd 0x4002c5c0 0x4002c53c
+axd 0x4002c5c4 0x4002c548
+axd 0x4002c5c8 0x4002c558
+axd 0x4002c5cc 0x4002c560
+axd 0x4002c644 0x4002c574
+axd 0x4002c648 0x4002c57c
+axd 0x4002c614 0x4002c5dc
+axd 0x4002c618 0x4002c5e8
+axC 0x4002e00c 0x4002c624
+axC 0x4007b32c 0x4002c628
+axC 0x400000b0 0x4002c62c
+axC 0x4002c518 0x4002c630
+axC 0x4007ad4c 0x4002c634
+axC 0x4002d120 0x4002c638
+axC 0x4002e314 0x4002c63c
+axc 0x4002c790 0x4002c698
+axc 0x4002c71c 0x4002c6bc
+axd 0x4002c7a4 0x4002c6e8
+axc 0x4002c704 0x4002c6f4
+axd 0x4002c7a8 0x4002c780
+axC 0x4002e574 0x4002c7bc
+axd 0x4002c9a0 0x4002c7c4
+axC 0x4002e574 0x4002c7d8
+axd 0x4002c9a0 0x4002c7e0
+axC 0x4002e574 0x4002c7f4
+axd 0x4002c9a0 0x4002c7fc
+axC 0x4002e574 0x4002c810
+axd 0x4002c9a0 0x4002c818
+axC 0x4002e688 0x4002c828
+axd 0x4002c9a0 0x4002c830
+axC 0x4002e8a4 0x4002c840
+axd 0x4002c9a0 0x4002c848
+axd 0x4002c9a4 0x4002c858
+axC 0x40030fd8 0x4002c864
+axd 0x4002c9a8 0x4002c868
+axC 0x40030fd8 0x4002c874
+axd 0x4002c9ac 0x4002c878
+axC 0x40030fd8 0x4002c884
+axd 0x4002c9b0 0x4002c888
+axC 0x40030fd8 0x4002c88c
+axC 0x4002ef1c 0x4002c894
+axd 0x4002c9b4 0x4002c89c
+axd 0x4002c9b8 0x4002c8b0
+axC 0x40030fd8 0x4002c8b8
+axC 0x4002ef1c 0x4002c8c0
+axd 0x4002c9b4 0x4002c8c8
+axd 0x4002c9bc 0x4002c8dc
+axC 0x40030fd8 0x4002c8e4
+axC 0x4002ef1c 0x4002c8ec
+axd 0x4002c9b4 0x4002c8f4
+axd 0x4002c9c0 0x4002c908
+axC 0x40030fd8 0x4002c910
+axC 0x4002ef1c 0x4002c918
+axd 0x4002c9b4 0x4002c920
+axd 0x4002c9c4 0x4002c934
+axC 0x40030fd8 0x4002c93c
+axC 0x4002ef1c 0x4002c944
+axd 0x4002c9b4 0x4002c94c
+axd 0x4002c9c8 0x4002c960
+axC 0x40030fd8 0x4002c968
+axC 0x4002ef1c 0x4002c970
+axd 0x4002c9b4 0x4002c978
+axd 0x4002c9cc 0x4002c98c
+axC 0x40030fd8 0x4002c994
+axd 0x4002ca38 0x4002c9dc
+axC 0x40030fd8 0x4002c9e0
+axd 0x4002ca3c 0x4002c9e4
+axd 0x4002ca40 0x4002c9e8
+axd 0x4002ca44 0x4002c9ec
+axC 0x40030fd8 0x4002c9f0
+axd 0x4002ca48 0x4002c9f4
+axd 0x4002ca4c 0x4002c9f8
+axC 0x40030fd8 0x4002c9fc
+axd 0x4002ca50 0x4002ca00
+axC 0x40030fd8 0x4002ca04
+axd 0x4002ca54 0x4002ca08
+axC 0x40030fd8 0x4002ca0c
+axC 0x40030a10 0x4002ca18
+axd 0x4002ca58 0x4002ca24
+axC 0x40030fd8 0x4002ca2c
+axd 0x4002d0ec 0x4002cfb0
+axC 0x4002ccf4 0x4002cfbc
+axC 0x4002e32c 0x4002cfc0
+axC 0x4002e368 0x4002cfc4
+axC 0x40030aec 0x4002cfc8
+axC 0x4008bd9c 0x4002cfcc
+axC 0x4008b45c 0x4002cfd0
+axC 0x4008ae20 0x4002cfd4
+axc 0x4002d008 0x4002cfe0
+axC 0x4008a474 0x4002cfe4
+axd 0x4002d0f0 0x4002cff4
+axC 0x4002e4a0 0x4002cff8
+axC 0x4008a474 0x4002d014
+axd 0x4002d0f4 0x4002d020
+axC 0x40030fd8 0x4002d028
+axC 0x4002cba4 0x4002d038
+axd 0x4002d0f8 0x4002d044
+axC 0x40030fd8 0x4002d04c
+axC 0x4008aff0 0x4002d05c
+axd 0x4002d0fc 0x4002d060
+axC 0x40030fd8 0x4002d064
+axC 0x4002ce18 0x4002d068
+axC 0x4002ccf4 0x4002d06c
+axc 0x4002d088 0x4002d070
+axd 0x4002d100 0x4002d074
+axC 0x40030fd8 0x4002d078
+axc 0x4002d088 0x4002d07c
+axd 0x4002d104 0x4002d080
+axC 0x40030fd8 0x4002d084
+axd 0x4002d108 0x4002d088
+axd 0x4002d10c 0x4002d08c
+axC 0x40030fd8 0x4002d090
+axC 0x40032cec 0x4002d094
+axC 0x4002c9d0 0x4002d098
+axd 0x4002d110 0x4002d09c
+axC 0x40030fd8 0x4002d0a0
+axC 0x4002c7ac 0x4002d0a4
+axd 0x4002d114 0x4002d0a8
+axC 0x40030fd8 0x4002d0ac
+axC 0x40032bcc 0x4002d0b0
+axC 0x400843a8 0x4002d0b4
+axd 0x4002d118 0x4002d0bc
+axC 0x4002cda0 0x4002d0c4
+axC 0x4008a474 0x4002d0c8
+axd 0x4002d11c 0x4002d0d0
+axC 0x40030fd8 0x4002d0d8
+axC 0x40085b94 0x4002d0e0
+axC 0x4002cfa4 0x4002d128
+axd 0x4002d144 0x4002d12c
+axC 0x40030fd8 0x4002d130
+axC 0x40072988 0x4002d134
+axC 0x4002da34 0x4002d138
+axC 0x4002e314 0x4002d13c
+axd 0x4002dc00 0x4002da40
+axC 0x40030fd8 0x4002da44
+axc 0x4002dbc8 0x4002da50
+axd 0x4002dc04 0x4002da54
+axC 0x40047d68 0x4002da68
+axd 0x4002dc08 0x4002da74
+axC 0x400492b0 0x4002da80
+axd 0x4002dc0c 0x4002da8c
+axC 0x400492b0 0x4002da98
+axd 0x4002dc10 0x4002daa4
+axC 0x400492b0 0x4002dab0
+axd 0x4002dc10 0x4002dab4
+axd 0x4002dc08 0x4002dac4
+axd 0x4002dc0c 0x4002dacc
+axd 0x4002dc14 0x4002dad4
+axC 0x40030fd8 0x4002dae0
+axc 0x4002db08 0x4002dae4
+axd 0x4002dc08 0x4002dae8
+axd 0x4002dc10 0x4002daf0
+axd 0x4002dc18 0x4002daf8
+axC 0x40030fd8 0x4002db04
+axd 0x4002dc08 0x4002db08
+axd 0x4002dc1c 0x4002db18
+axC 0x40030fd8 0x4002db1c
+axc 0x4002dbc8 0x4002db20
+axd 0x4002dc08 0x4002db24
+axd 0x4002dc10 0x4002db2c
+axd 0x4002dc08 0x4002db40
+axd 0x4002dc10 0x4002db48
+axC 0x40047d68 0x4002db7c
+axd 0x4002dc08 0x4002db80
+axd 0x4002dc04 0x4002db88
+axC 0x40033004 0x4002db90
+axd 0x4002dc04 0x4002dba0
+axd 0x4002dc20 0x4002dba8
+axd 0x4002dc04 0x4002dbac
+axC 0x40030fd8 0x4002dbb4
+axC 0x4002da10 0x4002dbb8
+axc 0x4002dbc8 0x4002dbbc
+axd 0x4002dc24 0x4002dbc0
+axC 0x40030fd8 0x4002dbc4
+axd 0x4002dc28 0x4002dbf0
+axC 0x40030fd8 0x4002dbf4
+axd 0x4002dcec 0x4002dc38
+axd 0x4002de78 0x4002dde4
+axd 0x4002de7c 0x4002de58
+axd 0x4002de80 0x4002de64
+axd 0x4002dee4 0x4002de90
+axd 0x4002df30 0x4002def4
+axd 0x4002e008 0x4002df44
+axc 0x4002dffc 0x4002dfd0
+axd 0x4002e270 0x4002e018
+axd 0x4002e274 0x4002e020
+axd 0x4002e278 0x4002e030
+axC 0x4002df34 0x4002e254
+axC 0x4002dc2c 0x4002e258
+axC 0x4002ddd8 0x4002e25c
+axC 0x4002de84 0x4002e260
+axC 0x4002dee8 0x4002e264
+axd 0x4002e328 0x4002e31c
+axC 0x40030fd8 0x4002e320
+axc 0x4002e324 0x4002e324
+axd 0x4002e4f8 0x4002e4ec
+axC 0x40030fd8 0x4002e4f0
+axd 0x4002e5ac 0x4002e5a4
+axc 0x4002e62c 0x4002e5a4
+axc 0x4002e640 0x4002e5a4
+axc 0x4002e654 0x4002e5a4
+axc 0x4002e668 0x4002e5a4
+axc 0x4002e608 0x4002e5a8
+axd 0x4002e680 0x4002e61c
+axd 0x4002e684 0x4002e63c
+axC 0x4008e024 0x4002e650
+axd 0x4002e890 0x4002e6bc
+axc 0x4002e71c 0x4002e6e0
+axd 0x4002e890 0x4002e728
+axd 0x4002e744 0x4002e73c
+axc 0x4002e7f4 0x4002e73c
+axc 0x4002e808 0x4002e73c
+axc 0x4002e81c 0x4002e73c
+axc 0x4002e830 0x4002e73c
+axc 0x4002e844 0x4002e73c
+axc 0x4002e850 0x4002e73c
+axc 0x4002e85c 0x4002e73c
+axc 0x4002e868 0x4002e73c
+axc 0x4002e874 0x4002e73c
+axc 0x4002e804 0x4002e740
+axc 0x4002e814 0x4002e7f4
+axC 0x4002e574 0x4002e808
+axd 0x4002e890 0x4002e814
+axd 0x4002e890 0x4002e82c
+axC 0x4008e024 0x4002e85c
+axc 0x4002e880 0x4002e868
+axd 0x4002e9fc 0x4002e8c8
+axd 0x4002e9fc 0x4002e8e0
+axd 0x4002e8fc 0x4002e8f4
+axc 0x4002e9ac 0x4002e8f4
+axc 0x4002e9c0 0x4002e8f4
+axc 0x4002e9d4 0x4002e8f4
+axc 0x4002e9e8 0x4002e8f4
+axc 0x4002e9fc 0x4002e8f4
+axc 0x4002ea08 0x4002e8f4
+axc 0x4002ea14 0x4002e8f4
+axc 0x4002ea20 0x4002e8f4
+axc 0x4002ea2c 0x4002e8f4
+axc 0x4002e9bc 0x4002e8f8
+axc 0x4002e9cc 0x4002e9ac
+axC 0x4002e574 0x4002e9c0
+axC 0x4008e024 0x4002e9e0
+axc 0x4002ea54 0x4002ea48
+axd 0x4002f0c4 0x4002ef54
+axc 0x4002f0b4 0x4002efe8
+axd 0x4002f008 0x4002f000
+axc 0x4002f08c 0x4002f000
+axc 0x4002f0a0 0x4002f000
+axc 0x4002f0b4 0x4002f000
+axc 0x4002f0c8 0x4002f000
+axc 0x4002f0dc 0x4002f000
+axc 0x4002f078 0x4002f004
+axC 0x4002e574 0x4002f07c
+axC 0x4008e024 0x4002f09c
+axc 0x4002f0b4 0x4002f0a8
+axC 0x40049690 0x4003055c
+axd 0x40030a00 0x40030560
+axd 0x40030a00 0x4003056c
+axd 0x40030a00 0x40030574
+axd 0x40030a04 0x400305ac
+axd 0x40030a08 0x400305b0
+axd 0x40030a04 0x400305b8
+axd 0x40030a0c 0x400305bc
+axd 0x40030a04 0x400305c4
+axd 0x40030a08 0x400305c8
+axd 0x40030a04 0x400305d0
+axc 0x4003062c 0x4003061c
+axd 0x40030a04 0x40030640
+axc 0x4003069c 0x4003068c
+axd 0x40030a04 0x400306b0
+axd 0x40030a04 0x400306fc
+axd 0x40030a04 0x40030748
+axc 0x400307a4 0x40030794
+axd 0x40030a04 0x400307b8
+axc 0x40030814 0x40030804
+axd 0x40030a04 0x40030828
+axc 0x40030884 0x40030874
+axd 0x40030a04 0x40030898
+axc 0x400308f4 0x400308e4
+axd 0x40030a04 0x40030908
+axc 0x40030964 0x40030954
+axd 0x40030a04 0x40030978
+axd 0x40030a04 0x400309bc
+axd 0x40030a00 0x400309c4
+axd 0x40030a04 0x400309cc
+axd 0x40030a00 0x400309d4
+axd 0x40030a04 0x400309dc
+axd 0x40030a00 0x400309ec
+axC 0x400492b0 0x400309f4
+axC 0x40030538 0x40030a28
+axd 0x40030ae8 0x40030a5c
+axd 0x40030bc0 0x40030af8
+axd 0x40030bc4 0x40030b00
+axC 0x40030a50 0x40030b08
+axd 0x40030be8 0x40030bd0
+axd 0x40030c4c 0x40030bfc
+axd 0x40030c4c 0x40030c08
+axd 0x40030c4c 0x40030c18
+axd 0x40030c50 0x40030c24
+axC 0x400492b0 0x40030c2c
+axd 0x40030c4c 0x40030c30
+axd 0x40030cac 0x40030c68
+axC 0x40030c54 0x40030c80
+axc 0x40030ce0 0x40030cc0
+axC 0x40030c54 0x40030cdc
+axd 0x40030d54 0x40030d0c
+axd 0x40030d58 0x40030d14
+axd 0x40030d54 0x40030d24
+axd 0x40030d54 0x40030d2c
+axd 0x40030d54 0x40030d3c
+axC 0x40030bc8 0x40030d68
+axc 0x40030db8 0x40030d80
+axC 0x40030bec 0x40030d8c
+axC 0x40030c54 0x40030de4
+axd 0x40030e48 0x40030e04
+axd 0x40030e48 0x40030e14
+axd 0x40030e48 0x40030e28
+axc 0x40030e40 0x40030e30
+axC 0x40030c54 0x40030e3c
+axC 0x40030e4c 0x40030ea4
+axC 0x40030df0 0x40030ed4
+axc 0x40030ef4 0x40030ed8
+axC 0x40030df0 0x40030ef0
+axd 0x40030f74 0x40030f1c
+axC 0x40030efc 0x40030f2c
+axd 0x40030f74 0x40030f34
+axC 0x40030df0 0x40030f68
+axc 0x40030fc0 0x40030f88
+axC 0x40030c54 0x40030fa0
+axC 0x40030c54 0x40030fbc
+axc 0x40031324 0x40030ff0
+axc 0x40031318 0x40031038
+axd 0x40031068 0x40031060
+axc 0x40031228 0x40031060
+axc 0x4003124c 0x40031060
+axc 0x40031270 0x40031060
+axc 0x40031294 0x40031060
+axc 0x400312b8 0x40031060
+axc 0x40031300 0x40031060
+axc 0x40031320 0x40031060
+axc 0x40031340 0x40031060
+axc 0x4003134c 0x40031060
+axc 0x40031350 0x40031060
+axc 0x400312e0 0x40031064
+axC 0x40030e4c 0x40031240
+axc 0x40031324 0x40031244
+axC 0x40030df0 0x40031270
+axC 0x40030efc 0x40031288
+axc 0x40031324 0x4003128c
+axC 0x40030efc 0x400312a8
+axc 0x40031324 0x400312ac
+axC 0x40030f78 0x400312c8
+axc 0x40031324 0x400312cc
+axC 0x40030df0 0x400312e4
+axc 0x40031324 0x400312e8
+axC 0x40030df0 0x40031314
+axC 0x40030df0 0x40031320
+axc 0x40031494 0x40031428
+axd 0x400314b0 0x40031430
+axc 0x40031478 0x40031444
+axd 0x40031538 0x400314c0
+axC 0x40049690 0x400314d4
+axd 0x40031538 0x400314d8
+axC 0x40049690 0x400314ec
+axd 0x40031538 0x400314f0
+axC 0x40049690 0x40031504
+axd 0x40031538 0x40031508
+axd 0x4003153c 0x40031514
+axd 0x40031540 0x40031518
+axC 0x4008c934 0x40031524
+axd 0x40031630 0x40031550
+axd 0x40031764 0x40031644
+axd 0x40031768 0x40031660
+axd 0x40031768 0x40031678
+axd 0x40031768 0x40031690
+axc 0x4003172c 0x400316c0
+axd 0x4003176c 0x400316cc
+axd 0x4003176c 0x400316e4
+axd 0x4003176c 0x400316fc
+axd 0x40031e28 0x4003178c
+axd 0x40031e2c 0x40031794
+axd 0x40031e30 0x400317a4
+axc 0x40031844 0x400317fc
+axC 0x40031634 0x40031854
+axd 0x40031e34 0x40031864
+axc 0x40031a68 0x40031a30
+axd 0x40031e38 0x40031a74
+axc 0x40031d64 0x40031d4c
+axd 0x40031e3c 0x40031d68
+axd 0x40031e40 0x40031d74
+axd 0x40031e44 0x40031d80
+axd 0x40031e48 0x40031d8c
+axd 0x40031e4c 0x40031d98
+axd 0x40031e50 0x40031da4
+axd 0x40031e54 0x40031db0
+axd 0x40031e54 0x40031dbc
+axd 0x40031e54 0x40031dc8
+axd 0x40031eb8 0x40031e68
+axd 0x40031ebc 0x40031e70
+axd 0x40032860 0x40031ed4
+axc 0x40031fb4 0x40031fa8
+axd 0x40032864 0x40031fd0
+axd 0x40032868 0x40031ff0
+axC 0x40030fd8 0x40031ff4
+axd 0x4003286c 0x40031ff8
+axC 0x40030fd8 0x40031ffc
+axC 0x4008e024 0x40032010
+axd 0x40032870 0x40032024
+axC 0x40030fd8 0x40032034
+axc 0x40032504 0x4003206c
+axC 0x4002f844 0x4003208c
+axC 0x4002fd3c 0x4003209c
+axc 0x400320dc 0x400320c8
+axC 0x4008e024 0x40032114
+axC 0x4008e024 0x40032154
+axd 0x40032874 0x40032164
+axd 0x40032874 0x40032174
+axd 0x40032878 0x400321a8
+axC 0x40030fd8 0x400321b8
+axC 0x4008e024 0x400321e8
+axC 0x4008e024 0x40032228
+axd 0x4003287c 0x4003229c
+axc 0x400322b0 0x400322a4
+axd 0x40032880 0x400322a8
+axc 0x400322e4 0x400322d0
+axd 0x40032874 0x400322e8
+axd 0x40032874 0x400322f8
+axd 0x40032884 0x40032344
+axC 0x40030fd8 0x40032354
+axc 0x400323c8 0x400323b4
+axc 0x400323fc 0x400323e8
+axc 0x400324e8 0x4003243c
+axc 0x40032474 0x40032460
+axc 0x400324a8 0x40032494
+axd 0x40032888 0x400324f0
+axC 0x40030fd8 0x400324f4
+axC 0x4002f844 0x40032528
+axC 0x4002fd3c 0x40032538
+axC 0x4008e024 0x40032554
+axC 0x4008e024 0x40032594
+axd 0x40032874 0x400325a4
+axd 0x40032874 0x400325b4
+axd 0x4003288c 0x400325ec
+axC 0x40030fd8 0x400325fc
+axd 0x40032890 0x40032644
+axC 0x40030fd8 0x4003264c
+axc 0x4003270c 0x40032700
+axd 0x40032864 0x40032728
+axC 0x4002f844 0x40032760
+axC 0x4002fd3c 0x40032770
+axC 0x4008e024 0x4003278c
+axC 0x4008e024 0x400327cc
+axd 0x40032874 0x400327dc
+axd 0x40032874 0x400327ec
+axd 0x4003288c 0x40032824
+axC 0x40030fd8 0x40032834
+axd 0x4003286c 0x40032838
+axC 0x40030fd8 0x4003283c
+axd 0x40032868 0x40032840
+axC 0x40030fd8 0x40032844
+axd 0x40032af8 0x400328ac
+axc 0x40032900 0x400328f4
+axd 0x40032afc 0x40032918
+axC 0x40030fd8 0x4003291c
+axd 0x40032b00 0x40032920
+axC 0x40030fd8 0x40032924
+axC 0x4008e024 0x40032938
+axd 0x40032b04 0x40032954
+axC 0x40030fd8 0x40032964
+axc 0x40032a60 0x40032984
+axC 0x4002f844 0x400329a4
+axC 0x4002fd3c 0x400329b4
+axc 0x400329f4 0x400329e0
+axC 0x4008e024 0x40032a2c
+axd 0x40032b08 0x40032a38
+axC 0x40030fd8 0x40032a48
+axd 0x40032b0c 0x40032a4c
+axC 0x40030fd8 0x40032a50
+axC 0x4002f844 0x40032a84
+axC 0x4002fd3c 0x40032a94
+axC 0x4008e024 0x40032ab0
+axd 0x40032b10 0x40032abc
+axC 0x40030fd8 0x40032acc
+axd 0x40032b00 0x40032ad0
+axC 0x40030fd8 0x40032ad4
+axd 0x40032afc 0x40032ad8
+axC 0x40030fd8 0x40032adc
+axd 0x40049340 0x40049338
+axc 0x40049388 0x4004933c
+axc 0x4004938c 0x400494b8
+axc 0x4004938c 0x40049580
+axc 0x4004938c 0x40049648
+axd 0x400729c4 0x40072990
+axd 0x400729c8 0x400729a0
+axC 0x4002c5d0 0x400729ac
+axC 0x4006dca0 0x400729b0
+axC 0x4006dd84 0x400729b4
+axC 0x4006dda4 0x400729b8
+axc 0x400729b8 0x400729bc
+axd 0x4007b2f4 0x4007ad58
+axd 0x4007b2f8 0x4007ad60
+axd 0x4007b2fc 0x4007ad68
+axC 0x4002e514 0x4007ad78
+axd 0x4007b300 0x4007ad7c
+axC 0x4002f314 0x4007ad84
+axd 0x4007b304 0x4007ad88
+axC 0x4002f314 0x4007ad90
+axd 0x4007b308 0x4007ad98
+axd 0x4007b308 0x4007ada4
+axC 0x40030034 0x4007adb4
+axC 0x40030034 0x4007adc0
+axC 0x40030034 0x4007adcc
+axd 0x4007b30c 0x4007ade4
+axC 0x4002ec2c 0x4007ade8
+axd 0x4007b310 0x4007ae00
+axC 0x4002ec2c 0x4007ae04
+axd 0x4007b314 0x4007ae1c
+axC 0x4002ec2c 0x4007ae20
+axd 0x4007b314 0x4007ae38
+axC 0x4002ec2c 0x4007ae3c
+axd 0x4007b314 0x4007ae54
+axC 0x4002ec2c 0x4007ae58
+axd 0x4007b318 0x4007ae70
+axC 0x4002ec2c 0x4007ae74
+axc 0x4007aea4 0x4007ae94
+axc 0x4007aef0 0x4007aee0
+axC 0x40030034 0x4007af1c
+axC 0x40030034 0x4007af28
+axC 0x40030034 0x4007af34
+axd 0x4007b31c 0x4007af40
+axC 0x4002f844 0x4007af48
+axd 0x4007b31c 0x4007af54
+axC 0x4002f844 0x4007af5c
+axd 0x4007b320 0x4007af68
+axC 0x4002f844 0x4007af70
+axd 0x4007b324 0x4007af7c
+axC 0x4002f844 0x4007af84
+axd 0x4007b310 0x4007af90
+axC 0x4002f844 0x4007af98
+axd 0x4007b328 0x4007afa4
+axC 0x4002f844 0x4007afac
+axd 0x4007b328 0x4007afb8
+axC 0x4002f844 0x4007afc0
+axd 0x4007b328 0x4007afcc
+axC 0x4002f844 0x4007afd4
+axd 0x4007b328 0x4007afe0
+axC 0x4002f844 0x4007afe8
+axd 0x4007b328 0x4007aff4
+axC 0x4002f844 0x4007affc
+axd 0x4007b328 0x4007b008
+axC 0x4002f844 0x4007b010
+axd 0x4007b328 0x4007b01c
+axC 0x4002f844 0x4007b024
+axd 0x4007b328 0x4007b030
+axC 0x4002f844 0x4007b038
+axd 0x4007b328 0x4007b044
+axC 0x4002f844 0x4007b04c
+axd 0x4007b328 0x4007b058
+axC 0x4002f844 0x4007b060
+axd 0x4007b328 0x4007b06c
+axC 0x4002f844 0x4007b074
+axd 0x4007b328 0x4007b080
+axC 0x4002f844 0x4007b088
+axd 0x4007b328 0x4007b094
+axC 0x4002f844 0x4007b09c
+axd 0x4007b328 0x4007b0a8
+axC 0x4002f844 0x4007b0b0
+axd 0x4007b328 0x4007b0bc
+axC 0x4002f844 0x4007b0c4
+axd 0x4007b328 0x4007b0d0
+axC 0x4002f844 0x4007b0d8
+axd 0x4007b328 0x4007b0e4
+axC 0x4002f844 0x4007b0ec
+axd 0x4007b328 0x4007b0f8
+axC 0x4002f844 0x4007b100
+axd 0x4007b328 0x4007b10c
+axC 0x4002f844 0x4007b114
+axd 0x4007b328 0x4007b120
+axC 0x4002f844 0x4007b128
+axd 0x4007b328 0x4007b134
+axC 0x4002f844 0x4007b13c
+axd 0x4007b328 0x4007b148
+axC 0x4002f844 0x4007b150
+axd 0x4007b328 0x4007b15c
+axC 0x4002f844 0x4007b164
+axd 0x4007b328 0x4007b170
+axC 0x4002f844 0x4007b178
+axd 0x4007b328 0x4007b184
+axC 0x4002f844 0x4007b18c
+axC 0x400300fc 0x4007b198
+axC 0x400300fc 0x4007b1a4
+axC 0x400300fc 0x4007b1b0
+axC 0x400300fc 0x4007b1bc
+axC 0x400300fc 0x4007b1c8
+axC 0x400300fc 0x4007b1d4
+axC 0x400300fc 0x4007b1e0
+axC 0x400300fc 0x4007b1ec
+axC 0x400300fc 0x4007b1f8
+axC 0x400300fc 0x4007b204
+axC 0x400300fc 0x4007b210
+axC 0x400300fc 0x4007b21c
+axC 0x400300fc 0x4007b228
+axC 0x400300fc 0x4007b234
+axC 0x400300fc 0x4007b240
+axC 0x400300fc 0x4007b24c
+axC 0x400300fc 0x4007b258
+axC 0x400300fc 0x4007b264
+axC 0x400300fc 0x4007b270
+axC 0x400300fc 0x4007b27c
+axC 0x400300fc 0x4007b288
+axC 0x400300fc 0x4007b294
+axC 0x400300fc 0x4007b2a0
+axC 0x400303f4 0x4007b2ac
+axC 0x400303f4 0x4007b2b8
+axC 0x400303f4 0x4007b2c4
+axC 0x400303f4 0x4007b2d0
+axC 0x400303f4 0x4007b2dc
+axC 0x400303f4 0x4007b2e8
+axd 0x4007ba00 0x4007b360
+axC 0x400492b0 0x4007b378
+axd 0x4007ba04 0x4007b38c
+axd 0x4007ba08 0x4007b394
+axd 0x4007ba0c 0x4007b39c
+axd 0x4007ba10 0x4007b3a4
+axd 0x4007ba14 0x4007b3ac
+axd 0x4007ba18 0x4007b3b4
+axd 0x4007ba1c 0x4007b3bc
+axd 0x4007ba20 0x4007b3c4
+axd 0x4007ba24 0x4007b3cc
+axd 0x4007ba28 0x4007b3d4
+axd 0x4007ba2c 0x4007b3dc
+axd 0x4007ba30 0x4007b3e4
+axd 0x4007ba34 0x4007b3ec
+axd 0x4007ba38 0x4007b3f4
+axd 0x4007ba3c 0x4007b3fc
+axd 0x4007ba40 0x4007b404
+axd 0x4007ba44 0x4007b408
+axd 0x4007ba48 0x4007b410
+axd 0x4007ba4c 0x4007b414
+axd 0x4007ba48 0x4007b41c
+axd 0x4007ba50 0x4007b420
+axd 0x4007ba48 0x4007b428
+axd 0x4007ba54 0x4007b42c
+axc 0x4007b44c 0x4007b43c
+axd 0x4007ba40 0x4007b458
+axd 0x4007ba58 0x4007b47c
+axd 0x4007ba5c 0x4007b484
+axd 0x4007ba60 0x4007b4a0
+axd 0x4007ba64 0x4007b4a8
+axd 0x4007ba68 0x4007b4c4
+axC 0x4008e024 0x4007b4d4
+axd 0x4007ba6c 0x4007b4e0
+axd 0x4007ba70 0x4007b4ec
+axd 0x4007ba74 0x4007b4f4
+axC 0x4008e230 0x4007b504
+axd 0x4007ba74 0x4007b518
+axC 0x4008e230 0x4007b528
+axd 0x4007ba74 0x4007b538
+axC 0x4008e230 0x4007b548
+axc 0x4007b584 0x4007b55c
+axd 0x4007ba74 0x4007b560
+axC 0x4008e230 0x4007b570
+axd 0x4007ba78 0x4007b590
+axd 0x4007ba74 0x4007b598
+axC 0x4008e230 0x4007b5a8
+axd 0x4007ba74 0x4007b5bc
+axC 0x4008e230 0x4007b5cc
+axd 0x4007ba74 0x4007b5dc
+axC 0x4008e230 0x4007b5ec
+axc 0x4007b628 0x4007b600
+axd 0x4007ba74 0x4007b604
+axC 0x4008e230 0x4007b614
+axd 0x4007ba7c 0x4007b634
+axd 0x4007ba80 0x4007b638
+axC 0x4008e230 0x4007b648
+axd 0x4007ba84 0x4007b658
+axd 0x4007ba88 0x4007b65c
+axC 0x4008e230 0x4007b66c
+axd 0x4007ba8c 0x4007b67c
+axd 0x4007ba90 0x4007b684
+axC 0x4008e230 0x4007b694
+axd 0x4007ba90 0x4007b6a8
+axC 0x4008e230 0x4007b6b8
+axd 0x4007ba90 0x4007b6c8
+axC 0x4008e230 0x4007b6d8
+axc 0x4007b710 0x4007b6ec
+axd 0x4007ba90 0x4007b6f0
+axC 0x4008e230 0x4007b700
+axd 0x4007ba94 0x4007b71c
+axd 0x4007ba98 0x4007b720
+axC 0x4008e230 0x4007b730
+axd 0x4007ba9c 0x4007b740
+axd 0x4007baa0 0x4007b744
+axC 0x4008e230 0x4007b754
+axd 0x4007baa4 0x4007b764
+axd 0x4007baa8 0x4007b768
+axC 0x4008e230 0x4007b778
+axd 0x4007baac 0x4007b788
+axd 0x4007bab0 0x4007b794
+axd 0x4007bab4 0x4007b7a0
+axd 0x4007bab8 0x4007b7ac
+axd 0x4007ba80 0x4007b7b4
+axC 0x4008e230 0x4007b7c4
+axd 0x4007ba80 0x4007b7d8
+axC 0x4008e230 0x4007b7e8
+axd 0x4007ba80 0x4007b7f8
+axC 0x4008e230 0x4007b808
+axc 0x4007b844 0x4007b81c
+axd 0x4007ba80 0x4007b820
+axC 0x4008e230 0x4007b830
+axd 0x4007babc 0x4007b850
+axd 0x4007bac0 0x4007b854
+axC 0x4008e230 0x4007b864
+axd 0x4007bac4 0x4007b880
+axd 0x4007bac8 0x4007b884
+axc 0x4007b89c 0x4007b88c
+axd 0x4007bac4 0x4007b890
+axd 0x4007bacc 0x4007b894
+axd 0x4007ba6c 0x4007b89c
+axd 0x4007ba70 0x4007b8a8
+axd 0x4007ba78 0x4007b8b4
+axd 0x4007ba7c 0x4007b8c0
+axd 0x4007ba84 0x4007b8cc
+axd 0x4007ba8c 0x4007b8d8
+axd 0x4007ba94 0x4007b8e4
+axd 0x4007ba9c 0x4007b8f0
+axd 0x4007baa4 0x4007b8fc
+axd 0x4007baac 0x4007b908
+axd 0x4007bab0 0x4007b914
+axd 0x4007bab4 0x4007b920
+axd 0x4007bab8 0x4007b92c
+axd 0x4007babc 0x4007b938
+axd 0x4007ba58 0x4007b944
+axd 0x4007ba60 0x4007b950
+axd 0x4007bac4 0x4007b95c
+axd 0x4007bad0 0x4007b968
+axd 0x4007bad4 0x4007b970
+axd 0x4007bad8 0x4007b974
+axd 0x4007bad8 0x4007b97c
+axc 0x4007b9c4 0x4007b98c
+axd 0x4007badc 0x4007b9c8
+axd 0x4007bad4 0x4007b9ec
+axc 0x4008cc58 0x4008ca44
+axc 0x4008cab4 0x4008ca88
+axC 0x4008d508 0x4008cb30
+axC 0x4008d570 0x4008cb40
+axC 0x4008d508 0x4008cb84
+axC 0x4008d570 0x4008cb94
+axc 0x4008cc58 0x4008cc14
+axc 0x4008d290 0x4008cd6c
+axc 0x4008d200 0x4008ce1c
+axc 0x4008ce80 0x4008ce54
+axC 0x4008d4bc 0x4008cec8
+axc 0x4008d0cc 0x4008cef4
+axc 0x4008cf7c 0x4008cf50
+axC 0x4008d4bc 0x4008cfb8
+axc 0x4008d0cc 0x4008d000
+axc 0x4008d290 0x4008d0c8
+axC 0x4008d508 0x4008d130
+axC 0x4008d570 0x4008d140
+axC 0x4008d508 0x4008d16c
+axC 0x4008d570 0x4008d17c
+axc 0x4008d290 0x4008d1fc
+axc 0x4008d4ac 0x4008d3d4
+axc 0x4008d424 0x4008d418
+axc 0x4008d438 0x4008d42c
+axc 0x4008d4ac 0x4008d440
+axc 0x4008d4ac 0x4008d464
+axc 0x4008d4ac 0x4008d488
+axd 0x4008e060 0x4008e058
+axc 0x4008e470 0x4008e20c
+axC 0x4002e4e4 0x4008e478
+"f fcn.0000004c 96 0x0000004c"
+"af+ 0x0000004c fcn.0000004c f n"
+afc arm64 @ 0x0000004c
+afb+ 0x0000004c 0x0000004c 76 0x00000098 0xffffffffffffffff b
+afb+ 0x0000004c 0x00000098 16 0x00000098 0x000000a8 n
+afb+ 0x0000004c 0x000000a8 4 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x4c
+"f fcn.0002e28c 16 0x0002e28c"
+"af+ 0x0002e28c fcn.0002e28c f n"
+afc arm64 @ 0x0002e28c
+afb+ 0x0002e28c 0x0002e28c 16 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x2e28c
+"f init 76 0x4000004c"
+"af+ 0x4000004c init f n"
+afc arm64 @ 0x4000004c
+afb+ 0x4000004c 0x4000004c 76 0xffffffffffffffff 0xffffffffffffffff b
+axd 0x4000025c 0x4000004c
+axd 0x40000260 0x40000050
+axC 0x4002e28c 0x4000006c
+axd 0x40000264 0x40000070
+afS 0 @ 0x4000004c
+"f initialize_memory_maybe 196 0x400000b0"
+"af+ 0x400000b0 initialize_memory_maybe f n"
+afc arm64 @ 0x400000b0
+afb+ 0x400000b0 0x400000b0 16 0x400000c0 0xffffffffffffffff b
+afb+ 0x400000b0 0x400000c0 16 0x400000c0 0x400000d0 n
+afb+ 0x400000b0 0x400000d0 164 0xffffffffffffffff 0xffffffffffffffff n
+axd 0x40000044 0x400000b4
+axd 0x40000048 0x400000b8
+axd 0x40000268 0x400000d0
+axd 0x4000026c 0x400000f8
+axd 0x40000270 0x4000010c
+axd 0x40000274 0x40000134
+axd 0x40000278 0x40000148
+axd 0x4000027c 0x4000015c
+afS 0 @ 0x400000b0
+"f uart_something 120 0x4002c3c8"
+"af+ 0x4002c3c8 uart_something f n"
+afc arm64 @ 0x4002c3c8
+afb+ 0x4002c3c8 0x4002c3c8 52 0x4002c420 0x4002c3fc n
+afb+ 0x4002c3c8 0x4002c3fc 12 0x4002c438 0x4002c408 n
+afb+ 0x4002c3c8 0x4002c408 4 0x4002c420 0xffffffffffffffff n
+afb+ 0x4002c3c8 0x4002c40c 20 0x4002c420 0xffffffffffffffff n
+afb+ 0x4002c3c8 0x4002c420 24 0x4002c40c 0x4002c438 n
+afb+ 0x4002c3c8 0x4002c438 8 0xffffffffffffffff 0xffffffffffffffff n
+afvb -12 local_ch int @ 0x4002c3c8
+afvb -8 local_8h int @ 0x4002c3c8
+axd 0x4002c440 0x4002c3d4
+axc 0x4002c420 0x4002c408
+axC 0x40030cf8 0x4002c41c
+afS 8 @ 0x4002c3c8
+"f interrupt_controller_something 188 0x4002c444"
+"af+ 0x4002c444 interrupt_controller_something f n"
+afc arm64 @ 0x4002c444
+afb+ 0x4002c444 0x4002c444 56 0x4002c4a0 0x4002c47c n
+afb+ 0x4002c444 0x4002c47c 20 0x4002c494 0x4002c490 n
+afb+ 0x4002c444 0x4002c490 4 0x4002c494 0xffffffffffffffff n
+afb+ 0x4002c444 0x4002c494 12 0x4002c4a0 0xffffffffffffffff n
+afb+ 0x4002c444 0x4002c4a0 36 0x4002c4f8 0x4002c4c4 n
+afb+ 0x4002c444 0x4002c4c4 16 0x4002c4d8 0x4002c4d4 n
+afb+ 0x4002c444 0x4002c4d4 4 0x4002c4d8 0xffffffffffffffff n
+afb+ 0x4002c444 0x4002c4d8 16 0x4002c4ec 0x4002c4e8 n
+afb+ 0x4002c444 0x4002c4e8 4 0x4002c4ec 0xffffffffffffffff n
+afb+ 0x4002c444 0x4002c4ec 12 0x4002c4f8 0xffffffffffffffff n
+afb+ 0x4002c444 0x4002c4f8 8 0xffffffffffffffff 0xffffffffffffffff n
+afvb -12 local_ch int @ 0x4002c444
+afvb -8 local_8h int @ 0x4002c444
+axd 0x4002c500 0x4002c450
+axC 0x4008b118 0x4002c490
+axC 0x4002c3c8 0x4002c4d4
+axC 0x4006dd50 0x4002c4e8
+afS 8 @ 0x4002c444
+"f fcn.4002c504 20 0x4002c504"
+"af+ 0x4002c504 fcn.4002c504 f n"
+afc arm64 @ 0x4002c504
+afb+ 0x4002c504 0x4002c504 20 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x4002c504
+"f mmu_table_something 24 0x4002c518"
+"af+ 0x4002c518 mmu_table_something f n"
+afc arm64 @ 0x4002c518
+afb+ 0x4002c518 0x4002c518 24 0xffffffffffffffff 0xffffffffffffffff n
+afvb -20 local_14h int @ 0x4002c518
+afvb -16 local_10h int @ 0x4002c518
+afvb -12 local_ch int @ 0x4002c518
+afvb -8 local_8h int @ 0x4002c518
+axd 0x4002c5b8 0x4002c524
+axd 0x4002c5bc 0x4002c530
+axd 0x4002c5c0 0x4002c53c
+axd 0x4002c5c4 0x4002c548
+axd 0x4002c5c8 0x4002c558
+axd 0x4002c5cc 0x4002c560
+axd 0x4002c644 0x4002c574
+axd 0x4002c648 0x4002c57c
+afS 20 @ 0x4002c518
+"f fcn.4002c5d0 68 0x4002c5d0"
+"af+ 0x4002c5d0 fcn.4002c5d0 f n"
+afc arm64 @ 0x4002c5d0
+afb+ 0x4002c5d0 0x4002c5d0 68 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002c5d0
+axd 0x4002c614 0x4002c5dc
+axd 0x4002c618 0x4002c5e8
+afS 12 @ 0x4002c5d0
+"f fcn.4002c61c 40 0x4002c61c"
+"af+ 0x4002c61c fcn.4002c61c f n"
+afc arm64 @ 0x4002c61c
+afb+ 0x4002c61c 0x4002c61c 40 0xffffffffffffffff 0xffffffffffffffff n
+axC 0x4002e00c 0x4002c624
+axC 0x4007b32c 0x4002c628
+axC 0x400000b0 0x4002c62c
+axC 0x4002c518 0x4002c630
+axC 0x4007ad4c 0x4002c634
+axC 0x4002d120 0x4002c638
+axC 0x4002e314 0x4002c63c
+afS 0 @ 0x4002c61c
+"f fcn.4002c64c 188 0x4002c64c"
+"af+ 0x4002c64c fcn.4002c64c f n"
+afc arm64 @ 0x4002c64c
+afb+ 0x4002c64c 0x4002c64c 60 0x4002c69c 0x4002c688 n
+afb+ 0x4002c64c 0x4002c688 20 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4002c64c 0x4002c69c 36 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4002c64c 0x4002c6c0 28 0x4002c6f8 0x4002c6dc n
+afb+ 0x4002c64c 0x4002c6dc 28 0x4002c704 0xffffffffffffffff n
+afb+ 0x4002c64c 0x4002c6f8 12 0x4002c704 0xffffffffffffffff b
+afb+ 0x4002c64c 0x4002c704 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -24 local_18h int @ 0x4002c64c
+afvb -18 local_12h int @ 0x4002c64c
+afvb -16 local_10h int @ 0x4002c64c
+afvb -9 local_9h int @ 0x4002c64c
+afvb -8 local_8h int @ 0x4002c64c
+afvb -6 local_6h int @ 0x4002c64c
+axc 0x4002c790 0x4002c698
+axc 0x4002c71c 0x4002c6bc
+axd 0x4002c7a4 0x4002c6e8
+axc 0x4002c704 0x4002c6f4
+afS 28 @ 0x4002c64c
+"f fcn.4002c68c 16 0x4002c68c"
+"af+ 0x4002c68c fcn.4002c68c f n"
+afc arm64 @ 0x4002c68c
+afb+ 0x4002c68c 0x4002c68c 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -24 local_18h int @ 0x4002c64c
+afvb -18 local_12h int @ 0x4002c64c
+afvb -16 local_10h int @ 0x4002c64c
+afvb -9 local_9h int @ 0x4002c64c
+afvb -8 local_8h int @ 0x4002c64c
+afvb -6 local_6h int @ 0x4002c64c
+axc 0x4002c790 0x4002c698
+afS 0 @ 0x4002c68c
+"f loc.4002c790 20 0x4002c790"
+"af+ 0x4002c790 loc.4002c790 l n"
+afc arm64 @ 0x4002c790
+afb+ 0x4002c790 0x4002c790 20 0xffffffffffffffff 0xffffffffffffffff n
+afvb -24 local_18h int @ 0x4002c790
+afS 0 @ 0x4002c790
+"f fcn.4002c7ac 408 0x4002c7ac"
+"af+ 0x4002c7ac fcn.4002c7ac f n"
+afc arm64 @ 0x4002c7ac
+afb+ 0x4002c7ac 0x4002c7ac 408 0xffffffffffffffff 0xffffffffffffffff n
+afvb -28 local_1ch int @ 0x4002c7ac
+afvb -24 local_18h int @ 0x4002c7ac
+afvb -20 local_14h int @ 0x4002c7ac
+afvb -16 local_10h int @ 0x4002c7ac
+afvb -12 local_ch int @ 0x4002c7ac
+afvb -8 local_8h int @ 0x4002c7ac
+axC 0x4002e574 0x4002c7bc
+axd 0x4002c9a0 0x4002c7c4
+axC 0x4002e574 0x4002c7d8
+axd 0x4002c9a0 0x4002c7e0
+axC 0x4002e574 0x4002c7f4
+axd 0x4002c9a0 0x4002c7fc
+axC 0x4002e574 0x4002c810
+axd 0x4002c9a0 0x4002c818
+axC 0x4002e688 0x4002c828
+axd 0x4002c9a0 0x4002c830
+axC 0x4002e8a4 0x4002c840
+axd 0x4002c9a0 0x4002c848
+axd 0x4002c9a4 0x4002c858
+axC 0x40030fd8 0x4002c864
+axd 0x4002c9a8 0x4002c868
+axC 0x40030fd8 0x4002c874
+axd 0x4002c9ac 0x4002c878
+axC 0x40030fd8 0x4002c884
+axd 0x4002c9b0 0x4002c888
+axC 0x40030fd8 0x4002c88c
+axC 0x4002ef1c 0x4002c894
+axd 0x4002c9b4 0x4002c89c
+axd 0x4002c9b8 0x4002c8b0
+axC 0x40030fd8 0x4002c8b8
+axC 0x4002ef1c 0x4002c8c0
+axd 0x4002c9b4 0x4002c8c8
+axd 0x4002c9bc 0x4002c8dc
+axC 0x40030fd8 0x4002c8e4
+axC 0x4002ef1c 0x4002c8ec
+axd 0x4002c9b4 0x4002c8f4
+axd 0x4002c9c0 0x4002c908
+axC 0x40030fd8 0x4002c910
+axC 0x4002ef1c 0x4002c918
+axd 0x4002c9b4 0x4002c920
+axd 0x4002c9c4 0x4002c934
+axC 0x40030fd8 0x4002c93c
+axC 0x4002ef1c 0x4002c944
+axd 0x4002c9b4 0x4002c94c
+axd 0x4002c9c8 0x4002c960
+axC 0x40030fd8 0x4002c968
+axC 0x4002ef1c 0x4002c970
+axd 0x4002c9b4 0x4002c978
+axd 0x4002c9cc 0x4002c98c
+axC 0x40030fd8 0x4002c994
+afS 24 @ 0x4002c7ac
+"f banner 104 0x4002c9d0"
+"af+ 0x4002c9d0 banner f n"
+afc arm64 @ 0x4002c9d0
+afb+ 0x4002c9d0 0x4002c9d0 104 0xffffffffffffffff 0xffffffffffffffff n
+afvb -12 local_ch int @ 0x4002c9d0
+afvb -8 local_8h int @ 0x4002c9d0
+axd 0x4002ca38 0x4002c9dc
+axC 0x40030fd8 0x4002c9e0
+axd 0x4002ca3c 0x4002c9e4
+axd 0x4002ca40 0x4002c9e8
+axd 0x4002ca44 0x4002c9ec
+axC 0x40030fd8 0x4002c9f0
+axd 0x4002ca48 0x4002c9f4
+axd 0x4002ca4c 0x4002c9f8
+axC 0x40030fd8 0x4002c9fc
+axd 0x4002ca50 0x4002ca00
+axC 0x40030fd8 0x4002ca04
+axd 0x4002ca54 0x4002ca08
+axC 0x40030fd8 0x4002ca0c
+axC 0x40030a10 0x4002ca18
+axd 0x4002ca58 0x4002ca24
+axC 0x40030fd8 0x4002ca2c
+afS 8 @ 0x4002c9d0
+"f fcn.4002cfa4 328 0x4002cfa4"
+"af+ 0x4002cfa4 fcn.4002cfa4 f n"
+afc arm64 @ 0x4002cfa4
+afb+ 0x4002cfa4 0x4002cfa4 64 0x4002d008 0xffffffffffffffff n
+afb+ 0x4002cfa4 0x4002cfe4 16 0x4002d014 0x4002cff4 n
+afb+ 0x4002cfa4 0x4002cff4 20 0x4002d008 0xffffffffffffffff n
+afb+ 0x4002cfa4 0x4002d008 12 0x4002cfe4 0x4002d014 n
+afb+ 0x4002cfa4 0x4002d014 36 0x4002d080 0x4002d038 n
+afb+ 0x4002cfa4 0x4002d038 36 0x4002d074 0x4002d05c n
+afb+ 0x4002cfa4 0x4002d05c 24 0x4002d088 0xffffffffffffffff n
+afb+ 0x4002cfa4 0x4002d074 12 0x4002d088 0xffffffffffffffff n
+afb+ 0x4002cfa4 0x4002d080 8 0x4002d088 0xffffffffffffffff b
+afb+ 0x4002cfa4 0x4002d088 100 0xffffffffffffffff 0xffffffffffffffff n
+afvb -20 local_14h int @ 0x4002cfa4
+afvb -16 local_10h int @ 0x4002cfa4
+afvb -12 local_ch int @ 0x4002cfa4
+afvb -8 local_8h int @ 0x4002cfa4
+axd 0x4002d0ec 0x4002cfb0
+axC 0x4002ccf4 0x4002cfbc
+axC 0x4002e32c 0x4002cfc0
+axC 0x4002e368 0x4002cfc4
+axC 0x40030aec 0x4002cfc8
+axC 0x4008bd9c 0x4002cfcc
+axC 0x4008b45c 0x4002cfd0
+axC 0x4008ae20 0x4002cfd4
+axc 0x4002d008 0x4002cfe0
+axC 0x4008a474 0x4002cfe4
+axd 0x4002d0f0 0x4002cff4
+axC 0x4002e4a0 0x4002cff8
+axC 0x4008a474 0x4002d014
+axd 0x4002d0f4 0x4002d020
+axC 0x40030fd8 0x4002d028
+axC 0x4002cba4 0x4002d038
+axd 0x4002d0f8 0x4002d044
+axC 0x40030fd8 0x4002d04c
+axC 0x4008aff0 0x4002d05c
+axd 0x4002d0fc 0x4002d060
+axC 0x40030fd8 0x4002d064
+axC 0x4002ce18 0x4002d068
+axC 0x4002ccf4 0x4002d06c
+axc 0x4002d088 0x4002d070
+axd 0x4002d100 0x4002d074
+axC 0x40030fd8 0x4002d078
+axc 0x4002d088 0x4002d07c
+axd 0x4002d104 0x4002d080
+axC 0x40030fd8 0x4002d084
+axd 0x4002d108 0x4002d088
+axd 0x4002d10c 0x4002d08c
+axC 0x40030fd8 0x4002d090
+axC 0x40032cec 0x4002d094
+axC 0x4002c9d0 0x4002d098
+axd 0x4002d110 0x4002d09c
+axC 0x40030fd8 0x4002d0a0
+axC 0x4002c7ac 0x4002d0a4
+axd 0x4002d114 0x4002d0a8
+axC 0x40030fd8 0x4002d0ac
+axC 0x40032bcc 0x4002d0b0
+axC 0x400843a8 0x4002d0b4
+axd 0x4002d118 0x4002d0bc
+axC 0x4002cda0 0x4002d0c4
+axC 0x4008a474 0x4002d0c8
+axd 0x4002d11c 0x4002d0d0
+axC 0x40030fd8 0x4002d0d8
+axC 0x40085b94 0x4002d0e0
+afS 16 @ 0x4002cfa4
+"f sdram_something 36 0x4002d120"
+"af+ 0x4002d120 sdram_something f n"
+afc arm64 @ 0x4002d120
+afb+ 0x4002d120 0x4002d120 36 0xffffffffffffffff 0xffffffffffffffff n
+axC 0x4002cfa4 0x4002d128
+axd 0x4002d144 0x4002d12c
+axC 0x40030fd8 0x4002d130
+axC 0x40072988 0x4002d134
+axC 0x4002da34 0x4002d138
+axC 0x4002e314 0x4002d13c
+afS 0 @ 0x4002d120
+"f fcn.4002da34 460 0x4002da34"
+"af+ 0x4002da34 fcn.4002da34 f n"
+afc arm64 @ 0x4002da34
+afb+ 0x4002da34 0x4002da34 32 0x4002dbc8 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002da54 112 0x4002dae8 0x4002dac4 n
+afb+ 0x4002da34 0x4002dac4 36 0x4002db08 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002dae8 32 0x4002db08 0xffffffffffffffff b
+afb+ 0x4002da34 0x4002db08 16 0x4002db24 0x4002db18 n
+afb+ 0x4002da34 0x4002db18 12 0x4002dbc8 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002db24 64 0x4002db70 0x4002db64 n
+afb+ 0x4002da34 0x4002db64 12 0x4002db70 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002db70 48 0x4002dbc0 0x4002dba0 n
+afb+ 0x4002da34 0x4002dba0 32 0x4002dbc8 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002dbc0 8 0x4002dbc8 0xffffffffffffffff n
+afb+ 0x4002da34 0x4002dbc8 40 0x4002da54 0x4002dbf0 n
+afb+ 0x4002da34 0x4002dbf0 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x4002da34
+afvb -12 local_ch int @ 0x4002da34
+afvb -6 local_6h int @ 0x4002da34
+axd 0x4002dc00 0x4002da40
+axC 0x40030fd8 0x4002da44
+axc 0x4002dbc8 0x4002da50
+axd 0x4002dc04 0x4002da54
+axC 0x40047d68 0x4002da68
+axd 0x4002dc08 0x4002da74
+axC 0x400492b0 0x4002da80
+axd 0x4002dc0c 0x4002da8c
+axC 0x400492b0 0x4002da98
+axd 0x4002dc10 0x4002daa4
+axC 0x400492b0 0x4002dab0
+axd 0x4002dc10 0x4002dab4
+axd 0x4002dc08 0x4002dac4
+axd 0x4002dc0c 0x4002dacc
+axd 0x4002dc14 0x4002dad4
+axC 0x40030fd8 0x4002dae0
+axc 0x4002db08 0x4002dae4
+axd 0x4002dc08 0x4002dae8
+axd 0x4002dc10 0x4002daf0
+axd 0x4002dc18 0x4002daf8
+axC 0x40030fd8 0x4002db04
+axd 0x4002dc08 0x4002db08
+axd 0x4002dc1c 0x4002db18
+axC 0x40030fd8 0x4002db1c
+axc 0x4002dbc8 0x4002db20
+axd 0x4002dc08 0x4002db24
+axd 0x4002dc10 0x4002db2c
+axd 0x4002dc08 0x4002db40
+axd 0x4002dc10 0x4002db48
+axC 0x40047d68 0x4002db7c
+axd 0x4002dc08 0x4002db80
+axd 0x4002dc04 0x4002db88
+axC 0x40033004 0x4002db90
+axd 0x4002dc04 0x4002dba0
+axd 0x4002dc20 0x4002dba8
+axd 0x4002dc04 0x4002dbac
+axC 0x40030fd8 0x4002dbb4
+axC 0x4002da10 0x4002dbb8
+axc 0x4002dbc8 0x4002dbbc
+axd 0x4002dc24 0x4002dbc0
+axC 0x40030fd8 0x4002dbc4
+axd 0x4002dc28 0x4002dbf0
+axC 0x40030fd8 0x4002dbf4
+afS 16 @ 0x4002da34
+"f fcn.4002dc2c 192 0x4002dc2c"
+"af+ 0x4002dc2c fcn.4002dc2c f n"
+afc arm64 @ 0x4002dc2c
+afb+ 0x4002dc2c 0x4002dc2c 192 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002dc2c
+axd 0x4002dcec 0x4002dc38
+afS 12 @ 0x4002dc2c
+"f fcn.4002ddd8 160 0x4002ddd8"
+"af+ 0x4002ddd8 fcn.4002ddd8 f n"
+afc arm64 @ 0x4002ddd8
+afb+ 0x4002ddd8 0x4002ddd8 160 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002ddd8
+axd 0x4002de78 0x4002dde4
+axd 0x4002de7c 0x4002de58
+axd 0x4002de80 0x4002de64
+afS 28 @ 0x4002ddd8
+"f fcn.4002de84 96 0x4002de84"
+"af+ 0x4002de84 fcn.4002de84 f n"
+afc arm64 @ 0x4002de84
+afb+ 0x4002de84 0x4002de84 96 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002de84
+axd 0x4002dee4 0x4002de90
+afS 12 @ 0x4002de84
+"f fcn.4002dee8 72 0x4002dee8"
+"af+ 0x4002dee8 fcn.4002dee8 f n"
+afc arm64 @ 0x4002dee8
+afb+ 0x4002dee8 0x4002dee8 72 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002dee8
+axd 0x4002df30 0x4002def4
+afS 12 @ 0x4002dee8
+"f fcn.4002df34 212 0x4002df34"
+"af+ 0x4002df34 fcn.4002df34 f n"
+afc arm64 @ 0x4002df34
+afb+ 0x4002df34 0x4002df34 116 0x4002dfd4 0x4002dfa8 n
+afb+ 0x4002df34 0x4002dfa8 44 0x4002dffc 0xffffffffffffffff n
+afb+ 0x4002df34 0x4002dfd4 40 0x4002dffc 0xffffffffffffffff b
+afb+ 0x4002df34 0x4002dffc 12 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x4002df34
+afvb -8 local_8h int @ 0x4002df34
+axd 0x4002e008 0x4002df44
+axc 0x4002dffc 0x4002dfd0
+afS 20 @ 0x4002df34
+"f gpio_init 612 0x4002e00c"
+"af+ 0x4002e00c gpio_init f n"
+afc arm64 @ 0x4002e00c
+afb+ 0x4002e00c 0x4002e00c 612 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x4002e00c
+axd 0x4002e270 0x4002e018
+axd 0x4002e274 0x4002e020
+axd 0x4002e278 0x4002e030
+axC 0x4002df34 0x4002e254
+axC 0x4002dc2c 0x4002e258
+axC 0x4002ddd8 0x4002e25c
+axC 0x4002de84 0x4002e260
+axC 0x4002dee8 0x4002e264
+afS 8 @ 0x4002e00c
+"f fcn.4002e28c 16 0x4002e28c"
+"af+ 0x4002e28c fcn.4002e28c f n"
+afc arm64 @ 0x4002e28c
+afb+ 0x4002e28c 0x4002e28c 16 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x4002e28c
+"f fcn.4002e29c 60 0x4002e29c"
+"af+ 0x4002e29c fcn.4002e29c f n"
+afc arm64 @ 0x4002e29c
+afb+ 0x4002e29c 0x4002e29c 36 0x4002e2c0 0xffffffffffffffff b
+afb+ 0x4002e29c 0x4002e2c0 20 0x4002e2c0 0x4002e2d4 n
+afb+ 0x4002e29c 0x4002e2d4 4 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x4002e29c
+"f fcn.4002e2d8 60 0x4002e2d8"
+"af+ 0x4002e2d8 fcn.4002e2d8 f n"
+afc arm64 @ 0x4002e2d8
+afb+ 0x4002e2d8 0x4002e2d8 36 0x4002e2fc 0xffffffffffffffff b
+afb+ 0x4002e2d8 0x4002e2fc 20 0x4002e2fc 0x4002e310 n
+afb+ 0x4002e2d8 0x4002e310 4 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x4002e2d8
+"f fcn.4002e314 20 0x4002e314"
+"af+ 0x4002e314 fcn.4002e314 f n"
+afc arm64 @ 0x4002e314
+afb+ 0x4002e314 0x4002e314 16 0x4002e324 0xffffffffffffffff b
+afb+ 0x4002e314 0x4002e324 4 0x4002e324 0xffffffffffffffff n
+afS 0 @ 0x4002e314
+"f fcn.4002e4e4 20 0x4002e4e4"
+"af+ 0x4002e4e4 fcn.4002e4e4 f n"
+afc arm64 @ 0x4002e4e4
+afb+ 0x4002e4e4 0x4002e4e4 20 0xffffffffffffffff 0xffffffffffffffff n
+axd 0x4002e4f8 0x4002e4ec
+axC 0x40030fd8 0x4002e4f0
+afS 0 @ 0x4002e4e4
+"f fcn.4002e574 56 0x4002e574"
+"af+ 0x4002e574 fcn.4002e574 f n"
+afc arm64 @ 0x4002e574
+afb+ 0x4002e574 0x4002e574 52 0xffffffffffffffff 0x4002e5a8 n
+afb+ 0x4002e574 0x4002e5a8 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -32 local_20h int @ 0x4002e574
+afvb -28 local_1ch int @ 0x4002e574
+afvb -24 local_18h int @ 0x4002e574
+afvb -20 local_14h int @ 0x4002e574
+afvb -16 local_10h int @ 0x4002e574
+afvb -12 local_ch int @ 0x4002e574
+afvb -8 local_8h int @ 0x4002e574
+axd 0x4002e5ac 0x4002e5a4
+axc 0x4002e62c 0x4002e5a4
+axc 0x4002e640 0x4002e5a4
+axc 0x4002e654 0x4002e5a4
+axc 0x4002e668 0x4002e5a4
+axc 0x4002e608 0x4002e5a8
+afS 32 @ 0x4002e574
+"f loc.4002e608 116 0x4002e608"
+"af+ 0x4002e608 loc.4002e608 l n"
+afc arm64 @ 0x4002e608
+afb+ 0x4002e608 0x4002e608 116 0xffffffffffffffff 0xffffffffffffffff n
+afvb -28 local_1ch int @ 0x4002e608
+afvb -24 local_18h int @ 0x4002e608
+afvb -20 local_14h int @ 0x4002e608
+afvb -16 local_10h int @ 0x4002e608
+afvb -12 local_ch int @ 0x4002e608
+afvb -8 local_8h int @ 0x4002e608
+axd 0x4002e680 0x4002e61c
+axd 0x4002e684 0x4002e63c
+axC 0x4008e024 0x4002e650
+afS 0 @ 0x4002e608
+"f fcn.4002e688 520 0x4002e688"
+"af+ 0x4002e688 fcn.4002e688 f n"
+afc arm64 @ 0x4002e688
+afb+ 0x4002e688 0x4002e688 92 0x4002e71c 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e6e4 20 0x4002e704 0x4002e6f8 n
+afb+ 0x4002e688 0x4002e6f8 12 0x4002e704 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e704 24 0x4002e71c 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e71c 12 0x4002e6e4 0x4002e728 n
+afb+ 0x4002e688 0x4002e728 24 0x4002e744 0x4002e740 n
+afb+ 0x4002e688 0x4002e740 4 0x4002e804 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e7f4 4 0x4002e814 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e804 4 0x4002e808 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e808 12 0x4002e814 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e814 8 0x4002e81c 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e81c 16 0x4002e86c 0x4002e82c n
+afb+ 0x4002e688 0x4002e82c 4 0x4002e830 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e830 20 0x4002e844 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e844 12 0x4002e850 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e850 12 0x4002e85c 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e85c 12 0x4002e868 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e868 4 0x4002e880 0xffffffffffffffff n
+afb+ 0x4002e688 0x4002e86c 8 0x4002e874 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e874 12 0x4002e880 0xffffffffffffffff b
+afb+ 0x4002e688 0x4002e880 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -24 local_18h int @ 0x4002e688
+afvb -20 local_14h int @ 0x4002e688
+afvb -16 local_10h int @ 0x4002e688
+afvb -12 local_ch int @ 0x4002e688
+afvb -8 local_8h int @ 0x4002e688
+axd 0x4002e890 0x4002e6bc
+axc 0x4002e71c 0x4002e6e0
+axd 0x4002e890 0x4002e728
+axd 0x4002e744 0x4002e73c
+axc 0x4002e7f4 0x4002e73c
+axc 0x4002e808 0x4002e73c
+axc 0x4002e81c 0x4002e73c
+axc 0x4002e830 0x4002e73c
+axc 0x4002e844 0x4002e73c
+axc 0x4002e850 0x4002e73c
+axc 0x4002e85c 0x4002e73c
+axc 0x4002e868 0x4002e73c
+axc 0x4002e874 0x4002e73c
+axc 0x4002e804 0x4002e740
+axc 0x4002e814 0x4002e7f4
+axC 0x4002e574 0x4002e808
+axd 0x4002e890 0x4002e814
+axd 0x4002e890 0x4002e82c
+axC 0x4008e024 0x4002e85c
+axc 0x4002e880 0x4002e868
+afS 24 @ 0x4002e688
+"f fcn.4002e8a4 88 0x4002e8a4"
+"af+ 0x4002e8a4 fcn.4002e8a4 f n"
+afc arm64 @ 0x4002e8a4
+afb+ 0x4002e8a4 0x4002e8a4 84 0xffffffffffffffff 0x4002e8f8 n
+afb+ 0x4002e8a4 0x4002e8f8 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -32 local_20h int @ 0x4002e8a4
+afvb -28 local_1ch int @ 0x4002e8a4
+afvb -24 local_18h int @ 0x4002e8a4
+afvb -20 local_14h int @ 0x4002e8a4
+afvb -16 local_10h int @ 0x4002e8a4
+afvb -12 local_ch int @ 0x4002e8a4
+afvb -8 local_8h int @ 0x4002e8a4
+axd 0x4002e9fc 0x4002e8c8
+axd 0x4002e9fc 0x4002e8e0
+axd 0x4002e8fc 0x4002e8f4
+axc 0x4002e9ac 0x4002e8f4
+axc 0x4002e9c0 0x4002e8f4
+axc 0x4002e9d4 0x4002e8f4
+axc 0x4002e9e8 0x4002e8f4
+axc 0x4002e9fc 0x4002e8f4
+axc 0x4002ea08 0x4002e8f4
+axc 0x4002ea14 0x4002e8f4
+axc 0x4002ea20 0x4002e8f4
+axc 0x4002ea2c 0x4002e8f4
+axc 0x4002e9bc 0x4002e8f8
+afS 52 @ 0x4002e8a4
+"f loc.4002e9bc 64 0x4002e9bc"
+"af+ 0x4002e9bc loc.4002e9bc l n"
+afc arm64 @ 0x4002e9bc
+afb+ 0x4002e9bc 0x4002e9bc 64 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x4002e9bc
+afvb -12 local_ch int @ 0x4002e9bc
+afvb -8 local_8h int @ 0x4002e9bc
+axC 0x4002e574 0x4002e9c0
+axC 0x4008e024 0x4002e9e0
+afS 0 @ 0x4002e9bc
+"f fcn.4002ef1c 544 0x4002ef1c"
+"af+ 0x4002ef1c fcn.4002ef1c f n"
+afc arm64 @ 0x4002ef1c
+afb+ 0x4002ef1c 0x4002ef1c 172 0x4002efe0 0x4002efc8 n
+afb+ 0x4002ef1c 0x4002efc8 12 0x4002efe0 0x4002efd4 n
+afb+ 0x4002ef1c 0x4002efd4 12 0x4002efec 0x4002efe0 n
+afb+ 0x4002ef1c 0x4002efe0 12 0x4002f0b4 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002efec 12 0x4002f0ac 0x4002eff8 n
+afb+ 0x4002ef1c 0x4002eff8 12 0x4002f008 0x4002f004 n
+afb+ 0x4002ef1c 0x4002f004 4 0x4002f078 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f078 20 0x4002f08c 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f08c 20 0x4002f0a0 0xffffffffffffffff b
+afb+ 0x4002ef1c 0x4002f0a0 12 0x4002f0b4 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f0ac 8 0x4002f0b4 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f0b4 16 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f0c8 20 0x4002f0dc 0xffffffffffffffff b
+afb+ 0x4002ef1c 0x4002f0dc 32 0x4002f128 0x4002f0fc n
+afb+ 0x4002ef1c 0x4002f0fc 44 0x4002f128 0xffffffffffffffff n
+afb+ 0x4002ef1c 0x4002f128 20 0xffffffffffffffff 0xffffffffffffffff n
+afvb -36 local_24h int @ 0x4002ef1c
+afvb -32 local_20h int @ 0x4002ef1c
+afvb -28 local_1ch int @ 0x4002ef1c
+afvb -24 local_18h int @ 0x4002ef1c
+afvb -20 local_14h int @ 0x4002ef1c
+afvb -16 local_10h int @ 0x4002ef1c
+afvb -12 local_ch int @ 0x4002ef1c
+afvb -8 local_8h int @ 0x4002ef1c
+axd 0x4002f0c4 0x4002ef54
+axc 0x4002f0b4 0x4002efe8
+axd 0x4002f008 0x4002f000
+axc 0x4002f08c 0x4002f000
+axc 0x4002f0a0 0x4002f000
+axc 0x4002f0b4 0x4002f000
+axc 0x4002f0c8 0x4002f000
+axc 0x4002f0dc 0x4002f000
+axc 0x4002f078 0x4002f004
+axC 0x4002e574 0x4002f07c
+axC 0x4008e024 0x4002f09c
+axc 0x4002f0b4 0x4002f0a8
+afS 60 @ 0x4002ef1c
+"f fcn.40030538 1224 0x40030538"
+"af+ 0x40030538 fcn.40030538 f n"
+afc arm64 @ 0x40030538
+afb+ 0x40030538 0x40030538 232 0x4003062c 0xffffffffffffffff n
+afb+ 0x40030538 0x40030620 12 0x4003062c 0xffffffffffffffff n
+afb+ 0x40030538 0x4003062c 12 0x40030620 0x40030638 n
+afb+ 0x40030538 0x40030638 88 0x4003069c 0xffffffffffffffff n
+afb+ 0x40030538 0x40030690 12 0x4003069c 0xffffffffffffffff n
+afb+ 0x40030538 0x4003069c 12 0x40030690 0x400306a8 n
+afb+ 0x40030538 0x400306a8 240 0x400307a4 0xffffffffffffffff n
+afb+ 0x40030538 0x40030798 12 0x400307a4 0xffffffffffffffff n
+afb+ 0x40030538 0x400307a4 12 0x40030798 0x400307b0 n
+afb+ 0x40030538 0x400307b0 88 0x40030814 0xffffffffffffffff n
+afb+ 0x40030538 0x40030808 12 0x40030814 0xffffffffffffffff n
+afb+ 0x40030538 0x40030814 12 0x40030808 0x40030820 n
+afb+ 0x40030538 0x40030820 88 0x40030884 0xffffffffffffffff n
+afb+ 0x40030538 0x40030878 12 0x40030884 0xffffffffffffffff n
+afb+ 0x40030538 0x40030884 12 0x40030878 0x40030890 n
+afb+ 0x40030538 0x40030890 88 0x400308f4 0xffffffffffffffff n
+afb+ 0x40030538 0x400308e8 12 0x400308f4 0xffffffffffffffff n
+afb+ 0x40030538 0x400308f4 12 0x400308e8 0x40030900 n
+afb+ 0x40030538 0x40030900 88 0x40030964 0xffffffffffffffff n
+afb+ 0x40030538 0x40030958 12 0x40030964 0xffffffffffffffff n
+afb+ 0x40030538 0x40030964 12 0x40030958 0x40030970 n
+afb+ 0x40030538 0x40030970 144 0xffffffffffffffff 0xffffffffffffffff n
+afvb -56 local_38h int @ 0x40030538
+afvb -36 local_24h int @ 0x40030538
+afvb -32 local_20h int @ 0x40030538
+afvb -28 local_1ch int @ 0x40030538
+afvb -24 local_18h int @ 0x40030538
+afvb -20 local_14h int @ 0x40030538
+afvb -16 local_10h int @ 0x40030538
+afvb -12 local_ch int @ 0x40030538
+afvb -8 local_8h int @ 0x40030538
+axC 0x40049690 0x4003055c
+axd 0x40030a00 0x40030560
+axd 0x40030a00 0x4003056c
+axd 0x40030a00 0x40030574
+axd 0x40030a04 0x400305ac
+axd 0x40030a08 0x400305b0
+axd 0x40030a04 0x400305b8
+axd 0x40030a0c 0x400305bc
+axd 0x40030a04 0x400305c4
+axd 0x40030a08 0x400305c8
+axd 0x40030a04 0x400305d0
+axc 0x4003062c 0x4003061c
+axd 0x40030a04 0x40030640
+axc 0x4003069c 0x4003068c
+axd 0x40030a04 0x400306b0
+axd 0x40030a04 0x400306fc
+axd 0x40030a04 0x40030748
+axc 0x400307a4 0x40030794
+axd 0x40030a04 0x400307b8
+axc 0x40030814 0x40030804
+axd 0x40030a04 0x40030828
+axc 0x40030884 0x40030874
+axd 0x40030a04 0x40030898
+axc 0x400308f4 0x400308e4
+axd 0x40030a04 0x40030908
+axc 0x40030964 0x40030954
+axd 0x40030a04 0x40030978
+axd 0x40030a04 0x400309bc
+axd 0x40030a00 0x400309c4
+axd 0x40030a04 0x400309cc
+axd 0x40030a00 0x400309d4
+axd 0x40030a04 0x400309dc
+axd 0x40030a00 0x400309ec
+axC 0x400492b0 0x400309f4
+afS 56 @ 0x40030538
+"f fcn.40030a10 64 0x40030a10"
+"af+ 0x40030a10 fcn.40030a10 f n"
+afc arm64 @ 0x40030a10
+afb+ 0x40030a10 0x40030a10 64 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x40030a10
+afvb -12 local_ch int @ 0x40030a10
+afvb -8 local_8h int @ 0x40030a10
+axC 0x40030538 0x40030a28
+afS 16 @ 0x40030a10
+"f fcn.40030a50 152 0x40030a50"
+"af+ 0x40030a50 fcn.40030a50 f n"
+afc arm64 @ 0x40030a50
+afb+ 0x40030a50 0x40030a50 152 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x40030a50
+axd 0x40030ae8 0x40030a5c
+afS 12 @ 0x40030a50
+"f uart_something_bis 168 0x40030aec"
+"af+ 0x40030aec uart_something_bis f n"
+afc arm64 @ 0x40030aec
+afb+ 0x40030aec 0x40030aec 168 0xffffffffffffffff 0xffffffffffffffff n
+afvb -12 local_ch int @ 0x40030aec
+afvb -8 local_8h int @ 0x40030aec
+axd 0x40030bc0 0x40030af8
+axd 0x40030bc4 0x40030b00
+axC 0x40030a50 0x40030b08
+afS 8 @ 0x40030aec
+"f fcn.40030bc8 32 0x40030bc8"
+"af+ 0x40030bc8 fcn.40030bc8 f n"
+afc arm64 @ 0x40030bc8
+afb+ 0x40030bc8 0x40030bc8 32 0xffffffffffffffff 0xffffffffffffffff n
+axd 0x40030be8 0x40030bd0
+afS 0 @ 0x40030bc8
+"f fcn.40030bec 96 0x40030bec"
+"af+ 0x40030bec fcn.40030bec f n"
+afc arm64 @ 0x40030bec
+afb+ 0x40030bec 0x40030bec 44 0x40030c3c 0x40030c18 n
+afb+ 0x40030bec 0x40030c18 36 0x40030c3c 0xffffffffffffffff n
+afb+ 0x40030bec 0x40030c3c 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x40030bec
+afvb -8 local_8h int @ 0x40030bec
+axd 0x40030c4c 0x40030bfc
+axd 0x40030c4c 0x40030c08
+axd 0x40030c4c 0x40030c18
+axd 0x40030c50 0x40030c24
+axC 0x400492b0 0x40030c2c
+axd 0x40030c4c 0x40030c30
+afS 16 @ 0x40030bec
+"f uart_something_tris 4 0x40030c54"
+"af+ 0x40030c54 uart_something_tris f n"
+afc arm64 @ 0x40030c54
+afb+ 0x40030c54 0x40030c54 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -13 local_dh int @ 0x40030c54
+afvb -8 local_8h int @ 0x40030c54
+axd 0x40030cac 0x40030c68
+afS 16 @ 0x40030c54
+"f fcn.40030cb0 4 0x40030cb0"
+"af+ 0x40030cb0 fcn.40030cb0 f n"
+afc arm64 @ 0x40030cb0
+afb+ 0x40030cb0 0x40030cb0 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x40030cb0
+axc 0x40030ce0 0x40030cc0
+afS 8 @ 0x40030cb0
+"f fcn.40030cf8 52 0x40030cf8"
+"af+ 0x40030cf8 fcn.40030cf8 f n"
+afc arm64 @ 0x40030cf8
+afb+ 0x40030cf8 0x40030cf8 52 0xffffffffffffffff 0xffffffffffffffff n
+afvb -5 local_5h int @ 0x40030cf8
+axd 0x40030d54 0x40030d0c
+axd 0x40030d58 0x40030d14
+axd 0x40030d54 0x40030d24
+axd 0x40030d54 0x40030d2c
+afS 12 @ 0x40030cf8
+"f fcn.40030d5c 88 0x40030d5c"
+"af+ 0x40030d5c fcn.40030d5c f n"
+afc arm64 @ 0x40030d5c
+afb+ 0x40030d5c 0x40030d5c 28 0x40030d84 0x40030d78 n
+afb+ 0x40030d5c 0x40030d78 12 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x40030d5c 0x40030d84 48 0xffffffffffffffff 0xffffffffffffffff b
+afvb -32 local_20h int @ 0x40030d5c
+afvb -5 local_5h int @ 0x40030d5c
+axC 0x40030bc8 0x40030d68
+axc 0x40030db8 0x40030d80
+axC 0x40030bec 0x40030d8c
+afS 32 @ 0x40030d5c
+"f fcn.40030dc8 40 0x40030dc8"
+"af+ 0x40030dc8 fcn.40030dc8 f n"
+afc arm64 @ 0x40030dc8
+afb+ 0x40030dc8 0x40030dc8 40 0xffffffffffffffff 0xffffffffffffffff n
+afvb -5 local_5h int @ 0x40030dc8
+axC 0x40030c54 0x40030de4
+afS 8 @ 0x40030dc8
+"f fcn.40030df0 88 0x40030df0"
+"af+ 0x40030df0 fcn.40030df0 f n"
+afc arm64 @ 0x40030df0
+afb+ 0x40030df0 0x40030df0 36 0x40030e34 0x40030e14 n
+afb+ 0x40030df0 0x40030e14 32 0x40030e40 0xffffffffffffffff n
+afb+ 0x40030df0 0x40030e34 12 0x40030e40 0xffffffffffffffff b
+afb+ 0x40030df0 0x40030e40 8 0xffffffffffffffff 0xffffffffffffffff n
+afvb -5 local_5h int @ 0x40030df0
+axd 0x40030e48 0x40030e04
+axd 0x40030e48 0x40030e14
+axd 0x40030e48 0x40030e28
+axc 0x40030e40 0x40030e30
+axC 0x40030c54 0x40030e3c
+afS 8 @ 0x40030df0
+"f fcn.40030e4c 4 0x40030e4c"
+"af+ 0x40030e4c fcn.40030e4c f n"
+afc arm64 @ 0x40030e4c
+afb+ 0x40030e4c 0x40030e4c 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -12 local_ch int @ 0x40030e4c
+afvb -8 local_8h int @ 0x40030e4c
+afS 8 @ 0x40030e4c
+"f fcn.40030efc 120 0x40030efc"
+"af+ 0x40030efc fcn.40030efc f n"
+afc arm64 @ 0x40030efc
+afb+ 0x40030efc 0x40030efc 28 0x40030f54 0x40030f18 n
+afb+ 0x40030efc 0x40030f18 60 0x40030f54 0xffffffffffffffff n
+afb+ 0x40030efc 0x40030f54 32 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x40030efc
+axd 0x40030f74 0x40030f1c
+axC 0x40030efc 0x40030f2c
+axd 0x40030f74 0x40030f34
+axC 0x40030df0 0x40030f68
+afS 8 @ 0x40030efc
+"f fcn.40030f78 96 0x40030f78"
+"af+ 0x40030f78 fcn.40030f78 f n"
+afc arm64 @ 0x40030f78
+afb+ 0x40030f78 0x40030f78 20 0x40030fc0 0xffffffffffffffff n
+afb+ 0x40030f78 0x40030f8c 16 0x40030fa4 0x40030f9c n
+afb+ 0x40030f78 0x40030f9c 8 0x40030fa4 0xffffffffffffffff n
+afb+ 0x40030f78 0x40030fa4 28 0x40030fc0 0xffffffffffffffff n
+afb+ 0x40030f78 0x40030fc0 16 0x40030f8c 0x40030fd0 n
+afb+ 0x40030f78 0x40030fd0 8 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x40030f78
+axc 0x40030fc0 0x40030f88
+axC 0x40030c54 0x40030fa0
+axC 0x40030c54 0x40030fbc
+afS 8 @ 0x40030f78
+"f fcn.40030fd8 892 0x40030fd8"
+"af+ 0x40030fd8 fcn.40030fd8 f n"
+afc arm64 @ 0x40030fd8
+afb+ 0x40030fd8 0x40030fd8 28 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40030ff4 44 0x400312ec 0x40031020 n
+afb+ 0x40030fd8 0x40031020 12 0x4003103c 0x4003102c n
+afb+ 0x40030fd8 0x4003102c 12 0x40031310 0x40031038 n
+afb+ 0x40030fd8 0x40031038 4 0x40031318 0xffffffffffffffff n
+afb+ 0x40030fd8 0x4003103c 40 0x40031068 0x40031064 n
+afb+ 0x40030fd8 0x40031064 4 0x400312e0 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031228 32 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x4003124c 32 0x40031280 0x4003126c n
+afb+ 0x40030fd8 0x4003126c 4 0x40031270 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031270 16 0x40031280 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031280 16 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031294 28 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x400312b8 24 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x400312e0 12 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x400312ec 16 0x40031308 0x400312fc n
+afb+ 0x40030fd8 0x400312fc 4 0x40031300 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031300 8 0x40031308 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031308 8 0x40031310 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031310 8 0x40031318 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031318 8 0x40031320 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031320 4 0x40031324 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031324 16 0x40030ff4 0x40031334 n
+afb+ 0x40030fd8 0x40031334 12 0x40031340 0xffffffffffffffff b
+afb+ 0x40030fd8 0x40031340 4 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x40030fd8 0x4003134c 4 0x40031350 0xffffffffffffffff n
+afb+ 0x40030fd8 0x40031350 4 0xffffffffffffffff 0xffffffffffffffff n
+afvb -24 local_18h int @ 0x40030fd8
+afvb -20 local_14h int @ 0x40030fd8
+afvb -16 local_10h int @ 0x40030fd8
+afvb -12 local_ch int @ 0x40030fd8
+afvb -9 local_9h int @ 0x40030fd8
+afvb -8 local_8h int @ 0x40030fd8
+afvb 4 arg_4h int @ 0x40030fd8
+afS 44 @ 0x40030fd8
+"f fcn.40031398 112 0x40031398"
+"af+ 0x40031398 fcn.40031398 f n"
+afc arm64 @ 0x40031398
+afb+ 0x40031398 0x40031398 48 0xffffffffffffffff 0x400313c8 n
+afb+ 0x40031398 0x400313c8 24 0x400313f8 0x400313e0 n
+afb+ 0x40031398 0x400313e0 24 0x400313f8 0xffffffffffffffff n
+afb+ 0x40031398 0x400313f8 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -36 local_24h int @ 0x40031398
+afvb -32 local_20h int @ 0x40031398
+afvb -28 local_1ch int @ 0x40031398
+afvb -24 local_18h int @ 0x40031398
+afvb -20 local_14h int @ 0x40031398
+afvb -16 local_10h int @ 0x40031398
+afvb -12 local_ch int @ 0x40031398
+afvb -8 local_8h int @ 0x40031398
+afvb 4 arg_4h int @ 0x40031398
+afvb 8 arg_8h int @ 0x40031398
+afS 36 @ 0x40031398
+"f fcn.400314b4 132 0x400314b4"
+"af+ 0x400314b4 fcn.400314b4 f n"
+afc arm64 @ 0x400314b4
+afb+ 0x400314b4 0x400314b4 132 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x400314b4
+axd 0x40031538 0x400314c0
+axC 0x40049690 0x400314d4
+axd 0x40031538 0x400314d8
+axC 0x40049690 0x400314ec
+axd 0x40031538 0x400314f0
+axC 0x40049690 0x40031504
+axd 0x40031538 0x40031508
+axd 0x4003153c 0x40031514
+axd 0x40031540 0x40031518
+axC 0x4008c934 0x40031524
+afS 8 @ 0x400314b4
+"f ddi_cache_something 52 0x40031544"
+"af+ 0x40031544 ddi_cache_something f n"
+afc arm64 @ 0x40031544
+afb+ 0x40031544 0x40031544 52 0xffffffffffffffff 0xffffffffffffffff n
+afvb -8 local_8h int @ 0x40031544
+axd 0x40031630 0x40031550
+afS 12 @ 0x40031544
+"f gpio_something 196 0x40031634"
+"af+ 0x40031634 gpio_something f n"
+afc arm64 @ 0x40031634
+afb+ 0x40031634 0x40031634 36 0x400316c4 0x40031658 n
+afb+ 0x40031634 0x40031658 108 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x40031634 0x400316c4 52 0xffffffffffffffff 0xffffffffffffffff b
+afvb -16 local_10h int @ 0x40031634
+afvb -8 local_8h int @ 0x40031634
+axd 0x40031764 0x40031644
+axd 0x40031768 0x40031660
+axd 0x40031768 0x40031678
+axd 0x40031768 0x40031690
+axc 0x4003172c 0x400316c0
+axd 0x4003176c 0x400316cc
+axd 0x4003176c 0x400316e4
+axd 0x4003176c 0x400316fc
+afS 20 @ 0x40031634
+"f fcn.40031770 1640 0x40031770"
+"af+ 0x40031770 fcn.40031770 f n"
+afc arm64 @ 0x40031770
+afb+ 0x40031770 0x40031770 72 0x40031800 0x400317b8 n
+afb+ 0x40031770 0x400317b8 72 0x40031844 0xffffffffffffffff n
+afb+ 0x40031770 0x40031800 68 0x40031844 0xffffffffffffffff b
+afb+ 0x40031770 0x40031844 12 0x40031858 0x40031850 n
+afb+ 0x40031770 0x40031850 8 0x40031858 0xffffffffffffffff n
+afb+ 0x40031770 0x40031858 420 0x40031a34 0x400319fc n
+afb+ 0x40031770 0x400319fc 56 0x40031a68 0xffffffffffffffff n
+afb+ 0x40031770 0x40031a34 52 0x40031a68 0xffffffffffffffff b
+afb+ 0x40031770 0x40031a68 708 0xffffffffffffffff 0x40031d2c n
+afb+ 0x40031770 0x40031d2c 12 0x40031d50 0x40031d38 n
+afb+ 0x40031770 0x40031d38 24 0x40031d64 0xffffffffffffffff n
+afb+ 0x40031770 0x40031d50 20 0x40031d64 0xffffffffffffffff b
+afb+ 0x40031770 0x40031d64 116 0xffffffffffffffff 0xffffffffffffffff n
+afvb -44 local_2ch int @ 0x40031770
+afvb -40 local_28h int @ 0x40031770
+afvb -36 local_24h int @ 0x40031770
+afvb -32 local_20h int @ 0x40031770
+afvb -28 local_1ch int @ 0x40031770
+afvb -24 local_18h int @ 0x40031770
+afvb -20 local_14h int @ 0x40031770
+afvb -16 local_10h int @ 0x40031770
+afvb -12 local_ch int @ 0x40031770
+afvb -8 local_8h int @ 0x40031770
+axd 0x40031e28 0x4003178c
+axd 0x40031e2c 0x40031794
+axd 0x40031e30 0x400317a4
+axc 0x40031844 0x400317fc
+axC 0x40031634 0x40031854
+axd 0x40031e34 0x40031864
+axc 0x40031a68 0x40031a30
+axd 0x40031e38 0x40031a74
+axc 0x40031d64 0x40031d4c
+axd 0x40031e3c 0x40031d68
+axd 0x40031e40 0x40031d74
+axd 0x40031e44 0x40031d80
+axd 0x40031e48 0x40031d8c
+axd 0x40031e4c 0x40031d98
+axd 0x40031e50 0x40031da4
+axd 0x40031e54 0x40031db0
+axd 0x40031e54 0x40031dbc
+axd 0x40031e54 0x40031dc8
+afS 48 @ 0x40031770
+"f fcn.40031e58 96 0x40031e58"
+"af+ 0x40031e58 fcn.40031e58 f n"
+afc arm64 @ 0x40031e58
+afb+ 0x40031e58 0x40031e58 44 0x40031eac 0x40031e84 n
+afb+ 0x40031e58 0x40031e84 40 0x40031eac 0xffffffffffffffff n
+afb+ 0x40031e58 0x40031eac 12 0xffffffffffffffff 0xffffffffffffffff n
+afvb -16 local_10h int @ 0x40031e58
+afvb -12 local_ch int @ 0x40031e58
+afvb -8 local_8h int @ 0x40031e58
+axd 0x40031eb8 0x40031e68
+axd 0x40031ebc 0x40031e70
+afS 20 @ 0x40031e58
+"f fcn.40031ec0 2384 0x40031ec0"
+"af+ 0x40031ec0 fcn.40031ec0 f n"
+afc arm64 @ 0x40031ec0
+afb+ 0x40031ec0 0x40031ec0 220 0x40031fac 0x40031f9c n
+afb+ 0x40031ec0 0x40031f9c 16 0x40031fb4 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40031fac 8 0x40031fb4 0xffffffffffffffff b
+afb+ 0x40031ec0 0x40031fb4 188 0x40032504 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032070 72 0x400320cc 0x400320b8 n
+afb+ 0x40031ec0 0x400320b8 20 0x400320dc 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400320cc 16 0x400320dc 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400320dc 24 0x40032104 0x400320f4 n
+afb+ 0x40031ec0 0x400320f4 16 0x40032104 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032104 340 0x400324f0 0x40032258 n
+afb+ 0x40031ec0 0x40032258 68 0x400322a8 0x4003229c n
+afb+ 0x40031ec0 0x4003229c 12 0x400322b0 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400322a8 8 0x400322b0 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400322b0 16 0x400322d4 0x400322c0 n
+afb+ 0x40031ec0 0x400322c0 20 0x400322e4 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400322d4 16 0x400322e4 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400322e4 128 0x400324f0 0x40032364 n
+afb+ 0x40031ec0 0x40032364 12 0x400324f0 0x40032370 n
+afb+ 0x40031ec0 0x40032370 12 0x400324f0 0x4003237c n
+afb+ 0x40031ec0 0x4003237c 12 0x400324f0 0x40032388 n
+afb+ 0x40031ec0 0x40032388 12 0x4003240c 0x40032394 n
+afb+ 0x40031ec0 0x40032394 16 0x400323b8 0x400323a4 n
+afb+ 0x40031ec0 0x400323a4 20 0x400323c8 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400323b8 16 0x400323c8 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400323c8 16 0x400323ec 0x400323d8 n
+afb+ 0x40031ec0 0x400323d8 20 0x400323fc 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400323ec 16 0x400323fc 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400323fc 16 0x40032440 0x4003240c n
+afb+ 0x40031ec0 0x4003240c 52 0x400324e8 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032440 16 0x40032464 0x40032450 n
+afb+ 0x40031ec0 0x40032450 20 0x40032474 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032464 16 0x40032474 0xffffffffffffffff b
+afb+ 0x40031ec0 0x40032474 16 0x40032498 0x40032484 n
+afb+ 0x40031ec0 0x40032484 20 0x400324a8 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032498 16 0x400324a8 0xffffffffffffffff b
+afb+ 0x40031ec0 0x400324a8 16 0x400324e8 0x400324b8 n
+afb+ 0x40031ec0 0x400324b8 48 0x400324e8 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400324e8 8 0x400324f0 0xffffffffffffffff n
+afb+ 0x40031ec0 0x400324f0 20 0x40032504 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032504 12 0x40032070 0x40032510 n
+afb+ 0x40031ec0 0x40032510 272 0xffffffffffffffff 0x40032620 n
+afb+ 0x40031ec0 0x40032620 12 0xffffffffffffffff 0x4003262c n
+afb+ 0x40031ec0 0x4003262c 200 0x40032704 0x400326f4 n
+afb+ 0x40031ec0 0x400326f4 16 0x4003270c 0xffffffffffffffff n
+afb+ 0x40031ec0 0x40032704 8 0x4003270c 0xffffffffffffffff b
+afb+ 0x40031ec0 0x4003270c 260 0xffffffffffffffff 0xffffffffffffffff n
+afvb -184 local_b8h int @ 0x40031ec0
+afvb -180 local_b4h int @ 0x40031ec0
+afvb -176 local_b0h int @ 0x40031ec0
+afvb -172 local_ach int @ 0x40031ec0
+afvb -168 local_a8h int @ 0x40031ec0
+afvb -164 local_a4h int @ 0x40031ec0
+afvb -160 local_a0h int @ 0x40031ec0
+afvb -156 local_9ch int @ 0x40031ec0
+afvb -152 local_98h int @ 0x40031ec0
+afvb -148 local_94h int @ 0x40031ec0
+afvb -144 local_90h int @ 0x40031ec0
+afvb -140 local_8ch int @ 0x40031ec0
+afvb -136 local_88h int @ 0x40031ec0
+afvb -132 local_84h int @ 0x40031ec0
+afvb -128 local_80h int @ 0x40031ec0
+afvb -112 local_70h int @ 0x40031ec0
+afvb -108 local_6ch int @ 0x40031ec0
+afvb -104 local_68h int @ 0x40031ec0
+afvb -100 local_64h int @ 0x40031ec0
+afvb -96 local_60h int @ 0x40031ec0
+afvb -92 local_5ch int @ 0x40031ec0
+afvb -88 local_58h int @ 0x40031ec0
+afvb -84 local_54h int @ 0x40031ec0
+afvb -80 local_50h int @ 0x40031ec0
+afvb -76 local_4ch int @ 0x40031ec0
+afvb -72 local_48h int @ 0x40031ec0
+afvb -68 local_44h int @ 0x40031ec0
+afvb -64 local_40h int @ 0x40031ec0
+afvb -60 local_3ch int @ 0x40031ec0
+afvb -56 local_38h int @ 0x40031ec0
+afvb -52 local_34h int @ 0x40031ec0
+afvb -48 local_30h int @ 0x40031ec0
+afvb -44 local_2ch int @ 0x40031ec0
+afvb -40 local_28h int @ 0x40031ec0
+afvb -36 local_24h int @ 0x40031ec0
+afvb -32 local_20h int @ 0x40031ec0
+afvb -28 local_1ch int @ 0x40031ec0
+afvb -24 local_18h int @ 0x40031ec0
+afvb -20 local_14h int @ 0x40031ec0
+afvb -16 local_10h int @ 0x40031ec0
+afvb -12 local_ch int @ 0x40031ec0
+afvb -8 local_8h int @ 0x40031ec0
+afvs 0 local_0h int @ 0x40031ec0
+afvs 4 local_4h int @ 0x40031ec0
+afvs 8 local_8h_2 int @ 0x40031ec0
+afvs 12 local_ch_2 int @ 0x40031ec0
+afvs 16 local_10h_2 int @ 0x40031ec0
+axd 0x40032860 0x40031ed4
+axc 0x40031fb4 0x40031fa8
+axd 0x40032864 0x40031fd0
+axd 0x40032868 0x40031ff0
+axC 0x40030fd8 0x40031ff4
+axd 0x4003286c 0x40031ff8
+axC 0x40030fd8 0x40031ffc
+axC 0x4008e024 0x40032010
+axd 0x40032870 0x40032024
+axC 0x40030fd8 0x40032034
+axc 0x40032504 0x4003206c
+axC 0x4002f844 0x4003208c
+axC 0x4002fd3c 0x4003209c
+axc 0x400320dc 0x400320c8
+axC 0x4008e024 0x40032114
+axC 0x4008e024 0x40032154
+axd 0x40032874 0x40032164
+axd 0x40032874 0x40032174
+axd 0x40032878 0x400321a8
+axC 0x40030fd8 0x400321b8
+axC 0x4008e024 0x400321e8
+axC 0x4008e024 0x40032228
+axd 0x4003287c 0x4003229c
+axc 0x400322b0 0x400322a4
+axd 0x40032880 0x400322a8
+axc 0x400322e4 0x400322d0
+axd 0x40032874 0x400322e8
+axd 0x40032874 0x400322f8
+axd 0x40032884 0x40032344
+axC 0x40030fd8 0x40032354
+axc 0x400323c8 0x400323b4
+axc 0x400323fc 0x400323e8
+axc 0x400324e8 0x4003243c
+axc 0x40032474 0x40032460
+axc 0x400324a8 0x40032494
+axd 0x40032888 0x400324f0
+axC 0x40030fd8 0x400324f4
+axC 0x4002f844 0x40032528
+axC 0x4002fd3c 0x40032538
+axC 0x4008e024 0x40032554
+axC 0x4008e024 0x40032594
+axd 0x40032874 0x400325a4
+axd 0x40032874 0x400325b4
+axd 0x4003288c 0x400325ec
+axC 0x40030fd8 0x400325fc
+axd 0x40032890 0x40032644
+axC 0x40030fd8 0x4003264c
+axc 0x4003270c 0x40032700
+axd 0x40032864 0x40032728
+axC 0x4002f844 0x40032760
+axC 0x4002fd3c 0x40032770
+axC 0x4008e024 0x4003278c
+axC 0x4008e024 0x400327cc
+axd 0x40032874 0x400327dc
+axd 0x40032874 0x400327ec
+axd 0x4003288c 0x40032824
+axC 0x40030fd8 0x40032834
+afS 208 @ 0x40031ec0
+"f fcn.40032894 612 0x40032894"
+"af+ 0x40032894 fcn.40032894 f n"
+afc arm64 @ 0x40032894
+afb+ 0x40032894 0x40032894 84 0x400328f8 0x400328e8 n
+afb+ 0x40032894 0x400328e8 16 0x40032900 0xffffffffffffffff n
+afb+ 0x40032894 0x400328f8 8 0x40032900 0xffffffffffffffff b
+afb+ 0x40032894 0x40032900 136 0x40032a60 0xffffffffffffffff n
+afb+ 0x40032894 0x40032988 72 0x400329e4 0x400329d0 n
+afb+ 0x40032894 0x400329d0 20 0x400329f4 0xffffffffffffffff n
+afb+ 0x40032894 0x400329e4 16 0x400329f4 0xffffffffffffffff b
+afb+ 0x40032894 0x400329f4 24 0x40032a1c 0x40032a0c n
+afb+ 0x40032894 0x40032a0c 16 0x40032a1c 0xffffffffffffffff n
+afb+ 0x40032894 0x40032a1c 68 0x40032a60 0xffffffffffffffff n
+afb+ 0x40032894 0x40032a60 12 0x40032988 0x40032a6c n
+afb+ 0x40032894 0x40032a6c 140 0xffffffffffffffff 0xffffffffffffffff n
+afvb -72 local_48h int @ 0x40032894
+afvb -68 local_44h int @ 0x40032894
+afvb -64 local_40h int @ 0x40032894
+afvb -60 local_3ch int @ 0x40032894
+afvb -56 local_38h int @ 0x40032894
+afvb -40 local_28h int @ 0x40032894
+afvb -36 local_24h int @ 0x40032894
+afvb -32 local_20h int @ 0x40032894
+afvb -28 local_1ch int @ 0x40032894
+afvb -24 local_18h int @ 0x40032894
+afvb -20 local_14h int @ 0x40032894
+afvb -16 local_10h int @ 0x40032894
+afvb -12 local_ch int @ 0x40032894
+afvb -8 local_8h int @ 0x40032894
+afvs 0 local_0h int @ 0x40032894
+afvs 4 local_4h int @ 0x40032894
+axd 0x40032af8 0x400328ac
+axc 0x40032900 0x400328f4
+axd 0x40032afc 0x40032918
+axC 0x40030fd8 0x4003291c
+axd 0x40032b00 0x40032920
+axC 0x40030fd8 0x40032924
+axC 0x4008e024 0x40032938
+axd 0x40032b04 0x40032954
+axC 0x40030fd8 0x40032964
+axc 0x40032a60 0x40032984
+axC 0x4002f844 0x400329a4
+axC 0x4002fd3c 0x400329b4
+axc 0x400329f4 0x400329e0
+axC 0x4008e024 0x40032a2c
+axd 0x40032b08 0x40032a38
+axC 0x40030fd8 0x40032a48
+axd 0x40032b0c 0x40032a4c
+axC 0x40030fd8 0x40032a50
+axC 0x4002f844 0x40032a84
+axC 0x4002fd3c 0x40032a94
+axC 0x4008e024 0x40032ab0
+axd 0x40032b10 0x40032abc
+axC 0x40030fd8 0x40032acc
+axd 0x40032b00 0x40032ad0
+axC 0x40030fd8 0x40032ad4
+axd 0x40032afc 0x40032ad8
+axC 0x40030fd8 0x40032adc
+afS 80 @ 0x40032894
+"f fcn.400492b0 924 0x400492b0"
+"af+ 0x400492b0 fcn.400492b0 f n"
+afc arm64 @ 0x400492b0
+afb+ 0x400492b0 0x400492b0 16 0x4004938c 0x400492c0 n
+afb+ 0x400492b0 0x400492c0 12 0x400493b0 0x400492cc n
+afb+ 0x400492b0 0x400492cc 8 0x400493e0 0x400492d4 n
+afb+ 0x400492b0 0x400492d4 12 0x40049330 0x400492e0 n
+afb+ 0x400492b0 0x400492e0 16 0x400492fc 0x400492f0 n
+afb+ 0x400492b0 0x400492f0 8 0x400492f8 0xffffffffffffffff n
+afb+ 0x400492b0 0x400492f8 4 0x400492fc 0xffffffffffffffff n
+afb+ 0x400492b0 0x400492fc 44 0x400492f8 0x40049328 n
+afb+ 0x400492b0 0x40049328 8 0x400492fc 0x40049330 n
+afb+ 0x400492b0 0x40049330 12 0x40049340 0x4004933c n
+afb+ 0x400492b0 0x4004933c 4 0x40049388 0xffffffffffffffff n
+afb+ 0x400492b0 0x40049340 72 0x40049388 0xffffffffffffffff b
+afb+ 0x400492b0 0x40049388 4 0x4004938c 0xffffffffffffffff n
+afb+ 0x400492b0 0x4004938c 36 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x400492b0 0x400493b0 40 0x4004938c 0x400493d8 n
+afb+ 0x400492b0 0x400493d8 8 0x400492d4 0x400493e0 n
+afb+ 0x400492b0 0x400493e0 16 0x400494bc 0x400493f0 n
+afb+ 0x400492b0 0x400493f0 4 0x40049584 0x400493f4 n
+afb+ 0x400492b0 0x400493f4 8 0x40049494 0x400493fc n
+afb+ 0x400492b0 0x400493fc 20 0x4004941c 0x40049410 n
+afb+ 0x400492b0 0x40049410 8 0x40049418 0xffffffffffffffff n
+afb+ 0x400492b0 0x40049418 4 0x4004941c 0xffffffffffffffff n
+afb+ 0x400492b0 0x4004941c 108 0x40049418 0x40049488 n
+afb+ 0x400492b0 0x40049488 8 0x4004941c 0x40049490 n
+afb+ 0x400492b0 0x40049490 4 0x40049494 0xffffffffffffffff n
+afb+ 0x400492b0 0x40049494 8 0x400494b4 0x4004949c n
+afb+ 0x400492b0 0x4004949c 24 0x4004949c 0x400494b4 n
+afb+ 0x400492b0 0x400494b4 8 0x4004938c 0xffffffffffffffff n
+afb+ 0x400492b0 0x400494bc 8 0x4004955c 0x400494c4 n
+afb+ 0x400492b0 0x400494c4 20 0x400494e4 0x400494d8 n
+afb+ 0x400492b0 0x400494d8 8 0x400494e0 0xffffffffffffffff n
+afb+ 0x400492b0 0x400494e0 4 0x400494e4 0xffffffffffffffff n
+afb+ 0x400492b0 0x400494e4 108 0x400494e0 0x40049550 n
+afb+ 0x400492b0 0x40049550 8 0x400494e4 0x40049558 n
+afb+ 0x400492b0 0x40049558 4 0x4004955c 0xffffffffffffffff n
+afb+ 0x400492b0 0x4004955c 8 0x4004957c 0x40049564 n
+afb+ 0x400492b0 0x40049564 24 0x40049564 0x4004957c n
+afb+ 0x400492b0 0x4004957c 8 0x4004938c 0xffffffffffffffff n
+afb+ 0x400492b0 0x40049584 8 0x40049624 0x4004958c n
+afb+ 0x400492b0 0x4004958c 20 0x400495ac 0x400495a0 n
+afb+ 0x400492b0 0x400495a0 8 0x400495a8 0xffffffffffffffff n
+afb+ 0x400492b0 0x400495a8 4 0x400495ac 0xffffffffffffffff n
+afb+ 0x400492b0 0x400495ac 108 0x400495a8 0x40049618 n
+afb+ 0x400492b0 0x40049618 8 0x400495ac 0x40049620 n
+afb+ 0x400492b0 0x40049620 4 0x40049624 0xffffffffffffffff n
+afb+ 0x400492b0 0x40049624 8 0x40049644 0x4004962c n
+afb+ 0x400492b0 0x4004962c 24 0x4004962c 0x40049644 n
+afb+ 0x400492b0 0x40049644 8 0x4004938c 0xffffffffffffffff n
+axd 0x40049340 0x40049338
+axc 0x40049388 0x4004933c
+axc 0x4004938c 0x400494b8
+axc 0x4004938c 0x40049580
+axc 0x4004938c 0x40049648
+afS 0 @ 0x400492b0
+"f fcn.40049690 132 0x40049690"
+"af+ 0x40049690 fcn.40049690 f n"
+afc arm64 @ 0x40049690
+afb+ 0x40049690 0x40049674 8 0x400496fc 0x4004967c n
+afb+ 0x40049690 0x4004967c 20 0x40049690 0xffffffffffffffff n
+afb+ 0x40049690 0x40049690 8 0x40049674 0x40049698 n
+afb+ 0x40049690 0x40049698 20 0x400496ec 0x400496ac n
+afb+ 0x40049690 0x400496ac 12 0x400496b8 0xffffffffffffffff b
+afb+ 0x40049690 0x400496b8 24 0x400496b8 0x400496d0 n
+afb+ 0x40049690 0x400496d0 28 0x400496ec 0xffffffffffffffff n
+afb+ 0x40049690 0x400496ec 16 0x400496fc 0xffffffffffffffff n
+afb+ 0x40049690 0x400496fc 24 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x40049690
+"f fcn.40072988 60 0x40072988"
+"af+ 0x40072988 fcn.40072988 f n"
+afc arm64 @ 0x40072988
+afb+ 0x40072988 0x40072988 24 0x400729c0 0x400729a0 n
+afb+ 0x40072988 0x400729a0 24 0x400729b8 0xffffffffffffffff b
+afb+ 0x40072988 0x400729b8 8 0x400729b8 0xffffffffffffffff n
+afb+ 0x40072988 0x400729c0 4 0xffffffffffffffff 0xffffffffffffffff n
+axd 0x400729c4 0x40072990
+axd 0x400729c8 0x400729a0
+axC 0x4002c5d0 0x400729ac
+axC 0x4006dca0 0x400729b0
+axC 0x4006dd84 0x400729b4
+axC 0x4006dda4 0x400729b8
+axc 0x400729b8 0x400729bc
+afS 0 @ 0x40072988
+"f pmu_init 1448 0x4007ad4c"
+"af+ 0x4007ad4c pmu_init f n"
+afc arm64 @ 0x4007ad4c
+afb+ 0x4007ad4c 0x4007ad4c 332 0x4007aea4 0xffffffffffffffff n
+afb+ 0x4007ad4c 0x4007ae98 12 0x4007aea4 0xffffffffffffffff n
+afb+ 0x4007ad4c 0x4007aea4 12 0x4007ae98 0x4007aeb0 n
+afb+ 0x4007ad4c 0x4007aeb0 52 0x4007aef0 0xffffffffffffffff n
+afb+ 0x4007ad4c 0x4007aee4 12 0x4007aef0 0xffffffffffffffff n
+afb+ 0x4007ad4c 0x4007aef0 12 0x4007aee4 0x4007aefc n
+afb+ 0x4007ad4c 0x4007aefc 1016 0xffffffffffffffff 0xffffffffffffffff n
+afvb -20 local_14h int @ 0x4007ad4c
+afvb -16 local_10h int @ 0x4007ad4c
+afvb -12 local_ch int @ 0x4007ad4c
+afvb -8 local_8h int @ 0x4007ad4c
+afvs 0 local_0h int @ 0x4007ad4c
+axd 0x4007b2f4 0x4007ad58
+axd 0x4007b2f8 0x4007ad60
+axd 0x4007b2fc 0x4007ad68
+axC 0x4002e514 0x4007ad78
+axd 0x4007b300 0x4007ad7c
+axC 0x4002f314 0x4007ad84
+axd 0x4007b304 0x4007ad88
+axC 0x4002f314 0x4007ad90
+axd 0x4007b308 0x4007ad98
+axd 0x4007b308 0x4007ada4
+axC 0x40030034 0x4007adb4
+axC 0x40030034 0x4007adc0
+axC 0x40030034 0x4007adcc
+axd 0x4007b30c 0x4007ade4
+axC 0x4002ec2c 0x4007ade8
+axd 0x4007b310 0x4007ae00
+axC 0x4002ec2c 0x4007ae04
+axd 0x4007b314 0x4007ae1c
+axC 0x4002ec2c 0x4007ae20
+axd 0x4007b314 0x4007ae38
+axC 0x4002ec2c 0x4007ae3c
+axd 0x4007b314 0x4007ae54
+axC 0x4002ec2c 0x4007ae58
+axd 0x4007b318 0x4007ae70
+axC 0x4002ec2c 0x4007ae74
+axc 0x4007aea4 0x4007ae94
+axc 0x4007aef0 0x4007aee0
+axC 0x40030034 0x4007af1c
+axC 0x40030034 0x4007af28
+axC 0x40030034 0x4007af34
+axd 0x4007b31c 0x4007af40
+axC 0x4002f844 0x4007af48
+axd 0x4007b31c 0x4007af54
+axC 0x4002f844 0x4007af5c
+axd 0x4007b320 0x4007af68
+axC 0x4002f844 0x4007af70
+axd 0x4007b324 0x4007af7c
+axC 0x4002f844 0x4007af84
+axd 0x4007b310 0x4007af90
+axC 0x4002f844 0x4007af98
+axd 0x4007b328 0x4007afa4
+axC 0x4002f844 0x4007afac
+axd 0x4007b328 0x4007afb8
+axC 0x4002f844 0x4007afc0
+axd 0x4007b328 0x4007afcc
+axC 0x4002f844 0x4007afd4
+axd 0x4007b328 0x4007afe0
+axC 0x4002f844 0x4007afe8
+axd 0x4007b328 0x4007aff4
+axC 0x4002f844 0x4007affc
+axd 0x4007b328 0x4007b008
+axC 0x4002f844 0x4007b010
+axd 0x4007b328 0x4007b01c
+axC 0x4002f844 0x4007b024
+axd 0x4007b328 0x4007b030
+axC 0x4002f844 0x4007b038
+axd 0x4007b328 0x4007b044
+axC 0x4002f844 0x4007b04c
+axd 0x4007b328 0x4007b058
+axC 0x4002f844 0x4007b060
+axd 0x4007b328 0x4007b06c
+axC 0x4002f844 0x4007b074
+axd 0x4007b328 0x4007b080
+axC 0x4002f844 0x4007b088
+axd 0x4007b328 0x4007b094
+axC 0x4002f844 0x4007b09c
+axd 0x4007b328 0x4007b0a8
+axC 0x4002f844 0x4007b0b0
+axd 0x4007b328 0x4007b0bc
+axC 0x4002f844 0x4007b0c4
+axd 0x4007b328 0x4007b0d0
+axC 0x4002f844 0x4007b0d8
+axd 0x4007b328 0x4007b0e4
+axC 0x4002f844 0x4007b0ec
+axd 0x4007b328 0x4007b0f8
+axC 0x4002f844 0x4007b100
+axd 0x4007b328 0x4007b10c
+axC 0x4002f844 0x4007b114
+axd 0x4007b328 0x4007b120
+axC 0x4002f844 0x4007b128
+axd 0x4007b328 0x4007b134
+axC 0x4002f844 0x4007b13c
+axd 0x4007b328 0x4007b148
+axC 0x4002f844 0x4007b150
+axd 0x4007b328 0x4007b15c
+axC 0x4002f844 0x4007b164
+axd 0x4007b328 0x4007b170
+axC 0x4002f844 0x4007b178
+axd 0x4007b328 0x4007b184
+axC 0x4002f844 0x4007b18c
+axC 0x400300fc 0x4007b198
+axC 0x400300fc 0x4007b1a4
+axC 0x400300fc 0x4007b1b0
+axC 0x400300fc 0x4007b1bc
+axC 0x400300fc 0x4007b1c8
+axC 0x400300fc 0x4007b1d4
+axC 0x400300fc 0x4007b1e0
+axC 0x400300fc 0x4007b1ec
+axC 0x400300fc 0x4007b1f8
+axC 0x400300fc 0x4007b204
+axC 0x400300fc 0x4007b210
+axC 0x400300fc 0x4007b21c
+axC 0x400300fc 0x4007b228
+axC 0x400300fc 0x4007b234
+axC 0x400300fc 0x4007b240
+axC 0x400300fc 0x4007b24c
+axC 0x400300fc 0x4007b258
+axC 0x400300fc 0x4007b264
+axC 0x400300fc 0x4007b270
+axC 0x400300fc 0x4007b27c
+axC 0x400300fc 0x4007b288
+axC 0x400300fc 0x4007b294
+axC 0x400300fc 0x4007b2a0
+axC 0x400303f4 0x4007b2ac
+axC 0x400303f4 0x4007b2b8
+axC 0x400303f4 0x4007b2c4
+axC 0x400303f4 0x4007b2d0
+axC 0x400303f4 0x4007b2dc
+axC 0x400303f4 0x4007b2e8
+afS 24 @ 0x4007ad4c
+"f clock_init 1748 0x4007b32c"
+"af+ 0x4007b32c clock_init f n"
+afc arm64 @ 0x4007b32c
+afb+ 0x4007b32c 0x4007b32c 276 0x4007b44c 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b440 12 0x4007b44c 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b44c 12 0x4007b440 0x4007b458 n
+afb+ 0x4007b32c 0x4007b458 192 0x4007b560 0x4007b518 n
+afb+ 0x4007b32c 0x4007b518 72 0x4007b584 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b560 36 0x4007b584 0xffffffffffffffff b
+afb+ 0x4007b32c 0x4007b584 56 0x4007b604 0x4007b5bc n
+afb+ 0x4007b32c 0x4007b5bc 72 0x4007b628 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b604 36 0x4007b628 0xffffffffffffffff b
+afb+ 0x4007b32c 0x4007b628 128 0x4007b6f0 0x4007b6a8 n
+afb+ 0x4007b32c 0x4007b6a8 72 0x4007b710 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b6f0 32 0x4007b710 0xffffffffffffffff b
+afb+ 0x4007b32c 0x4007b710 200 0x4007b820 0x4007b7d8 n
+afb+ 0x4007b32c 0x4007b7d8 72 0x4007b844 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b820 36 0x4007b844 0xffffffffffffffff b
+afb+ 0x4007b32c 0x4007b844 60 0x4007b890 0x4007b880 n
+afb+ 0x4007b32c 0x4007b880 16 0x4007b89c 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b890 12 0x4007b89c 0xffffffffffffffff b
+afb+ 0x4007b32c 0x4007b89c 244 0x4007b9c4 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b990 52 0x4007b9c4 0xffffffffffffffff n
+afb+ 0x4007b32c 0x4007b9c4 16 0x4007b990 0x4007b9d4 n
+afb+ 0x4007b32c 0x4007b9d4 24 0x4007b9d4 0x4007b9ec n
+afb+ 0x4007b32c 0x4007b9ec 20 0xffffffffffffffff 0xffffffffffffffff n
+afvb -348 local_15ch int @ 0x4007b32c
+afvb -344 local_158h int @ 0x4007b32c
+afvb -340 local_154h int @ 0x4007b32c
+afvb -336 local_150h int @ 0x4007b32c
+afvb -332 local_14ch int @ 0x4007b32c
+afvb -328 local_148h int @ 0x4007b32c
+afvb -324 local_144h int @ 0x4007b32c
+afvb -320 local_140h int @ 0x4007b32c
+afvb -104 local_68h int @ 0x4007b32c
+afvb -100 local_64h int @ 0x4007b32c
+afvb -96 local_60h int @ 0x4007b32c
+afvb -92 local_5ch int @ 0x4007b32c
+afvb -88 local_58h int @ 0x4007b32c
+afvb -84 local_54h int @ 0x4007b32c
+afvb -80 local_50h int @ 0x4007b32c
+afvb -76 local_4ch int @ 0x4007b32c
+afvb -72 local_48h int @ 0x4007b32c
+afvb -68 local_44h int @ 0x4007b32c
+afvb -64 local_40h int @ 0x4007b32c
+afvb -60 local_3ch int @ 0x4007b32c
+afvb -56 local_38h int @ 0x4007b32c
+afvb -52 local_34h int @ 0x4007b32c
+afvb -48 local_30h int @ 0x4007b32c
+afvb -44 local_2ch int @ 0x4007b32c
+afvb -40 local_28h int @ 0x4007b32c
+afvb -36 local_24h int @ 0x4007b32c
+afvb -32 local_20h int @ 0x4007b32c
+afvb -28 local_1ch int @ 0x4007b32c
+afvb -24 local_18h int @ 0x4007b32c
+afvb -20 local_14h int @ 0x4007b32c
+afvb -16 local_10h int @ 0x4007b32c
+axd 0x4007ba00 0x4007b360
+axC 0x400492b0 0x4007b378
+axd 0x4007ba04 0x4007b38c
+axd 0x4007ba08 0x4007b394
+axd 0x4007ba0c 0x4007b39c
+axd 0x4007ba10 0x4007b3a4
+axd 0x4007ba14 0x4007b3ac
+axd 0x4007ba18 0x4007b3b4
+axd 0x4007ba1c 0x4007b3bc
+axd 0x4007ba20 0x4007b3c4
+axd 0x4007ba24 0x4007b3cc
+axd 0x4007ba28 0x4007b3d4
+axd 0x4007ba2c 0x4007b3dc
+axd 0x4007ba30 0x4007b3e4
+axd 0x4007ba34 0x4007b3ec
+axd 0x4007ba38 0x4007b3f4
+axd 0x4007ba3c 0x4007b3fc
+axd 0x4007ba40 0x4007b404
+axd 0x4007ba44 0x4007b408
+axd 0x4007ba48 0x4007b410
+axd 0x4007ba4c 0x4007b414
+axd 0x4007ba48 0x4007b41c
+axd 0x4007ba50 0x4007b420
+axd 0x4007ba48 0x4007b428
+axd 0x4007ba54 0x4007b42c
+axc 0x4007b44c 0x4007b43c
+axd 0x4007ba40 0x4007b458
+axd 0x4007ba58 0x4007b47c
+axd 0x4007ba5c 0x4007b484
+axd 0x4007ba60 0x4007b4a0
+axd 0x4007ba64 0x4007b4a8
+axd 0x4007ba68 0x4007b4c4
+axC 0x4008e024 0x4007b4d4
+axd 0x4007ba6c 0x4007b4e0
+axd 0x4007ba70 0x4007b4ec
+axd 0x4007ba74 0x4007b4f4
+axC 0x4008e230 0x4007b504
+axd 0x4007ba74 0x4007b518
+axC 0x4008e230 0x4007b528
+axd 0x4007ba74 0x4007b538
+axC 0x4008e230 0x4007b548
+axc 0x4007b584 0x4007b55c
+axd 0x4007ba74 0x4007b560
+axC 0x4008e230 0x4007b570
+axd 0x4007ba78 0x4007b590
+axd 0x4007ba74 0x4007b598
+axC 0x4008e230 0x4007b5a8
+axd 0x4007ba74 0x4007b5bc
+axC 0x4008e230 0x4007b5cc
+axd 0x4007ba74 0x4007b5dc
+axC 0x4008e230 0x4007b5ec
+axc 0x4007b628 0x4007b600
+axd 0x4007ba74 0x4007b604
+axC 0x4008e230 0x4007b614
+axd 0x4007ba7c 0x4007b634
+axd 0x4007ba80 0x4007b638
+axC 0x4008e230 0x4007b648
+axd 0x4007ba84 0x4007b658
+axd 0x4007ba88 0x4007b65c
+axC 0x4008e230 0x4007b66c
+axd 0x4007ba8c 0x4007b67c
+axd 0x4007ba90 0x4007b684
+axC 0x4008e230 0x4007b694
+axd 0x4007ba90 0x4007b6a8
+axC 0x4008e230 0x4007b6b8
+axd 0x4007ba90 0x4007b6c8
+axC 0x4008e230 0x4007b6d8
+axc 0x4007b710 0x4007b6ec
+axd 0x4007ba90 0x4007b6f0
+axC 0x4008e230 0x4007b700
+axd 0x4007ba94 0x4007b71c
+axd 0x4007ba98 0x4007b720
+axC 0x4008e230 0x4007b730
+axd 0x4007ba9c 0x4007b740
+axd 0x4007baa0 0x4007b744
+axC 0x4008e230 0x4007b754
+axd 0x4007baa4 0x4007b764
+axd 0x4007baa8 0x4007b768
+axC 0x4008e230 0x4007b778
+axd 0x4007baac 0x4007b788
+axd 0x4007bab0 0x4007b794
+axd 0x4007bab4 0x4007b7a0
+axd 0x4007bab8 0x4007b7ac
+axd 0x4007ba80 0x4007b7b4
+axC 0x4008e230 0x4007b7c4
+axd 0x4007ba80 0x4007b7d8
+axC 0x4008e230 0x4007b7e8
+axd 0x4007ba80 0x4007b7f8
+axC 0x4008e230 0x4007b808
+axc 0x4007b844 0x4007b81c
+axd 0x4007ba80 0x4007b820
+axC 0x4008e230 0x4007b830
+axd 0x4007babc 0x4007b850
+axd 0x4007bac0 0x4007b854
+axC 0x4008e230 0x4007b864
+axd 0x4007bac4 0x4007b880
+axd 0x4007bac8 0x4007b884
+axc 0x4007b89c 0x4007b88c
+axd 0x4007bac4 0x4007b890
+axd 0x4007bacc 0x4007b894
+axd 0x4007ba6c 0x4007b89c
+axd 0x4007ba70 0x4007b8a8
+axd 0x4007ba78 0x4007b8b4
+axd 0x4007ba7c 0x4007b8c0
+axd 0x4007ba84 0x4007b8cc
+axd 0x4007ba8c 0x4007b8d8
+axd 0x4007ba94 0x4007b8e4
+axd 0x4007ba9c 0x4007b8f0
+axd 0x4007baa4 0x4007b8fc
+axd 0x4007baac 0x4007b908
+axd 0x4007bab0 0x4007b914
+axd 0x4007bab4 0x4007b920
+axd 0x4007bab8 0x4007b92c
+axd 0x4007babc 0x4007b938
+axd 0x4007ba58 0x4007b944
+axd 0x4007ba60 0x4007b950
+axd 0x4007bac4 0x4007b95c
+axd 0x4007bad0 0x4007b968
+axd 0x4007bad4 0x4007b970
+axd 0x4007bad8 0x4007b974
+axd 0x4007bad8 0x4007b97c
+axc 0x4007b9c4 0x4007b98c
+axd 0x4007badc 0x4007b9c8
+axd 0x4007bad4 0x4007b9ec
+afS 340 @ 0x4007b32c
+"f fcn.4008c934 2952 0x4008c934"
+"af+ 0x4008c934 fcn.4008c934 f n"
+afc arm64 @ 0x4008c934
+afb+ 0x4008c934 0x4008c934 108 0x4008d3a4 0x4008c9a0 n
+afb+ 0x4008c934 0x4008c9a0 40 0x4008d2b0 0x4008c9c8 n
+afb+ 0x4008c934 0x4008c9c8 28 0x4008d468 0x4008c9e4 n
+afb+ 0x4008c934 0x4008c9e4 32 0x4008d444 0x4008ca04 n
+afb+ 0x4008c934 0x4008ca04 64 0x4008ca04 0x4008ca44 n
+afb+ 0x4008c934 0x4008ca44 4 0x4008cc58 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008ca48 36 0x4008cd70 0x4008ca6c n
+afb+ 0x4008c934 0x4008ca6c 12 0x4008caec 0x4008ca78 n
+afb+ 0x4008c934 0x4008ca78 16 0x4008d444 0x4008ca88 n
+afb+ 0x4008c934 0x4008ca88 4 0x4008cab4 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008ca8c 40 0x4008d444 0x4008cab4 n
+afb+ 0x4008c934 0x4008cab4 16 0x4008ca8c 0x4008cac4 n
+afb+ 0x4008c934 0x4008cac4 40 0x4008caec 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008caec 32 0x4008d468 0x4008cb0c n
+afb+ 0x4008c934 0x4008cb0c 32 0x4008d444 0x4008cb2c n
+afb+ 0x4008c934 0x4008cb2c 72 0x4008cc58 0x4008cb74 n
+afb+ 0x4008c934 0x4008cb74 12 0x4008cc18 0x4008cb80 n
+afb+ 0x4008c934 0x4008cb80 72 0x4008cb80 0x4008cbc8 n
+afb+ 0x4008c934 0x4008cbc8 12 0x4008cc58 0x4008cbd4 n
+afb+ 0x4008c934 0x4008cbd4 64 0x4008cbd4 0x4008cc14 n
+afb+ 0x4008c934 0x4008cc14 4 0x4008cc58 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008cc18 64 0x4008cc18 0x4008cc58 n
+afb+ 0x4008c934 0x4008cc58 36 0x4008cd70 0x4008cc7c n
+afb+ 0x4008c934 0x4008cc7c 96 0x4008d48c 0x4008ccdc n
+afb+ 0x4008c934 0x4008ccdc 16 0x4008d48c 0x4008ccec n
+afb+ 0x4008c934 0x4008ccec 20 0x4008d468 0x4008cd00 n
+afb+ 0x4008c934 0x4008cd00 112 0x4008d290 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008cd70 12 0x4008ce20 0x4008cd7c n
+afb+ 0x4008c934 0x4008cd7c 112 0x4008d48c 0x4008cdec n
+afb+ 0x4008c934 0x4008cdec 16 0x4008d48c 0x4008cdfc n
+afb+ 0x4008c934 0x4008cdfc 32 0x4008d468 0x4008ce1c n
+afb+ 0x4008c934 0x4008ce1c 4 0x4008d200 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008ce20 12 0x4008cef8 0x4008ce2c n
+afb+ 0x4008c934 0x4008ce2c 24 0x4008ceb8 0x4008ce44 n
+afb+ 0x4008c934 0x4008ce44 16 0x4008d444 0x4008ce54 n
+afb+ 0x4008c934 0x4008ce54 4 0x4008ce80 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008ce58 40 0x4008d444 0x4008ce80 n
+afb+ 0x4008c934 0x4008ce80 16 0x4008ce58 0x4008ce90 n
+afb+ 0x4008c934 0x4008ce90 40 0x4008ceb8 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008ceb8 64 0x4008d0cc 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008cef8 12 0x4008d004 0x4008cf04 n
+afb+ 0x4008c934 0x4008cf04 60 0x4008cfb4 0x4008cf40 n
+afb+ 0x4008c934 0x4008cf40 16 0x4008d444 0x4008cf50 n
+afb+ 0x4008c934 0x4008cf50 4 0x4008cf7c 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008cf54 40 0x4008d444 0x4008cf7c n
+afb+ 0x4008c934 0x4008cf7c 16 0x4008cf54 0x4008cf8c n
+afb+ 0x4008c934 0x4008cf8c 40 0x4008cfb4 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008cfb4 64 0x4008d3d8 0x4008cff4 n
+afb+ 0x4008c934 0x4008cff4 16 0x4008d0cc 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d004 92 0x4008d48c 0x4008d060 n
+afb+ 0x4008c934 0x4008d060 16 0x4008d48c 0x4008d070 n
+afb+ 0x4008c934 0x4008d070 20 0x4008d468 0x4008d084 n
+afb+ 0x4008c934 0x4008d084 72 0x4008d290 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d0cc 16 0x4008d48c 0x4008d0dc n
+afb+ 0x4008c934 0x4008d0dc 16 0x4008d48c 0x4008d0ec n
+afb+ 0x4008c934 0x4008d0ec 32 0x4008d468 0x4008d10c n
+afb+ 0x4008c934 0x4008d10c 12 0x4008d200 0x4008d118 n
+afb+ 0x4008c934 0x4008d118 20 0x4008d200 0x4008d12c n
+afb+ 0x4008c934 0x4008d12c 60 0x4008d168 0xffffffffffffffff b
+afb+ 0x4008c934 0x4008d168 72 0x4008d168 0x4008d1b0 n
+afb+ 0x4008c934 0x4008d1b0 12 0x4008d290 0x4008d1bc n
+afb+ 0x4008c934 0x4008d1bc 64 0x4008d1bc 0x4008d1fc n
+afb+ 0x4008c934 0x4008d1fc 4 0x4008d290 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d200 80 0x4008d250 0xffffffffffffffff b
+afb+ 0x4008c934 0x4008d250 64 0x4008d250 0x4008d290 n
+afb+ 0x4008c934 0x4008d290 32 0x4008d3a4 0x4008d2b0 n
+afb+ 0x4008c934 0x4008d2b0 28 0x4008d468 0x4008d2cc n
+afb+ 0x4008c934 0x4008d2cc 32 0x4008d444 0x4008d2ec n
+afb+ 0x4008c934 0x4008d2ec 52 0x4008d37c 0x4008d320 n
+afb+ 0x4008c934 0x4008d320 52 0x4008d37c 0x4008d354 n
+afb+ 0x4008c934 0x4008d354 40 0x4008d37c 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d37c 40 0x4008cd70 0x4008d3a4 n
+afb+ 0x4008c934 0x4008d3a4 16 0x4008ca48 0x4008d3b4 n
+afb+ 0x4008c934 0x4008d3b4 36 0x4008d4ac 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d3d8 40 0x4008d430 0x4008d400 n
+afb+ 0x4008c934 0x4008d400 16 0x4008d41c 0x4008d410 n
+afb+ 0x4008c934 0x4008d410 12 0x4008d424 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d41c 8 0x4008d424 0xffffffffffffffff b
+afb+ 0x4008c934 0x4008d424 12 0x4008d438 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d430 8 0x4008d438 0xffffffffffffffff b
+afb+ 0x4008c934 0x4008d438 12 0x4008d4ac 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d444 36 0x4008d4ac 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d468 36 0x4008d4ac 0xffffffffffffffff n
+afb+ 0x4008c934 0x4008d48c 32 0x4008d4ac 0xffffffffffffffff b
+afb+ 0x4008c934 0x4008d4ac 16 0xffffffffffffffff 0xffffffffffffffff n
+afvb -56 local_38h int @ 0x4008c934
+afvb -52 local_34h int @ 0x4008c934
+afvb -48 local_30h int @ 0x4008c934
+afvb -44 local_2ch int @ 0x4008c934
+afvb -40 local_28h int @ 0x4008c934
+afvb -36 local_24h int @ 0x4008c934
+afvb -32 local_20h int @ 0x4008c934
+afvb -28 local_1ch int @ 0x4008c934
+afvb -24 local_18h int @ 0x4008c934
+afvb -20 local_14h int @ 0x4008c934
+afvb -16 local_10h int @ 0x4008c934
+afvb -12 local_ch int @ 0x4008c934
+afvb -8 local_8h int @ 0x4008c934
+axc 0x4008cc58 0x4008ca44
+axc 0x4008cab4 0x4008ca88
+axC 0x4008d508 0x4008cb30
+axC 0x4008d570 0x4008cb40
+axC 0x4008d508 0x4008cb84
+axC 0x4008d570 0x4008cb94
+axc 0x4008cc58 0x4008cc14
+axc 0x4008d290 0x4008cd6c
+axc 0x4008d200 0x4008ce1c
+axc 0x4008ce80 0x4008ce54
+axC 0x4008d4bc 0x4008cec8
+axc 0x4008d0cc 0x4008cef4
+axc 0x4008cf7c 0x4008cf50
+axC 0x4008d4bc 0x4008cfb8
+axc 0x4008d0cc 0x4008d000
+axc 0x4008d290 0x4008d0c8
+axC 0x4008d508 0x4008d130
+axC 0x4008d570 0x4008d140
+axC 0x4008d508 0x4008d16c
+axC 0x4008d570 0x4008d17c
+axc 0x4008d290 0x4008d1fc
+axc 0x4008d4ac 0x4008d3d4
+axc 0x4008d424 0x4008d418
+axc 0x4008d438 0x4008d42c
+axc 0x4008d4ac 0x4008d440
+axc 0x4008d4ac 0x4008d464
+axc 0x4008d4ac 0x4008d488
+afS 56 @ 0x4008c934
+"f fcn.4008e024 492 0x4008e024"
+"af+ 0x4008e024 fcn.4008e024 f n"
+afc arm64 @ 0x4008e024
+afb+ 0x4008e024 0x4008e024 12 0x4008e204 0x4008e030 n
+afb+ 0x4008e024 0x4008e030 8 0x4008e1e8 0x4008e038 n
+afb+ 0x4008e024 0x4008e038 8 0x4008e1f4 0x4008e040 n
+afb+ 0x4008e024 0x4008e040 28 0x4008e060 0x4008e05c n
+afb+ 0x4008e024 0x4008e05c 4 0x4008e060 0xffffffffffffffff n
+afb+ 0x4008e024 0x4008e060 392 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4008e024 0x4008e1e8 12 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4008e024 0x4008e1f4 16 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x4008e024 0x4008e204 12 0xffffffffffffffff 0xffffffffffffffff n
+axd 0x4008e060 0x4008e058
+axc 0x4008e470 0x4008e20c
+afS 0 @ 0x4008e024
+"f loc.4008e470 16 0x4008e470"
+"af+ 0x4008e470 loc.4008e470 l n"
+afc arm64 @ 0x4008e470
+afb+ 0x4008e470 0x4008e470 16 0xffffffffffffffff 0xffffffffffffffff n
+axC 0x4002e4e4 0x4008e478
+afS 0 @ 0x4008e470
+
+ahb 32 @ 0x98
+# types
+tk *aligned_alloc=func
+tk _Exit=func
+tk __assert_fail=func
+tk __libc_init=func
+tk __libc_init_array=func
+tk __libc_start_main=func
+tk __stack_chk_fail=func
+tk __uClibc_main=func
+tk _exit=func
+tk abort=func
+tk abs=func
+tk access=func
+tk acos=func
+tk acosf=func
+tk acosh=func
+tk acoshf=func
+tk acoshl=func
+tk acosl=func
+tk arc4random=func
+tk asctime=func
+tk asin=func
+tk asinf=func
+tk asinh=func
+tk asinhf=func
+tk asinhl=func
+tk asinl=func
+tk at_quick_exit=func
+tk atan=func
+tk atan2=func
+tk atan2f=func
+tk atan2l=func
+tk atanf=func
+tk atanh=func
+tk atanhf=func
+tk atanhl=func
+tk atanl=func
+tk atexit=func
+tk atof=func
+tk atoi=func
+tk atol=func
+tk atoll=func
+tk basename=func
+tk bindtextdomain=func
+tk bsearch=func
+tk btowc=func
+tk bzero=func
+tk calloc=func
+tk cbrt=func
+tk cbrtf=func
+tk cbrtl=func
+tk ceil=func
+tk ceilf=func
+tk ceill=func
+tk char=type
+tk char *=type
+tk chmod=func
+tk clearerr=func
+tk clock=func
+tk close=func
+tk compat_mode=func
+tk copysign=func
+tk copysignf=func
+tk copysignl=func
+tk cos=func
+tk cosf=func
+tk cosh=func
+tk coshf=func
+tk coshl=func
+tk cosl=func
+tk ctime=func
+tk difftime=func
+tk div=func
+tk double=type
+tk erf=func
+tk erfc=func
+tk erfcf=func
+tk erfcl=func
+tk erff=func
+tk erfl=func
+tk error=func
+tk exit=func
+tk exp=func
+tk exp2=func
+tk exp2f=func
+tk exp2l=func
+tk expf=func
+tk expl=func
+tk expm1=func
+tk expm1f=func
+tk expm1l=func
+tk fabs=func
+tk fabsf=func
+tk fabsl=func
+tk fchmod=func
+tk fclose=func
+tk fdim=func
+tk fdimf=func
+tk fdiml=func
+tk feclearexcept=func
+tk fegetenv=func
+tk fegetexceptflag=func
+tk fegetround=func
+tk feholdexcept=func
+tk feof=func
+tk feraiseexcept=func
+tk ferror=func
+tk fesetenv=func
+tk fesetexceptflag=func
+tk fesetround=func
+tk fetestexcept=func
+tk feupdateenv=func
+tk fflush=func
+tk fgetc=func
+tk fgetpos=func
+tk fgets=func
+tk fgetwc=func
+tk fgetws=func
+tk fileno=func
+tk float=type
+tk floor=func
+tk floorf=func
+tk floorl=func
+tk fma=func
+tk fmaf=func
+tk fmal=func
+tk fmax=func
+tk fmaxf=func
+tk fmaxl=func
+tk fmin=func
+tk fminf=func
+tk fminl=func
+tk fmod=func
+tk fmodf=func
+tk fmodl=func
+tk fopen=func
+tk fpclassify=func
+tk fprintf=func
+tk fputc=func
+tk fputs=func
+tk fputwc=func
+tk fputws=func
+tk fread=func
+tk free=func
+tk freopen=func
+tk frexp=func
+tk frexpf=func
+tk frexpl=func
+tk fscanf=func
+tk fseek=func
+tk fsetpos=func
+tk fstat=func
+tk ftell=func
+tk func.*aligned_alloc.arg.0=size_t,alignment
+tk func.*aligned_alloc.arg.1=size_t,size
+tk func.*aligned_alloc.args=2
+tk func.*aligned_alloc.ret=void
+tk func._Exit.arg.0=int,status
+tk func._Exit.args=1
+tk func._Exit.noreturn=true
+tk func._Exit.ret=void
+tk func.__assert_fail.arg.0=const char *,assertion
+tk func.__assert_fail.arg.1=const char *,file
+tk func.__assert_fail.arg.2=unsigned int,line
+tk func.__assert_fail.arg.3=const char *,function
+tk func.__assert_fail.args=4
+tk func.__assert_fail.noreturn=true
+tk func.__assert_fail.ret=void
+tk func.__libc_init.arg.0=int,argc
+tk func.__libc_init.arg.1=char **,argv
+tk func.__libc_init.arg.2=char **,envp
+tk func.__libc_init.args=3
+tk func.__libc_init.noreturn=true
+tk func.__libc_init.ret=void
+tk func.__libc_init_array.args=0
+tk func.__libc_init_array.ret=void
+tk func.__libc_start_main.arg.0=func,main
+tk func.__libc_start_main.arg.1=int,argc
+tk func.__libc_start_main.arg.2=char **,ubp_av
+tk func.__libc_start_main.arg.3=func,init
+tk func.__libc_start_main.arg.4=func,fini
+tk func.__libc_start_main.arg.5=func,rtld_fini
+tk func.__libc_start_main.arg.6=void *,stack_end
+tk func.__libc_start_main.args=7
+tk func.__libc_start_main.noreturn=true
+tk func.__libc_start_main.ret=int
+tk func.__stack_chk_fail.args=0
+tk func.__stack_chk_fail.noreturn=true
+tk func.__stack_chk_fail.ret=void
+tk func.__uClibc_main.arg.0=func,main
+tk func.__uClibc_main.arg.1=int,argc
+tk func.__uClibc_main.arg.2=char **,argv
+tk func.__uClibc_main.arg.3=func,app_init
+tk func.__uClibc_main.arg.4=func,app_fini
+tk func.__uClibc_main.arg.5=func,rtld_fini
+tk func.__uClibc_main.arg.6=void *,stack_end
+tk func.__uClibc_main.args=7
+tk func.__uClibc_main.noreturn=true
+tk func.__uClibc_main.ret=int
+tk func._exit.arg.0=int,status
+tk func._exit.args=1
+tk func._exit.noreturn=true
+tk func._exit.ret=void
+tk func.abort.args=0
+tk func.abort.noreturn=true
+tk func.abort.ret=void
+tk func.abs.arg.0=int,j
+tk func.abs.args=1
+tk func.abs.ret=int
+tk func.access.arg.0=const char *,path
+tk func.access.arg.1=int,mode
+tk func.access.args=2
+tk func.access.ret=int
+tk func.acos.arg.0=arithmetic,x
+tk func.acos.args=1
+tk func.acos.ret=floating_point
+tk func.acosf.arg.0=float,x
+tk func.acosf.args=1
+tk func.acosf.ret=float
+tk func.acosh.arg.0=arithmetic,x
+tk func.acosh.args=1
+tk func.acosh.ret=floating_point
+tk func.acoshf.arg.0=float,x
+tk func.acoshf.args=1
+tk func.acoshf.ret=float
+tk func.acoshl.arg.0=long double,x
+tk func.acoshl.args=1
+tk func.acoshl.ret=long double
+tk func.acosl.arg.0=long double,x
+tk func.acosl.args=1
+tk func.acosl.ret=long double
+tk func.arc4random.args=0
+tk func.arc4random.ret=uint32_t
+tk func.asctime.arg.0=const tm *,timeptr
+tk func.asctime.args=1
+tk func.asctime.ret=char *
+tk func.asin.arg.0=arithmetic,x
+tk func.asin.args=1
+tk func.asin.ret=floating_point
+tk func.asinf.arg.0=float,x
+tk func.asinf.args=1
+tk func.asinf.ret=float
+tk func.asinh.arg.0=arithmetic,x
+tk func.asinh.args=1
+tk func.asinh.ret=floating_point
+tk func.asinhf.arg.0=float,x
+tk func.asinhf.args=1
+tk func.asinhf.ret=float
+tk func.asinhl.arg.0=long double,x
+tk func.asinhl.args=1
+tk func.asinhl.ret=long double
+tk func.asinl.arg.0=long double,x
+tk func.asinl.args=1
+tk func.asinl.ret=long double
+tk func.at_quick_exit.args=0
+tk func.at_quick_exit.ret=int
+tk func.atan.arg.0=arithmetic,x
+tk func.atan.args=1
+tk func.atan.ret=floating_point
+tk func.atan2.arg.0=arithmetic,y
+tk func.atan2.arg.1=arithmetic,x
+tk func.atan2.args=2
+tk func.atan2.ret=floating_point
+tk func.atan2f.arg.0=float,y
+tk func.atan2f.arg.1=float,x
+tk func.atan2f.args=2
+tk func.atan2f.ret=float
+tk func.atan2l.arg.0=long double,y
+tk func.atan2l.arg.1=long double,x
+tk func.atan2l.args=2
+tk func.atan2l.ret=long double
+tk func.atanf.arg.0=float,x
+tk func.atanf.args=1
+tk func.atanf.ret=float
+tk func.atanh.arg.0=arithmetic,x
+tk func.atanh.args=1
+tk func.atanh.ret=floating_point
+tk func.atanhf.arg.0=float,x
+tk func.atanhf.args=1
+tk func.atanhf.ret=float
+tk func.atanhl.arg.0=long double,x
+tk func.atanhl.args=1
+tk func.atanhl.ret=long double
+tk func.atanl.arg.0=long double,x
+tk func.atanl.args=1
+tk func.atanl.ret=long double
+tk func.atexit.arg.0=func,function
+tk func.atexit.args=1
+tk func.atexit.ret=int
+tk func.atof.arg.0=const char *,str
+tk func.atof.args=1
+tk func.atof.ret=double
+tk func.atoi.arg.0=const char *,str
+tk func.atoi.args=1
+tk func.atoi.ret=int
+tk func.atol.arg.0=const char *,str
+tk func.atol.args=1
+tk func.atol.ret=long
+tk func.atoll.arg.0=const char *,str
+tk func.atoll.args=1
+tk func.atoll.ret=long long
+tk func.basename.arg.0=char *,path
+tk func.basename.args=1
+tk func.basename.ret=char *
+tk func.bindtextdomain.arg.0=char *,domainname
+tk func.bindtextdomain.arg.1=char *,dirname
+tk func.bindtextdomain.args=2
+tk func.bindtextdomain.ret=char *
+tk func.bsearch.arg.0=const void *,key
+tk func.bsearch.arg.1=const void *,base
+tk func.bsearch.arg.2=size_t,nmemb
+tk func.bsearch.arg.3=size_t,size
+tk func.bsearch.arg.4=int,(*compar)(const void *,const void *)
+tk func.bsearch.args=5
+tk func.btowc.arg.0=int,c
+tk func.btowc.args=1
+tk func.btowc.ret=wint_t
+tk func.bzero.arg.0=void *,s
+tk func.bzero.arg.1=size_t,n
+tk func.bzero.args=2
+tk func.bzero.ret=void
+tk func.calloc.arg.0=size_t,nmeb
+tk func.calloc.arg.1=size_t,size
+tk func.calloc.args=2
+tk func.calloc.ret=void *
+tk func.cbrt.arg.0=arithmetic,x
+tk func.cbrt.args=1
+tk func.cbrt.ret=floating_point
+tk func.cbrtf.arg.0=float,x
+tk func.cbrtf.args=1
+tk func.cbrtf.ret=float
+tk func.cbrtl.arg.0=long double,x
+tk func.cbrtl.args=1
+tk func.cbrtl.ret=long double
+tk func.ceil.arg.0=arithmetic,x
+tk func.ceil.args=1
+tk func.ceil.ret=floating_point
+tk func.ceilf.arg.0=float,x
+tk func.ceilf.args=1
+tk func.ceilf.ret=float
+tk func.ceill.arg.0=long double,x
+tk func.ceill.args=1
+tk func.ceill.ret=long double
+tk func.chmod.arg.0=const char *,path
+tk func.chmod.arg.1=int,mode
+tk func.chmod.args=2
+tk func.chmod.ret=int
+tk func.clearerr.arg.0=FILE *,stream
+tk func.clearerr.args=1
+tk func.clearerr.ret=void
+tk func.clock.args=0
+tk func.clock.ret=clock_t
+tk func.close.arg.0=int,fildes
+tk func.close.args=1
+tk func.close.ret=int
+tk func.compat_mode.arg.0=const char *,function
+tk func.compat_mode.arg.1=const char *,mode
+tk func.compat_mode.args=2
+tk func.compat_mode.ret=bool
+tk func.copysign.arg.0=arithmetic,x
+tk func.copysign.arg.1=arithmetic,y
+tk func.copysign.args=2
+tk func.copysign.ret=floating_point
+tk func.copysignf.arg.0=float,x
+tk func.copysignf.arg.1=float,y
+tk func.copysignf.args=2
+tk func.copysignf.ret=float
+tk func.copysignl.arg.0=long double,x
+tk func.copysignl.arg.1=long double,y
+tk func.copysignl.args=2
+tk func.copysignl.ret=long double
+tk func.cos.arg.0=arithmetic,x
+tk func.cos.args=1
+tk func.cos.ret=floating_point
+tk func.cosf.arg.0=float,x
+tk func.cosf.args=1
+tk func.cosf.ret=float
+tk func.cosh.arg.0=arithmetic,x
+tk func.cosh.args=1
+tk func.cosh.ret=floating_point
+tk func.coshf.arg.0=float,x
+tk func.coshf.args=1
+tk func.coshf.ret=float
+tk func.coshl.arg.0=long double,x
+tk func.coshl.args=1
+tk func.coshl.ret=long double
+tk func.cosl.arg.0=long double,x
+tk func.cosl.args=1
+tk func.cosl.ret=long double
+tk func.ctime.arg.0=const time_t *,timer
+tk func.ctime.args=1
+tk func.ctime.ret=char *
+tk func.difftime.arg.0=time_t,time1
+tk func.difftime.arg.1=time_t,time0
+tk func.difftime.args=2
+tk func.difftime.ret=double
+tk func.div.arg.0=int,numer
+tk func.div.arg.1=int,denom
+tk func.div.args=2
+tk func.div.ret=div_t
+tk func.erf.arg.0=arithmetic,x
+tk func.erf.args=1
+tk func.erf.ret=floating_point
+tk func.erfc.arg.0=arithmetic,x
+tk func.erfc.args=1
+tk func.erfc.ret=floating_point
+tk func.erfcf.arg.0=float,x
+tk func.erfcf.args=1
+tk func.erfcf.ret=float
+tk func.erfcl.arg.0=long double,x
+tk func.erfcl.args=1
+tk func.erfcl.ret=long double
+tk func.erff.arg.0=float,x
+tk func.erff.args=1
+tk func.erff.ret=float
+tk func.erfl.arg.0=long double,x
+tk func.erfl.args=1
+tk func.erfl.ret=long double
+tk func.error.arg.0=int,status
+tk func.error.arg.1=int,errname
+tk func.error.arg.2=char *,format
+tk func.error.args=3
+tk func.error.ret=void
+tk func.exit.arg.0=int,status
+tk func.exit.args=1
+tk func.exit.noreturn=true
+tk func.exit.ret=void
+tk func.exp.arg.0=arithmetic,x
+tk func.exp.args=1
+tk func.exp.ret=floating_point
+tk func.exp2.arg.0=arithmetic,x
+tk func.exp2.args=1
+tk func.exp2.ret=floating_point
+tk func.exp2f.arg.0=float,x
+tk func.exp2f.args=1
+tk func.exp2f.ret=float
+tk func.exp2l.arg.0=long double,x
+tk func.exp2l.args=1
+tk func.exp2l.ret=long double
+tk func.expf.arg.0=float,x
+tk func.expf.args=1
+tk func.expf.ret=float
+tk func.expl.arg.0=long double,x
+tk func.expl.args=1
+tk func.expl.ret=long double
+tk func.expm1.arg.0=arithmetic,x
+tk func.expm1.args=1
+tk func.expm1.ret=floating_point
+tk func.expm1f.arg.0=float,x
+tk func.expm1f.args=1
+tk func.expm1f.ret=float
+tk func.expm1l.arg.0=long double,x
+tk func.expm1l.args=1
+tk func.expm1l.ret=long double
+tk func.fabs.arg.0=arithmetic,x
+tk func.fabs.args=1
+tk func.fabs.ret=floating_point
+tk func.fabsf.arg.0=float,x
+tk func.fabsf.args=1
+tk func.fabsf.ret=float
+tk func.fabsl.arg.0=long double,x
+tk func.fabsl.args=1
+tk func.fabsl.ret=long double
+tk func.fchmod.arg.0=int,fd
+tk func.fchmod.arg.1=int,mode
+tk func.fchmod.args=2
+tk func.fchmod.ret=int
+tk func.fclose.arg.0=FILE *,stream
+tk func.fclose.args=1
+tk func.fclose.ret=int
+tk func.fdim.arg.0=arithmetic,x
+tk func.fdim.arg.1=arithmetic,y
+tk func.fdim.args=2
+tk func.fdim.ret=floating_point
+tk func.fdimf.arg.0=float,x
+tk func.fdimf.arg.1=float,y
+tk func.fdimf.args=2
+tk func.fdimf.ret=float
+tk func.fdiml.arg.0=long double,x
+tk func.fdiml.arg.1=long double,y
+tk func.fdiml.args=2
+tk func.fdiml.ret=long double
+tk func.feclearexcept.arg.0=int,excepts
+tk func.feclearexcept.args=1
+tk func.feclearexcept.ret=int
+tk func.fegetenv.arg.0=fenv_t *,envp
+tk func.fegetenv.args=1
+tk func.fegetenv.ret=int
+tk func.fegetexceptflag.arg.0=fexcept_t *,flagp
+tk func.fegetexceptflag.arg.1=int,excepts
+tk func.fegetexceptflag.args=2
+tk func.fegetexceptflag.ret=int
+tk func.fegetround.args=0
+tk func.fegetround.ret=int
+tk func.feholdexcept.arg.0=fenv_t *,envp
+tk func.feholdexcept.args=1
+tk func.feholdexcept.ret=int
+tk func.feof.arg.0=FILE *,stream
+tk func.feof.args=1
+tk func.feof.ret=int
+tk func.feraiseexcept.arg.0=int,excepts
+tk func.feraiseexcept.args=1
+tk func.feraiseexcept.ret=int
+tk func.ferror.arg.0=FILE *,stream
+tk func.ferror.args=1
+tk func.ferror.ret=int
+tk func.fesetenv.arg.0=const,fenv_t*
+tk func.fesetenv.args=1
+tk func.fesetenv.ret=int
+tk func.fesetexceptflag.arg.0=const,fexcept_t*
+tk func.fesetexceptflag.arg.1=int,excepts
+tk func.fesetexceptflag.args=2
+tk func.fesetexceptflag.ret=int
+tk func.fesetround.arg.0=int,round
+tk func.fesetround.args=1
+tk func.fesetround.ret=int
+tk func.fetestexcept.arg.0=int,excepts
+tk func.fetestexcept.args=1
+tk func.fetestexcept.ret=int
+tk func.feupdateenv.arg.0=const,fenv_t*
+tk func.feupdateenv.args=1
+tk func.feupdateenv.ret=int
+tk func.fflush.arg.0=FILE *,stream
+tk func.fflush.args=1
+tk func.fflush.ret=int
+tk func.fgetc.arg.0=FILE *,stream
+tk func.fgetc.args=1
+tk func.fgetc.ret=int
+tk func.fgetpos.arg.0=FILE *,stream
+tk func.fgetpos.arg.1=fpos_t*,pos
+tk func.fgetpos.args=2
+tk func.fgetpos.ret=int
+tk func.fgets.arg.0=char *,s
+tk func.fgets.arg.1=int,size
+tk func.fgets.arg.2=FILE *,stream
+tk func.fgets.args=3
+tk func.fgets.ret=char *
+tk func.fgetwc.arg.0=FILE *,stream
+tk func.fgetwc.args=1
+tk func.fgetwc.ret=wint_t
+tk func.fgetws.arg.0=wchar_t *,s
+tk func.fgetws.arg.1=int,n
+tk func.fgetws.arg.2=FILE *,stream
+tk func.fgetws.args=3
+tk func.fgetws.ret=wchar_t*
+tk func.fileno.arg.0=FILE *,stream
+tk func.fileno.args=1
+tk func.fileno.ret=int
+tk func.floor.arg.0=arithmetic,x
+tk func.floor.args=1
+tk func.floor.ret=floating_point
+tk func.floorf.arg.0=float,x
+tk func.floorf.args=1
+tk func.floorf.ret=float
+tk func.floorl.arg.0=long double,x
+tk func.floorl.args=1
+tk func.floorl.ret=long double
+tk func.fma.arg.0=arithmetic,x
+tk func.fma.arg.1=arithmetic,y
+tk func.fma.arg.2=arithmetic,z
+tk func.fma.args=3
+tk func.fma.ret=floating_point
+tk func.fmaf.arg.0=float,x
+tk func.fmaf.arg.1=float,y
+tk func.fmaf.arg.2=float,z
+tk func.fmaf.args=3
+tk func.fmaf.ret=float
+tk func.fmal.arg.0=long double,x
+tk func.fmal.arg.1=long double,y
+tk func.fmal.arg.2=long double,z
+tk func.fmal.args=3
+tk func.fmal.ret=long double
+tk func.fmax.arg.0=arithmetic,x
+tk func.fmax.arg.1=arithmetic,y
+tk func.fmax.args=2
+tk func.fmax.ret=floating_point
+tk func.fmaxf.arg.0=float,x
+tk func.fmaxf.arg.1=float,y
+tk func.fmaxf.args=2
+tk func.fmaxf.ret=float
+tk func.fmaxl.arg.0=long double,x
+tk func.fmaxl.arg.1=long double,y
+tk func.fmaxl.args=2
+tk func.fmaxl.ret=long double
+tk func.fmin.arg.0=arithmetic,x
+tk func.fmin.arg.1=arithmetic,y
+tk func.fmin.args=2
+tk func.fmin.ret=floating_point
+tk func.fminf.arg.0=float,x
+tk func.fminf.arg.1=float,y
+tk func.fminf.args=2
+tk func.fminf.ret=float
+tk func.fminl.arg.0=long double,x
+tk func.fminl.arg.1=long double,y
+tk func.fminl.args=2
+tk func.fminl.ret=long double
+tk func.fmod.arg.0=arithmetic,x
+tk func.fmod.arg.1=arithmetic,y
+tk func.fmod.args=2
+tk func.fmod.ret=floating_point
+tk func.fmodf.arg.0=float,x
+tk func.fmodf.arg.1=float,y
+tk func.fmodf.args=2
+tk func.fmodf.ret=float
+tk func.fmodl.arg.0=long double,x
+tk func.fmodl.arg.1=long double,y
+tk func.fmodl.args=2
+tk func.fmodl.ret=long double
+tk func.fopen.arg.0=const char *,filename
+tk func.fopen.arg.1=const char *,mode
+tk func.fopen.args=2
+tk func.fopen.ret=file*
+tk func.fpclassify.arg.0=arithmetic,x
+tk func.fpclassify.args=1
+tk func.fpclassify.ret=int
+tk func.fprintf.arg.0=FILE *,stream
+tk func.fprintf.arg.1=const char *,format
+tk func.fprintf.arg.2= ,...
+tk func.fprintf.args=3
+tk func.fprintf.ret=int
+tk func.fputc.arg.0=int,c
+tk func.fputc.arg.1=FILE *,stream
+tk func.fputc.args=2
+tk func.fputc.ret=int
+tk func.fputs.arg.0=const char *,s
+tk func.fputs.arg.1=FILE *,stream
+tk func.fputs.args=2
+tk func.fputs.ret=int
+tk func.fputwc.arg.0=wchar_t,c
+tk func.fputwc.arg.1=FILE *,stream
+tk func.fputwc.args=2
+tk func.fputwc.ret=wint_t
+tk func.fputws.arg.0=const wchar_t *,s
+tk func.fputws.arg.1=FILE *,stream
+tk func.fputws.args=2
+tk func.fputws.ret=int
+tk func.fread.arg.0=void *,ptr
+tk func.fread.arg.1=size_t,size
+tk func.fread.arg.2=size_t,nmemb
+tk func.fread.arg.3=FILE *,stream
+tk func.fread.args=4
+tk func.fread.ret=size_t
+tk func.free.arg.0=void *,ptr
+tk func.free.args=1
+tk func.free.ret=void
+tk func.freopen.arg.0=const char *,filename
+tk func.freopen.arg.1=const char *,mode
+tk func.freopen.arg.2=FILE *,stream
+tk func.freopen.args=3
+tk func.freopen.ret=file*
+tk func.frexp.arg.0=arithmetic,value
+tk func.frexp.arg.1=int *,exp
+tk func.frexp.args=2
+tk func.frexp.ret=floating_point
+tk func.frexpf.arg.0=float,value
+tk func.frexpf.arg.1=int *,exp
+tk func.frexpf.args=2
+tk func.frexpf.ret=float
+tk func.frexpl.arg.0=long double,value
+tk func.frexpl.arg.1=int *,exp
+tk func.frexpl.args=2
+tk func.frexpl.ret=long double
+tk func.fscanf.arg.0=FILE *,stream
+tk func.fscanf.arg.1=const char *,format
+tk func.fscanf.arg.2=,...
+tk func.fscanf.args=3
+tk func.fscanf.ret=int
+tk func.fseek.arg.0=FILE *,stream
+tk func.fseek.arg.1=long,offset
+tk func.fseek.arg.2=int,whence
+tk func.fseek.args=3
+tk func.fseek.ret=int
+tk func.fsetpos.arg.0=FILE *,stream
+tk func.fsetpos.arg.1=const fpos_t*,pos
+tk func.fsetpos.args=2
+tk func.fsetpos.ret=int
+tk func.fstat.arg.0=int,fildes
+tk func.fstat.arg.1=void *,buf
+tk func.fstat.args=2
+tk func.fstat.ret=int
+tk func.ftell.arg.0=FILE *,stream
+tk func.ftell.args=1
+tk func.ftell.ret=long
+tk func.fwide.arg.0=FILE *,stream
+tk func.fwide.arg.1=int,mode
+tk func.fwide.args=2
+tk func.fwide.ret=int
+tk func.fwprintf.arg.0=FILE *,stream
+tk func.fwprintf.arg.1=const wchar_t *,format
+tk func.fwprintf.args=2
+tk func.fwprintf.ret=int
+tk func.fwrite.arg.0=const void *,ptr
+tk func.fwrite.arg.1=size_t,size
+tk func.fwrite.arg.2=size_t,nitems
+tk func.fwrite.arg.3=FILE *,stream
+tk func.fwrite.args=4
+tk func.fwrite.ret=size_t
+tk func.fwscanf.arg.0=FILE *,stream
+tk func.fwscanf.arg.1=const wchar_t *,format
+tk func.fwscanf.args=2
+tk func.fwscanf.ret=int
+tk func.getc.arg.0=FILE *,stream
+tk func.getc.args=1
+tk func.getc.ret=int
+tk func.getchar.args=0
+tk func.getchar.ret=int
+tk func.getenv.arg.0=const char *,name
+tk func.getenv.args=1
+tk func.getenv.ret=char *
+tk func.geteuid.args=0
+tk func.geteuid.ret=uid_t
+tk func.getopt.arg.0=int,argc
+tk func.getopt.arg.1=const char * *,argv
+tk func.getopt.arg.2=const char *,optstring
+tk func.getopt.args=3
+tk func.getopt.ret=int
+tk func.getpid.args=0
+tk func.getpid.ret=int
+tk func.getprogname.args=0
+tk func.getprogname.ret=const char *
+tk func.gets.arg.0=char *,s
+tk func.gets.args=1
+tk func.gets.ret=char *
+tk func.getsockname.arg.0=int,sockfd
+tk func.getsockname.arg.1=struct sockaddr *,addr
+tk func.getsockname.arg.2=socklen_t *,addrlen
+tk func.getsockname.args=3
+tk func.getsockname.ret=int
+tk func.getsockopt.arg.0=int,sockfd
+tk func.getsockopt.arg.1=int,level
+tk func.getsockopt.arg.2=int,optname
+tk func.getsockopt.arg.3=void *,optval
+tk func.getsockopt.arg.4=socklen_t *,optlen
+tk func.getsockopt.args=5
+tk func.getsockopt.ret=int
+tk func.getuid.args=0
+tk func.getuid.ret=uid_t
+tk func.getwc.arg.0=FILE *,stream
+tk func.getwc.args=1
+tk func.getwc.ret=wint_t
+tk func.getwchar.args=0
+tk func.getwchar.ret=wint_t
+tk func.gmtime.arg.0=const time_t *,timer
+tk func.gmtime.args=1
+tk func.gmtime.ret=tm*
+tk func.humanize_number.arg.0=char *,buf
+tk func.humanize_number.arg.1=size_t,len
+tk func.humanize_number.arg.2=int64_t,number
+tk func.humanize_number.arg.3=const char *,suffix
+tk func.humanize_number.arg.4=int,scale
+tk func.humanize_number.arg.5=int,flags
+tk func.humanize_number.args=1
+tk func.humanize_number.ret=int
+tk func.hypot.arg.0=arithmetic,x
+tk func.hypot.arg.1=arithmetic,y
+tk func.hypot.args=2
+tk func.hypot.ret=floating_point
+tk func.hypotf.arg.0=float,x
+tk func.hypotf.arg.1=float,y
+tk func.hypotf.args=2
+tk func.hypotf.ret=float
+tk func.hypotl.arg.0=long double,x
+tk func.hypotl.arg.1=long double,y
+tk func.hypotl.args=2
+tk func.hypotl.ret=long double
+tk func.ilogb.arg.0=arithmetic,x
+tk func.ilogb.args=1
+tk func.ilogb.ret=int
+tk func.ilogbf.arg.0=float,x
+tk func.ilogbf.args=1
+tk func.ilogbf.ret=int
+tk func.ilogbl.arg.0=long double,x
+tk func.ilogbl.args=1
+tk func.ilogbl.ret=int
+tk func.imaxabs.arg.0=intmax_t,j
+tk func.imaxabs.args=1
+tk func.imaxabs.ret=intmax_t
+tk func.imaxdiv.arg.0=intmax_t,numer
+tk func.imaxdiv.arg.1=intmax_t,denom
+tk func.imaxdiv.args=2
+tk func.imaxdiv.ret=imaxdiv_t
+tk func.ioctl.arg.0=int,fd
+tk func.ioctl.arg.1=unsigned long,request
+tk func.ioctl.args=2
+tk func.ioctl.ret=int
+tk func.isalnum.arg.0=int,c
+tk func.isalnum.args=1
+tk func.isalnum.ret=int
+tk func.isalpha.arg.0=int,c
+tk func.isalpha.args=1
+tk func.isalpha.ret=int
+tk func.isatty.arg.0=int,fd
+tk func.isatty.args=1
+tk func.isatty.ret=int
+tk func.isblank.arg.0=int,c
+tk func.isblank.args=1
+tk func.isblank.ret=int
+tk func.iscntrl.arg.0=int,c
+tk func.iscntrl.args=1
+tk func.iscntrl.ret=int
+tk func.isdigit.arg.0=int,c
+tk func.isdigit.args=1
+tk func.isdigit.ret=int
+tk func.isfinite.arg.0=arithmetic,x
+tk func.isfinite.args=1
+tk func.isfinite.ret=bool
+tk func.isgraph.arg.0=int,c
+tk func.isgraph.args=1
+tk func.isgraph.ret=int
+tk func.isgreater.arg.0=arithmetic,x
+tk func.isgreater.arg.1=arithmetic,y
+tk func.isgreater.args=2
+tk func.isgreater.ret=bool
+tk func.isgreaterequal.arg.0=arithmetic,x
+tk func.isgreaterequal.arg.1=arithmetic,y
+tk func.isgreaterequal.args=2
+tk func.isgreaterequal.ret=bool
+tk func.isinf.arg.0=arithmetic,x
+tk func.isinf.args=1
+tk func.isinf.ret=bool
+tk func.isless.arg.0=arithmetic,x
+tk func.isless.arg.1=arithmetic,y
+tk func.isless.args=2
+tk func.isless.ret=bool
+tk func.islessequal.arg.0=arithmetic,x
+tk func.islessequal.arg.1=arithmetic,y
+tk func.islessequal.args=2
+tk func.islessequal.ret=bool
+tk func.islessgreater.arg.0=arithmetic,x
+tk func.islessgreater.arg.1=arithmetic,y
+tk func.islessgreater.args=2
+tk func.islessgreater.ret=bool
+tk func.islower.arg.0=int,c
+tk func.islower.args=1
+tk func.islower.ret=int
+tk func.isnan.arg.0=arithmetic,x
+tk func.isnan.args=1
+tk func.isnan.ret=bool
+tk func.isnormal.arg.0=arithmetic,x
+tk func.isnormal.args=1
+tk func.isnormal.ret=bool
+tk func.isprint.arg.0=int,c
+tk func.isprint.args=1
+tk func.isprint.ret=int
+tk func.ispunct.arg.0=int,c
+tk func.ispunct.args=1
+tk func.ispunct.ret=int
+tk func.isspace.arg.0=int,c
+tk func.isspace.args=1
+tk func.isspace.ret=int
+tk func.isunordered.arg.0=arithmetic,x
+tk func.isunordered.arg.1=arithmetic,y
+tk func.isunordered.args=2
+tk func.isunordered.ret=bool
+tk func.isupper.arg.0=int,c
+tk func.isupper.args=1
+tk func.isupper.ret=int
+tk func.iswalnum.arg.0=wint_t,wc
+tk func.iswalnum.args=1
+tk func.iswalnum.ret=int
+tk func.iswalpha.arg.0=wint_t,wc
+tk func.iswalpha.args=1
+tk func.iswalpha.ret=int
+tk func.iswblank.arg.0=wint_t,wc
+tk func.iswblank.args=1
+tk func.iswblank.ret=int
+tk func.iswcntrl.arg.0=wint_t,wc
+tk func.iswcntrl.args=1
+tk func.iswcntrl.ret=int
+tk func.iswctype.arg.0=wint_t,wc
+tk func.iswctype.arg.1=wctype_t,desc
+tk func.iswctype.args=2
+tk func.iswctype.ret=int
+tk func.iswdigit.arg.0=wint_t,wc
+tk func.iswdigit.args=1
+tk func.iswdigit.ret=int
+tk func.iswgraph.arg.0=wint_t,wc
+tk func.iswgraph.args=1
+tk func.iswgraph.ret=int
+tk func.iswlower.arg.0=wint_t,wc
+tk func.iswlower.args=1
+tk func.iswlower.ret=int
+tk func.iswprint.arg.0=wint_t,wc
+tk func.iswprint.args=1
+tk func.iswprint.ret=int
+tk func.iswpunct.arg.0=wint_t,wc
+tk func.iswpunct.args=1
+tk func.iswpunct.ret=int
+tk func.iswspace.arg.0=wint_t,wc
+tk func.iswspace.args=1
+tk func.iswspace.ret=int
+tk func.iswupper.arg.0=wint_t,wc
+tk func.iswupper.args=1
+tk func.iswupper.ret=int
+tk func.iswxdigit.arg.0=wint_t,wc
+tk func.iswxdigit.args=1
+tk func.iswxdigit.ret=int
+tk func.isxdigit.arg.0=int,c
+tk func.isxdigit.args=1
+tk func.isxdigit.ret=int
+tk func.labs.arg.0=long,j
+tk func.labs.args=1
+tk func.labs.ret=long
+tk func.ldexp.arg.0=arithmetic,value
+tk func.ldexp.arg.1=int,exp
+tk func.ldexp.args=2
+tk func.ldexp.ret=floating_point
+tk func.ldexpf.arg.0=float,value
+tk func.ldexpf.arg.1=int,exp
+tk func.ldexpf.args=2
+tk func.ldexpf.ret=float
+tk func.ldexpl.arg.0=long double,value
+tk func.ldexpl.arg.1=int,exp
+tk func.ldexpl.args=2
+tk func.ldexpl.ret=long double
+tk func.ldiv.arg.0=long,numer
+tk func.ldiv.arg.1=long,denom
+tk func.ldiv.args=2
+tk func.ldiv.ret=ldiv_t
+tk func.lgamma.arg.0=arithmetic,x
+tk func.lgamma.args=1
+tk func.lgamma.ret=floating_point
+tk func.lgammaf.arg.0=float,x
+tk func.lgammaf.args=1
+tk func.lgammaf.ret=float
+tk func.lgammal.arg.0=long double,x
+tk func.lgammal.args=1
+tk func.lgammal.ret=long double
+tk func.llabs.arg.0=long long,j
+tk func.llabs.args=1
+tk func.llabs.ret=long long
+tk func.lldiv.arg.0=long long,numer
+tk func.lldiv.arg.1=long long,denom
+tk func.lldiv.args=2
+tk func.lldiv.ret=lldiv_t
+tk func.llrint.arg.0=arithmetic,x
+tk func.llrint.args=1
+tk func.llrint.ret=long long
+tk func.llrintf.arg.0=float,x
+tk func.llrintf.args=1
+tk func.llrintf.ret=long long
+tk func.llrintl.arg.0=long double,x
+tk func.llrintl.args=1
+tk func.llrintl.ret=long long
+tk func.llround.arg.0=arithmetic,x
+tk func.llround.args=1
+tk func.llround.ret=long long
+tk func.llroundf.arg.0=float,x
+tk func.llroundf.args=1
+tk func.llroundf.ret=long long
+tk func.llroundl.arg.0=long double,x
+tk func.llroundl.args=1
+tk func.llroundl.ret=long long
+tk func.localeconv.args=0
+tk func.localeconv.ret=lconv*
+tk func.localtime.arg.0=const time_t *,timer
+tk func.localtime.args=1
+tk func.localtime.ret=tm*
+tk func.log.arg.0=arithmetic,x
+tk func.log.args=1
+tk func.log.ret=floating_point
+tk func.log10.arg.0=arithmetic,x
+tk func.log10.args=1
+tk func.log10.ret=floating_point
+tk func.log10f.arg.0=float,x
+tk func.log10f.args=1
+tk func.log10f.ret=float
+tk func.log10l.arg.0=long double,x
+tk func.log10l.args=1
+tk func.log10l.ret=long double
+tk func.log1p.arg.0=arithmetic,x
+tk func.log1p.args=1
+tk func.log1p.ret=floating_point
+tk func.log1pf.arg.0=float,x
+tk func.log1pf.args=1
+tk func.log1pf.ret=float
+tk func.log1pl.arg.0=long double,x
+tk func.log1pl.args=1
+tk func.log1pl.ret=long double
+tk func.log2.arg.0=arithmetic,x
+tk func.log2.args=1
+tk func.log2.ret=floating_point
+tk func.log2f.arg.0=float,x
+tk func.log2f.args=1
+tk func.log2f.ret=float
+tk func.log2l.arg.0=long double,x
+tk func.log2l.args=1
+tk func.log2l.ret=long double
+tk func.logb.arg.0=arithmetic,x
+tk func.logb.args=1
+tk func.logb.ret=floating_point
+tk func.logbf.arg.0=float,x
+tk func.logbf.args=1
+tk func.logbf.ret=float
+tk func.logbl.arg.0=long double,x
+tk func.logbl.args=1
+tk func.logbl.ret=long double
+tk func.logf.arg.0=float,x
+tk func.logf.args=1
+tk func.logf.ret=float
+tk func.logl.arg.0=long double,x
+tk func.logl.args=1
+tk func.logl.ret=long double
+tk func.longjmp.arg.0=jmp_buf,env
+tk func.longjmp.arg.1=int,val
+tk func.longjmp.args=2
+tk func.longjmp.ret=void
+tk func.lrint.arg.0=arithmetic,x
+tk func.lrint.args=1
+tk func.lrint.ret=long
+tk func.lrintf.arg.0=float,x
+tk func.lrintf.args=1
+tk func.lrintf.ret=long
+tk func.lrintl.arg.0=long double,x
+tk func.lrintl.args=1
+tk func.lrintl.ret=long
+tk func.lround.arg.0=arithmetic,x
+tk func.lround.args=1
+tk func.lround.ret=long
+tk func.lroundf.arg.0=float,x
+tk func.lroundf.args=1
+tk func.lroundf.ret=long
+tk func.lroundl.arg.0=long double,x
+tk func.lroundl.args=1
+tk func.lroundl.ret=long
+tk func.lstat.arg.0=const char *,path
+tk func.lstat.arg.1=void *,buf
+tk func.lstat.args=2
+tk func.lstat.ret=void
+tk func.main.arg.0=int,argc
+tk func.main.arg.1=char **,argv
+tk func.main.arg.2=char **,envp
+tk func.main.args=3
+tk func.main.ret=int
+tk func.malloc.arg.0=size_t,size
+tk func.malloc.args=1
+tk func.malloc.ret= void *
+tk func.maskrune.arg.0=uint32_t,c
+tk func.maskrune.arg.1=unsigned long,f
+tk func.maskrune.args=2
+tk func.maskrune.ret=int
+tk func.mblen.arg.0=const char *,s
+tk func.mblen.arg.1=size_t,n
+tk func.mblen.args=2
+tk func.mblen.ret=int
+tk func.mbrlen.arg.0=const char *,s
+tk func.mbrlen.arg.1=size_t,n
+tk func.mbrlen.arg.2=mbstate_t *,ps
+tk func.mbrlen.args=3
+tk func.mbrlen.ret=size_t
+tk func.mbrtowc.arg.0=wchar_t *,pwc
+tk func.mbrtowc.arg.1=const char *,s
+tk func.mbrtowc.arg.2=size_t,n
+tk func.mbrtowc.arg.3=mbstate_t *,ps
+tk func.mbrtowc.args=4
+tk func.mbrtowc.ret=size_t
+tk func.mbsinit.arg.0=const mbstate_t *,ps
+tk func.mbsinit.args=1
+tk func.mbsinit.ret=int
+tk func.mbsrtowcs.arg.0=wchar_t *,dst
+tk func.mbsrtowcs.arg.1=const char * *,src
+tk func.mbsrtowcs.arg.2=size_t,len
+tk func.mbsrtowcs.arg.3=mbstate_t *,ps
+tk func.mbsrtowcs.args=4
+tk func.mbsrtowcs.ret=size_t
+tk func.mbstowcs.arg.0=wchar_t *,pwcs
+tk func.mbstowcs.arg.1=const char *,s
+tk func.mbstowcs.arg.2=size_t,n
+tk func.mbstowcs.args=3
+tk func.mbstowcs.ret=size_t
+tk func.mbtowc.arg.0=wchar_t *,pwc
+tk func.mbtowc.arg.1=const char *,s
+tk func.mbtowc.arg.2=size_t,n
+tk func.mbtowc.args=3
+tk func.mbtowc.ret=int
+tk func.memchr.arg.0=void *,s
+tk func.memchr.arg.1=int,c
+tk func.memchr.arg.2=size_t,n
+tk func.memchr.args=3
+tk func.memchr.ret=void *
+tk func.memcmp.arg.0=const void *,s1
+tk func.memcmp.arg.1=const void *,s2
+tk func.memcmp.arg.2=size_t,n
+tk func.memcmp.args=3
+tk func.memcmp.ret=int
+tk func.memcpy.arg.0=void *,s1
+tk func.memcpy.arg.1=const void *,s2
+tk func.memcpy.arg.2=size_t,n
+tk func.memcpy.args=3
+tk func.memcpy.ret=void *
+tk func.memmove.arg.0=void *,s1
+tk func.memmove.arg.1=const void *,s2
+tk func.memmove.arg.2=size_t,n
+tk func.memmove.args=3
+tk func.memmove.ret=void *
+tk func.memset.arg.0=void *,s
+tk func.memset.arg.1=int,c
+tk func.memset.arg.2=size_t,n
+tk func.memset.args=3
+tk func.memset.ret=void *
+tk func.mkstemp.arg.0=char *,template
+tk func.mkstemp.args=1
+tk func.mkstemp.ret=int
+tk func.mktemp.arg.0=char *,template
+tk func.mktemp.args=1
+tk func.mktemp.ret=char *
+tk func.mktime.arg.0=tm *,timeptr
+tk func.mktime.args=1
+tk func.mktime.ret=time_t
+tk func.mmap.arg.0=void*,addr
+tk func.mmap.arg.1=size_t,length
+tk func.mmap.arg.2=int,prot
+tk func.mmap.arg.3=int,flags
+tk func.mmap.arg.4=int,fd
+tk func.mmap.arg.5=size_t,offset
+tk func.mmap.args=6
+tk func.mmap.ret=void*
+tk func.modf.arg.0=floating_point,value
+tk func.modf.arg.1=floating_point *,iptr
+tk func.modf.args=2
+tk func.modf.ret=floating_point
+tk func.modff.arg.0=float,value
+tk func.modff.arg.1=float *,iptr
+tk func.modff.args=2
+tk func.modff.ret=float
+tk func.modfl.arg.0=long double,value
+tk func.modfl.arg.1=long double *,iptr
+tk func.modfl.args=2
+tk func.modfl.ret=long double
+tk func.munmap.arg.0=void*,addr
+tk func.munmap.arg.1=size_t,length
+tk func.munmap.args=2
+tk func.munmap.ret=int
+tk func.nan.arg.0=const char *,str
+tk func.nan.args=1
+tk func.nan.ret=double
+tk func.nanf.arg.0=const char *,str
+tk func.nanf.args=1
+tk func.nanf.ret=float
+tk func.nanl.arg.0=const char *,str
+tk func.nanl.args=1
+tk func.nanl.ret=long double
+tk func.nanosleep.arg.0=const struct timespec *,req
+tk func.nanosleep.arg.1=struct timespec *,rem
+tk func.nanosleep.args=2
+tk func.nanosleep.ret=int
+tk func.nearbyint.arg.0=arithmetic,x
+tk func.nearbyint.args=1
+tk func.nearbyint.ret=floating_point
+tk func.nearbyintf.arg.0=float,x
+tk func.nearbyintf.args=1
+tk func.nearbyintf.ret=float
+tk func.nearbyintl.arg.0=long double,x
+tk func.nearbyintl.args=1
+tk func.nearbyintl.ret=long double
+tk func.nextafter.arg.0=arithmetic,x
+tk func.nextafter.arg.1=arithmetic,y
+tk func.nextafter.args=2
+tk func.nextafter.ret=floating_point
+tk func.nextafterf.arg.0=float,x
+tk func.nextafterf.arg.1=float,y
+tk func.nextafterf.args=2
+tk func.nextafterf.ret=float
+tk func.nextafterl.arg.0=long double,x
+tk func.nextafterl.arg.1=long double,y
+tk func.nextafterl.args=2
+tk func.nextafterl.ret=long double
+tk func.nexttoward.arg.0=arithmetic,x
+tk func.nexttoward.arg.1=long double,y
+tk func.nexttoward.args=2
+tk func.nexttoward.ret=floating_point
+tk func.nexttowardf.arg.0=float,x
+tk func.nexttowardf.arg.1=long double,y
+tk func.nexttowardf.args=2
+tk func.nexttowardf.ret=float
+tk func.nexttowardl.arg.0=long double,x
+tk func.nexttowardl.arg.1=long double,y
+tk func.nexttowardl.args=2
+tk func.nexttowardl.ret=long double
+tk func.nl_langinfo.arg.0=nl_item,item
+tk func.nl_langinfo.args=1
+tk func.nl_langinfo.ret=char *
+tk func.nl_langinfo_l.arg.0=nl_item,item
+tk func.nl_langinfo_l.arg.1=locale_t locale
+tk func.nl_langinfo_l.args=2
+tk func.nl_langinfo_l.ret=char *
+tk func.objc_msgSend.arg.0=void *,instance
+tk func.objc_msgSend.arg.1=char *,selector
+tk func.objc_msgSend.args=2
+tk func.objc_msgSend.ret=void *
+tk func.open.arg.0=const char *,path
+tk func.open.arg.1=int,oflag
+tk func.open.args=2
+tk func.open.ret=int
+tk func.perror.arg.0=const char *,s
+tk func.perror.args=1
+tk func.perror.ret=void
+tk func.pow.arg.0=arithmetic,x
+tk func.pow.arg.1=arithmetic,y
+tk func.pow.args=2
+tk func.pow.ret=floating_point
+tk func.powf.arg.0=float,x
+tk func.powf.arg.1=float,y
+tk func.powf.args=2
+tk func.powf.ret=float
+tk func.powl.arg.0=long double,x
+tk func.powl.arg.1=long double,y
+tk func.powl.args=2
+tk func.powl.ret=long double
+tk func.prctl.arg.0=int,option
+tk func.prctl.arg.1=unsigned long,v2
+tk func.prctl.arg.2=unsigned long,v3
+tk func.prctl.arg.3=unsigned long,v4
+tk func.prctl.arg.4=unsigned long,v5
+tk func.prctl.args=5
+tk func.prctl.ret=int
+tk func.printf.arg.0=const char *,format
+tk func.printf.args=1
+tk func.printf.ret=int
+tk func.ptrace.arg.0=__ptrace_request,request
+tk func.ptrace.arg.1=pid_t,pid
+tk func.ptrace.arg.2=void*,addr
+tk func.ptrace.arg.3=void*,data
+tk func.ptrace.args=4
+tk func.putc.arg.0=int,c
+tk func.putc.arg.1=FILE *,stream
+tk func.putc.args=2
+tk func.putc.ret=int
+tk func.putchar.arg.0=int,c
+tk func.putchar.args=1
+tk func.putchar.ret=int
+tk func.puts.arg.0=const char *,s
+tk func.puts.args=1
+tk func.puts.ret=int
+tk func.pututxline.arg.0=void *,utx
+tk func.pututxline.args=1
+tk func.pututxline.ret=void *
+tk func.putwc.arg.0=wchar_t,c
+tk func.putwc.arg.1=FILE *,stream
+tk func.putwc.args=2
+tk func.putwc.ret=wint_t
+tk func.putwchar.arg.0=wchar_t,c
+tk func.putwchar.args=1
+tk func.putwchar.ret=wint_t
+tk func.qsort.arg.0=void *,base
+tk func.qsort.arg.1=size_t,nmemb
+tk func.qsort.arg.2=size_t,size
+tk func.qsort.arg.3=int(*compar)(const void *,const void *)
+tk func.qsort.args=4
+tk func.quick_exit.arg.0=int,status
+tk func.quick_exit.args=1
+tk func.quick_exit.ret=void
+tk func.raise.arg.0=int,sig
+tk func.raise.args=1
+tk func.raise.ret=int
+tk func.rand.args=0
+tk func.rand.ret=int
+tk func.read.arg.0=int,fildes
+tk func.read.arg.1=void *,buf
+tk func.read.arg.2=size_t,nbyte
+tk func.read.args=3
+tk func.read.ret=ssize_t
+tk func.realloc.arg.0=void *,ptr
+tk func.realloc.arg.1=size_t,size
+tk func.realloc.args=2
+tk func.realloc.ret=void *
+tk func.remainder.arg.0=arithmetic,x
+tk func.remainder.arg.1=arithmetic,y
+tk func.remainder.args=2
+tk func.remainder.ret=floating_point
+tk func.remainderf.arg.0=float,x
+tk func.remainderf.arg.1=float,y
+tk func.remainderf.args=2
+tk func.remainderf.ret=float
+tk func.remainderl.arg.0=long double,x
+tk func.remainderl.arg.1=long double,y
+tk func.remainderl.args=2
+tk func.remainderl.ret=long double
+tk func.remove.arg.0=const char *,filename
+tk func.remove.args=1
+tk func.remove.ret=int
+tk func.remquo.arg.0=arithmetic,x
+tk func.remquo.arg.1=arithmetic,y
+tk func.remquo.arg.2=int *,pquo
+tk func.remquo.args=3
+tk func.remquo.ret=floating_point
+tk func.remquof.arg.0=float,x
+tk func.remquof.arg.1=float,y
+tk func.remquof.arg.2=int *,pquo
+tk func.remquof.args=3
+tk func.remquof.ret=float
+tk func.remquol.arg.0=long double,x
+tk func.remquol.arg.1=long double,y
+tk func.remquol.arg.2=int *,pquo
+tk func.remquol.args=3
+tk func.remquol.ret=long double
+tk func.rename.arg.0=const char *,oldpath
+tk func.rename.arg.1=const char *,newpath
+tk func.rename.args=2
+tk func.rename.ret=int
+tk func.rewind.arg.0=FILE *,stream
+tk func.rewind.args=1
+tk func.rewind.ret=void
+tk func.rint.arg.0=arithmetic,x
+tk func.rint.args=1
+tk func.rint.ret=floating_point
+tk func.rintf.arg.0=float,x
+tk func.rintf.args=1
+tk func.rintf.ret=float
+tk func.rintl.arg.0=long double,x
+tk func.rintl.args=1
+tk func.rintl.ret=long double
+tk func.round.arg.0=arithmetic,x
+tk func.round.args=1
+tk func.round.ret=floating_point
+tk func.roundf.arg.0=float,x
+tk func.roundf.args=1
+tk func.roundf.ret=float
+tk func.roundl.arg.0=long double,x
+tk func.roundl.args=1
+tk func.roundl.ret=long double
+tk func.scalbln.arg.0=arithmetic,x
+tk func.scalbln.arg.1=long,ex
+tk func.scalbln.args=2
+tk func.scalbln.ret=floating_point
+tk func.scalblnf.arg.0=float,x
+tk func.scalblnf.arg.1=long,ex
+tk func.scalblnf.args=2
+tk func.scalblnf.ret=float
+tk func.scalblnl.arg.0=long double,x
+tk func.scalblnl.arg.1=long,ex
+tk func.scalblnl.args=2
+tk func.scalblnl.ret=long double
+tk func.scalbn.arg.0=arithmetic,x
+tk func.scalbn.arg.1=int,ex
+tk func.scalbn.args=2
+tk func.scalbn.ret=floating_point
+tk func.scalbnf.arg.0=float,x
+tk func.scalbnf.arg.1=int,ex
+tk func.scalbnf.args=2
+tk func.scalbnf.ret=float
+tk func.scalbnl.arg.0=long double,x
+tk func.scalbnl.arg.1=int,ex
+tk func.scalbnl.args=2
+tk func.scalbnl.ret=long double
+tk func.scanf.arg.0=const char *,format
+tk func.scanf.args=1
+tk func.scanf.ret=int
+tk func.select.arg.0=int,nfds
+tk func.select.arg.1=fd_set *,readfds
+tk func.select.arg.2=fd_set *,writefds
+tk func.select.arg.3=fd_set *,exceptfds
+tk func.select.arg.4=struct timeval *,timeout
+tk func.select.args=5
+tk func.select.ret=int
+tk func.setbuf.arg.0=FILE *,stream
+tk func.setbuf.arg.1=char *,buf
+tk func.setbuf.args=2
+tk func.setbuf.ret=void
+tk func.setjmp.arg.0=jmpbuf,env
+tk func.setjmp.args=1
+tk func.setjmp.ret=int
+tk func.setlocale.arg.0=int,category
+tk func.setlocale.arg.1=const char *,locale
+tk func.setlocale.args=2
+tk func.setlocale.ret=char *
+tk func.setsockopt.arg.0=int,sockfd
+tk func.setsockopt.arg.1=int,level
+tk func.setsockopt.arg.2=int,optname
+tk func.setsockopt.arg.3=void *,optval
+tk func.setsockopt.arg.4=socklen_t,optlen
+tk func.setsockopt.args=5
+tk func.setsockopt.ret=int
+tk func.setvbuf.arg.0=FILE*,stream
+tk func.setvbuf.arg.1=char *,buf
+tk func.setvbuf.arg.2=int,mode
+tk func.setvbuf.arg.3=size_t,size
+tk func.setvbuf.args=4
+tk func.setvbuf.ret=int
+tk func.sigaction.arg.0=int,signum
+tk func.sigaction.arg.1=const struct sigaction *,act
+tk func.sigaction.arg.2=struct sigaction *,oldact
+tk func.sigaction.args=3
+tk func.sigaction.ret=int
+tk func.signal.arg.0=int,sig
+tk func.signal.arg.1=void *,func
+tk func.signal.args=2
+tk func.signal.ret=void
+tk func.signbit.arg.0=arithmetic,x
+tk func.signbit.args=1
+tk func.signbit.ret=bool
+tk func.sin.arg.0=arithmetic,x
+tk func.sin.args=1
+tk func.sin.ret=floating_point
+tk func.sinf.arg.0=float,x
+tk func.sinf.args=1
+tk func.sinf.ret=float
+tk func.sinh.arg.0=arithmetic,x
+tk func.sinh.args=1
+tk func.sinh.ret=floating_point
+tk func.sinhf.arg.0=float,x
+tk func.sinhf.args=1
+tk func.sinhf.ret=float
+tk func.sinhl.arg.0=long double,x
+tk func.sinhl.args=1
+tk func.sinhl.ret=long double
+tk func.sinl.arg.0=long double,x
+tk func.sinl.args=1
+tk func.sinl.ret=long double
+tk func.sleep.arg.0=int,s
+tk func.sleep.args=1
+tk func.sleep.ret=int
+tk func.snprintf.arg.0=char *,s
+tk func.snprintf.arg.1=size_t,size
+tk func.snprintf.arg.2=const char *,format
+tk func.snprintf.arg.3=,...
+tk func.snprintf.args=4
+tk func.snprintf.ret=int
+tk func.sprintf.arg.0=char *,s
+tk func.sprintf.arg.1=const char *,format
+tk func.sprintf.arg.2=,...
+tk func.sprintf.args=3
+tk func.sprintf.ret=int
+tk func.sqrt.arg.0=arithmetic,x
+tk func.sqrt.args=1
+tk func.sqrt.ret=floating_point
+tk func.sqrtf.arg.0=float,x
+tk func.sqrtf.args=1
+tk func.sqrtf.ret=float
+tk func.sqrtl.arg.0=long double,x
+tk func.sqrtl.args=1
+tk func.sqrtl.ret=long double
+tk func.srand.arg.0=int,seed
+tk func.srand.args=1
+tk func.srand.ret=void
+tk func.sscanf.arg.0=const char *,s
+tk func.sscanf.arg.1=const char *,format
+tk func.sscanf.arg.2= ,...
+tk func.sscanf.args=3
+tk func.sscanf.ret=int
+tk func.strcasecmp.arg.0=const char *,s1
+tk func.strcasecmp.arg.1=const char *,s2
+tk func.strcasecmp.args=2
+tk func.strcasecmp.ret=int
+tk func.strcat.arg.0=char *,s1
+tk func.strcat.arg.1=const char *,s2
+tk func.strcat.args=2
+tk func.strcat.ret=char *
+tk func.strchr.arg.0=const char *,s
+tk func.strchr.arg.1=int,c
+tk func.strchr.args=2
+tk func.strchr.ret=char *
+tk func.strcmp.arg.0=const char *,s1
+tk func.strcmp.arg.1=const char *,s2
+tk func.strcmp.args=2
+tk func.strcmp.ret=int
+tk func.strcoll.arg.0=const char *,s1
+tk func.strcoll.arg.1=const char *,s2
+tk func.strcoll.args=2
+tk func.strcoll.ret=int
+tk func.strcpy.arg.0=char *,dest
+tk func.strcpy.arg.1=const char *,src
+tk func.strcpy.args=2
+tk func.strcpy.ret=char *
+tk func.strcspn.arg.0=const char *,s1
+tk func.strcspn.arg.1=const char *,s2
+tk func.strcspn.args=2
+tk func.strcspn.ret=size_t
+tk func.strdup.arg.0=const char *,src
+tk func.strdup.args=1
+tk func.strdup.ret=char *
+tk func.strerror.arg.0=int,errnum
+tk func.strerror.args=1
+tk func.strerror.ret=char *
+tk func.strftime.arg.0=char *,s
+tk func.strftime.arg.1=size_t,maxsize
+tk func.strftime.arg.2=const char *,format
+tk func.strftime.arg.3=const tm *,timeptr
+tk func.strftime.args=4
+tk func.strftime.ret=size_t
+tk func.strlcpy.arg.0=char *,dest
+tk func.strlcpy.arg.1=const char *,src
+tk func.strlcpy.arg.2=size_t, n
+tk func.strlcpy.args=3
+tk func.strlcpy.ret=char *
+tk func.strlen.arg.0=const char *,s
+tk func.strlen.args=1
+tk func.strlen.ret=size_t
+tk func.strmode.arg.0=int,mode
+tk func.strmode.arg.1=char *,bp
+tk func.strmode.args=2
+tk func.strmode.ret=void
+tk func.strncasecmp.arg.0=const char *,s1
+tk func.strncasecmp.arg.1=const char *,s2
+tk func.strncasecmp.arg.2=size_t,n
+tk func.strncasecmp.args=3
+tk func.strncasecmp.ret=int
+tk func.strncat.arg.0=char *,s1
+tk func.strncat.arg.1=const char *,s2
+tk func.strncat.arg.2=size_t,n
+tk func.strncat.args=3
+tk func.strncat.ret=char *
+tk func.strncmp.arg.0=const char *,s1
+tk func.strncmp.arg.1=const char *,s2
+tk func.strncmp.arg.2=size_t,n
+tk func.strncmp.args=3
+tk func.strncmp.ret=int
+tk func.strncpy.arg.0=char *,dest
+tk func.strncpy.arg.1=const char *,src
+tk func.strncpy.arg.2=size_t, n
+tk func.strncpy.args=3
+tk func.strncpy.ret=char *
+tk func.strndup.arg.0=const char *,src
+tk func.strndup.arg.1=int,n
+tk func.strndup.args=2
+tk func.strndup.ret=char *
+tk func.strpbrk.arg.0=const char *,s1
+tk func.strpbrk.arg.1=const char *,s2
+tk func.strpbrk.args=2
+tk func.strpbrk.ret=char *
+tk func.strrchr.arg.0=const char *,s
+tk func.strrchr.arg.1=int,c
+tk func.strrchr.args=2
+tk func.strrchr.ret=char *
+tk func.strspn.arg.0=const char *,s1
+tk func.strspn.arg.1=const char *,s2
+tk func.strspn.args=2
+tk func.strspn.ret=size_t
+tk func.strstr.arg.0=const char *,s1
+tk func.strstr.arg.1=const char *,s2
+tk func.strstr.args=2
+tk func.strstr.ret=char *
+tk func.strtod.arg.0=const char *,str
+tk func.strtod.arg.1=char * *,endptr
+tk func.strtod.args=2
+tk func.strtod.ret=double
+tk func.strtof.arg.0=const char *,str
+tk func.strtof.arg.1=char * *,endptr
+tk func.strtof.args=2
+tk func.strtof.ret=float
+tk func.strtoimax.arg.0=const char *,str
+tk func.strtoimax.arg.1=char * *,endptr
+tk func.strtoimax.arg.2=int,base
+tk func.strtoimax.args=3
+tk func.strtoimax.ret=intmax_t
+tk func.strtok.arg.0=char *,s1
+tk func.strtok.arg.1=const char *,s2
+tk func.strtok.args=2
+tk func.strtok.ret=char *
+tk func.strtol.arg.0=const char *,str
+tk func.strtol.arg.1=char * *,endptr
+tk func.strtol.arg.2=int,base
+tk func.strtol.args=3
+tk func.strtol.ret=long
+tk func.strtold.arg.0=const char *,str
+tk func.strtold.arg.1=char * *,endptr
+tk func.strtold.args=2
+tk func.strtold.ret=long double
+tk func.strtoll.arg.0=const char *,str
+tk func.strtoll.arg.1=char * *,endptr
+tk func.strtoll.arg.2=int,base
+tk func.strtoll.args=3
+tk func.strtoll.ret=long long
+tk func.strtoul.arg.0=const char *,str
+tk func.strtoul.arg.1=char * *,endptr
+tk func.strtoul.arg.2=int,base
+tk func.strtoul.args=3
+tk func.strtoul.ret=long
+tk func.strtoull.arg.0=const char *,str
+tk func.strtoull.arg.1=char * *,endptr
+tk func.strtoull.arg.2=int,base
+tk func.strtoull.args=3
+tk func.strtoull.ret=long long
+tk func.strtoumax.arg.0=const char *,str
+tk func.strtoumax.arg.1=char * *,endptr
+tk func.strtoumax.arg.2=int,base
+tk func.strtoumax.args=3
+tk func.strtoumax.ret=uintmax_t
+tk func.strxfrm.arg.0=char *,s1
+tk func.strxfrm.arg.1=const char *,s2
+tk func.strxfrm.arg.2=size_t,n
+tk func.strxfrm.args=3
+tk func.strxfrm.ret=size_t
+tk func.swprintf.arg.0=wchar_t *,s
+tk func.swprintf.arg.1=size_t,n
+tk func.swprintf.arg.2=const wchar_t *,format
+tk func.swprintf.args=3
+tk func.swprintf.ret=int
+tk func.swscanf.arg.0=const wchar_t *,s
+tk func.swscanf.arg.1=const wchar_t *,format
+tk func.swscanf.args=2
+tk func.swscanf.ret=int
+tk func.symlink.arg.0=const char *,path1
+tk func.symlink.arg.1=const char *,path2
+tk func.symlink.args=2
+tk func.symlink.ret=int
+tk func.system.arg.0=const char *,string
+tk func.system.args=1
+tk func.system.ret=int
+tk func.tan.arg.0=arithmetic,x
+tk func.tan.args=1
+tk func.tan.ret=floating_point
+tk func.tanf.arg.0=float,x
+tk func.tanf.args=1
+tk func.tanf.ret=float
+tk func.tanh.arg.0=arithmetic,x
+tk func.tanh.args=1
+tk func.tanh.ret=floating_point
+tk func.tanhf.arg.0=float,x
+tk func.tanhf.args=1
+tk func.tanhf.ret=float
+tk func.tanhl.arg.0=long double,x
+tk func.tanhl.args=1
+tk func.tanhl.ret=long double
+tk func.tanl.arg.0=long double,x
+tk func.tanl.args=1
+tk func.tanl.ret=long double
+tk func.textdomain.arg.0=char *,domainname
+tk func.textdomain.args=1
+tk func.textdomain.ret=char *
+tk func.tgamma.arg.0=arithmetic,x
+tk func.tgamma.args=1
+tk func.tgamma.ret=floating_point
+tk func.tgammaf.arg.0=float,x
+tk func.tgammaf.args=1
+tk func.tgammaf.ret=float
+tk func.tgammal.arg.0=long double,x
+tk func.tgammal.args=1
+tk func.tgammal.ret=long double
+tk func.tgoto.arg.0=const char *,cap
+tk func.tgoto.arg.1=int,col
+tk func.tgoto.arg.2=int,row
+tk func.tgoto.args=3
+tk func.tgoto.ret=char *
+tk func.time.arg.0=time_t *,timer
+tk func.time.args=1
+tk func.time.ret=time_t
+tk func.tmpfile.args=0
+tk func.tmpfile.ret=file*
+tk func.tmpnam.arg.0=char *,s
+tk func.tmpnam.args=1
+tk func.tmpnam.ret=char *
+tk func.tolower.arg.0=int,c
+tk func.tolower.args=1
+tk func.tolower.ret=int
+tk func.toupper.arg.0=int,c
+tk func.toupper.args=1
+tk func.toupper.ret=int
+tk func.towctrans.arg.0=wint_t,wc
+tk func.towctrans.arg.1=wctrans_t,desc
+tk func.towctrans.args=2
+tk func.towctrans.ret=wint_t
+tk func.towlower.arg.0=wint_t,wc
+tk func.towlower.args=1
+tk func.towlower.ret=wint_t
+tk func.towupper.arg.0=wint_t,wc
+tk func.towupper.args=1
+tk func.towupper.ret=wint_t
+tk func.trunc.arg.0=arithmetic,x
+tk func.trunc.args=1
+tk func.trunc.ret=floating_point
+tk func.truncf.arg.0=float,x
+tk func.truncf.args=1
+tk func.truncf.ret=float
+tk func.truncl.arg.0=long double,x
+tk func.truncl.args=1
+tk func.truncl.ret=long double
+tk func.umask.arg.0=int,m
+tk func.umask.args=1
+tk func.umask.ret=int
+tk func.ungetc.arg.0=int,c
+tk func.ungetc.arg.1=FILE *,stream
+tk func.ungetc.args=2
+tk func.ungetc.ret=int
+tk func.ungetwc.arg.0=wint_t,c
+tk func.ungetwc.arg.1=FILE *,stream
+tk func.ungetwc.args=2
+tk func.ungetwc.ret=wint_t
+tk func.unlink.arg.0=const char *,path
+tk func.unlink.args=1
+tk func.unlink.ret=int
+tk func.vfprintf.arg.0=FILE *,stream
+tk func.vfprintf.arg.1=const char *,format
+tk func.vfprintf.arg.2=va_list,ap
+tk func.vfprintf.args=3
+tk func.vfprintf.ret=int
+tk func.vfscanf.arg.0=FILE *,stream
+tk func.vfscanf.arg.1=const char *,format
+tk func.vfscanf.arg.2=va_list,ap
+tk func.vfscanf.args=3
+tk func.vfscanf.ret=int
+tk func.vfwprintf.arg.0=FILE *,stream
+tk func.vfwprintf.arg.1=const wchar_t *,format
+tk func.vfwprintf.arg.2=va_list,arg
+tk func.vfwprintf.args=3
+tk func.vfwprintf.ret=int
+tk func.vfwscanf.arg.0=FILE *,stream
+tk func.vfwscanf.arg.1=const wchar_t *,format
+tk func.vfwscanf.arg.2=va_list,arg
+tk func.vfwscanf.args=3
+tk func.vfwscanf.ret=int
+tk func.vprintf.arg.0=const char *,format
+tk func.vprintf.arg.1=va_list,ap
+tk func.vprintf.args=2
+tk func.vprintf.ret=int
+tk func.vscanf.arg.0=const char *,format
+tk func.vscanf.arg.1=va_list,ap
+tk func.vscanf.args=2
+tk func.vscanf.ret=int
+tk func.vsnprintf.arg.0=char *,s
+tk func.vsnprintf.arg.1=size_t,size
+tk func.vsnprintf.arg.2=const char *,format
+tk func.vsnprintf.arg.3=va_list,arg
+tk func.vsnprintf.args=4
+tk func.vsnprintf.ret=int
+tk func.vsprintf.arg.0=char *,s
+tk func.vsprintf.arg.1=const char *,format
+tk func.vsprintf.arg.2=va_list,arg
+tk func.vsprintf.args=3
+tk func.vsprintf.ret=int
+tk func.vsscanf.arg.0=const char *,s
+tk func.vsscanf.arg.1=const char *,format
+tk func.vsscanf.arg.2=va_list,arg
+tk func.vsscanf.args=3
+tk func.vsscanf.ret=int
+tk func.vswprintf.arg.0=wchar_t *,s
+tk func.vswprintf.arg.1=size_t,n
+tk func.vswprintf.arg.2=const wchar_t *,format
+tk func.vswprintf.arg.3=va_list,arg
+tk func.vswprintf.args=4
+tk func.vswprintf.ret=int
+tk func.vswscanf.arg.0=const wchar_t *,s
+tk func.vswscanf.arg.1=const wchar_t *,format
+tk func.vswscanf.arg.2=va_list,arg
+tk func.vswscanf.args=3
+tk func.vswscanf.ret=int
+tk func.vwprintf.arg.0=const wchar_t *,format
+tk func.vwprintf.arg.1=va_list,arg
+tk func.vwprintf.args=2
+tk func.vwprintf.ret=int
+tk func.vwscanf.arg.0=const wchar_t *,format
+tk func.vwscanf.arg.1=va_list,arg
+tk func.vwscanf.args=2
+tk func.vwscanf.ret=int
+tk func.wait.arg.0=int *,wstatus
+tk func.wait.args=1
+tk func.wait.ret=pid_t
+tk func.waitid.arg.0=idtype_t,idtype
+tk func.waitid.arg.1=id_t,id
+tk func.waitid.arg.2=siginfo_t *,infop
+tk func.waitid.arg.3=int,options
+tk func.waitid.args=4
+tk func.waitid.ret=int
+tk func.waitpid.arg.0=pid_t,pid
+tk func.waitpid.arg.1=int *,wstatus
+tk func.waitpid.arg.2=int,options
+tk func.waitpid.args=3
+tk func.waitpid.ret=pid_t
+tk func.warn.arg.0=const char *,format
+tk func.warn.args=1
+tk func.warn.ret=void
+tk func.wcrtomb.arg.0=char *,s
+tk func.wcrtomb.arg.1=wchar_t,wc
+tk func.wcrtomb.arg.2=mbstate_t *,ps
+tk func.wcrtomb.args=3
+tk func.wcrtomb.ret=size_t
+tk func.wcscat.arg.0=wchar_t *,s1
+tk func.wcscat.arg.1=const wchar_t *,s2
+tk func.wcscat.args=2
+tk func.wcscat.ret=wchar_t*
+tk func.wcschr.arg.0=wchar_t *,s
+tk func.wcschr.arg.1=wchar_t,c
+tk func.wcschr.args=2
+tk func.wcschr.ret=wchar_t*
+tk func.wcscmp.arg.0=const wchar_t *,s1
+tk func.wcscmp.arg.1=const wchar_t *,s2
+tk func.wcscmp.args=2
+tk func.wcscmp.ret=int
+tk func.wcscoll.arg.0=const wchar_t *,s1
+tk func.wcscoll.arg.1=const wchar_t *,s2
+tk func.wcscoll.args=2
+tk func.wcscoll.ret=int
+tk func.wcscpy.arg.0=wchar_t *,s1
+tk func.wcscpy.arg.1=const wchar_t *,s2
+tk func.wcscpy.args=2
+tk func.wcscpy.ret=wchar_t*
+tk func.wcscspn.arg.0=const wchar_t *,s1
+tk func.wcscspn.arg.1=const wchar_t *,s2
+tk func.wcscspn.args=2
+tk func.wcscspn.ret=size_t
+tk func.wcsftime.arg.0=wchar_t *,s
+tk func.wcsftime.arg.1=size_t,maxsize
+tk func.wcsftime.arg.2=const wchar_t *,format
+tk func.wcsftime.arg.3=const tm *,timeptr
+tk func.wcsftime.args=4
+tk func.wcsftime.ret=size_t
+tk func.wcslen.arg.0=const wchar_t *,s
+tk func.wcslen.args=1
+tk func.wcslen.ret=size_t
+tk func.wcsncat.arg.0=wchar_t *,s1
+tk func.wcsncat.arg.1=const wchar_t *,s2
+tk func.wcsncat.arg.2=size_t,n
+tk func.wcsncat.args=3
+tk func.wcsncat.ret=wchar_t*
+tk func.wcsncmp.arg.0=const wchar_t *,s1
+tk func.wcsncmp.arg.1=const wchar_t *,s2
+tk func.wcsncmp.arg.2=size_t,n
+tk func.wcsncmp.args=3
+tk func.wcsncmp.ret=int
+tk func.wcsncpy.arg.0=wchar_t *,s1
+tk func.wcsncpy.arg.1=const wchar_t *,s2
+tk func.wcsncpy.arg.2=size_t,n
+tk func.wcsncpy.args=3
+tk func.wcsncpy.ret=wchar_t*
+tk func.wcspbrk.arg.0=wchar_t *,s1
+tk func.wcspbrk.arg.1=const wchar_t *,s2
+tk func.wcspbrk.args=2
+tk func.wcspbrk.ret=wchar_t*
+tk func.wcsrchr.arg.0=wchar_t *,s
+tk func.wcsrchr.arg.1=wchar_t,c
+tk func.wcsrchr.args=2
+tk func.wcsrchr.ret=wchar_t*
+tk func.wcsrtombs.arg.0=char *,dst
+tk func.wcsrtombs.arg.1=const wchar_t* *,src
+tk func.wcsrtombs.arg.2=size_t,len
+tk func.wcsrtombs.arg.3=mbstate_t *,ps
+tk func.wcsrtombs.args=4
+tk func.wcsrtombs.ret=size_t
+tk func.wcsspn.arg.0=const wchar_t *,s1
+tk func.wcsspn.arg.1=const wchar_t *,s2
+tk func.wcsspn.args=2
+tk func.wcsspn.ret=size_t
+tk func.wcsstr.arg.0=wchar_t *,s1
+tk func.wcsstr.arg.1=const wchar_t *,s2
+tk func.wcsstr.args=2
+tk func.wcsstr.ret=wchar_t*
+tk func.wcstod.arg.0=const wchar_t *,nptr
+tk func.wcstod.arg.1=wchar_t* *,endptr
+tk func.wcstod.args=2
+tk func.wcstod.ret=double
+tk func.wcstof.arg.0=const wchar_t *,nptr
+tk func.wcstof.arg.1=wchar_t* *,endptr
+tk func.wcstof.args=2
+tk func.wcstof.ret=float
+tk func.wcstoimax.arg.0=const,wchar_t*
+tk func.wcstoimax.arg.1=wchar_t* *,endptr
+tk func.wcstoimax.arg.2=int,base
+tk func.wcstoimax.args=3
+tk func.wcstoimax.ret=intmax_t
+tk func.wcstok.arg.0=wchar_t *,s1
+tk func.wcstok.arg.1=const wchar_t *,s2
+tk func.wcstok.arg.2=wchar_t* *,ptr
+tk func.wcstok.args=3
+tk func.wcstok.ret=wchar_t*
+tk func.wcstol.arg.0=const wchar_t *,nptr
+tk func.wcstol.arg.1=wchar_t* *,endptr
+tk func.wcstol.arg.2=int,base
+tk func.wcstol.args=3
+tk func.wcstol.ret=long
+tk func.wcstold.arg.0=const wchar_t *,nptr
+tk func.wcstold.arg.1=wchar_t* *,endptr
+tk func.wcstold.args=2
+tk func.wcstold.ret=long double
+tk func.wcstoll.arg.0=const wchar_t *,nptr
+tk func.wcstoll.arg.1=wchar_t* *,endptr
+tk func.wcstoll.arg.2=int,base
+tk func.wcstoll.args=3
+tk func.wcstoll.ret=long long
+tk func.wcstombs.arg.0=char *,s
+tk func.wcstombs.arg.1=const wchar_t *,pwcs
+tk func.wcstombs.arg.2=size_t,n
+tk func.wcstombs.args=3
+tk func.wcstombs.ret=size_t
+tk func.wcstoul.arg.0=const wchar_t *,nptr
+tk func.wcstoul.arg.1=wchar_t* *,endptr
+tk func.wcstoul.arg.2=int,base
+tk func.wcstoul.args=3
+tk func.wcstoul.ret=long
+tk func.wcstoull.arg.0=const wchar_t *,nptr
+tk func.wcstoull.arg.1=wchar_t* *,endptr
+tk func.wcstoull.arg.2=int,base
+tk func.wcstoull.args=3
+tk func.wcstoull.ret=long long
+tk func.wcstoumax.arg.0=const,wchar_t*
+tk func.wcstoumax.arg.1=wchar_t* *,endptr
+tk func.wcstoumax.arg.2=int,base
+tk func.wcstoumax.args=3
+tk func.wcstoumax.ret=uintmax_t
+tk func.wcsxfrm.arg.0=wchar_t *,s1
+tk func.wcsxfrm.arg.1=const wchar_t *,s2
+tk func.wcsxfrm.arg.2=size_t,n
+tk func.wcsxfrm.args=3
+tk func.wcsxfrm.ret=size_t
+tk func.wctob.arg.0=wint_t,c
+tk func.wctob.args=1
+tk func.wctob.ret=int
+tk func.wctomb.arg.0=char *,s
+tk func.wctomb.arg.1=wchar_t,wchar
+tk func.wctomb.args=2
+tk func.wctomb.ret=int
+tk func.wctrans.arg.0=const char *,property
+tk func.wctrans.args=1
+tk func.wctrans.ret=wctrans_t
+tk func.wctype.arg.0=const char *,property
+tk func.wctype.args=1
+tk func.wctype.ret=wctype_t
+tk func.wmemchr.arg.0=wchar_t *,s
+tk func.wmemchr.arg.1=wchar_t,c
+tk func.wmemchr.arg.2=size_t,n
+tk func.wmemchr.args=3
+tk func.wmemchr.ret=wchar_t*
+tk func.wmemcmp.arg.0=wchar_t *,s1
+tk func.wmemcmp.arg.1=const wchar_t *,s2
+tk func.wmemcmp.arg.2=size_t,n
+tk func.wmemcmp.args=3
+tk func.wmemcmp.ret=int
+tk func.wmemcpy.arg.0=wchar_t *,s1
+tk func.wmemcpy.arg.1=const wchar_t *,s2
+tk func.wmemcpy.arg.2=size_t,n
+tk func.wmemcpy.args=3
+tk func.wmemcpy.ret=wchar_t*
+tk func.wmemmove.arg.0=wchar_t *,s1
+tk func.wmemmove.arg.1=const wchar_t *,s2
+tk func.wmemmove.arg.2=size_t,n
+tk func.wmemmove.args=3
+tk func.wmemmove.ret=wchar_t*
+tk func.wmemset.arg.0=wchar_t *,s
+tk func.wmemset.arg.1=wchar_t,c
+tk func.wmemset.arg.2=size_t,n
+tk func.wmemset.args=3
+tk func.wmemset.ret=wchar_t*
+tk func.wprintf.arg.0=const wchar_t *,format
+tk func.wprintf.args=1
+tk func.wprintf.ret=int
+tk func.write.arg.0=int,fd
+tk func.write.arg.1=void *,ptr
+tk func.write.arg.2=size_t,nbytes
+tk func.write.args=3
+tk func.write.ret=ssize_t
+tk func.wscanf.arg.0=const wchar_t *,format
+tk func.wscanf.args=1
+tk func.wscanf.ret=int
+tk func.xmalloc.arg.0=size_t,size
+tk func.xmalloc.args=1
+tk func.xmalloc.ret= void *
+tk fwide=func
+tk fwprintf=func
+tk fwrite=func
+tk fwscanf=func
+tk getc=func
+tk getchar=func
+tk getenv=func
+tk geteuid=func
+tk getopt=func
+tk getpid=func
+tk getprogname=func
+tk gets=func
+tk getsockname=func
+tk getsockopt=func
+tk getuid=func
+tk getwc=func
+tk getwchar=func
+tk gmtime=func
+tk humanize_number=func
+tk hypot=func
+tk hypotf=func
+tk hypotl=func
+tk ilogb=func
+tk ilogbf=func
+tk ilogbl=func
+tk imaxabs=func
+tk imaxdiv=func
+tk int=type
+tk int16_t=type
+tk int32_t=type
+tk int64_t=type
+tk int8_t=type
+tk ioctl=func
+tk isalnum=func
+tk isalpha=func
+tk isatty=func
+tk isblank=func
+tk iscntrl=func
+tk isdigit=func
+tk isfinite=func
+tk isgraph=func
+tk isgreater=func
+tk isgreaterequal=func
+tk isinf=func
+tk isless=func
+tk islessequal=func
+tk islessgreater=func
+tk islower=func
+tk isnan=func
+tk isnormal=func
+tk isprint=func
+tk ispunct=func
+tk isspace=func
+tk isunordered=func
+tk isupper=func
+tk iswalnum=func
+tk iswalpha=func
+tk iswblank=func
+tk iswcntrl=func
+tk iswctype=func
+tk iswdigit=func
+tk iswgraph=func
+tk iswlower=func
+tk iswprint=func
+tk iswpunct=func
+tk iswspace=func
+tk iswupper=func
+tk iswxdigit=func
+tk isxdigit=func
+tk labs=func
+tk ldexp=func
+tk ldexpf=func
+tk ldexpl=func
+tk ldiv=func
+tk lgamma=func
+tk lgammaf=func
+tk lgammal=func
+tk llabs=func
+tk lldiv=func
+tk llrint=func
+tk llrintf=func
+tk llrintl=func
+tk llround=func
+tk llroundf=func
+tk llroundl=func
+tk localeconv=func
+tk localtime=func
+tk log=func
+tk log10=func
+tk log10f=func
+tk log10l=func
+tk log1p=func
+tk log1pf=func
+tk log1pl=func
+tk log2=func
+tk log2f=func
+tk log2l=func
+tk logb=func
+tk logbf=func
+tk logbl=func
+tk logf=func
+tk logl=func
+tk long=type
+tk long long=type
+tk longjmp=func
+tk lrint=func
+tk lrintf=func
+tk lrintl=func
+tk lround=func
+tk lroundf=func
+tk lroundl=func
+tk lstat=func
+tk main=func
+tk malloc=func
+tk maskrune=func
+tk mblen=func
+tk mbrlen=func
+tk mbrtowc=func
+tk mbsinit=func
+tk mbsrtowcs=func
+tk mbstowcs=func
+tk mbtowc=func
+tk memchr=func
+tk memcmp=func
+tk memcpy=func
+tk memmove=func
+tk memset=func
+tk mkstemp=func
+tk mktemp=func
+tk mktime=func
+tk mmap=func
+tk modf=func
+tk modff=func
+tk modfl=func
+tk munmap=func
+tk nan=func
+tk nanf=func
+tk nanl=func
+tk nanosleep=func
+tk nearbyint=func
+tk nearbyintf=func
+tk nearbyintl=func
+tk nextafter=func
+tk nextafterf=func
+tk nextafterl=func
+tk nexttoward=func
+tk nexttowardf=func
+tk nexttowardl=func
+tk nl_langinfo=func
+tk nl_langinfo_l=func
+tk objc_msgSend=func
+tk open=func
+tk perror=func
+tk pow=func
+tk powf=func
+tk powl=func
+tk prctl=func
+tk printf=func
+tk ptrace=func
+tk putc=func
+tk putchar=func
+tk puts=func
+tk pututxline=func
+tk putwc=func
+tk putwchar=func
+tk qsort=func
+tk quick_exit=func
+tk raise=func
+tk rand=func
+tk read=func
+tk realloc=func
+tk remainder=func
+tk remainderf=func
+tk remainderl=func
+tk remove=func
+tk remquo=func
+tk remquof=func
+tk remquol=func
+tk rename=func
+tk rewind=func
+tk rint=func
+tk rintf=func
+tk rintl=func
+tk round=func
+tk roundf=func
+tk roundl=func
+tk scalbln=func
+tk scalblnf=func
+tk scalblnl=func
+tk scalbn=func
+tk scalbnf=func
+tk scalbnl=func
+tk scanf=func
+tk select=func
+tk setbuf=func
+tk setjmp=func
+tk setlocale=func
+tk setsockopt=func
+tk setvbuf=func
+tk short=type
+tk sigaction=func
+tk signal=func
+tk signbit=func
+tk sin=func
+tk sinf=func
+tk sinh=func
+tk sinhf=func
+tk sinhl=func
+tk sinl=func
+tk size_t=type
+tk sleep=func
+tk snprintf=func
+tk sprintf=func
+tk sqrt=func
+tk sqrtf=func
+tk sqrtl=func
+tk srand=func
+tk sscanf=func
+tk strcasecmp=func
+tk strcat=func
+tk strchr=func
+tk strcmp=func
+tk strcoll=func
+tk strcpy=func
+tk strcspn=func
+tk strdup=func
+tk strerror=func
+tk strftime=func
+tk strlcpy=func
+tk strlen=func
+tk strmode=func
+tk strncasecmp=func
+tk strncat=func
+tk strncmp=func
+tk strncpy=func
+tk strndup=func
+tk strpbrk=func
+tk strrchr=func
+tk strspn=func
+tk strstr=func
+tk strtod=func
+tk strtof=func
+tk strtoimax=func
+tk strtok=func
+tk strtol=func
+tk strtold=func
+tk strtoll=func
+tk strtoul=func
+tk strtoull=func
+tk strtoumax=func
+tk strxfrm=func
+tk swprintf=func
+tk swscanf=func
+tk symlink=func
+tk system=func
+tk tan=func
+tk tanf=func
+tk tanh=func
+tk tanhf=func
+tk tanhl=func
+tk tanl=func
+tk textdomain=func
+tk tgamma=func
+tk tgammaf=func
+tk tgammal=func
+tk tgoto=func
+tk time=func
+tk tmpfile=func
+tk tmpnam=func
+tk tolower=func
+tk toupper=func
+tk towctrans=func
+tk towlower=func
+tk towupper=func
+tk trunc=func
+tk truncf=func
+tk truncl=func
+tk type.char=c
+tk type.char *=z
+tk type.char *.size=64
+tk type.char.size=8
+tk type.double=f
+tk type.double.size=64
+tk type.float=f
+tk type.float.size=32
+tk type.int=d
+tk type.int.size=32
+tk type.int16_t=w
+tk type.int16_t.size=16
+tk type.int32_t=d
+tk type.int32_t.size=32
+tk type.int64_t=q
+tk type.int64_t.size=64
+tk type.int8_t=b
+tk type.int8_t.size=8
+tk type.long=x
+tk type.long long=q
+tk type.long long.size=64
+tk type.long.size=64
+tk type.short=w
+tk type.short.size=16
+tk type.size_t=x
+tk type.size_t.size=64
+tk type.uid_t=i
+tk type.uid_t.size=64
+tk type.uint16_t=w
+tk type.uint16_t.size=16
+tk type.uint32_t=d
+tk type.uint32_t.size=32
+tk type.uint64_t=q
+tk type.uint64_t.size=64
+tk type.uint8_t=b
+tk type.uint8_t.size=8
+tk type.unsigned char=b
+tk type.unsigned char.size=8
+tk type.unsigned int=i
+tk type.unsigned int.size=32
+tk type.unsigned short=w
+tk type.unsigned short.size=16
+tk type.void *=p
+tk type.void *.size=64
+tk uid_t=type
+tk uint16_t=type
+tk uint32_t=type
+tk uint64_t=type
+tk uint8_t=type
+tk umask=func
+tk ungetc=func
+tk ungetwc=func
+tk unlink=func
+tk unsigned char=type
+tk unsigned int=type
+tk unsigned short=type
+tk vfprintf=func
+tk vfscanf=func
+tk vfwprintf=func
+tk vfwscanf=func
+tk void *=type
+tk vprintf=func
+tk vscanf=func
+tk vsnprintf=func
+tk vsprintf=func
+tk vsscanf=func
+tk vswprintf=func
+tk vswscanf=func
+tk vwprintf=func
+tk vwscanf=func
+tk wait=func
+tk waitid=func
+tk waitpid=func
+tk warn=func
+tk wcrtomb=func
+tk wcscat=func
+tk wcschr=func
+tk wcscmp=func
+tk wcscoll=func
+tk wcscpy=func
+tk wcscspn=func
+tk wcsftime=func
+tk wcslen=func
+tk wcsncat=func
+tk wcsncmp=func
+tk wcsncpy=func
+tk wcspbrk=func
+tk wcsrchr=func
+tk wcsrtombs=func
+tk wcsspn=func
+tk wcsstr=func
+tk wcstod=func
+tk wcstof=func
+tk wcstoimax=func
+tk wcstok=func
+tk wcstol=func
+tk wcstold=func
+tk wcstoll=func
+tk wcstombs=func
+tk wcstoul=func
+tk wcstoull=func
+tk wcstoumax=func
+tk wcsxfrm=func
+tk wctob=func
+tk wctomb=func
+tk wctrans=func
+tk wctype=func
+tk wmemchr=func
+tk wmemcmp=func
+tk wmemcpy=func
+tk wmemmove=func
+tk wmemset=func
+tk wprintf=func
+tk write=func
+tk wscanf=func
+tk xmalloc=func
+# macros
+# seek
+s 0x400328d4
