@@ -147,3 +147,41 @@ hits: 3
 ```
 
 and indeed the function just above have some operation with that register involved!
+
+But now it's mandatory to add the correct memory mapping for the device: from the specification
+we know that the memory regions are the following
+
+| Address space | Device Name |
+|---------------|-------------|
+| 0x00000000-0x00003fff | special region for instruction TCM |
+| 0x10000000-0x10003fff | on-chip 16kB memory |
+| 0x40000000-0x4fffffff | off-chip SDRAM chip |
+| 0xe0000000-0xe0003fff | internal boot ROM |
+| 0xf0000000-0xffffffff | on-chio peripherals |
+
+so in radare2 we indicate this with the commands
+
+```
+[0x400328d4]> on malloc://0x4000 0x10000000 rw-
+4
+[0x400328d4]> omn 0x10000000 ram
+[0x400328d4]> on malloc://0x0fffffff 0xf0000000 rw-
+5
+[0x400328d4]> omn 0xf0000000 peripherals
+[0x400328d4]> om
+ 3 fd: 5 +0x00000000 0xf0000000 - 0xfffffffe rw- peripherals
+ 2 fd: 4 +0x00000000 0x10000000 - 0x10003fff rw- ram
+ 1 fd: 3 +0x00000000 0x40000000 - 0x400c25f3 r-x
+```
+
+To start we want to create a new flagspace for peripherals named ``per``
+so to have directly name to refer
+
+```
+:> fs per
+:> f per.uart_ch0 @ 0xf0532000
+```
+
+At ``0x40030fd8`` there are some comparisons with values that seem single byte char,
+to make easier to read directly is possible to **hint** radare2 that we want to see
+directly the char in the disassembly in visual mode with the sequence "dis"
