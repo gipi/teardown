@@ -185,3 +185,24 @@ so to have directly name to refer
 At ``0x40030fd8`` there are some comparisons with values that seem single byte char,
 to make easier to read directly is possible to **hint** radare2 that we want to see
 directly the char in the disassembly in visual mode with the sequence "dis"
+
+## Wrong path
+
+Looking at the code of the bootloader, particularly at [cr0.S](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/master/bootable/bootloader/lk/arch/arm/crt0.S)
+is clear that all the binary file is intended to be loaded in memory; try yourself compiling the code
+
+```
+$ bootable/bootloader/lk
+$ make tcc8920_evm_emmc EMMC_BOOT=1 TOOLCHAIN_PREFIX=/usr/bin/arm-linux-gnueabi-
+```
+
+The problem now is: how translate all the flag we set previously with the wrong addresses?
+well, radare2 got us covered
+
+```
+f?
+ ...
+| fb [addr] [flag*]        move flags matching 'flag' to relative addr
+ ...
+```
+
