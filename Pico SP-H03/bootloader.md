@@ -19,7 +19,7 @@ Looking at the start of the file ``TCCBoot4.2.rom`` is possible to see like 0x70
 0x000000b0  f801 0040 0000 e047 c8e6 ee47 08d2 9fe5  ...@...G...G....
 ```
 
-the interesting thing is the word at offset 0x0c, ``0x0c2664`` that is equal to the file
+the interesting thing is the word at offset 0x1c, ``0x0c2664`` that is equal to the file
 size; remove the header and try to look at that
 
 ```
