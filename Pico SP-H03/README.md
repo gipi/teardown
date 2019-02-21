@@ -241,14 +241,25 @@ CN1102| Connects to the DMD board and main board. A bad connection will cause a 
 
 ## Boot mode
 
+It's possible to activate two different USB mode to upgrade the system
+
+### Boot ROM
+
 It seems there is a boot mode via USB like described in the datasheet of [TCC760](https://www.bg-electronics.de/datenblaetter/Schaltkreise/TCC760.pdf)
 or that other people [have found](https://dreamlayers.blogspot.com/2013/03/telechips-tcc76x-usb-boot.html); it loads via the [tcctool](https://github.com/Rockbox/rockbox/blob/master/utils/tcctool/tcctool.c)
-some code in ``SDRAM`` and executes it
+some code in ``SDRAM`` and executes it.
 
-Maybe is activated pressing the button nearer the sdcard slot: when this happens the device has the red led on and the
-usb device has identifier ``140e:b077``: see the image below
+### FWDN
+
+This is a bootloader mode that allows to upgrade the firmware using special crafted images;
+maybe is activated pressing the button nearer the sdcard slot: see the image below
 
 ![](Images/boot.jpg)
+
+when this happens the device has the red led on and the
+usb device has identifier ``140e:b077``(like the ``vid:pid`` used for ``TCC91XX`` [here](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/a9790f6edf973d9e6b102f9be89c7b7f883f1cb2/bootable/bootloader/lk/platform/tcc_shared/include/usb/usbdev_class.h)). 
+
+## TCCBox
 
 Maybe is possible to use a tool named ``tccbox`` to update the firmware from the command line **of the device**; the source code
 maybe is in this [repository](https://github.com/huangguojun/linux_drv/) under ``linux_test/tcc8925_test/firmupdate.c``
