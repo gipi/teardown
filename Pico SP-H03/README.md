@@ -330,5 +330,4 @@ resources/3001.bin:            RIFF (little-endian) data, AVI, 272 x 60, 10.00 f
  - https://github.com/cnxsoft/tccutils/
  - https://wenku.baidu.com/view/6545cb13a216147917112879.html
  - https://wenku.baidu.com/view/4ae28f1655270722192ef7ec.html
-
-
+ - [TCC8900 FWDN for Linux](https://www.tripleoxygen.net/post/tcc8900-fwdn-for-linux/)
