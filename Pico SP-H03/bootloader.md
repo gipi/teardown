@@ -153,11 +153,11 @@ we know that the memory regions are the following
 
 | Address space | Device Name |
 |---------------|-------------|
-| 0x00000000-0x00003fff | special region for instruction TCM |
-| 0x10000000-0x10003fff | on-chip 16kB memory |
-| 0x40000000-0x4fffffff | off-chip SDRAM chip |
-| 0xe0000000-0xe0003fff | internal boot ROM |
-| 0xf0000000-0xffffffff | on-chio peripherals |
+| ``0x00000000``-``0x00003fff`` | special region for instruction TCM |
+| ``0x10000000``-``0x10003fff`` | on-chip 16kB memory |
+| ``0x40000000``-``0x4fffffff`` | off-chip SDRAM chip |
+| ``0xe0000000``-``0xe0003fff`` | internal boot ROM |
+| ``0xf0000000``-``0xffffffff`` | on-chip peripherals |
 
 so in radare2 we indicate this with the commands
 
