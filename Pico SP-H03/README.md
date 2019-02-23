@@ -249,6 +249,84 @@ It seems there is a boot mode via USB like described in the datasheet of [TCC760
 or that other people [have found](https://dreamlayers.blogspot.com/2013/03/telechips-tcc76x-usb-boot.html); it loads via the [tcctool](https://github.com/Rockbox/rockbox/blob/master/utils/tcctool/tcctool.c)
 some code in ``SDRAM`` and executes it.
 
+To boot in this mode the SoC checks some GPIOs, namely ``BM[2:0]``, ``GPIOE[3]`` etc... but since I have not
+the board layout (yet :P) I don't know where the physical pull-up/pull-down resistor are placed (I supposed
+this configuration is done by using resistor); however, in the specification is indicated the boot ROM as the
+failsafe when the other configurations fail.
+
+With this in mind I simply shorted the ``CE`` and ``VCC`` of the NAND Flash to obtain the following
+USB device
+
+```
+Feb 23 10:35:23 turing kernel: [ 1038.755195] usb 2-2: new high-speed USB device number 3 using xhci_hcd
+Feb 23 10:35:23 turing kernel: [ 1038.903570] usb 2-2: config 1 interface 0 altsetting 0 bulk endpoint 0x82 has invalid maxpacket 64
+Feb 23 10:35:23 turing kernel: [ 1038.903576] usb 2-2: config 1 interface 0 altsetting 0 bulk endpoint 0x1 has invalid maxpacket 64
+Feb 23 10:35:23 turing kernel: [ 1038.903582] usb 2-2: New USB device found, idVendor=140e, idProduct=b077
+Feb 23 10:35:23 turing kernel: [ 1038.903586] usb 2-2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Feb 23 10:35:40 turing kernel: [ 1056.322886] usb 2-2: USB disconnect, device number 3
+```
+
+```
+Bus 002 Device 004: ID 140e:b077 Telechips, Inc.
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass            0 (Defined at Interface level)
+  bDeviceSubClass         0
+  bDeviceProtocol         0
+  bMaxPacketSize0        64
+  idVendor           0x140e Telechips, Inc.
+  idProduct          0xb077
+  bcdDevice            1.00
+  iManufacturer           0
+  iProduct                0
+  iSerial                 0
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           32
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass    255 Vendor Specific Subclass
+      bInterfaceProtocol    255 Vendor Specific Protocol
+      iInterface              0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+Device Status:     0x2300
+  (Bus Powered)
+```
+
 ### FWDN
 
 This is a bootloader mode that allows to upgrade the firmware using special crafted images;
