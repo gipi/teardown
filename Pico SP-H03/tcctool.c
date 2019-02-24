@@ -41,8 +41,8 @@ struct device_t
     char* name;
     char* label;
     uint16_t productid; /* USB's product id we expect */
-    uint32_t loadaddr;  /* address where to copy the firmware */
     uint32_t startaddr; /* address to jump in at the end */
+    uint32_t destaddr;  /* address where to copy the firmware */
 };
 
 static struct device_t devices[] = 
@@ -106,7 +106,7 @@ int upload_app(usb_dev_handle* dh, int device, char* p, int len)
 
     put_int32le(0xf0000000, buf);   /* Unknown - always the same */
     put_int32le(devices[device].startaddr, buf + 4);
-    put_int32le(devices[device].loadaddr, buf + 8);
+    put_int32le(devices[device].destaddr, buf + 8);
     put_int32le(len / PACKET_SIZE, buf + 0xc);
 
     err = usb_bulk_write(dh, TCC_BULK_TO, buf, PACKET_SIZE, TOUT);
@@ -118,6 +118,11 @@ int upload_app(usb_dev_handle* dh, int device, char* p, int len)
         return -1;
     }
 
+    fprintf(stderr, " [I] app configured to be copied to 0x%08x and start from 0x%08x\n",
+        devices[device].destaddr,
+        devices[device].startaddr);
+
+    fprintf(stderr, "[I] sending packets: ");
     /* Now send the data, PACKET_SIZE bytes at a time. */
     for (i=0 ; i < (len / PACKET_SIZE) ; i++)
     {
@@ -130,8 +135,12 @@ int upload_app(usb_dev_handle* dh, int device, char* p, int len)
             return -1;
         }
 
+        fprintf(stderr, ".");
+
         p += PACKET_SIZE;
     }
+
+    fprintf(stderr, "\n");
 
     return 0;
 }
