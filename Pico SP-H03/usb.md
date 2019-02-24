@@ -29,8 +29,12 @@ the board layout (yet :P) I don't know where the physical pull-up/pull-down resi
 this configuration is done by using resistor); however, in the specification is indicated the boot ROM as the
 failsafe when the other configurations fail.
 
-With this in mind I simply shorted the ``CE`` and ``VCC`` of the NAND Flash to obtain the following
-USB device
+With this in mind I simply shorted the ``CE`` and ``VCC`` of the NAND Flash
+
+![](Images/disable-flash.png)
+
+and obtained the following USB device
+
 
 ```
 Feb 23 10:35:23 turing kernel: [ 1038.755195] usb 2-2: new high-speed USB device number 3 using xhci_hcd
@@ -115,7 +119,9 @@ maybe is activated pressing the button nearer the sdcard slot: see the image bel
 ![](Images/boot.jpg)
 
 when this happens the device has the red led on and the
-usb device has identifier ``140e:b077``(like the ``vid:pid`` used for ``TCC91XX`` [here](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/a9790f6edf973d9e6b102f9be89c7b7f883f1cb2/bootable/bootloader/lk/platform/tcc_shared/include/usb/usbdev_class.h)). 
+usb device has identifier ``140e:b077``(like the ``vid:pid`` used for ``TCC91XX`` [here](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/a9790f6edf973d9e6b102f9be89c7b7f883f1cb2/bootable/bootloader/lk/platform/tcc_shared/include/usb/usbdev_class.h)).
+
+In my case seems the same mode as above, I don't know if is a bootloader problem or what.
 
 ## SCSI mode
 
