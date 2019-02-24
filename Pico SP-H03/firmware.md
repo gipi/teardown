@@ -1,7 +1,13 @@
 # Firmware
 
 Seems from the firmware (downloaded from the site) named ``P-OBRNPWWC-1008.1.rom``
-that is a ``tar`` archive, that the system is a linux one
+that is a ``tar`` archive, that the system is a linux one.
+
+You can find the complete list of files included in this link
+
+ - [P-OBRNPWWC-1008.1.rom list files](P-OBRNPWWC-1008.1.list) generate with ``find Pico\ SP-H03/P-OBRNPWWC-1008.1/ -exec file \{\} \; | cut -d'/' -f3- > Pico\ SP-H03/P-OBRNPWWC-1008.1.list``
+
+below just a snippet to show a glipse of what you can find
 
 ```
 $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
@@ -23,25 +29,14 @@ $ tar -tf Pico\ SP-H03/P-OBRNPWWC-1008.1.rom
 ./TCCKernel7.3.rom
 ./setup/
 ./setup/reg_set.obn
-./opensource/
-./opensource/opensource_oberon_dutch.txt
-./opensource/opensource_oberon_sweden.txt
-./opensource/opensource_oberon_spain.txt
-./opensource/opensource_oberon_china.txt
-./opensource/opensource_oberon_germany.txt
-./opensource/opensource_oberon_turky.txt
-./opensource/opensource_oberon_russia.txt
-./opensource/opensource_oberon_tai.txt
-./opensource/opensource_oberon_portugese.txt
-./opensource/opensource_oberon_french.txt
-./opensource/opensource_oberon_english.txt
-./opensource/opensource_oberon_korea.txt
-./opensource/opensource_oberon_italia.txt
 ./md5sum
 ./TCCBoot4.2.rom
 ./run.sh
 ./pico
 ```
+
+Since it is an Android system, we can assume that this archive is what contained in the ``userdata``
+partition (less the kernel and bootloader probably).
 
 Analysing the ``TCCKernel7.3.rom`` and ``TCCBoot4.2.rom`` that I assume are respectively the kernel
 and bootloader
