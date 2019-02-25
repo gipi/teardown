@@ -11,11 +11,11 @@ Product page: http://www.samsung.com/it/support/model/SP0351VBX/EN
 
 ## SOC
 
-Seems the ``TCC9101G-0BX`` an [ARM946E-S](processor.https://static.docs.arm.com/ddi0201/d/DDI0201D_arm946es_r1p1_trm.pdf)
+Seems the ``TCC9101G-0BX``, an [ARM1176JZ(F)-S](https://en.wikipedia.org/wiki/ARM11)
 used also for the Cowon v5 tablet.
 
-https://en.wikipedia.org/wiki/List_of_applications_of_ARM_cores
-[ARM1176JZ(F)-S](https://en.wikipedia.org/wiki/ARM11)
+See the [list of the ARM cores](https://en.wikipedia.org/wiki/List_of_applications_of_ARM_cores).
+
 
 ## Components
 
