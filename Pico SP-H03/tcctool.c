@@ -47,7 +47,7 @@ struct device_t
 
 static struct device_t devices[] = 
 { 
-    {"pico",     "Pico SP-H03 projector",            0xb077, 0x40000000, 0x40000000},
+    {"pico",     "Pico SP-H03 projector",            0xb077, 0x00002000, 0x00002000},
 };
 
 #define NUM_DEVICES ((sizeof(devices) / sizeof(struct device_t)))
