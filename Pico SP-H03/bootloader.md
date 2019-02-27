@@ -206,3 +206,10 @@ f?
  ...
 ```
 
+## Setup
+
+This is the start of the execution, setup the stack and stuffs...
+
+## Main
+
+Probably is at ``0x4002c68c`` where a series of init functions is called.
