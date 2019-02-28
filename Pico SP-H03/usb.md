@@ -22,7 +22,7 @@ in the specification is described in the following way:
 
 It's similar of what is described in the datasheet of [TCC760](https://www.bg-electronics.de/datenblaetter/Schaltkreise/TCC760.pdf)
 or that other people [have found](https://dreamlayers.blogspot.com/2013/03/telechips-tcc76x-usb-boot.html); it loads via the [tcctool](https://github.com/Rockbox/rockbox/blob/master/utils/tcctool/tcctool.c)
-some code in ``SDRAM`` and executes it.
+some code in ``SDRAM`` and executes it. Probably we should start from an entry like this [commit](https://github.com/dreamlayers/rockbox/commit/86866b4644482a9b0c7188c0d7b200e521788fe9).
 
 To boot in this mode the SoC checks some GPIOs, namely ``BM[2:0]``, ``GPIOE[3]`` etc... but since I have not
 the board layout (yet :P) I don't know where the physical pull-up/pull-down resistor are placed (I supposed
