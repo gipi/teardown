@@ -94,6 +94,10 @@ manually the ``rc`` file to fix the issue).
 Diving into the code it's possible to see some address that are strings, so we can move to the address ``0x40091de8``
 and from the cursor mode press "ds" and define a string.
 
+## Interrupts
+
+At ``0x4002e2fc`` exists a function to disable IRQ/FIQ (see pg100 ARM11 specification), and at ``0x4002e2ec`` the opposite.
+
 ## UART
 
 The most interesting part I want to find is the UART, from the specification I see that it is at address
