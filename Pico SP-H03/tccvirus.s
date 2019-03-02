@@ -10,7 +10,7 @@
 .set IEN, (1<<3)
 .set TCKSEL, (1<<4)
 .set WATCHDOG_EN, (1<<31)
-
+.set CONTROL_POFF, (1<<1)
 main:
 	ldr	r3, .TWDCFG
 	ldrb	r4, [r3]
@@ -26,7 +26,16 @@ main:
 	str	r4, [r3]
 .loop:
 	b .loop
+.CONTROL_ADDR:
+	.word	0xf0404000
 .TWDCFG:
 	.word	0xf0403070
+.TWDCLR_ADDR:
+	.word	0xf0403074
 .WATCHDOG_ADDR:
 	.word	0xf040400c
+power_off:
+	ldr	r3, .CONTROL_ADDR
+	ldr	r4, [r3]
+	orr	r4, r4, #CONTROL_POFF
+	str	r4, [r3]
