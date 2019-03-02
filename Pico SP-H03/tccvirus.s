@@ -12,6 +12,7 @@
 .set WATCHDOG_EN, (1<<31)
 .set CONTROL_POFF, (1<<1)
 main:
+enable_watchdog:
 	ldr	r3, .TWDCFG
 	ldrb	r4, [r3]
 	orr	r4, r4, #(EN | IEN)
@@ -20,6 +21,9 @@ main:
 	bic	r4, r4, 0x30 @ clear the TCKSEL
 	orr	r4, r4, 0x40 @ set the TCKSEL to 0x04
 	strb	r4, [r3]
+	ldr	r3, .TWDCLR_ADDR
+	mov r4, #0x00000000
+	str	r4, [r3]
 	ldr	r3, .WATCHDOG_ADDR
 	ldr	r4, [r3]
 	orr	r4, r4, #WATCHDOG_EN
