@@ -105,9 +105,9 @@ int upload_app(usb_dev_handle* dh, int device, char* p, int len)
     memset(buf, 0, PACKET_SIZE);
 
     put_int32le(0xf0000000, buf);   /* Unknown - always the same */
-    put_int32le(devices[device].startaddr, buf + 4);
-    put_int32le(devices[device].destaddr, buf + 8);
-    put_int32le(len / PACKET_SIZE, buf + 0xc);
+    put_int32le(len / PACKET_SIZE, buf + 0x04);
+    put_int32le(devices[device].startaddr, buf + 0x08);
+    put_int32le(devices[device].destaddr, buf + 0x0c);
 
     err = usb_bulk_write(dh, TCC_BULK_TO, buf, PACKET_SIZE, TOUT);
 
