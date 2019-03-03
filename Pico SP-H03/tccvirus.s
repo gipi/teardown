@@ -94,7 +94,8 @@ gpio_signal:
 	str	r7, [r6]                   @ set OUTPUT MODE
 
 	/* from now on, we need to loop over the encoding */
-	mul	r4, r8, r9                 @ r4 contains the number of cycles to toggle the GPIO
+	lsl	r8, 5
+	orr	r4, r8, r9                 @ r4 contains the number of cycles to toggle the GPIO
 	mov	r3, #0                     @ this will be our counter
 _loop_over_encoding:
 	add	r6, r5, #GPIO_GPXEN_OFFSET @ r6 points at the GPxXOR register
