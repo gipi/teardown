@@ -98,19 +98,24 @@ _loop_over_encoding:
 .GPIO_REGISTER_MAP_ADDR:
 	.word	0xf0102000
 
+.set GPIO_GROUPS_N, 0x06
+.set GPIO_IDX_N,    0x20
+
 gpio_identification:
 	mov	r10, lr
 
 	mov	r8, #0
-_loop_idx:
+_loop_group:
 	mov	r9, #0
-	bl	_loop_over_encoding
+_loop_idx:
+	bl	gpio_signal
 	add	r9, r9, #1
-	cmp	r9, #32
+	cmp	r9, #GPIO_IDX_N
 	bne	_loop_idx
 	add	r8, r8, #1
-	cmp	r8, #6
-	bne _loop_idx
+	cmp	r8, #GPIO_GROUPS_N
+	bne _loop_group
 
 	mov lr, r10
 	mov pc, lr
+
