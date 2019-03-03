@@ -103,6 +103,7 @@ _loop_over_encoding:
 	str	r7, [r6]                   @ twice so to have a square wave
 	add	r3, r3, #1
 	cmp	r3, r4
+	bl watchdog_clear
 	bne	_loop_over_encoding
 
 	/* now set to zero the GPIO */
