@@ -78,9 +78,8 @@ power_off:
 .set GPIO_GROUP_OFFSET, 0x40
 .set GPIO_GPXDAT_OFFSET, 0x00
 .set GPIO_GPXCLR_OFFSET, 0x0c
-.set GPIO_GPXEN_OFFSET, 0x04
-.set GPIO_GPXXOR_OFFSET, 0x10
-
+.set GPIO_GPxEN_OFFSET, 0x04
+.set GPIO_GPxXOR_OFFSET, 0x10
 gpio_signal:
 	mov	r11, lr                     @ save the return pointer
 	/* initialize the GPIO requested in OUTPUT mode */
@@ -88,7 +87,7 @@ gpio_signal:
 	mov r7, #GPIO_GROUP_OFFSET
 	mul	r4, r8, r7
 	add	r5, r3, r4                 @ r5 points at the start of the right GPIO group address
-	add	r6, r5, #GPIO_GPXEN_OFFSET @ r6 points to the direction control
+	add	r6, r5, #GPIO_GPxEN_OFFSET @ r6 points to the direction control
 	mov	r7, #1
 	lsl	r7, r9                     @ r7 contains the pattern for the right GPIO to be activated
 	str	r7, [r6]                   @ set OUTPUT MODE
@@ -98,7 +97,7 @@ gpio_signal:
 	orr	r4, r8, r9                 @ r4 contains the number of cycles to toggle the GPIO
 	mov	r3, #0                     @ this will be our counter
 _loop_over_encoding:
-	add	r6, r5, #GPIO_GPXEN_OFFSET @ r6 points at the GPxXOR register
+	add	r6, r5, #GPIO_GPxXOR_OFFSET @ r6 points at the GPxXOR register
 	str	r7, [r6]                   @ we toggle the corresponding register
 	str	r7, [r6]                   @ twice so to have a square wave
 	add	r3, r3, #1
