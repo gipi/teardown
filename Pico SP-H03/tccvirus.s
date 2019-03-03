@@ -10,6 +10,7 @@
 .set IEN, (1<<3)
 .set TCKSEL, (1<<4)
 .set WATCHDOG_EN, (1<<31)
+.set WATCHDOG_CLR, (1<<30)
 .set CONTROL_POFF, (1<<1)
 main:
 	bl gpio_identification
@@ -32,6 +33,15 @@ enable_watchdog:
 	orr	r4, r4, #WATCHDOG_EN
 	str	r4, [r3]
 	mov	lr, r10
+	mov pc, lr
+
+watchdog_clear:
+	mov	r12, lr
+	ldr	r0, .WATCHDOG_ADDR
+	ldr	r1, [r0]
+	orr	r1, r1, #WATCHDOG_CLR
+	str	r1, [r0]
+	mov lr, r12
 	mov pc, lr
 
 .CONTROL_ADDR:
