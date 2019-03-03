@@ -80,6 +80,12 @@ power_off:
 .set GPIO_GPXCLR_OFFSET, 0x0c
 .set GPIO_GPxEN_OFFSET, 0x04
 .set GPIO_GPxXOR_OFFSET, 0x10
+.set GPIO_GPxPD0_OFFSET, 0x1c
+.set GPIO_GPxPD1_OFFSET, 0x20
+.set GPIO_GPxFN0_OFFSET, 0x24
+.set GPIO_GPxFN1_OFFSET, 0x28
+.set GPIO_GPxFN2_OFFSET, 0x2c
+.set GPIO_GPxFN3_OFFSET, 0x30
 gpio_signal:
 	mov	r11, lr                     @ save the return pointer
 	/* initialize the GPIO requested in OUTPUT mode */
@@ -91,6 +97,26 @@ gpio_signal:
 	mov	r7, #1
 	lsl	r7, r9                     @ r7 contains the pattern for the right GPIO to be activated
 	str	r7, [r6]                   @ set OUTPUT MODE
+	/* set pull-down */
+	add	r6, r5, #GPIO_GPxPD0_OFFSET
+	ldr	r3, .GPIO_PULL_DOWN
+	str	r3, [r6]
+	add	r6, r5, #GPIO_GPxPD1_OFFSET
+	ldr	r3, .GPIO_PULL_DOWN
+	str	r3, [r6]
+	/* and set function mode to 0 */
+	add	r6, r5, #GPIO_GPxFN0_OFFSET
+	mov	r3, #0
+	str	r3, [r6]
+	add	r6, r5, #GPIO_GPxFN1_OFFSET
+	mov	r3, #0
+	str	r3, [r6]
+	add	r6, r5, #GPIO_GPxFN2_OFFSET
+	mov	r3, #0
+	str	r3, [r6]
+	add	r6, r5, #GPIO_GPxFN3_OFFSET
+	mov	r3, #0
+	str	r3, [r6]
 
 	/* from now on, we need to loop over the encoding */
 	lsl	r8, 5
@@ -114,7 +140,8 @@ _loop_over_encoding:
 	mov pc, lr
 .GPIO_REGISTER_MAP_ADDR:
 	.word	0xf0102000
-
+.GPIO_PULL_DOWN:
+	.word	0xaaaaaaaa
 .set GPIO_GROUPS_N, 0x06
 .set GPIO_IDX_N,    0x20
 
