@@ -11,7 +11,6 @@
 .set TCKSEL, (1<<4)
 .set WATCHDOG_EN, (1<<31)
 .set WATCHDOG_CLR, (1<<30)
-.set CONTROL_POFF, (1<<1)
 main:
 	bl gpio_identification
 
@@ -52,6 +51,9 @@ watchdog_clear:
 	.word	0xf0403074
 .WATCHDOG_ADDR:
 	.word	0xf040400c
+
+.set CONTROL_POFF, (1<<1)
+
 power_off:
 	ldr	r3, .CONTROL_ADDR
 	ldr	r4, [r3]
