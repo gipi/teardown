@@ -125,7 +125,10 @@ gpio_signal:
 _loop_over_encoding:
 	add	r6, r5, #GPIO_GPxXOR_OFFSET @ r6 points at the GPxXOR register
 	str	r7, [r6]                   @ we toggle the corresponding register
+	ldr	r0, .DELAY_VALUE
+	bl _delay
 	str	r7, [r6]                   @ twice so to have a square wave
+	bl _delay
 	add	r3, r3, #1
 	cmp	r3, r4
 	bl watchdog_clear
@@ -138,6 +141,8 @@ _loop_over_encoding:
 	/* return at home */
 	mov	lr, r11
 	mov pc, lr
+.DELAY_VALUE:
+	.word	0xffff
 .GPIO_REGISTER_MAP_ADDR:
 	.word	0xf0102000
 .GPIO_PULL_DOWN:
@@ -163,3 +168,15 @@ _loop_idx:
 	mov lr, r10
 	mov pc, lr
 
+/* takes r0 as number of loop to wait
+ * internally uses r1 and r2
+ */
+_delay:
+	mov	r2, lr
+	mov	r1, #0x00
+_loop_delay:
+	add	r1, r1, #1
+	cmp	r1, r0
+	bne	_loop_delay
+	mov	lr, r2
+	mov	pc, lr
