@@ -6,13 +6,17 @@
 	.arm
 	.fpu softvfp
 	.type	main, %function
+main:
+	bl enable_watchdog
+gpio:
+	bl gpio_identification
+	b gpio
+
 .set  EN, (1<<0)
 .set IEN, (1<<3)
 .set TCKSEL, (1<<4)
 .set WATCHDOG_EN, (1<<31)
 .set WATCHDOG_CLR, (1<<30)
-main:
-	bl gpio_identification
 
 enable_watchdog:
 	mov	r10, lr
