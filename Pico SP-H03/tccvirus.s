@@ -15,6 +15,7 @@ main:
 	bl gpio_identification
 
 enable_watchdog:
+	mov	r10, lr
 	ldr	r3, .TWDCFG
 	ldrb	r4, [r3]
 	orr	r4, r4, #(EN | IEN)
@@ -30,8 +31,9 @@ enable_watchdog:
 	ldr	r4, [r3]
 	orr	r4, r4, #WATCHDOG_EN
 	str	r4, [r3]
-.loop:
-	b .loop
+	mov	lr, r10
+	mov pc, lr
+
 .CONTROL_ADDR:
 	.word	0xf0404000
 .TWDCFG:
@@ -64,7 +66,7 @@ power_off:
 .set GPIO_GPXXOR_OFFSET, 0x10
 
 gpio_signal:
-	mov	r10, lr                     @ save the return pointer
+	mov	r11, lr                     @ save the return pointer
 	/* initialize the GPIO requested in OUTPUT mode */
 	ldr	r3, .GPIO_REGISTER_MAP_ADDR
 	mov r7, #GPIO_GROUP_OFFSET
@@ -91,13 +93,13 @@ _loop_over_encoding:
 	str	r7, [r6]
 
 	/* return at home */
-	mov	lr, r10
+	mov	lr, r11
 	mov pc, lr
 .GPIO_REGISTER_MAP_ADDR:
 	.word	0xf0102000
 
 gpio_identification:
-	mov	r11, lr
+	mov	r10, lr
 
 	mov	r8, #0
 _loop_idx:
@@ -110,5 +112,5 @@ _loop_idx:
 	cmp	r8, #6
 	bne _loop_idx
 
-	mov lr, r11
+	mov lr, r10
 	mov pc, lr
