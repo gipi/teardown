@@ -125,8 +125,8 @@ gpio_signal:
 	/* from now on, we need to loop over the encoding */
 	orr	r4, r9, r8, LSL #5         @ r4 contains the number of cycles to toggle the GPIO
 	mov	r3, #0                     @ this will be our counter
-_loop_over_encoding:
 	add	r6, r5, #GPIO_GPxXOR_OFFSET @ r6 points at the GPxXOR register
+_loop_over_encoding:
 	str	r7, [r6]                   @ we toggle the corresponding register
 	ldr	r0, .DELAY_VALUE
 	bl _delay
