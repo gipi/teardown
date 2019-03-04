@@ -177,8 +177,8 @@ _delay:
 	mov	r2, lr
 	mov	r1, #0x00
 _loop_delay:
-	add	r1, r1, #1
 	cmp	r1, r0
+	add	r1, r1, #1
 	bne	_loop_delay
 	mov	lr, r2
 	mov	pc, lr
