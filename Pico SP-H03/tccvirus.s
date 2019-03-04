@@ -1,7 +1,6 @@
 ; https://stackoverflow.com/questions/6139952/what-is-the-booting-process-for-arm
 	.text
 	.align	2
-	.global	main
 	.syntax unified
 	.arm
 	.fpu softvfp
@@ -80,10 +79,10 @@ power_off:
  * identifiable.
  *
  */
-.set GPIO_GROUP_OFFSET, 0x40
-.set GPIO_GPXDAT_OFFSET, 0x00
-.set GPIO_GPXCLR_OFFSET, 0x0c
-.set GPIO_GPxEN_OFFSET, 0x04
+.set GPIO_GROUP_OFFSET,  0x40
+.set GPIO_GPxDAT_OFFSET, 0x00
+.set GPIO_GPxEN_OFFSET,  0x04
+.set GPIO_GPxCLR_OFFSET, 0x0c
 .set GPIO_GPxXOR_OFFSET, 0x10
 .set GPIO_GPxPD0_OFFSET, 0x1c
 .set GPIO_GPxPD1_OFFSET, 0x20
@@ -138,7 +137,7 @@ _loop_over_encoding:
 	bne	_loop_over_encoding
 
 	/* now set to zero the GPIO */
-	add	r6, r5, #GPIO_GPXCLR_OFFSET
+	add	r6, r5, #GPIO_GPxCLR_OFFSET
 	str	r7, [r6]
 
 	/* return at home */
