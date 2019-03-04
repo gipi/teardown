@@ -146,7 +146,7 @@ _loop_over_encoding:
 	mov	lr, r11
 	mov pc, lr
 .DELAY_VALUE:
-	.word	0xffff
+	.word	0xf
 .GPIO_REGISTER_MAP_ADDR:
 	.word	0xf0102000
 .GPIO_PULL_DOWN:
