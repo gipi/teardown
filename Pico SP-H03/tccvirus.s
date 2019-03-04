@@ -5,8 +5,13 @@
 	.syntax unified
 	.arm
 	.fpu softvfp
-	.type	main, %function
-main:
+	.type	__entry, %function
+	.type	enable_watchdog, %function
+	.type	gpio_identification, %function
+	.type	gpio_signal, %function
+	.type	watchdog_clear, %function
+	.type	_delay, %function
+__entry:
 	bl enable_watchdog
 gpio:
 	bl gpio_identification
