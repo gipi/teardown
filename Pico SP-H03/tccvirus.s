@@ -133,8 +133,8 @@ _loop_over_encoding:
 	bl _delay
 	str	r7, [r6]                   @ twice so to have a square wave
 	bl _delay
-	add	r3, r3, #1
 	cmp	r3, r4
+	add	r3, r3, #1
 	bl watchdog_clear
 	bne	_loop_over_encoding
 
