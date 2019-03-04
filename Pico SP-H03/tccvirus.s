@@ -14,7 +14,7 @@
 __entry:
 	bl enable_watchdog
 gpio:
-	bl gpio_identification
+	bl watchdog_clear
 	b gpio
 
 .set  EN, (1<<0)
@@ -135,7 +135,6 @@ _loop_over_encoding:
 	bl _delay
 	cmp	r3, r4
 	add	r3, r3, #1
-	bl watchdog_clear
 	bne	_loop_over_encoding
 
 	/* now set to zero the GPIO */
