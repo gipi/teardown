@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 #include <inttypes.h>
-#include <usb.h>
+#include <usb.h>  /* needs libusb 0.1 */
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
