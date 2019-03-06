@@ -7,6 +7,7 @@ Product page: http://www.samsung.com/it/support/model/SP0351VBX/EN
  - [USB](usb.md)
  - [firmware files](firmware.md)
  - [bootloader reversing](bootloader.md)
+ - [GPIOs recovery](gpios.md)
  - [Windows driver for FWDN7](windows_driver.md)
 
 ## SOC
