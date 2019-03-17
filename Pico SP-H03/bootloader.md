@@ -98,6 +98,77 @@ and from the cursor mode press "ds" and define a string.
 
 At ``0x4002e2fc`` exists a function to disable IRQ/FIQ (see pg100 ARM11 specification), and at ``0x4002e2ec`` the opposite.
 
+## GPIO
+
+In a bare metal firmware the libraries are the peripherics accessible using memory addresses: first of all we need to
+understand
+
+## BSS
+
+At ``0x40000120`` exist a function that sets to zero a memory area that I think should be the ``bss``, located between ``[0x47e00000, 0x47eee6c8]``.
+
+
+## Like main loop or boot messages
+
+At ``0x4002d014`` there are a few messages that can indicates us something interesting
+
+```
+void cmd_loop(void)
+
+{
+  int isLow;
+  int iVar1;
+  uint32_t local_r0_272;
+  undefined4 uVar2;
+  int local_14;
+  
+  gpio_cfg_2();
+  vpic_cfg();
+  FUN_4002e3d8();
+  uart_cfg_maybe();
+  FUN_4008be0c();
+  FUN_4008b4cc();
+  FUN_4008ae90();
+  local_14 = 0;
+  while ((local_14 < 10 && (isLow = check_gpioE6_low(), isLow != 0))) {
+    sleep_maybe(UINT_4002d160);
+    local_14 = local_14 + 1;
+  }
+  iVar1 = check_gpioE6_low();
+  uart_printf(PTR_s_MAX8903:DC_=_%x_4002d164,iVar1);
+  if (iVar1 == 0) {
+    iVar1 = FUN_4002cc14();
+    uart_printf(PTR_s_Battery_Voltage_Check...(%d)_4002d168,iVar1);
+    if (iVar1 < 0x119) {
+      FUN_4008b060();
+      uart_printf(PTR_DAT_4002d16c);
+      FUN_4002ce88();
+      gpio_cfg_2();
+    }
+    else {
+      uart_printf(PTR_DAT_4002d170);
+    }
+  }
+  else {
+    uart_printf(PTR_DAT_4002d174);
+  }
+  uart_printf(PTR_s_NAND:_%s_4002d178,PTR_DAT_4002d17c);
+  FUN_40032d5c();
+  FUN_4002ca40();
+  uart_printf(PTR_s_CLOCK:_4002d180);
+  FUN_4002c81c();
+  uart_printf(PTR_s_LCD:_4002d184);
+  FUN_40032c3c();
+  local_r0_272 = FUN_40084418();
+  *(uint32_t *)PTR_DAT_4002d188 = local_r0_272;
+  FUN_4002ce10();
+  uVar2 = check_gpioE6_low();
+  uart_printf(PTR_s_MAX8903A_DC_input_=%d_4002d18c,uVar2);
+  FUN_40085c04(0);
+  return;
+}
+```
+
 ## UART
 
 The most interesting part I want to find is the UART, from the specification I see that it is at address
