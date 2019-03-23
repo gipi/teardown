@@ -261,6 +261,50 @@ At ``0x40030fd8`` there are some comparisons with values that seem single byte c
 to make easier to read directly is possible to **hint** radare2 that we want to see
 directly the char in the disassembly in visual mode with the sequence "dis"
 
+### GPIO configuration
+
+The ``UART`` must be configured as such, setting the ``FNx`` field in the gpio controller of the
+corresponding pins. This peripherics is available under the following ``GPIO``s:
+
+ - GPIOD[13],GPIOD[14],GPIOD[15],GPIOD[16],GPIOD[17],GPIOD[18],GPIOD[19],GPIOD[20]
+ - GPIOE[0],GPIOE[1],GPIOE[2],GPIOE[3], GPIOE[4],GPIOE[5],GPIOE[6],GPIOE[7],GPIOE[8], GPIOE[9],GPIOE[10],GPIOE[11]
+
+all with function 1.
+
+Analyzing the firmware is apparent that the configuration happens at address ``0x40030b5c``:
+please look with awe at this decompilation piece performed by [Ghidra](https://www.ghidra-sre.org/):
+
+```
+/* 40030b5c
+   
+   It configures the UART:
+   
+   GPIOE[0] and GPIOE[1] as output */
+
+void uart_cfg(void)
+
+{
+  struct gpios *gpio_ctl_ptr;
+  struct uart *serial;
+  
+  gpio_ctl_ptr = GPIO_CONTROLLER_PTR;
+  serial = UART_CONTROLLER_PTR;
+  vpic_cfg();
+  serial->LCR = 0x17;
+  serial->LCR = serial->LCR & 0xffffff7f;
+  serial->IER = 0;
+  serial->LCR = serial->LCR | 0x80;
+  serial->IIR = 0x37;
+  serial->RBR = 0x1c;
+  serial->IER = 0;
+  serial->LCR = serial->LCR & 0xffffff7f;
+  serial->IER = 1;
+  (gpio_ctl_ptr->E).GPxEN = (gpio_ctl_ptr->E).GPxEN | 0b00000011;
+  (gpio_ctl_ptr->E).GPxFN0 = (gpio_ctl_ptr->E).GPxFN0 | 0x11;
+  return;
+}
+```
+
 ## Wrong path
 
 Looking at the code of the bootloader, particularly at [cr0.S](https://github.com/JeffreyLau/JJWD-K8_icsCream/blob/master/bootable/bootloader/lk/arch/arm/crt0.S)
