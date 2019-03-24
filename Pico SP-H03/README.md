@@ -4,6 +4,7 @@ Product page: http://www.samsung.com/it/support/model/SP0351VBX/EN
 
 ## Analysis
 
+ - [boot log](boot.md)
  - [USB](usb.md)
  - [firmware files](firmware.md)
  - [bootloader reversing](bootloader.md)
@@ -38,6 +39,12 @@ CN1002| Connects to a fan. A bad connection will disable the fan, causing a fan 
 CN1003| Connects to a fan. A bad connection will disable the fan, causing a fan error. |
 CN1101| Used for debugging, and is for technical service purpose only. | FPC 40 way, .50mm 
 CN1102| Connects to the DMD board and main board. A bad connection will cause a blank screen. |
+
+### Serial
+
+It's located in the connector ``CN1101`` with pin 6, 7, 8 as indicated in picture
+
+![](Images/uart-connector.png)
 
 
 ## TCCBox
