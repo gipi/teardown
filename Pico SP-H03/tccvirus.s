@@ -10,9 +10,16 @@
 	.type	gpio_signal, %function
 	.type	watchdog_clear, %function
 	.type	_delay, %function
+/*
+ * Since we have not stack available for now (no hard constraint, we are only lazy)
+ * we call routines and use r10, r11 and r12 as temporary registers to save lr.
+ *
+ * KEEP IN MIND THE LEVEL OF NESTING A FUNCTION IS CALLED!
+ */
 __entry:
 	bl enable_watchdog
 gpio:
+	bl gpio_identification @ uses r10
 	bl watchdog_clear
 	b gpio
 
