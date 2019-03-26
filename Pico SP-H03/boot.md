@@ -188,3 +188,80 @@ Starting pid 427, console /dev/ttySAC0: '/bin/sh'
 / #
 ```
 
+## Shell
+
+```
+/ # ls -al
+drwxr-xr-x   18 root     root            0 Jan  1 00:00 .
+drwxr-xr-x   18 root     root            0 Jan  1 00:00 ..
+drwxr-xr-x    2 1013     100             0 Jul 12  2010 bin
+drwxr-xr-x    3 root     root        16384 Jan  1 00:00 data
+drwxr-xr-x    6 1013     100             0 Jan  1 00:00 dev
+drwxr-xr-x    6 root     root        16384 Jan  1 00:00 disk
+drwxr-xr-x    5 1013     100             0 Jul 12  2010 etc
+lrwxrwxrwx    1 1013     100            13 Jul 12  2010 init -> ./bin/busybox
+drwxr-xr-x    3 1013     100             0 Jul 12  2010 lib
+lrwxrwxrwx    1 1013     100            11 Jul 12  2010 linuxrc -> bin/busybox
+drwxr-xr-x    3 1013     100             0 Jul 12  2010 mnt
+drwxr-xr-x    2 1013     100             0 Jul 12  2010 nfs
+lrwxrwxrwx    1 root     root           11 Jan  1 00:00 opt -> /system/opt
+dr-xr-xr-x   34 root     root            0 Jan  1 00:00 proc
+drwxr-xr-x    2 1013     100             0 Jul 12  2010 sbin
+drwxr-xr-x   13 root     root            0 Jan  1 00:00 sys
+drwxr-xr-x    2 root     root        16384 Jan  1 00:00 system
+drwxr-xr-x    2 1013     100             0 Jul 12  2010 temp
+drwxr-xr-x    2 1013     100             0 Jul 12  2010 tmp
+drwxr-xr-x    6 1013     100             0 Jul 12  2010 usr
+drwxr-xr-x    6 root     root            0 Jan  1 00:00 var
+/ # cat /proc/cpuinfo 
+Processor	: ARMv6-compatible processor rev 6 (v6l)
+BogoMIPS	: 504.62
+Features	: swp half thumb fastmult vfp edsp java 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 6
+
+Hardware	: Samsung Oberon Board
+Revision	: AX
+Oberon Version	: 0007.2
+Serial		: 0000000e0dd3c3b0
+/ # cat /proc/partitions 
+major minor  #blocks  name
+
+ 240        0     953344 ndda
+ 240        1     184320 ndda1
+ 240        2     748528 ndda2
+ 240        3      20480 ndda3
+/ # mount
+rootfs on / type rootfs (rw)
+proc on /proc type proc (rw)
+none on /dev/pts type devpts (rw,mode=622)
+tmpfs on /dev/shm type tmpfs (rw)
+sysfs on /sys type sysfs (rw)
+/dev/ndda1 on /system type vfat (ro,noatime,fmask=0022,dmask=0022,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=ro)
+/dev/ndda2 on /disk type vfat (rw,noatime,fmask=0022,dmask=0022,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=ro)
+/dev/ndda3 on /data type vfat (rw,noatime,fmask=0022,dmask=0022,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=ro)
+tmpfs on /dev/shm type tmpfs (rw)
+/ # cat /etc/passwd 
+root::0:0:root:/root:/bin/sh
+/ # find . -name bin -type d
+./bin
+./usr/bin
+/ # ls bin/
+ash      date     false    kill     mount    pwd      su       uname
+busybox  dd       fgrep    ln       msh      rm       sync     usleep
+cat      df       grep     login    mv       rmdir    tar      vi
+chmod    dmesg    gunzip   ls       nice     sed      touch
+chown    echo     gzip     mkdir    ping     sh       true
+cp       egrep    ip       mknod    ps       sleep    umount
+/ # ls /usr/bin/
+[              du             ftpput         passwd         udevd
+[[             eject          hexdump        telnet         uptime
+amixer         env            killall        test           which
+aplay          expr           md5sum         time           yes
+awk            find           mesg           top
+blkid          free           ntfs-3g        tr
+clear          ftpget         ntfs-3g.probe  udevadm
+```
