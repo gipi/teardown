@@ -233,6 +233,6 @@ doesn't work
 ## Links
 
  - [Wiki page](https://wikidevi.com/wiki/Cisco_Meraki_MX64) with some specifications
- - [Github repo](https://github.com/riptidewave93/meraki-uboot) Copies of the Cisco Meraki U-Boot GPL Source
+ - [Github repo](https://github.com/riptidewave93/meraki-uboot) Copies of the Cisco Meraki U-Boot GPL Source. Compile with ``gcc-4``, branch ``mr32-20171031`` and target ``venom_nand``.
  - [Pwning the meraki MR18](https://snt.sh/2016/02/pwning-the-meraki-mr18/)
  - [Pwning the meraki MR18 again](https://snt.sh/2017/06/pwning-the-meraki-mr18-again/)
