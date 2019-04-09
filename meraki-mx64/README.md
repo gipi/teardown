@@ -1,15 +1,48 @@
 # Meraki MX64
 
+## ICs
+
+| Component | IC | Label |
+|-----------|----|-------|
+| SoC       | ``BCM58625BA0KF12G`` | ``U1`` |
+| SDRAM     | ``K4B4G08460`` | ``U5`` ``U7`` ``U16`` ``U17`` |
+| NAND Flash     | ``MT29F8G08ABACA`` | ``U9`` |
+| Step Down | ``TPS54329`` | ``PU3`` ``PU4`` ``PU5`` |
+| I2C EEPROM | ``24C64F`` | ``U10`` |
+
 ## Serial
 
-Connector J1
+Connector ``J1``
 
 | Pin | Signal |
 |-----|--------|
-| 1   | VCC |
+| 1   | VCC (3V3) |
 | 2   |  TX |
 | 3   |  RX |
 | 4   | GND |
+
+## JTAG
+
+Connector ``J2`` (not confirmed), all the even numbered pins are ``GND``;
+there is a row of connector along the internal side and
+each resistor has a value of 4.6k but ``R95`` that seems having a 0k value, but it's
+not connected to any of these pins.
+
+Using [this document](http://www.sase.com.ar/2013/files/2013/09/SASE2013-ARM_Trace.pdf) we can
+deduce the following pinout
+
+| Pin | Signal |
+|-----|--------|
+| 1   | VCC (3V3) |
+| 3  | ``TRST`` (3V3) |
+| 5  | ``TDI`` (3V3) |
+| 7  | ``TMS`` (3V3) |
+| 9 | ``TCLK`` (0V) |
+| 11 | ``RTCK`` (0V) |
+| 13 | ``TDO`` (3V3) |
+| 15 | ``RST`` (3V3) |
+| 17 | 0V |
+| 19 | 0V |
 
 ## Recovery
 
@@ -228,7 +261,8 @@ vlan1     Link encap:Ethernet  HWaddr 00:22:44:66:88:00
 # insmod usb-storage
 ```
 
-doesn't work
+doesn't work. There is also a ``usb_test`` program (really one in ``/bin/`` and another
+in ``/sbin/`` maybe) but doesn't work.
 
 ## Links
 
