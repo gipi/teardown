@@ -21,6 +21,8 @@ It's the main processor on this device.
 As indicated in this [page](http://www.iezvu.com/download_tool.php?&l=en) it's possible to
 activate the flashing mode shorting pins 19 and 20 (right side, bottom to up) each other and then apply power.
 
+From some hints (like the update program library) I think the device is going to use the ``ADFU`` (Actions Device Firmware Update) protocol like [this](https://github.com/96boards-bubblegum/linaro-adfu-tool).
+
 After that the device is seen as 
 
 ```
