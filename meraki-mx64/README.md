@@ -44,6 +44,60 @@ deduce the following pinout
 | 17 | 0V |
 | 19 | 0V |
 
+With a little improvisation with a clone of a ``J-Link Segger``
+
+```
+$ JLinkExe 
+SEGGER J-Link Commander V6.44e (Compiled Apr  5 2019 16:16:27)
+DLL version V6.44e, compiled Apr  5 2019 16:16:13
+
+Connecting to J-Link via USB...O.K.
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware version: V8.00
+S/N: 788594195
+License(s): RDI,FlashDL,FlashBP,JFlash,GDB
+VTref=3.313V
+
+
+Type "connect" to establish a target connection, '?' for help
+J-Link>connect
+Please specify device / core. <Default>: Unspecified
+Type '?' for selection dialog
+Device>BCM43907
+Please specify target interface:
+  J) JTAG (Default)
+  S) SWD
+  T) cJTAG
+TIF>
+Device position in JTAG chain (IRPre,DRPre) <Default>: -1,-1 => Auto-detect
+JTAGConf>
+Specify target interface speed [kHz]. <Default>: 4000 kHz
+Speed>
+Device "BCM43907" selected.
+
+
+Connecting to target via JTAG
+TotalIRLen = 64, IRPrint = 0x000000000000000001
+JTAG chain detection found 1 devices:
+ #0 Id: 0x0035B17F, IRLen: 64, Unknown device
+TotalIRLen = 64, IRPrint = 0x000000000000000001
+JTAG chain detection found 1 devices:
+ #0 Id: 0x0035B17F, IRLen: 64, Unknown device
+
+****** Error: CPU-TAP not found in JTAG chain
+
+TotalIRLen = 64, IRPrint = 0x000000000000000001
+JTAG chain detection found 1 devices:
+ #0 Id: 0x0035B17F, IRLen: 64, Unknown device
+TotalIRLen = 64, IRPrint = 0x000000000000000001
+JTAG chain detection found 1 devices:
+ #0 Id: 0x0035B17F, IRLen: 64, Unknown device
+
+****** Error: CPU-TAP not found in JTAG chain
+
+Cannot connect to target
+```
+
 ## Recovery
 
 If you keep pressing the reset button during the startup, after a while it reboots
