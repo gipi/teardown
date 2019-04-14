@@ -103,6 +103,10 @@ pads at the bottom of the board (see image below).
 ![](UART.jpg)
 
 This gives us a [boot log](mirascreen_boot.log) and a root shell to inspect the system
+(take note that without the ``WiFi`` dongle the system reboots itself and if you don't
+kill ``fui.app`` the shell is flooded with log messages).
+
+The system is a Linux one, in particular a ``MIPS`` little endian architecture
 
 ```
 # uname -ra
@@ -122,6 +126,11 @@ shadow register sets    : 2
 core                    : 0
 VCED exceptions         : not available
 VCEI exceptions         : not available
+```
+
+there are a few partitions
+
+```
 # cat /proc/partitions
 
 major minor  #blocks  name
@@ -231,6 +240,104 @@ Filesystem                Size      Used Available Use% Mounted on
 Total:        63536        31268        32268
 ```
 
+A part from some kernel threads, there are some process (with extension ``.app``
+that we can guess are GUI and stuffs)
+
+```
+/ # ps 
+  PID USER       VSZ STAT COMMAND
+    1 root      3224 S    init       
+    2 root         0 SW<  [kthreadd]
+    3 root         0 SW<  [ksoftirqd/0]
+    4 root         0 SW<  [events/0]
+    5 root         0 SW<  [khelper]
+   30 root         0 SW<  [kintegrityd/0]
+   31 root         0 SW<  [kblockd/0]
+   39 root         0 SW<  [ksuspend_usbd]
+   45 root         0 SW<  [khubd]
+   80 root         0 SW   [pdflush]
+   81 root         0 SW   [pdflush]
+   82 root         0 SW<  [kswapd0]
+   83 root         0 SW<  [aio/0]
+  106 root         0 SW<  [zd1211rw]
+  112 root         0 SW<  [mtdblockd]
+  120 root         0 SW<  [Flash_Update_th]
+  158 root      6120 S    manager.app 
+  176 root         0 DW<  [am_2d_thread]
+  214 root      3288 S    -/bin/sh 
+  222 root         0 DW<  [card identify t]
+  256 root      1888 S    pthsystem.app 5 6 
+  257 root      175m S    fui.app 0 7 9 
+  261 root      2888 S    framectrl.app 16 19 
+  296 root         0 SW   [RTW_CMD_THREAD]
+  366 root      3596 S    wpa_supplicant -B -i wlan0 -c /mnt/vram/wifi/5e606c33
+  470 root      2260 S    hostapd -B /etc/rtl_hostapd_01.conf 
+  473 root      3224 S    udhcpd /tmp/udhcpd_01.conf 
+  477 root      2240 S    thttpd -C /etc/thttpd.conf -u root 
+  510 root      2180 S    /sbin/dnsmasq -d -C /tmp/dnsmasq.conf 
+  696 root      3288 R    ps
+```
+
+Furthermore there are a couple of net services
+
+```
+/ # netstat -ltp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:60099           0.0.0.0:*               LISTEN      470/hostapd
+tcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:64109           0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      477/thttpd
+tcp        0      0 0.0.0.0:46068           0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:53              0.0.0.0:*               LISTEN      510/dnsmasq
+tcp        0      0 0.0.0.0:47000           0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:7000            0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:7001            0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:2425            0.0.0.0:*               LISTEN      257/fui.app
+tcp        0      0 0.0.0.0:7100            0.0.0.0:*               LISTEN      257/fui.app
+```
+
+There is also a file containing the version of the device
+
+```
+# cat /etc/version.conf 
+vram = FALSE
+udisk = TRUE
+VERSION_SOFTWARE = AM8251.DEMO.001
+VERSION_PATCH = Patch.0
+VERSION_HARDWARE = AM8251.QC.SZ&TP
+VERSION_PROCESSOR = AM8251
+VERSION_VENDOR = Actions-Microelectronics.Co.,Ltd.
+VERSION_PRODUCT = EZ.BOX
+FIRMWARE = 14838000
+VERSION_MODEL = ezcast_am8252_keyswitch_mirascreen24g
+VERSION_SVN = Sdk14838.Case14838.Scripts14838
+BUILD_VERSION = 20160401-184844
+DDR_TYPE = 3
+DDR_CAPACITY = 128
+# lsmod
+Module                  Size  Used by    Tainted: P
+8188eu                827440  0
+am7x_hcd               27984  0
+am7x_cec                8048  0
+am7x_cipher            22592  0
+am7xx_dac               9744  0
+am7x_keys               6000  0
+am7x_uoc_next          12944  0
+am7x_uoc               13936  1 am7x_hcd
+am7x_carddet           14576  0
+ambl                    3024  0
+am7x_lcm               48480  0
+hdcp_i2c                1424  1 am7x_lcm
+edid_i2c_gpio           3504  1 am7x_lcm
+edid_i2c_hw             2192  1 am7x_lcm
+i2c_am7x                2496  4 hdcp_i2c,edid_i2c_hw
+hx170dec                2336  0
+am7x_graph              8736  1
+amreg                    960  0
+am7x_nftl             101520  5 am7x_cipher
+```
+
 Here I'm trying to make sense of the partitions
 
 ```
@@ -262,6 +369,26 @@ To understand the ``nftl`` filesystem (?) there are some
 links [1](http://etutorials.org/Linux+systems/embedded+linux+systems/Chapter+7.+Storage+Device+Manipulation/7.1+MTD-Supported+Devices/)
 [2](http://www.tldp.org/HOWTO/Disk-on-Chip-HOWTO/intro.html)
 that talk about that.
+
+Further analysis make me thinking that the bootloader and kernel are not exposed via ``nand_block``
+directly: in the bootlog there is some output that seems like internal partitions
+
+```
+1+:RECOVER BIN,      10,    7800, 9ce27ac +
+1+:FMCOVER BIN,      4c,    ea00, 445396e +
+1+:WELCOME BIN,      c1,  1c2200,4804164d +
+1+:COVER   BIN,     ed2,   ea800, 23daaeb +
+1+:FAILED  BIN,    1626,   ea800,5203d2d4 +
+1+:SUCCESS BIN,    1d7a,   ea800,68f22e7f +
+1+:LCM     BIN,    24ce,     200,96550729 +
+1+:BACKLIGHBIN,    24cf,     200,457a1265 +
+1+:GAMMA   BIN,    24d0,     600,3117a936 +
+1+:GPIO    BIN,    24d3,     200,3358a31a +
+1+:VERSION CON,    24d4,     200,681b8f07 +
+1+:SYSCFG  SYS,    24d5,  337200, b78d7c4 +
+1+:INITRD  DAT,    3e8e,  200000,c41b8e8b +
+1+:BOOTARG TXT,    4e8e,     200,a2db26f3 +
+```
 
 ## Networking
 
