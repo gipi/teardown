@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 '''
 Dump a file from a serial connection.
+
+FIX: the file dumped has '\n' -> '\r\n'
+FIX: make an iterable the dump with a progress bar
 '''
 import sys
 import serial
@@ -31,7 +34,7 @@ if __name__ == '__main__':
     local_path  = sys.argv[4]
 
     connection = serial.Serial(serial_port_path, serial_baud)
-    connection.timeout = 5
+    #connection.timeout = 5
 
     file_contents = serial_shell_cmd(connection, b"cat '%s'" % bytes(remote_path, 'utf-8'))
 

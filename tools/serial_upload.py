@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 '''
 Upload a file from a serial connection.
+
+WARNING: this script assumes that PS1='\$ ' and there aren't log
+messages polluting the console.
 '''
 import os
 import sys
