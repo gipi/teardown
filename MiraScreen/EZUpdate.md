@@ -375,3 +375,6 @@ There are plenty of instruction like ``mov dword fs:[0], ecx``, this seems relat
 to the [Win32 Thread Information Block](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block).
 
 In particular see this [answer](https://reverseengineering.stackexchange.com/questions/1911/whats-fs0-doing-and-how-can-i-execute-it-step-by-step).
+
+ - [Guidelines to MFC Reversing](https://quequero.org/2008/08/guidelines-to-mfc-reversing/)
+
