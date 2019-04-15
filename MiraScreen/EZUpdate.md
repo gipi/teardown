@@ -4,6 +4,13 @@ Below some attempts to reverse the update application (I don't
 really know if the EZCast update process works for this device
 but meanwhile...).
 
+## Ghidra
+
+Since the updating process is using ``USB`` bulk only transfer makes sense to look
+for the signature of that protocol i.e. the ``USBC`` string: there are a certain number
+of preallocated packets starting from address ``0x0052f154``.
+
+## Radare2
 
 ```
 [0x004dc2a4]> iz~http
