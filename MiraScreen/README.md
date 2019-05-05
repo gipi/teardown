@@ -19,7 +19,8 @@ It's the main processor on this device.
 ## Download mode
 
 As indicated in this [page](http://www.iezvu.com/download_tool.php?&l=en) it's possible to
-activate the flashing mode shorting pins 19 and 20 (right side, bottom to up) each other and then apply power.
+activate the flashing mode shorting pins 19 and 20 (right side, bottom to up) each other and then apply power
+(pratically are the pins 44 and 43 of the ``TC58NVG0S3HTA00`` corresponding to ``IO8`` and ``IO7``).
 
 From some hints (like the update program library) I think the device is going to use the ``ADFU`` (Actions Device Firmware Update) protocol like [this](https://github.com/96boards-bubblegum/linaro-adfu-tool) but further analysis make it less sure: that is from **Actions Semiconductors** not **Actions Microeletronics** (but [here](https://web.archive.org/web/20160418175522/http://wiki.s1mp3.org/Actions_SoC_Family) there are indications that they are connected), BTW [this an old page](https://web.archive.org/web/20160418032428/http://wiki.s1mp3.org/USB_modes/)
 describing the protocol that is very similar to what I'm seeing.

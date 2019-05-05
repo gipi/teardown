@@ -6,6 +6,9 @@ but meanwhile...).
 
 ## Ghidra
 
+First of all, the application is using ``VC6`` (the magic in the ``FuncInfo`` struct is ``0x19930520``).
+
+
 Since the updating process is using ``USB`` bulk only transfer makes sense to look
 for the signature of that protocol i.e. the ``USBC`` string: there are a certain number
 of preallocated packets starting from address ``0x0052f154``.
