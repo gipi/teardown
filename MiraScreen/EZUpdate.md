@@ -8,6 +8,15 @@ but meanwhile...).
 
 First of all, the application is using ``VC6`` (the magic in the ``FuncInfo`` struct is ``0x19930520``).
 
+### GUI
+
+The main ``CWinApp`` vtable is located at ``0x004df938``.
+
+The class involved with the download of the update is a subclass of ``CDialog`` and its
+vtable is located at ``0x004e0320``; this class is involved also in the parsing
+of the firmware format, in particular starting from address ``0x0040e7a0``.
+
+### USB
 
 Since the updating process is using ``USB`` bulk only transfer makes sense to look
 for the signature of that protocol i.e. the ``USBC`` string: there are a certain number
