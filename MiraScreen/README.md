@@ -414,3 +414,7 @@ command.
 
  - [Universal Serial Bus Mass Storage Class](http://www.usb.org/developers/docs/devclass_docs/usbmassbulk_10.pdf)
  - [linaro ADFU tool](https://github.com/96boards-bubblegum/linaro-adfu-tool)
+
+## Links
+
+ - [Repo](https://github.com/allen605/am12xx_8268b) with source code maybe
