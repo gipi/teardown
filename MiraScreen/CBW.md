@@ -1,10 +1,21 @@
-# CBW
+# Update process CBW
+
+This page contains the notes about the reversing of the protocol used by the Mirascreen
+for its update process.
+
+It's based on the **Bulk only transport** for the ``USB`` **Mass Storage class**, [here](https://www.usb.org/sites/default/files/usbmassbulk_10.pdf)
+the specification. In particular what interest us is the **Command Block Wrapper** (``CBW``)
+packet.
+
+It's available a capture of the update communication in this [issue](https://github.com/c3c/miracast/issues/1)
 
 Using wireshark is possible to filter the packets using a description like
 
 ```
 usbms && scsi.spc.opcode == 0xb0 && usbms.dCBWTag == 0x77c05c94
 ```
+
+The protocol seems an updated version of what is described [here](https://web.archive.org/web/20160418032428/http://wiki.s1mp3.org/USB_modes/) for the S1MP3.
 
 ## Cmd 05 Tag88: upload
 
