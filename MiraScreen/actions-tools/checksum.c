@@ -8,17 +8,7 @@
 #include <stdint.h>
 #include <unistd.h>
 
-
-#define ACTIONS_HEADER_SIZE 0x400
-
-
-struct ActionsChecksumSection {
-    char name[16];
-    uint32_t start;
-    uint32_t length;
-    uint32_t isEncrypted;
-    uint32_t checksum;
-};
+#include "actions.h"
 
 
 /*
@@ -70,38 +60,8 @@ uint32_t checksum_file(int fileDescriptor, uint32_t startOffset, uint32_t size) 
     return ret;
 }
 
-void usage(const char* progname) {
-    fprintf(stderr, "usage: %s <firmware>\n", progname);
-    exit(1);
-}
 
-
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        usage(argv[0]);
-    }
-
-    const char* firmwarePath = strdup(argv[1]);
-    if (!firmwarePath) {
-        perror("failed to allocate path");
-        exit(1);
-    }
-
-    int fd = open(firmwarePath, O_RDONLY);
-
-    if (fd < 0) {
-        perror("I could not open the file");
-        exit(1);
-    }
-
-    char header[ACTIONS_HEADER_SIZE];
-
-    int count = read(fd, header, ACTIONS_HEADER_SIZE);
-    if (count < ACTIONS_HEADER_SIZE) {
-        fprintf(stderr, "fatal: I could not read the header\n");
-        exit(1);
-    }
-
+void handle_CHECKSUM(int fd, void* header) {
     int checksumOffset = findSection(header, "CHECKSUM");
 
     fprintf(stdout, "CHECKSUM section at offset 0x%08x\n", checksumOffset);
@@ -116,7 +76,5 @@ int main(int argc, char* argv[]) {
     uint32_t calculatedChecksum = checksum_file(fd, checksumSection->start, checksumSection->length);
 
     fprintf(stdout, " checksum\t0x%08x\n", calculatedChecksum);
-
-
-    return 0;
 }
+
