@@ -132,3 +132,38 @@ fcache          mtdblock7       sdb2            sdg3
 
 Strange stuff happens: ``httpd`` appears only if I do an explicit request
 to the device.
+
+Probably the source code for the BSP of something similar to this device is leaked in this
+[repo](https://github.com/weihutaisui/BCM).
+
+## Firmware
+
+It is possible to use the script found in the repo [BigNerd95/bcmImageEditor](https://github.com/BigNerd95/bcmImageEditor)
+and obtain information about the different parts of the original
+firmware
+
+```
+$ bcmImageEditor/bcmImageEditor.py info -i DSL-2640B/DSL-2640B_1.00_WI_20110414.bin 
+** Broadcom Image info **
+Tag Version:        6
+Signature 1:        Broadcom Corporatio
+Signature 2:        4.06.01.DIE1
+Chip ID:            6328
+Board ID:           AW4337AU
+Big Endian flag:    True
+Total Image Length: 4867842 bytes
+CFE Address:        0x0
+CFE Length:         0 bytes
+RootFS Address:     0xbfc10100
+RootFS Length:      3964928 bytes
+Kernel Address:     0xbffd8100
+Kernel Length:      902914 bytes
+Image sequence:     
+Image version:      
+Reserved:           0 not null bytes
+Image jamCRC:       0xce6e9d3f
+RootFS jamCRC:      0xb45571e0
+Kernel jamCRC:      0xca52f9db
+Tag jamCRC:         0x756037ba
+```
+
