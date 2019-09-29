@@ -406,6 +406,56 @@ root:$1$qsNdVNb0$U5HuLrYhZ6vbslIiyaQlA1:14610:0:99999:7:::
 
 that corresponds to ``000000``.
 
+## thttpd
+
+```
+$ QEMU_LD_PREFIX=/path/to/rootfs/  sbin/thttpd -V
+thttpd/2.25b 29dec2003
+```
+
+You can find [here](https://acme.com/software/thttpd/thttpd-2.29.tar.gz) the source code.
+
+There are a couple of ``cgi`` files
+
+```
+$ find user1/thttpd/html/cgi-bin
+user1/thttpd/html/cgi-bin
+user1/thttpd/html/cgi-bin/delete_password_POST.cgi
+user1/thttpd/html/cgi-bin/set_devicename_reboot.cgi
+user1/thttpd/html/cgi-bin/set_EQ.cgi
+user1/thttpd/html/cgi-bin/set_defaultmode_POST.cgi
+user1/thttpd/html/cgi-bin/upload3.cgi
+user1/thttpd/html/cgi-bin/conference_control.cgi
+user1/thttpd/html/cgi-bin/set_resolution_POST.cgi
+user1/thttpd/html/cgi-bin/htmlsetting_snapshot.cgi
+user1/thttpd/html/cgi-bin/set_wifi_POST.cgi
+user1/thttpd/html/cgi-bin/upload1.cgi
+user1/thttpd/html/cgi-bin/pushdongleinfo.cgi
+user1/thttpd/html/cgi-bin/windir.cgi
+user1/thttpd/html/cgi-bin/upload.cgi
+user1/thttpd/html/cgi-bin/get_my_mac.cgi
+user1/thttpd/html/cgi-bin/user_get_cookie.cgi
+user1/thttpd/html/cgi-bin/set_hotspot_ap.cgi
+user1/thttpd/html/cgi-bin/set_autoplay.cgi
+user1/thttpd/html/cgi-bin/get_my_ip.cgi
+user1/thttpd/html/cgi-bin/info.cgi
+user1/thttpd/html/cgi-bin/set_router_ctl_POST.cgi
+user1/thttpd/html/cgi-bin/apply.cgi
+user1/thttpd/html/cgi-bin/wifi_info_GET.cgi
+user1/thttpd/html/cgi-bin/password_POST.cgi
+user1/thttpd/html/cgi-bin/set_devicename.cgi
+user1/thttpd/html/cgi-bin/user_password_post.cgi
+user1/thttpd/html/cgi-bin/rs232cmd.cgi
+user1/thttpd/html/cgi-bin/dir.cgi
+user1/thttpd/html/cgi-bin/set_music_output_POST.cgi
+user1/thttpd/html/cgi-bin/set_lan_POST.cgi
+user1/thttpd/html/cgi-bin/htmlsetting_test.cgi
+user1/thttpd/html/cgi-bin/add_network_POST.cgi
+user1/thttpd/html/cgi-bin/upload2.cgi
+user1/thttpd/html/cgi-bin/myall.cgi
+user1/thttpd/html/cgi-bin/factory_test.cgi
+```
+
 ## TODO
 
 Write a client application to flash firmware, use this [project](https://github.com/rounaksingh/faltu)
