@@ -17,7 +17,75 @@ usbms && scsi.spc.opcode == 0xb0 && usbms.dCBWTag == 0x77c05c94
 
 The protocol seems an updated version of what is described [here](https://web.archive.org/web/20160418032428/http://wiki.s1mp3.org/USB_modes/) for the S1MP3.
 
-## Cmd 05 Tag88: upload
+## Dumped stream
+
+```
+host > device
+0000   55 53 42 43 88 00 00 00 00 20 00 00 00 00 10 05
+0010   00 00 04 b4 00 20 00 00 00 00 00 00 00 00 00
+
+host < device
+0000   55 53 42 53 00 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 00 00 00 00 00 00 00 00 00 00 00 10
+0010   00 00 04 b4 00 00 00 00 00 00 00 00 00 00 00
+
+<
+0000   55 53 42 53 00 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 88 00 00 00 04 00 00 00 00 00 10 05
+0010   f0 1f 04 b4 04 00 00 00 80 00 00 80 00 00 00
+
+<
+0000   55 53 42 53 88 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 88 00 00 00 08 26 00 00 00 00 10 05
+0010   00 00 00 a0 08 26 00 00 00 00 00 00 00 00 00
+
+<
+0000   55 53 42 53 88 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 00 00 00 00 00 00 00 00 00 00 00 10
+0010   00 00 00 a0 00 00 00 00 00 00 00 00 00 00 00
+
+<
+0000   55 53 42 53 00 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 88 00 00 00 a0 27 00 00 00 00 10 05
+0010   00 00 01 a0 a0 27 00 00 00 00 00 00 00 00 00
+
+<
+0000   55 53 42 53 88 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 00 00 00 00 00 00 00 00 00 00 10 b0
+0010   00 00 01 a0 00 00 00 00 58 46 00 00 00 00 00
+
+<
+0000   55 53 42 53 00 00 00 00 00 00 00 00 00
+
+>
+0000   55 53 42 43 10 92 a7 00 02 00 00 00 00 00 10 b0
+0010   00 00 00 00 00 00 02 00 ae 6a 00 00 00 00 00
+
+<
+0000   50 00
+
+< (packet n.97)
+0000   55 53 42 53 10 92 a7 00 00 00 00 00 00
+```
+
+## Taxonomy
+
+What follows is the commands via USB that the device in download mode
+accepts
+
+### Cmd 05 Tag88: upload
 
            0052f154 55 53 42 43     ddw       43425355h               signature
            0052f158 88 00 00 00     ddw       88h                     tag
@@ -31,7 +99,7 @@ The protocol seems an updated version of what is described [here](https://web.ar
 
 followed by a certain numbers of requests that will contain the payload
 
-## Cmd b0 Tag 00: execute driver
+### Cmd b0 Tag 00: execute driver
 
            0052f194 55 53 42 43     ddw       43425355h               signature
            0052f198 00 00 00 00     ddw       0h                      tag
@@ -45,7 +113,7 @@ followed by a certain numbers of requests that will contain the payload
 
 you need to upload a driver in order to execute it.
 
-## Cmd 10 Tag 00: execute {ADEC,ADFU}adfus
+### Cmd 10 Tag 00: execute {ADEC,ADFU}adfus
 
            0052f174 55 53 42 43     ddw       43425355h               signature
            0052f178 00 00 00 00     ddw       0h                      tag
@@ -108,22 +176,26 @@ from a pcap we have
 0230   ae 05 67 43 fd 04 2b 04 3b 5e ee 1e aa 55 35 3e   ®.gCý.+.;^î.ªU5>
 ```
 
-
 that the application prints with the following format string
 
+```
 "name    chksum   chksum  MaxBit TtalBit BCHType Reclaim  \r\n"
+```
 
 then 4 times
 
+```
 "%s%d   0x%-4x   0x%-4x "
 " %2d     %3d     %3d     %4d  \r\n"
+```
 
 and another 4 times the same last two and at the end
 
+```
 "VaildMbrcNum:%d,VaildBrecNum:%d  \r\n"
+```
 
-
-## Cmd b0 Tag 77c05c94: get HwSC info
+### Cmd b0 Tag 77c05c94: get HwSC info
 
            0052f1d4 55 53 42 43     ddw       43425355h               signature
            0052f1d8 94 5c c0 77     ddw       77C05C94h               tag
@@ -133,7 +205,7 @@ and another 4 times the same last two and at the end
            0052f1e2 10              db        10h                     cmdLength
            0052f1e3 b0 00 00 00 00  db[15]                            cmdBlock
                     00 00 <size>80 
-                    c4 00 00 00 00
+                    c4 00 00 00 00  <--- 0xc480 seems get info
 
 where ``size`` is ``0x50``.
 
@@ -152,7 +224,7 @@ at offset ``0x0e`` there is the string describing the type of flash
 and the dword starting at ``0x3a`` is probably the size (must be shifted left by 9)
 of the flash.
 
-## Cmd b0 Tag 77c05c94: get FWsc info
+### Cmd b0 Tag 77c05c94: get FWsc info
 
 The ``size`` parameter is ``0x90``. The response from a wireshark capture
 seems like this
@@ -169,7 +241,7 @@ seems like this
 0080   00 d8 03 00 00 00 00 00 00 00 00 00 00 00 00 00   .Ø..............
 ```
 
-## Cmd b0 Tag A79210: get length
+### Cmd b0 Tag A79210: get length
 
            0052f1b4 55 53 42 43     ddw       43425355h               signature
            0052f1b8 10 92 a7 00     ddw       A79210h                 tag
@@ -179,6 +251,18 @@ seems like this
            0052f1c2 10              db        10h                     cmdLength
            0052f1c3 b0 00 00 00 00  db[15]                            cmdBlock
                     00 00 02 00 ae 
-                    6a 00 00 00 00
+                    6a 00 00 00 00 <--- 0x6aae seems get length
 
 the response has in its first two bytes the length of the info response.
+
+### Cmd b0 tag 0D: upload flash
+
+0000   55 53 42 43 0d 00 00 00 00 00 01 00 00 00 10 b0
+0010   00 70 02 00 00 00 80 00 1c 6a 00 01 00 00 00
+
+0000   55 53 42 43 0d 00 00 00 00 00 01 00 00 00 10 b0
+0010   80 70 02 00 00 00 80 00 1c 6a 00 01 00 00 00
+
+0000   55 53 42 43 0d 00 00 00 00 00 01 00 00 00 10 b0
+0010   00 71 02 00 00 00 80 00 1c 6a 00 01 00 00 00
+
