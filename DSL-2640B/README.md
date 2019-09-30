@@ -167,3 +167,47 @@ Kernel jamCRC:      0xca52f9db
 Tag jamCRC:         0x756037ba
 ```
 
+## Emulation
+
+It is possible to run directly the squashfs dumped from mtdblock0 once unpacked
+
+```
+$ unsquashfs mtdblock0
+$ cp /usr/bin/qemu-mips-static squashfs-root/usr/bin/
+$ sudo chroot squashfs-root bin/sh
+
+
+BusyBox v1.00 (2011.06.21-10:29+0000) Built-in shell (msh)
+Enter 'help' for a list of built-in commands.
+
+#
+```
+## CFE web update
+
+If you press reset for ten seconds you can obtain the following
+log from the serial:
+
+```
+*** Restore to Factory Default Setting ***
+
+
+*** Break into CFE console ***
+
+Board IP address                  : 192.168.1.1:ffffff00
+Host IP address                   : 192.168.1.100
+Gateway IP address                :
+Run from flash/host (f/h)         : f
+Default host run file name        : vmlinux
+Default host flash file name      : bcm963xx_fs_kernel
+Boot delay (0-9 seconds)          : 1
+Board Id (0-5)                    : AW4337AU
+Number of MAC Addresses (1-32)    : 11
+Base MAC Address                  : b8:a3:86:ea:1a:96
+PSI Size (1-128) KBytes            : 128
+Enable Backup PSI [0|1]           : 0
+System Log Size (0-256) KBytes    : 0
+Main Thread Number [0|1]          : 0
+
+web info: Waiting for connection on socket 0.
+CFE> 
+```
