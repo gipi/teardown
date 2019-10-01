@@ -83,7 +83,14 @@ host < device
 ## Taxonomy
 
 What follows is the commands via USB that the device in download mode
-accepts
+accepts.
+
+It seems that when the CBW accepts a size in reality the two LSB bytes are
+the size that we are going to write and the two MSB are the size we are
+going to read.
+
+The role of the **tag** and **subCmd** is not clear at all, they seem
+magic values.
 
 ### Cmd 05 Tag88: upload
 
@@ -257,6 +264,7 @@ the response has in its first two bytes the length of the info response.
 
 ### Cmd b0 tag 0D: upload flash
 
+```
 0000   55 53 42 43 0d 00 00 00 00 00 01 00 00 00 10 b0
 0010   00 70 02 00 00 00 80 00 1c 6a 00 01 00 00 00
 
@@ -265,4 +273,27 @@ the response has in its first two bytes the length of the info response.
 
 0000   55 53 42 43 0d 00 00 00 00 00 01 00 00 00 10 b0
 0010   00 71 02 00 00 00 80 00 1c 6a 00 01 00 00 00
+```
+
+```
+0000   55 53 42 43
+       0d 00 00 00
+       00 00 01 00
+       00
+       00
+       10
+       b0 00 70 02 00
+       00 00 80 00 1c
+       6a 00 01 00 00 00
+```
+
+### Cmd b0 tag ffffffff subCmd 6f37: download from flash
+
+download 512 bytes from the flash(?)
+
+```
+0000   55 53 42 43 ff ff ff ff 00 02 00 00 00 00 10 b0
+0010   04 00 00 00 1f 00 00 00 37 6f 00 00 00 00 00
+       '-----------'--- these seems to indicate an offset
+```
 
