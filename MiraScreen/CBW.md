@@ -297,3 +297,19 @@ download 512 bytes from the flash(?)
        '-----------'--- these seems to indicate an offset
 ```
 
+### Cmd b0 tag 38f688 subcmd b586: maybe close connection
+
+```
+        0052f214          55 53 42        CBW_t
+                          43 88 f6 
+                          38 00 00 
+           0052f214 55 53 42 43     ddw       43425355h               signature                                             
+           0052f218 88 f6 38 00     ddw       38F688h                 tag
+           0052f21c 00 00 00 00     ddw       0h                      transferLength
+           0052f220 00              db        0h                      flags
+           0052f221 00              db        0h                      LUN
+           0052f222 10              db        10h                     cmdLength
+           0052f223 b0 00 00 00 00  db[15]                            cmdBlock
+                    00 00 00 00 86 
+                    b5 00 00 00 00
+```
