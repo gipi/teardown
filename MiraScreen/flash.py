@@ -69,6 +69,7 @@ INIT_HWSC:****hwsc.bin Ver Apr 25 2017 Tim:11:32:49,hard_ware_scan_main****
  BootDiskType  F648, length=0x0050
 
 '''
+import time
 import os
 import sys
 import logging
@@ -83,6 +84,8 @@ logging.getLogger("usb").setLevel(logging.DEBUG)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
+# WARNING: this script has been tested only with this device
+#          change these at your own risk!!!
 ID_VENDOR = 0x1de1
 ID_PRODUCT = 0x1205
 
@@ -244,6 +247,18 @@ def hwsc(path, r, w):
     hwsc_get_info(r, w, size)
 
 
+def fwsc(path, r, w):
+    '''
+    It stands for firmware scan'''
+    logger.info('FWSC')
+    address = 0xa0018000
+    upload(path, r, w, address)
+    execute(r, w, address, 0x4658)
+    time.sleep(5)  # we must wait for the code to execute
+    size = hwsc_get_size(r, w)
+    hwsc_get_info(r, w, size)
+
+
 def ADECadfus(path, r, w):
     '''
     cmd 05 tag 88 address b4040000 subCmd 00 -> upload
@@ -267,18 +282,24 @@ def ADFUadfus(path, r, w):
     execute_adfus(r, w, address, 0x00)
 
 
+def disconnect(r, w):
+    cbw_write(w, 0xb0, 0x38f688, 0x10, 0x00, 0x00, 0xb586)
+    cbw_read_response(r, 0x38f688)
+
+
 def usage(progname):
-    print(f'''usage: {progname} ADEC ADFU hwsc''')
+    print(f'''usage: {progname} ADEC ADFU hwsc fwsc''')
     sys.exit(1)
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 4:
+    if len(sys.argv) < 5:
         usage(sys.argv[0])
 
     path_adec = sys.argv[1]
     path_adfu = sys.argv[2]
     path_hwsc = sys.argv[3]
+    path_fwsc = sys.argv[4]
 
     # configure the endpoint for the bulk transfers
     endpoint_read, endpoint_write = usb_conf()
@@ -286,3 +307,5 @@ if __name__ == '__main__':
     ADECadfus(path_adec, endpoint_read, endpoint_write)
     ADFUadfus(path_adfu, endpoint_read, endpoint_write)
     hwsc(path_hwsc, endpoint_read, endpoint_write)
+    fwsc(path_fwsc, endpoint_read, endpoint_write)
+    disconnect(endpoint_read, endpoint_write)
