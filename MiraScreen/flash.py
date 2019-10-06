@@ -67,7 +67,130 @@ INIT_HWSC:****hwsc.bin Ver Apr 25 2017 Tim:11:32:49,hard_ware_scan_main****
  NAND Flash       is:1580f198
  CMD92       is:0
  BootDiskType  F648, length=0x0050
+ CHIPINFO: 0x1101000e
+ Dram size is:0x8000000
+ Test size is:0x7f80000
+ current addr:0x5a5aa5a5 PC:0xa00188a4 SP:0xa000af84
+ current addr:0x5a5aa5a5 PC:0x800188b4 SP:0xa000af84
+ start data line test pattern :0xaaaaaaaa
+ finish pattern:0xaaaaaaaa
+ start data line test pattern :0x55555555
+ finish pattern:0x55555555
 
+ ***AL1213 AM1101,1101,fwsc.bin Ver Apr 25 2017 Tim:11:32:50*****
+
+ MU_REG1:0x00003e00
+ MU_REG2:0x00003e00
+ CMU_COREPLL [b0010000]: 388d94b
+ CMU_BUSCLK [b001000c]: 2000038c
+ SDR_CTL [b0070000]: 30166
+ SDR_CMD [b007000c]: 0
+ SDR_TIMING [b0070030]: 25aa7377
+ SDR_RFSH [b0070014]: d00
+ SDR_EN [b0070008]: 1
+ SDR_MODE [b0070018]: 521
+ SDR_CLKDLY [b007005c]: 10a0000
+ SDR_MSTDLY [b0070060]: 51713
+ SDR_LATENCY [b0070058]: 8000605
+ --------- getcorepll() COREPLL val:492
+##Set nand Flash:32800 Khz##
+##CMU_COREPLL:0x388d94b ,NAND_CTL: 0x48901
+###CMU_NANDCLK:0x50e,CLKCTL:0x9,NANDCTL48901###
+###NandDMAChannel:0 ###
+###4.User_Data_2Byte:0
+###5.EIP_IRQ_MODE:1
+###6.TEST_RB_CTL:0
+##7.SPECIAL_DMA_Test:0
+##8.PageBCH24 Read:0,Write:0
+##9.PageBCH8 Read:0,Write:0
+##10.pseudoNoise:0
+ mode32:0x608401a4,mode8:0x608001a4
+ mode32:0x1a46084,mode8:0x1a46080
+ [INIT] INIT_CreateBlkTbls() enter.
+
+ ====22 boot nand Flash CHIPID:0x1580f198 ====
+ Flash ChipNo:0 CHIPID:1580f198
+ Flash ChipNo:1 CHIPID:0
+
+ ===Set:0x0, NAND_ECCCTL:0x1,
+ AM1213 Set ECC type BCH8
+ NAND_ECCCTL:0x1 ==
+
+ --------- getcorepll() COREPLL val:492
+ CMU_COREPLL:0x388d94b
+###7,9,492Mhz,20MHz,20500Khz ###
+###Set BMA:82Mhz###
+###CMU_NANDCLK:0x507,CLKCTL:0x9,NANDCTL48900###
+
+ INIT_DBG: ================NAND STORAGE INFOR================
+ INIT_DBG:     ChipEnableInfo is:0x1
+ INIT_DBG:     ChipCnt        is:0x1
+ INIT_DBG:     BankCntPerChip is:0x1
+ INIT_DBG:     DieCntPerChip  is:0x1
+ INIT_DBG:     PlaneCntPerDie is:0x1
+ INIT_DBG:     SectorNumPerPage  is:0x4
+ INIT_DBG:     PageNumPerPhyBlk  is:0x40
+ INIT_DBG:     TotalBlkNumPerDie is:0x400
+ INIT_DBG:     OperationOpt is:0x0
+ INIT_DBG:     FrequencePar is:0x14
+ INIT_DBG:     Reclaim is:6
+ INIT_DBG:     SpareSize is:128
+ INIT_DBG:     NandChipId   is:0x1580f198
+ INIT_DBG: ====================================================
+
+ INIT_DBG: ================LOGIC ORGANIZE INFO=================
+ INIT_DBG:     DataBlkNumPerZone  is:0x3d8
+ INIT_DBG:     PageNumPerLogicBlk is:0x40
+ INIT_DBG:     SectorNumPerLogicPage is:0x4
+ INIT_DBG:     ZoneNumPerDie      is:0x1
+ INIT_DBG: ====================================================
+
+ INIT_DBG: ===============SPECICAL CMMOND INFO=================
+ INIT_DBG:     MultiProgCmd         is:0x11, 0x80
+ INIT_DBG:     MultiCopyReadCmd     is:0x0, 0x0, 0x30
+ INIT_DBG:     MultiCopyProgCmd     is:0x8c, 0x11, 0x8c
+ INIT_DBG:     MultiBlkAddrOffset   is:0x0
+ INIT_DBG:     BadBlkFlagPst        is:0x0
+ INIT_DBG:     ReadMultiOpStatusCmd is:0x71
+ INIT_DBG:     InterChip0StatusCmd  is:0x70
+ INIT_DBG:     InterChip1StatusCmd  is:0x70
+ INIT_DBG: =====================================================
+
+ INIT_DBG: ===============Sector Bimmap=================
+ INIT_DBG 1.===>Sector_BitmapBBF:0x3
+ INIT_DBG 2.===>Sector_BitmapSpare:0x7
+ INIT_DBG 3.===>USER_DataByte:0x2
+ INIT_DBG 4.===>USER_SectorCnt:0x3
+ INIT_DBG 5.===>TOTAL_SPAREDATA:6
+ INIT_DBG 6.===>Single_BitmapSpare:7
+ INIT_DBG: =====================================================
+
+ TOTAL_BANKS          1
+ DIENUM_IN_FLASH      1
+ ZONENUM_PER_DIE      1
+ SUBLK_PER_DIE        1024
+ PAGES_PER_SUBLK      64
+ MULTI_PLANE_SUPPORT  0
+ DIE_FIRST_SUBLK_NUM  8
+###NandDevInfo.PhyCache :a0032640 ,size:2048
+###GPageBuf:0xa0031630
+ [SCAN] ScanSearchZoneTbls: (DieNo: 0) enter.absZoneTblStartPage:28
+ ScanSearchZoneTbls: [SCAN] Found valid zone table 0 for die 0 at block 8, page 28.
+ [SCAN] ScanSearchZoneTbls: (DieNo: 0) out, ret 0
+ [INIT] INIT_CreateBlkTbls() out, ret 0.
+##1.Reclaim: 6,6,brecsize:128KB
+##2.Read Super:1, Readclaim:1
+##3.Write Super:0, Wearleveling:1
+##4.ECC_reclaim,1,overecc:1
+##5.DataBlk:984,MultiPlane:0
+##6.PageCache:0xa0031630,4
+##7.NandDevInfo.PhyCache:0xa0032640:
+ INIT_CreateBlkTbls end
+ logical_whole_cap: 3d800,123MB
+ fwsc BlocNo:4,checksum:0,brecSize128KB
+ writing finished(4MB)OP:1,0x     0,0
+
+ afcfl fwsc n!
 '''
 import time
 import os
@@ -122,6 +245,33 @@ def usb_conf():
     logger.info(f'using interface for write {ep_w}')
 
     return ep_r, ep_w
+
+
+def cbw_write_(interface, cmd, tag, size, arg0, arg1, subCmd, cmdLength=0x10):
+    cmd_hex = struct.pack('B', cmd).hex()
+    tag_hex = struct.pack('I', tag).hex()
+    cmdLength_hex = struct.pack('B', cmdLength).hex()
+    arg0_hex = struct.pack('I', arg0).hex()
+    arg1_hex = struct.pack('I', arg1).hex()
+    size_hex = struct.pack('I', size).hex()
+    subCmd_hex = struct.pack('H', subCmd).hex()
+
+    cbw_fmt = f'''55 53 42 43
+    {tag_hex}
+    {size_hex}
+    00
+    00
+    {cmdLength_hex}
+    {cmd_hex} {arg0_hex}
+    {arg1_hex}
+    {subCmd_hex} 00 00 00 00 00'''
+    logger.debug(cbw_fmt)
+
+    cbw = bytearray.fromhex(cbw_fmt.replace('\n', ' '))
+
+    logger.debug(cbw)
+
+    interface.write(cbw)
 
 
 def cbw_write(interface, cmd, tag, cmdLength, dstAddr, size, subCmd):
@@ -254,6 +404,7 @@ def fwsc(path, r, w):
     address = 0xa0018000
     upload(path, r, w, address)
     execute(r, w, address, 0x4658)
+    logger.info('waiting for scan to complete execution')
     time.sleep(5)  # we must wait for the code to execute
     size = hwsc_get_size(r, w)
     hwsc_get_info(r, w, size)
@@ -282,6 +433,24 @@ def ADFUadfus(path, r, w):
     execute_adfus(r, w, address, 0x00)
 
 
+def flash_dump(r, w):
+    logger.info('dump flash')
+    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, 0x6f37)
+    response = r.read(0x200)
+
+    logger.debug('\n' + hexdump(response, result='return'))
+    cbw_read_response(r, 0xffffffff)
+
+
+def mbrc_dump(r, w):
+    logger.info('dumping mbrc')
+    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, 0x6f36)
+    response = r.read(0x200)
+
+    logger.debug('\n' + hexdump(response, result='return'))
+    cbw_read_response(r, 0xffffffff)
+
+
 def disconnect(r, w):
     cbw_write(w, 0xb0, 0x38f688, 0x10, 0x00, 0x00, 0xb586)
     cbw_read_response(r, 0x38f688)
@@ -308,4 +477,7 @@ if __name__ == '__main__':
     ADFUadfus(path_adfu, endpoint_read, endpoint_write)
     hwsc(path_hwsc, endpoint_read, endpoint_write)
     fwsc(path_fwsc, endpoint_read, endpoint_write)
+    flash_dump(endpoint_read, endpoint_write)
+    mbrc_dump(endpoint_read, endpoint_write)
+
     disconnect(endpoint_read, endpoint_write)
