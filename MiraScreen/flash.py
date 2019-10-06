@@ -247,7 +247,8 @@ def usb_conf():
     return ep_r, ep_w
 
 
-def cbw_write_(interface, cmd, tag, size, arg0, arg1, subCmd, cmdLength=0x10):
+# FIXME: this is going to be the final general purpose cbw-write-to-device
+def cbw_write_(interface, cmd, tag, size, arg0, arg1, subCmd, subCmd2=0x0, cmdLength=0x10):
     cmd_hex = struct.pack('B', cmd).hex()
     tag_hex = struct.pack('I', tag).hex()
     cmdLength_hex = struct.pack('B', cmdLength).hex()
@@ -255,6 +256,7 @@ def cbw_write_(interface, cmd, tag, size, arg0, arg1, subCmd, cmdLength=0x10):
     arg1_hex = struct.pack('I', arg1).hex()
     size_hex = struct.pack('I', size).hex()
     subCmd_hex = struct.pack('H', subCmd).hex()
+    subCmd2_hex = struct.pack('H', subCmd2).hex()
 
     cbw_fmt = f'''55 53 42 43
     {tag_hex}
@@ -264,7 +266,7 @@ def cbw_write_(interface, cmd, tag, size, arg0, arg1, subCmd, cmdLength=0x10):
     {cmdLength_hex}
     {cmd_hex} {arg0_hex}
     {arg1_hex}
-    {subCmd_hex} 00 00 00 00 00'''
+    {subCmd_hex} {subCmd2_hex} 00 00 00'''
     logger.debug(cbw_fmt)
 
     cbw = bytearray.fromhex(cbw_fmt.replace('\n', ' '))
@@ -451,6 +453,16 @@ def mbrc_dump(r, w):
     cbw_read_response(r, 0xffffffff)
 
 
+def mbr_dump(r, w):
+    logger.info('dump MBR')
+    tag = 0x88
+    cbw_write_(w, 0x08, tag, 0x200, 0x7000, 0x10000, 0x80, 0x8000)
+    response = r.read(0x200)
+
+    logger.debug('\n' + hexdump(response, result='return'))
+    cbw_read_response(r, tag)
+
+
 def disconnect(r, w):
     cbw_write(w, 0xb0, 0x38f688, 0x10, 0x00, 0x00, 0xb586)
     cbw_read_response(r, 0x38f688)
@@ -479,5 +491,6 @@ if __name__ == '__main__':
     fwsc(path_fwsc, endpoint_read, endpoint_write)
     flash_dump(endpoint_read, endpoint_write)
     mbrc_dump(endpoint_read, endpoint_write)
+    mbr_dump(endpoint_read, endpoint_write)
 
     disconnect(endpoint_read, endpoint_write)
