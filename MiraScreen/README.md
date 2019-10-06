@@ -23,6 +23,14 @@ activate the flashing mode shorting pins 19 and 20 (right side, bottom to up) ea
 of the main chip (there is a trace connected to a via for the pin 19); however in my
 device is enough to press the button during power up to enter this mode.
 
+Probably this SoC has the following ([source](http://read.pudn.com/downloads121/ebook/513248/2007%E7%82%AC%E5%8A%9B%E9%9B%86%E6%88%90USDK130%E5%9F%B9%E8%AE%AD%E4%BC%9A_USDK130%E6%9E%B6%E6%9E%84.pdf))
+internal boot sequence(?)
+
+ - ``BROM``
+ - ``MBRC``
+ - ``BREC``
+ - ``ADFU`` server
+
 From some hints (like the update program library) I think the device is going to use the ``ADFU`` (Actions Device Firmware Update) protocol like [this](https://github.com/96boards-bubblegum/linaro-adfu-tool) but further analysis make it less sure: that is from **Actions Semiconductors** not **Actions Microeletronics** (but [here](https://web.archive.org/web/20160418175522/http://wiki.s1mp3.org/Actions_SoC_Family) there are indications that they are connected), BTW [this an old page](https://web.archive.org/web/20160418032428/http://wiki.s1mp3.org/USB_modes/)
 describing the protocol that is very similar to what I'm seeing.
 
