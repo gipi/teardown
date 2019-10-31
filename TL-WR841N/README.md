@@ -39,6 +39,7 @@ Rootfs data length     : 0x002c0000 /  2883584 bytes
 Boot loader data offset: 0x00000000 /        0 bytes
 Boot loader data length: 0x0000c38f /    50063 bytes
 Total firmware length  : 0x003e0200 /  4063744 bytes
+```
 
 ## UART
 
