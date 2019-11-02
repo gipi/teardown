@@ -10,12 +10,12 @@ import sys
 import time
 import serial
 import logging
-import tqdm # for the progress bar
+import tqdm  # for the progress bar
 
 
 # we want to log on file the communications
 # and in console the INFO
-#logging.basicConfig()
+# logging.basicConfig()
 logger_console = logging.getLogger('%s.info' % __name__)
 logger_console.setLevel(logging.INFO)
 stream = logging.StreamHandler()
@@ -32,14 +32,13 @@ logger_console.addHandler(handler)
 log_comm.addHandler(handler)
 
 
-
-
 def get_encoded_repr(data):
     line = ""
     for index in range(len(data)):
         line += "\\x%02x" % data[index]
 
     return line
+
 
 def serial_shell_cmd(s, cmd, one_more_line=False):
     '''
@@ -53,15 +52,15 @@ def serial_shell_cmd(s, cmd, one_more_line=False):
     s.write(line)
 
     string_end = b"%s# " % marker
-    
-    #line_received = s.readline()
-    #logger.debug('< %s' % line_received)
+
+    # line_received = s.readline()
+    # logger.debug('< %s' % line_received)
     line_received = s.read_until(string_end)
     log_comm.debug('< %s' % line_received)
 
     if line not in line_received:
-        #print(s.readline())
-        #raise AttributeError('received:%s vs sent:%s' % (line_received, line))
+        # print(s.readline())
+        # raise AttributeError('received:%s vs sent:%s' % (line_received, line))
         pass
     line_received = line_received[:-len(string_end)]
     log_comm.debug('< %s' % line_received)
@@ -106,4 +105,3 @@ if __name__ == '__main__':
                 remote_path
             ), True)
             progress.update(CHUNK_SIZE)
-
