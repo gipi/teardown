@@ -68,7 +68,15 @@ def serial_shell_cmd(s, cmd, one_more_line=False):
     return line_received
 
 
+def usage(progname):
+    print(f'usage: {progname} port baud src dst')
+    sys.exit(1)
+
+
 if __name__ == '__main__':
+    if len(sys.argv) < 5:
+        usage(sys.argv[0])
+
     serial_port_path = sys.argv[1]
     serial_baud = sys.argv[2]
     local_path  = sys.argv[3]
