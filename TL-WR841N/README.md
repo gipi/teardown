@@ -72,7 +72,6 @@ Instead ``u-boot`` is not accessible with this configuration, I don't know why.
 
 ## System info
 
-
 From ``/tmp/dec-model.conf``
 
 ```
@@ -343,6 +342,25 @@ athr_gmac_ring_free Freeing at 0x81e99000
 athr_gmac_ring_alloc Allocated 8176 at 0x81c52000
 athr_gmac_ring_alloc Allocated 2048 at 0x81e99000
 ```
+
+By default the system includes busybox with very few tools compiled in
+(good from the security viewpoint) but anyway you can upload a more complete
+version using ``tftp``
+
+```
+(remote) $ pip3 install --user ptftpd
+(remote) $ ptftpd -p 4444 enp8s0 -v /opt/teardown/
+INFO(tftpd): Serving TFTP requests on enp8s0/192.168.0.100:4444 in /opt/teardown
+INFO(tftpd): Serving file busybox.mips32 to host 192.168.0.1...
+INFO(tftpd): Transfer of file busybox.mips32 completed.
+```
+
+```
+# tftp -g -r busybox.mips32 -l /tmp/busybox 192.168.0.100 4444
+```
+
+The root filesystem is read only, so copy somewhere persisten :)
+
 
 ## Emulation
 
