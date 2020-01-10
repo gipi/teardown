@@ -17,6 +17,9 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 1180160       0x120200        Squashfs filesystem, little endian, version 4.0, compression:lzma, size: 2477651 bytes, 560 inodes, blocksize: 131072 bytes, created: 2015-03-10 07:25:11
 ```
 
+at offset ``0x3A10`` there is the ``LZMA`` compressed ``u-boot`` image (architecture ``MIPS`` 32bit big-endian, variant **micro**, at least, that one gives
+the best result in Ghidra)
+
 ```
 $ ./mktplinkfw -i wr841nv10_wr841ndv10_en_3_16_9_up_boot\(150310\).bin 
 File name              : wr841nv10_wr841ndv10_en_3_16_9_up_boot(150310).bin
@@ -330,6 +333,60 @@ athr_gmac_ring_free Freeing at 0x81cdc000
 athr_gmac_ring_free Freeing at 0x81e99000
 athr_gmac_ring_alloc Allocated 8176 at 0x81c52000
 athr_gmac_ring_alloc Allocated 2048 at 0x81e99000
+```
+
+## Emulation
+
+With ``qemu-mips-static`` is possible to run the ``httpd`` daemon, take in mind
+that versions previous to 4.2 have problems to run it, so in Debian I'm using
+the version installed in the host
+
+```
+$ docker run -it \
+    -v $PWD/TL-WR841N/extra/_wr841nv10_wr841ndv10_en_3_16_9_up_boot\(150310\).bin.extracted/squashfs-root/:/tp-link \
+    -v /usr/bin/qemu-mips-static:/usr/bin/qemu-mips-static  \
+    ubuntu:19.10 /bin/bash
+root@3ca21c357fdc:/# qemu-mips-static -L /tp-link/ /tp-link/usr/bin/httpd -h
+/tp-link/usr/bin/httpd: cache '/etc/ld.so.cache' is corrupt
+Usage:  /tp-link/usr/bin/httpd [-krfhv] [--help] [--version]
+        [-k, --kill]    kill all httpd threads
+        [-r, --reset]   start httpd, and reset all settings to default
+        [-f, --freeup]  this parameter allows httpd can update any firmware.
+        [-h, --help]    help
+        [-v, --version] version
+root@3ca21c357fdc:/# qemu-mips-static -L /tp-link/ /tp-link/usr/bin/httpd 
+/tp-link/usr/bin/httpd: cache '/etc/ld.so.cache' is corrupt
+Segmentation fault (core dumped)
+root@3ca21c357fdc:/# chroot /tp-link/ bin/sh
+
+
+BusyBox v1.01 (2015.03.10-07:17+0000) Built-in shell (msh)
+Enter 'help' for a list of built-in commands.
+
+# httpd 
+SIGSEGV - core dumped
+$ qemu-system-mips \
+    -M malta \
+    -kernel mips/vmlinux-2.6.32-5-4kc-malta \
+    -hda mips/debian_squeeze_mips_standard.qcow2 \
+    -append "root=/dev/sda1 console=ttyS0" \
+    -nographic \
+    -serial mon:stdio \
+    -nic user,hostfwd=tcp::2222-:22
+```
+
+In this last case you have an old Debian system that needs the following repositories
+enabled ([source](https://wiki.debian.org/it/DebianSqueeze))
+
+```
+deb http://archive.debian.org/debian squeeze main
+deb http://archive.debian.org/debian squeeze-lts main
+```
+
+with the following in ``/etc/apt/apt.conf``
+
+```
+Acquire::Check-Valid-Until false;
 ```
 
 ## Links
