@@ -72,6 +72,15 @@ Instead ``u-boot`` is not accessible with this configuration, I don't know why.
 
 ## System info
 
+
+From ``/tmp/dec-model.conf``
+
+```
+/* Product id and product version */
+PRODUCT_ID = 0x08410010
+PRODUCT_VERSION = 0x00000001
+```
+
 ```
 # cat /proc/cpuinfo 
 system type             : QCA953x
@@ -372,7 +381,7 @@ $ qemu-system-mips \
     -append "root=/dev/sda1 console=ttyS0" \
     -nographic \
     -serial mon:stdio \
-    -nic user,hostfwd=tcp::2222-:22
+    -nic user,hostfwd=tcp::2222-:22,hostfwd=tcp::8080-:80
 ```
 
 In this last case you have an old Debian system that needs the following repositories
@@ -389,6 +398,14 @@ with the following in ``/etc/apt/apt.conf``
 Acquire::Check-Valid-Until false;
 ```
 
+The most reliable until now is to use ``qemu`` and then chroot into
+the squashfs of the router and launch ``httpd``.
+
+You have to take in mind two things
+
+ - this daemon configures the network interfaces in such a way that is impossible to reach qemu from your host
+   (you can intercept all the ``system()`` and ``execve()`` with the ``LD_PRELOAD`` trick)
+ - you need to mount the ``/proc`` filesystem otherwise it crashes (``mount --bind /proc <rootfs>/proc``)
 ## Links
 
  - [Product page](https://www.tp-link.com/it/support/download/tl-wr841n/v10/)
