@@ -186,7 +186,8 @@ Enter 'help' for a list of built-in commands.
 but if you want to run via ``qemu``
 
 ```
-root@debian-mips:/dlink-rootfs# LD_LIBRARY_PATH=/lib/public/  chroot . bin/sh
+root@debian-mips:/dlink-rootfs# mount --bind /proc /dlink-rootfs/proc/
+root@debian-mips:/dlink-rootfs# LD_LIBRARY_PATH=/lib/public/:/lib/private/  chroot . bin/sh
 
 
 BusyBox v1.00 (2011.06.21-10:29+0000) Built-in shell (msh)
@@ -196,17 +197,47 @@ Enter 'help' for a list of built-in commands.
 httpd:error:511.568:oalMsg_init:120:connect to /var/smd_messaging_server_addr failed, rc=-1 errno=146                                                                                                              
 httpd:error:511.570:main:257:cmsMsg_init failed, ret=9002
 # /bin/smd -v 2
+===== Release Version EU_1.01 (build timestamp 2011.06.21-18:29:06) =====
+
+# /bin/smd -v 2
 
 ===== Release Version EU_1.01 (build timestamp 2011.06.21-18:29:06) =====
 
-smd:notice:596.575:initUnixDomainServerSocket:1409:smd msg socket opened and ready (fd=3)
-smd:debug:596.575:initDls:310:inserting stage 1 entity: ssk (21)
-smd:debug:596.576:insertDlsInfoEntry:371:eid=21 (0x15)
-smd:notice:596.576:oalSysmon_init:114:Entered
-smd:notice:596.577:system_init:230:entered
-smd:error:596.577:writeToProc:114:could not open /proc/sys/net/ipv6/conf/all/forwarding
-smd:notice:596.578:system_init:234:done, ret=9002
-smd:error:596.578:main:142:initialization failed (9002), exit.
+smd:notice:231.497:initUnixDomainServerSocket:1409:smd msg socket opened and ready (fd=3)
+smd:debug:231.498:initDls:310:inserting stage 1 entity: ssk (21)
+smd:debug:231.498:insertDlsInfoEntry:371:eid=21 (0x15)
+smd:notice:231.499:oalSysmon_init:114:Entered
+smd:notice:231.499:system_init:230:entered
+smd:notice:231.505:system_init:234:done, ret=0
+smd:notice:231.505:oal_launchOnBoot:438:stage=1
+smd:notice:231.506:sendMessageByState:1436:launching ssk to receive msg 0x10000250
+smd:debug:231.506:launchApp:998:spawning /bin/ssk args 
+smd:debug:231.507:parseArgs:460:argv[0] = ssk
+smd:debug:231.510:launchApp:1016:ssk launched, pid 1662
+smd:notice:231.511:smd_init:220:done, ret=0
+smd:debug:231.511:oal_processEvents:603:sleeping for 4294967295 ms
+smd:debug:231.657:oal_processEvents:639:fd 3 is set
+smd:debug:231.658:oal_processEvents:722:accepted new connection from app on fd 5
+smd:debug:231.659:oal_processEvents:751:new connection from src=0x15
+smd:debug:231.660:oal_processEvents:760:got APP_LAUNCHED from ssk (eid=21, pid=1662) on fd 5
+smd:debug:231.661:processLaunchConfirmation:796:ssk (eid=21) transitioning to state=2
+smd:debug:231.661:processLaunchConfirmation:806:sending queued msg 0x10000250
+smd:debug:231.665:oal_processEvents:603:sleeping for 4294967295 ms
+ssk:error:231.767:devCtl_boardIoctl:230:Unable to open device /dev/brcmboard
+ssk:error:231.768:cmsImg_getRealConfigFlashSize:326:boardIoctl to get config flash size failed.
+ssk:error:231.769:ssk_init:592:cmsMdm_init failed, ret=9002
+ssk:error:231.769:main:166:initialization failed (9002), exit.
+smd:debug:231.772:oal_processEvents:639:fd 5 is set
+smd:notice:231.772:oal_processEvents:678:detected message on fd 5 from ssk
+smd:notice:231.773:oal_processEvents:688:detected exit of ssk (pid=1662) on fd 5
+smd:debug:231.815:collectApp:1179:collected ssk (pid 1662) signalNum=0
+smd:debug:231.816:collectApp:1230:unlink and free dInfo structure at 0x41f034 for ssk eid=21 (0x15)
+smd:debug:231.817:interest_unregisterAll:198:eid=21 (0x15)
+smd:error:231.818:oal_processEvents:692:ssk has died.  smd must exit now!
+smd:notice:231.819:main:149:exiting with code 0
+smd:notice:231.821:cmsMdm_cleanup:349:entered
+smd:error:231.822:oalShm_cleanup:304:shmctl IPC_STAT failed
+smd:notice:231.823:cmsMdm_cleanup:357:done
 ```
 
 ## CFE web update
