@@ -182,6 +182,19 @@ Enter 'help' for a list of built-in commands.
 
 #
 ```
+
+but if you want to run via ``qemu``
+
+```
+root@debian-mips:/dlink-rootfs# LD_LIBRARY_PATH=/lib/public/  chroot . bin/sh
+
+
+BusyBox v1.00 (2011.06.21-10:29+0000) Built-in shell (msh)
+Enter 'help' for a list of built-in commands.
+
+#
+```
+
 ## CFE web update
 
 If you press reset for ten seconds you can obtain the following
