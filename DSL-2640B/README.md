@@ -192,7 +192,21 @@ root@debian-mips:/dlink-rootfs# LD_LIBRARY_PATH=/lib/public/  chroot . bin/sh
 BusyBox v1.00 (2011.06.21-10:29+0000) Built-in shell (msh)
 Enter 'help' for a list of built-in commands.
 
-#
+# /bin/httpd                                                                                                                                                                                                       
+httpd:error:511.568:oalMsg_init:120:connect to /var/smd_messaging_server_addr failed, rc=-1 errno=146                                                                                                              
+httpd:error:511.570:main:257:cmsMsg_init failed, ret=9002
+# /bin/smd -v 2
+
+===== Release Version EU_1.01 (build timestamp 2011.06.21-18:29:06) =====
+
+smd:notice:596.575:initUnixDomainServerSocket:1409:smd msg socket opened and ready (fd=3)
+smd:debug:596.575:initDls:310:inserting stage 1 entity: ssk (21)
+smd:debug:596.576:insertDlsInfoEntry:371:eid=21 (0x15)
+smd:notice:596.576:oalSysmon_init:114:Entered
+smd:notice:596.577:system_init:230:entered
+smd:error:596.577:writeToProc:114:could not open /proc/sys/net/ipv6/conf/all/forwarding
+smd:notice:596.578:system_init:234:done, ret=9002
+smd:error:596.578:main:142:initialization failed (9002), exit.
 ```
 
 ## CFE web update
