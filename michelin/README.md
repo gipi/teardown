@@ -2,10 +2,20 @@
 
 I named this after the brand on it.
 
+https://4pda.ru/forum/index.php?showtopic=708093&st=3080
+
 ## Processor
 
 It's an infamous ``AM7331`` related to **Actions Microelectronics**, like
 the MiraScreen.
+
+It seems that the Philips SPF4080P photo frame has the same SoC.
+
+https://fccid.io/YL5SPF4080P/Label/Label-Sample-1341109
+
+## Flash
+
+K9F2G08U0M
 
 ## Bootlog
 
@@ -487,4 +497,25 @@ msg.msg.data[0]:c8
 msg.msg.data[0]:c8
 GetGPIO(30):0
 
+```
+
+## ADFU mode
+
+It's possible to enter ``ADFU`` mode shorting the ``!CE`` pin
+of the flash with 3.3V
+
+https://web.archive.org/web/20080327212622/http://www.s1mp3.org/en/docs_deadrec.php
+
+https://wenku.baidu.com/view/543c8b4d852458fb770b56ee.html
+
+```
+kernel: [1217438.375421] usb 2-6: new high-speed USB device number 49 using xhci_hcd
+kernel: [1217438.907401] usb 2-6: new full-speed USB device number 50 using xhci_hcd
+kernel: [1217438.927629] usb 2-6: not running at top speed; connect to a high speed hub
+kernel: [1217438.927799] usb 2-6: New USB device found, idVendor=1de1, idProduct=1205, bcdDevice= 1.00
+kernel: [1217438.927801] usb 2-6: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+mtp-probe: checking bus 2, device 50: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-6"
+mtp-probe: bus: 2, device: 50 was not an MTP device
+mtp-probe: checking bus 2, device 50: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-6"
+mtp-probe: bus: 2, device: 50 was not an MTP device
 ```
