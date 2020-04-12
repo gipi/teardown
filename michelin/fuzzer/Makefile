@@ -27,4 +27,18 @@ flash: ${BIN}.hex
 	avrdude -v -c $(AVRDUDE_PROTOCOL) -p $(MCU) -P $(AVRDUDE_PORT) -b $(AVRDUDE_BAUDRATE) -U flash:w:$<:i
 
 clean:
-	rm -f ${BIN}.elf ${BIN}.hex ${OBJS}
+	rm -f ${BIN}.elf ${BIN}.hex ${OBJS} virus.o virus.elf virus.bin
+
+# NOTE: use -fno-plt -fno-pic bc otherwise at linking time it tries to put
+#       somewhere the relocations as globals.
+#
+# Use
+#
+#  $ mipsel-linux-gnu-objdump -b binary -mmips:isa32 -EL -D virus.bin
+#
+# to see the result
+MIPSEL_PREFIX = mipsel-linux-gnu-
+virus.bin: virus.c
+	$(MIPSEL_PREFIX)gcc -fno-plt -fno-pic -c $<
+	$(MIPSEL_PREFIX)ld -Tvirus.ld virus.o -o virus.elf
+	$(MIPSEL_PREFIX)objcopy -O binary virus.elf $@

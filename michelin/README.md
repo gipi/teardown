@@ -4,6 +4,8 @@ I named this after the brand on it.
 
 https://4pda.ru/forum/index.php?showtopic=708093&st=3080
 
+https://www.transcend-info.com/Support/No-311
+
 ## Processor
 
 It's an infamous ``AM7331`` related to **Actions Microelectronics**, like
@@ -518,4 +520,241 @@ mtp-probe: checking bus 2, device 50: "/sys/devices/pci0000:00/0000:00:14.0/usb2
 mtp-probe: bus: 2, device: 50 was not an MTP device
 mtp-probe: checking bus 2, device 50: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-6"
 mtp-probe: bus: 2, device: 50 was not an MTP device
+```
+
+## Fuzzing
+
+## HWSC
+
+```
+
+INIT_HWSC:****hwsc.bin Ver  svn7663 Jul  5 2012 ,hard_ware_scan_main****
+
+
+ +++++:nand_flash_inithw_HWSC,run to:429+++++++
+GPIO_MFCTL1:b01c0044,0x10000000
+GPIO_MFCTL2:b01c0048,0x31011111
+GPIO_MFCTL3:b01c004c,0xc0156233
+GPIO_MFCTL4:b01c0050,0x0
+CMU_COREPLL 0xb0010000:0x86a90dd
+CMU_BUSCLK 0xb001000c:0x390
+SDR_CLKDLY_VAL 0xB0070024:0xc0000014
+SDR_CTL 0xB0070000:0xf0120
+SDR_INIT 0xB0070028:0xcf08
+SDR_TIMING 0xB0070030:0xc92814a
+SDR_AUTORFC 0xB0070014:0x 4fc
+SDR_EN 0xB0070008:0x1
+SDR_MODE 0xB0070018:0x32
+SDR_PD 0xB0070034:0x4c4b400
+SDR_INITD 0xB0070028:0xcf08
+
+MU_REG1 0xB01C0080,0x0
+MU_REG2 0xB01C0090,0x0
+
+PMU_DHVLDO_VAL 0xB0000000 + 0x14,0x0
+PMU_DLVLDO_VAL 0xB0000000 + 0x18,0x0
+
+====1.1580daec,ec,da,80,15,======
+====2.80daec50,50,ec,da,80,======
+run to:_SearchIdTable2,1
+_SearchIdTable2 :1
+Page Size is:4
+Block Sizeis:64
+NAND Flash  is:1580daec
+*TmpSecPerBlk:8,4 KB
+CMD92       is:0
+hard_ware_scan_main  38343646
+
+INIT_HWSC:****hwsc.bin Ver  svn7663 Jul  5 2012 ,hard_ware_scan_main****
+
+
+ +++++:nand_flash_inithw_HWSC,run to:429+++++++
+GPIO_MFCTL1:b01c0044,0x10000000
+GPIO_MFCTL2:b01c0048,0x31011111
+GPIO_MFCTL3:b01c004c,0xc0156233
+GPIO_MFCTL4:b01c0050,0x0
+CMU_COREPLL 0xb0010000:0x86a90dd
+CMU_BUSCLK 0xb001000c:0x390
+SDR_CLKDLY_VAL 0xB0070024:0xc0000014
+SDR_CTL 0xB0070000:0xf0120
+SDR_INIT 0xB0070028:0xcf08
+SDR_TIMING 0xB0070030:0xc92814a
+SDR_AUTORFC 0xB0070014:0x 4fc
+SDR_EN 0xB0070008:0x1
+SDR_MODE 0xB0070018:0x32
+SDR_PD 0xB0070034:0x4c4b400
+SDR_INITD 0xB0070028:0xcf08
+
+MU_REG1 0xB01C0080,0x0
+MU_REG2 0xB01C0090,0x0
+
+PMU_DHVLDO_VAL 0xB0000000 + 0x14,0x0
+PMU_DLVLDO_VAL 0xB0000000 + 0x18,0x0
+
+====1.1580daec,ec,da,80,15,======
+====2.80daec50,50,ec,da,80,======
+run to:_SearchIdTable2,1
+_SearchIdTable2 :1
+Page Size is:4
+Block Sizeis:64
+NAND Flash  is:1580daec
+*TmpSecPerBlk:8,4 KB
+CMD92       is:0
+hard_ware_scan
+
+```
+
+## FWSC
+
+```
+[INIT] INIT_CreateBlkTbls() enter.
+Flash ChipNo:0 CHIPID:1580daec
+Flash ChipNo:1 CHIPID:0
+###6,4,330Mhz,15MHz,15714Khz ###
+###6,4,48900###
+
+INIT_DBG: ================NAND STORAGE INFOR================
+INIT_DBG:     ChipEnableInfo is:0x1
+INIT_DBG:     ChipCnt        is:0x1
+INIT_DBG:     BankCntPerChip is:0x1
+INIT_DBG:     DieCntPerChip  is:0x2
+INIT_DBG:     PlaneCntPerDie is:0x1
+INIT_DBG:     SectorNumPerPage  is:0x4
+INIT_DBG:     PageNumPerPhyBlk  is:0x40
+INIT_DBG:     TotalBlkNumPerDie is:0x400
+INIT_DBG:     OperationOpt is:0x10
+INIT_DBG:     FrequencePar is:0xf
+INIT_DBG:     NandChipId   is:0x15ffdaec
+INIT_DBG: ====================================================
+
+INIT_DBG: ================LOGIC ORGANIZE INFO=================
+INIT_DBG:     DataBlkNumPerZone  is:0x3d8
+INIT_DBG:     PageNumPerLogicBlk is:0x40
+INIT_DBG:     SectorNumPerLogicPage is:0x4
+INIT_DBG:     ZoneNumPerDie      is:0x1
+INIT_DBG: ====================================================
+
+INIT_DBG: ===============SPECICAL CMMOND INFO=================
+INIT_DBG:     MultiProgCmd         is:0x11, 0x81
+INIT_DBG:     MultiCopyReadCmd     is:0x0, 0x0, 0x35
+INIT_DBG:     MultiCopyProgCmd     is:0x85, 0x11, 0x81
+INIT_DBG:     MultiBlkAddrOffset   is:0x1
+INIT_DBG:     BadBlkFlagPst        is:0x1
+INIT_DBG:     ReadMultiOpStatusCmd is:0x70
+INIT_DBG:     InterChip0StatusCmd  is:0xf1
+INIT_DBG:     InterChip1StatusCmd  is:0xf2
+INIT_DBG: =====================================================
+
+INIT_DBG: ===============Sector Bimmap=================
+INIT_DBG 1.===>Sector_BitmapBBF:0x1
+INIT_DBG 2.===>Sector_BitmapSpare:0x3
+INIT_DBG 3.===>USER_DataByte:0x3
+INIT_DBG 4.===>USER_SectorCnt:0x2
+INIT_DBG 5.===>TOTAL_SPAREDATA:6
+INIT_DBG 6.===>Single_BitmapSpare:3
+INIT_DBG: =====================================================
+
+TOTAL_BANKS          1
+DIENUM_IN_FLASH      2
+ZONENUM_PER_DIE      1
+SUBLK_PER_DIE        1024
+PAGES_PER_SUBLK      64
+MULTI_PLANE_SUPPORT  0
+DIE_FIRST_SUBLK_NUM  8
+[SCAN] ScanSearchZoneTbls: (DieNo: 0) enterx.
+[SCAN] ScanSearchZoneTbls: (DieNo: 0) out, ret 0
+[SCAN] ScanSearchZoneTbls: (DieNo: 1) enterx.
+[SCAN] ScanSearchZoneTbls: (DieNo: 1) out, ret 0
+[INIT] INIT_CreateBlkTbls() out, ret 0.
+fwscretinfo.addr: a00296fc
+fwscretinfo.length: 00000090
+
+```
+
+```
+$ lsusb -v
+Bus 002 Device 120: ID 1de1:1205 Actions Microelectronics Co.
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0
+  bDeviceSubClass         0
+  bDeviceProtocol         0
+  bMaxPacketSize0        64
+  idVendor           0x1de1 Actions Microelectronics Co.
+  idProduct          0x1205
+  bcdDevice            1.00
+  iManufacturer           0
+  iProduct                0
+  iSerial                 0
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0020
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              300mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass    255 Vendor Specific Subclass
+      bInterfaceProtocol    255 Vendor Specific Protocol
+      iInterface              0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+```
+
+this is the piece of code in ``ADFU`` that handles the ``b0`` cmd
+
+```c
+    if (usb_otg->OTG_FIFO1DAT != 0x43425355) goto _infinite_loop;
+    register0x00000020 = usb_otg->OTG_FIFO1DAT; // tag
+    TransferLength = usb_otg->OTG_FIFO1DAT;
+    cmd = usb_otg->OTG_FIFO1DAT >> 0x18;
+                    /* here starts cmd 0xb0 with several actions depending on the subcmd value */
+    if (cmd == 0xb0) {
+      arg0 = usb_otg->OTG_FIFO1DAT;
+      arg1 = usb_otg->OTG_FIFO1DAT;
+      DAT_a00023a4 = usb_otg->OTG_FIFO1DAT;
+      usb_otg->OTG_OUT1CS = 0;
+      _local_t4_468 = usb_otg->OTG_FIFO1DAT & 0xffff;
+
+```
+
+```
+00    55 53 42 43    signature
+04    TT TT TT TT    tag
+08    TL TL TL TL    transfer length
+0c    FF 00 CL CM    flags ?? cmdLength cmd
+10    A0 A0 A0 A0    arg0
+14    A1 A1 A1 A1    arg1
+18    SC SC sc sc    subCmd subCmd1
+1c    00 00 00
 ```

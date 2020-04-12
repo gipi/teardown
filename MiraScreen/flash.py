@@ -200,6 +200,7 @@ import struct
 import usb
 from tqdm import tqdm
 from hexdump import hexdump
+from pathlib import Path
 
 
 logging.basicConfig()
@@ -211,6 +212,7 @@ logger.setLevel(logging.DEBUG)
 #          change these at your own risk!!!
 ID_VENDOR = 0x1de1
 ID_PRODUCT = 0x1205
+USB_wMaxPacketSize = 0x200  # TODO: extract info from USB itself
 
 
 def usb_conf():
@@ -309,7 +311,7 @@ def cbw_read_response(endpoint, tag=None):
     with exactly 13 (0Dh) bytes transferred. Fields appear aligned to byte
     offsets equal to a multiple of their byte size. All CSW transfers shall be
     ordered with the LSB (byte 0) first (little endian).'''
-    response = endpoint.read(0x0d)
+    response = bytes(endpoint.read(0x0d))
     logger.debug(response)
 
     signature, responseTag, residue, status = struct.unpack('4sIIB', response)
@@ -336,9 +338,10 @@ def upload(path, e_read, e_write, address, checkTag=True):
     progress = tqdm(total=stat.st_size)
     with open(path, 'rb') as firmware:
         while count < stat.st_size:
-            content = firmware.read(64)
+            content = firmware.read(USB_wMaxPacketSize)
             e_write.write(content)
-            count += 64
+            count += USB_wMaxPacketSize
+            logger.debug(f'{count:d}: {content.hex()}')
             progress.update(count)
 
     progress.close()
@@ -360,7 +363,7 @@ def execute(r, w, address, subCmd):
 
 def hwsc_get_size(r, w):
     logger.info('hwsc get size')
-    cbw_write(w, 0xb0, 0xa79210, 0x10, 0x00, 0x00020000, 0x6aae)
+    cbw_write(w, 0xb0, 0xa79210, 0x10, 0x00, 0x00020000, 0x0000)
     response = r.read(2)
 
     logger.debug(f'hwsc_get_size response={response}')
@@ -393,8 +396,9 @@ def hwsc(path, r, w):
     '''
     logger.info('HWSC')
     address = 0xa0010000
-    upload(path, r, w, address)
+    upload(path, r, w, address, checkTag=False)
     execute(r, w, address, 0x4658)
+    time.sleep(3)
     size = hwsc_get_size(r, w)
     hwsc_get_info(r, w, size)
 
@@ -404,7 +408,7 @@ def fwsc(path, r, w):
     It stands for firmware scan'''
     logger.info('FWSC')
     address = 0xa0018000
-    upload(path, r, w, address)
+    upload(path, r, w, address, checkTag=False)
     execute(r, w, address, 0x4658)
     logger.info('waiting for scan to complete execution')
     time.sleep(5)  # we must wait for the code to execute
@@ -431,7 +435,7 @@ def ADFUadfus(path, r, w):
     '''
     logger.info('ADFUadfus')
     address = 0xa0000000
-    upload(path, r, w, address)
+    upload(path, r, w, address, checkTag=False)
     execute_adfus(r, w, address, 0x00)
 
 
@@ -463,34 +467,53 @@ def mbr_dump(r, w):
     cbw_read_response(r, tag)
 
 
+def upload_virus(path_virus, r, w):
+    logger.info('VIRUS ~~~~~o 🦠')
+
+    addr_virus = 0xa0010000
+    upload(path_virus, r, w, addr_virus, checkTag=False)
+    execute(r, w, addr_virus, 0x4658)
+    time.sleep(4)
+
+
 def disconnect(r, w):
     cbw_write(w, 0xb0, 0x38f688, 0x10, 0x00, 0x00, 0xb586)
     cbw_read_response(r, 0x38f688)
 
 
 def usage(progname):
-    print(f'''usage: {progname} ADEC ADFU hwsc fwsc''')
+    print(f'''usage: {progname} --dir <extracted firmware directory>
+                     {progname} --virus <virus>
+''')
     sys.exit(1)
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 5:
+    isStandardFW = (len(sys.argv) == 3) and (sys.argv[1] == '--dir')
+    isVirus = (len(sys.argv) == 5) and (sys.argv[3] == '--virus')
+    if not (isStandardFW or isVirus):
         usage(sys.argv[0])
 
-    path_adec = sys.argv[1]
-    path_adfu = sys.argv[2]
-    path_hwsc = sys.argv[3]
-    path_fwsc = sys.argv[4]
+    path_virus = sys.argv[4] if isVirus else None
+
+    path_dir = Path(sys.argv[2])
+
+    path_adec = path_dir / 'ADECadfus'
+    path_adfu = path_dir / 'ADFUadfus'
+    path_hwsc = path_dir / 'HWSChwsc'
+    path_fwsc = path_dir / 'F648fwsc'
 
     # configure the endpoint for the bulk transfers
     endpoint_read, endpoint_write = usb_conf()
     # upload and execute the ADECadfus (from the serial we see test ddr stuffs)
     ADECadfus(path_adec, endpoint_read, endpoint_write)
     ADFUadfus(path_adfu, endpoint_read, endpoint_write)
-    hwsc(path_hwsc, endpoint_read, endpoint_write)
-    fwsc(path_fwsc, endpoint_read, endpoint_write)
-    flash_dump(endpoint_read, endpoint_write)
-    mbrc_dump(endpoint_read, endpoint_write)
+    # hwsc(path_hwsc, endpoint_read, endpoint_write)
+    # fwsc(path_fwsc, endpoint_read, endpoint_write)
+    # flash_dump(endpoint_read, endpoint_write)
+    # mbrc_dump(endpoint_read, endpoint_write)
     mbr_dump(endpoint_read, endpoint_write)
+    if isVirus:
+        upload_virus(path_virus, endpoint_read, endpoint_write)
 
     disconnect(endpoint_read, endpoint_write)

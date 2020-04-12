@@ -17,8 +17,11 @@ import sys
 import logging
 import struct
 import usb
+from pathlib import Path
 from tqdm import tqdm
 from hexdump import hexdump
+
+USB_wMaxPacketSize = 0x200  # TODO: extract info from USB itself
 
 
 #logging.basicConfig()
@@ -37,6 +40,9 @@ low_stream.setFormatter(low_formatter)
 logger.addHandler(app_stream)
 usb_logger.addHandler(low_stream)
 
+import usb.backend.libusb1
+usb_backend = usb.backend.libusb1.get_backend(find_library=lambda x: "/usr/lib/libusb-1.0.so")
+
 
 def usb_conf(idVendor, idProduct):
     '''
@@ -46,10 +52,10 @@ def usb_conf(idVendor, idProduct):
     device.
     '''
     logger.debug(f'trying to connect to {idVendor:x}:{idProduct:x}')
-    dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
+    dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=usb_backend)  # try to avoid 253th find() error
 
     if not dev:
-        return None
+        return None, None, None
 
     logger.debug(f'found device {dev!r}')
 
@@ -74,7 +80,8 @@ def usb_conf(idVendor, idProduct):
 
 
 # FIXME: this is going to be the final general purpose cbw-write-to-device
-def cbw_write_(interface, cmd, tag, size, arg0, arg1=0x00, subCmd=0x0, flags=0x00, subCmd2=0x0, cmdLength=0x10):
+def cbw_write_(interface, cmd, tag, size, arg0, arg1=None, subCmd=0x0, flags=0x00, subCmd2=0x0, cmdLength=0x10):
+    arg1 = arg1 if arg1 else size
     tag_hex = struct.pack('I', tag).hex()
     size_hex = struct.pack('I', size).hex()
     flags = struct.pack('B', flags).hex()
@@ -225,15 +232,15 @@ def upload(path, e_read, e_write, address, checkTag=True):
     logger.info('uploading')
     stat = os.stat(path)
     logger.debug(f'size={stat.st_size}')
-    cbw_write(e_write, 0x05, 0x88, 0x10, address, stat.st_size, 0x0000)
+    cbw_write_(e_write, 0x05, 0x88, 0x10, address, stat.st_size, 0x0000)
 
     count = 0
     progress = tqdm(total=stat.st_size)
     with open(path, 'rb') as firmware:
         while count < stat.st_size:
-            content = firmware.read(64)
+            content = firmware.read(USB_wMaxPacketSize)
             e_write.write(content)
-            count += 64
+            count += USB_wMaxPacketSize
             progress.update(count)
 
     progress.close()
@@ -332,11 +339,11 @@ def ADFUadfus(path, r, w):
 
 def flash_dump(r, w):
     logger.info('dump flash')
-    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, 0x6f37)
-    response = r.read(0x200)
+    cbw_write_(w, 0xb0, 0xcafebabe, 0x0200, 0x00, 0x00, subCmd=0x6f36)
+    response = r.read(r.wMaxPacketSize)
 
     logger.debug('\n' + hexdump(response, result='return'))
-    cbw_read_response(r, 0xffffffff)
+    cbw_read_response(r, 0xcafebabe)
 
 
 def mbrc_dump(r, w):
@@ -358,13 +365,21 @@ def mbr_dump(r, w):
     cbw_read_response(r, tag)
 
 
+def upload_adfus(r, w, path_fw):
+    '''This initializes the board and activates the command other than 05 and 10'''
+    path_adec = path_fw / 'ADECadfus'
+    path_adfu = path_fw / 'ADFUadfus'
+    ADECadfus(path_adec, r, w)
+    ADFUadfus(path_adfu, r, w)
+
+
 def disconnect(r, w):
     cbw_write(w, 0xb0, 0x38f688, 0x10, 0x00, 0x00, 0xb586)
     cbw_read_response(r, 0x38f688)
 
 
 def usage(progname):
-    print(f'''usage: {progname} --device=idv:idp''')
+    print(f'''usage: {progname} --device=idv:idp <adfu directory>''')
     sys.exit(1)
 
 
@@ -373,6 +388,8 @@ if __name__ == '__main__':
         opts, args = getopt.getopt(sys.argv[1:], "d:h", [
             'device=',
             'help',
+            'logger-usb=',
+            'logger-app=',
         ])
     except getopt.GetoptError as err:
         print(err)
@@ -386,6 +403,12 @@ if __name__ == '__main__':
             v, p = value.split(':')
             id_vendor = int(v, 16)
             id_product = int(p, 16)
+        elif option in ('--logger-app',):
+            print(f'LOGGING USB set to {value}')
+            logger.setLevel(value)
+        elif option in ('--logger-usb',):
+            print(f'LOGGING USB set to {value}')
+            usb_logger.setLevel(value)
         elif option in ('-h', '--help'):
             usage(sys.argv[0])
             sys.exit(1)
@@ -394,12 +417,23 @@ if __name__ == '__main__':
         print('please indicate the vendor and product id', file=sys.stderr)
         sys.exit(2)
 
-    # configure the endpoint for the bulk transfers
-    endpoint_read, endpoint_write = usb_conf(id_vendor, id_product)
-    # upload and execute the ADECadfus (from the serial we see test ddr stuffs)
+    path_adfus = Path(args[0])  # you must pass a directory containing at least ADECadfu and ADFUadfu
 
-    isActions(endpoint_read, endpoint_write)
+    # configure the endpoint for the bulk transfers
+    dev, endpoint_read, endpoint_write = usb_conf(id_vendor, id_product)
+    if not dev:
+        logger.critical('no device found')
+        sys.exit(2)
+    # upload and execute the ADECadfus (from the serial we see test ddr stuffs)
+    upload_adfus(endpoint_read, endpoint_write, path_adfus)
+
+    hwsc(path_adfus / 'HWSChwsc', endpoint_read, endpoint_write)
+    fwsc(path_adfus / 'F648fwsc', endpoint_read, endpoint_write)
+
+    # isActions(endpoint_read, endpoint_write)
     # isSwitchToAdfu(endpoint_read, endpoint_write)
-    getSysInfo(endpoint_read, endpoint_write)
+    # getSysInfo(endpoint_read, endpoint_write)
+    time.sleep(3)
+    flash_dump(endpoint_read, endpoint_write)
 
     disconnect(endpoint_read, endpoint_write)

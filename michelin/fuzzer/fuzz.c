@@ -19,10 +19,10 @@
 #include <avr/interrupt.h>
 
 #define PIN_LED               PB5
-#define PIN_EXTERNAL_TRIGGER  PD2
+#define PIN_EXTERNAL_TRIGGER  PD2 /* Arduino's digital pin 2 */
 
-#define PIN_RESET             PD3
-#define PIN_FLASH_CE          PD4
+#define PIN_RESET             PD3 /* Arduino's digital pin 3 */
+#define PIN_FLASH_CE          PD4 /* Arduino's digital pin 4 */
 
 #define TIME_MS_LED           1000
 #define TIME_MS_HOLD_CE      2000
