@@ -160,7 +160,7 @@ def cbw_read_response(endpoint, tag=None, size=0x0d):
     if status != 0:
         raise ValueError(f'CSW status={status:x}')
 
-    logger.info(f'data residue={residue:x}')
+    logger.debug(f'data residue={residue:x}')
 
 
 def isSwitchToAdfu(e_read, e_write):
@@ -265,7 +265,7 @@ def hwsc_get_size(r, w):
     cbw_write(w, 0xb0, 0xa79210, 0x10, 0x00, 0x00020000, 0x6aae)
     response = r.read(2)
 
-    logger.debug(f'hwsc_get_size response={response}')
+    logger.info(f'hwsc_get_size response={response}')
 
     size = struct.unpack('H', response)[0]
     cbw_read_response(r, 0xa79210)
@@ -278,8 +278,8 @@ def hwsc_get_info(r, w, size):
     cbw_write(w, 0xb0, 0x77c05c94, 0x10, 0x00, size << 16, 0xc480)
     response = r.read(size)
 
-    logger.debug(f'hwsc_get_info response={response}')
-    logger.debug('\n' + hexdump(response, result='return'))
+    logger.info(f'hwsc_get_info response={response}')
+    logger.info('\n' + hexdump(response, result='return'))
 
     cbw_read_response(r, 0x77c05c94)
 
@@ -342,16 +342,16 @@ def flash_dump(r, w):
     cbw_write_(w, 0xb0, 0xcafebabe, 0x0200, 0x00, 0x00, subCmd=0x6f36)
     response = r.read(r.wMaxPacketSize)
 
-    logger.debug('\n' + hexdump(response, result='return'))
+    logger.info('\n' + hexdump(response, result='return'))
     cbw_read_response(r, 0xcafebabe)
 
 
 def mbrc_dump(r, w):
     logger.info('dumping mbrc')
-    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, 0x6f36)
+    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, subCmd=0x6f36)
     response = r.read(0x200)
 
-    logger.debug('\n' + hexdump(response, result='return'))
+    logger.info('\n' + hexdump(response, result='return'))
     cbw_read_response(r, 0xffffffff)
 
 
@@ -361,7 +361,7 @@ def mbr_dump(r, w):
     cbw_write_(w, 0x08, tag, 0x200, 0x7000, 0x10000, 0x80, 0x8000)
     response = r.read(0x200)
 
-    logger.debug('\n' + hexdump(response, result='return'))
+    logger.info('\n' + hexdump(response, result='return'))
     cbw_read_response(r, tag)
 
 
@@ -404,7 +404,7 @@ if __name__ == '__main__':
             id_vendor = int(v, 16)
             id_product = int(p, 16)
         elif option in ('--logger-app',):
-            print(f'LOGGING USB set to {value}')
+            print(f'LOGGING APP set to {value}')
             logger.setLevel(value)
         elif option in ('--logger-usb',):
             print(f'LOGGING USB set to {value}')
@@ -434,6 +434,6 @@ if __name__ == '__main__':
     # isSwitchToAdfu(endpoint_read, endpoint_write)
     # getSysInfo(endpoint_read, endpoint_write)
     time.sleep(3)
-    flash_dump(endpoint_read, endpoint_write)
+    mbrc_dump(endpoint_read, endpoint_write)
 
     disconnect(endpoint_read, endpoint_write)
