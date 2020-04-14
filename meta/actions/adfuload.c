@@ -259,7 +259,9 @@ static void adfu_execute(libusb_device_handle *hdev, uint32_t address)
 
 static void usage(char *name)
 {
-    printf("usage: (sudo) %s [-u vid:pid] [-e] -s1 stage1.bin -s2 stage2.bin\n", name);
+    printf("usage: (sudo) %s run [-u vid:pid] [-e] -s1 stage1.bin -s2 stage2.bin\n", name);
+    printf("usage: %s encrypt plain.bin\n", name);
+    printf("usage: %s decrypt encrypted.bin\n", name);
     printf("stage1.bin          Binary of the stage1 (ADEC_N63.BIN for example)\n");
     printf("stage2.bin          Binary of the custom user code\n");
     printf("\n");
@@ -269,8 +271,69 @@ static void usage(char *name)
     printf("-e                  Encode stage1 binary as needed by brom adfu mode\n");
 }
 
-int main (int argc, char **argv)
-{
+int do_encrypt(int argc, char* argv[]) {
+    int ret;
+
+    if (argc != 3) {
+        usage(argv[0]);
+        exit(1);
+    }
+
+    char* path_src = argv[2];
+    FILE* fp = fopen(path_src, "rb");
+
+    if (fp == NULL)
+    {
+        fprintf(stderr, "[error]: Could not open file \"%s\"\n", path_src);
+        ret = -10;
+        goto end;
+    }
+
+    fseek(fp, 0, SEEK_END);
+    size_t filesize = (uint32_t)ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+
+    size_t filesize_round = ( (filesize + 511) / 512 ) * 512;
+
+    unsigned char* buf = malloc(filesize_round);
+    fprintf(stderr, "[info]: original size: %lu rounded size: %lu\n", filesize, filesize_round);
+
+    if (buf == NULL)
+    {
+        fprintf(stderr, "[error]: Cannot allocate %lu bytes of memory\n", filesize_round);
+        ret = -11;
+        goto end_fclose;
+    }
+
+    if (fread(buf, 1, filesize, fp) != filesize)
+    {
+        fprintf(stderr, "[error]: can't read file: %s\n", path_src);
+        ret = -12;
+        goto end_free;
+    }
+
+    fprintf(stderr, "[info]: encrypting binary\n");
+    ret = encrypt(buf, filesize_round);
+
+    if (ret)
+    {
+        fprintf(stderr, "[error]: can't encrypt binary\n");
+        ret = -13;
+        goto end_free;
+    }
+
+    fwrite(buf, 1, filesize, stdout);
+    fflush(stdout);
+
+end_free:
+    if (buf) {free(buf);}
+end_fclose:
+    if (fp) {fclose(fp);}
+end:
+    return ret;
+}
+
+int do_run(int argc, char**argv) {
     uint16_t pid = PRODUCTID;
     uint16_t vid = VENDORID;
 
@@ -513,3 +576,25 @@ end:
 
     return ret;
 }
+
+int main (int argc, char **argv)
+{
+    if (argc == 1) {
+        usage(argv[0]);
+        exit(1);
+    }
+
+    char* cmd = argv[1];
+
+    int return_value;
+
+    if (!strcmp(cmd, "run")) {
+        return_value = do_run(argc, argv);
+    } else if (!strcmp(cmd, "encrypt")) {
+        return_value = do_encrypt(argc, argv);
+    } else if (!strcmp(cmd, "decrypt")) {
+    }
+
+    return return_value;
+}
+
