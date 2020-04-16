@@ -271,7 +271,7 @@ static void usage(char *name)
     printf("-e                  Encode stage1 binary as needed by brom adfu mode\n");
 }
 
-int do_encrypt(int argc, char* argv[]) {
+int do_Xcrypt(int argc, char* argv[], int (*crypt_function)(unsigned char*, int)) {
     int ret;
 
     if (argc != 3) {
@@ -313,7 +313,7 @@ int do_encrypt(int argc, char* argv[]) {
     }
 
     fprintf(stderr, "[info]: encrypting binary\n");
-    ret = encrypt(buf, filesize_round);
+    ret = crypt_function(buf, filesize_round);
 
     if (ret)
     {
@@ -577,6 +577,14 @@ end:
     return ret;
 }
 
+int do_encrypt(int argc, char* argv[]) {
+    return do_Xcrypt(argc, argv, encrypt);
+}
+
+int do_decrypt(int argc, char* argv[]) {
+    return do_Xcrypt(argc, argv, decrypt);
+}
+
 int main (int argc, char **argv)
 {
     if (argc == 1) {
@@ -593,6 +601,7 @@ int main (int argc, char **argv)
     } else if (!strcmp(cmd, "encrypt")) {
         return_value = do_encrypt(argc, argv);
     } else if (!strcmp(cmd, "decrypt")) {
+        return_value = do_decrypt(argc, argv);
     }
 
     return return_value;

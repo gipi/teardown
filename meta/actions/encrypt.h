@@ -19,3 +19,4 @@
  ****************************************************************************/
 
 int encrypt(unsigned char *data, int length);
+int decrypt(unsigned char *data, int length);

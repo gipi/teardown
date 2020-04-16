@@ -18,7 +18,25 @@
  *
  ****************************************************************************/
 
-const unsigned char xor_key[512] =
+const unsigned char xor_key[256] = {
+    0, 233, 105, 46, 43, 19, 19, 50, 171, 192, 105, 96, 105, 237, 223, 96, 121,
+    100, 117, 5, 236, 8, 155, 109, 156, 31, 25, 100, 154, 85, 102, 168, 121, 127,
+    154, 41, 71, 147, 80, 116, 237, 154, 125, 7, 253, 96, 231, 219, 208, 212, 97,
+    212, 233, 18, 61, 154, 209, 0, 91, 7, 252, 54, 190, 234, 0, 228, 142, 129, 181,
+    111, 129, 180, 109, 28, 31, 117, 133, 192, 180, 96, 18, 159, 22, 199, 233, 19,
+    58, 12, 97, 48, 31, 64, 163, 147, 61, 105, 28, 176, 74, 138, 252, 50, 90, 71,
+    209, 204, 0, 55, 138, 153, 51, 77, 17, 200, 84, 59, 7, 18, 91, 162, 212, 140,
+    253, 210, 243, 154, 63, 213, 120, 231, 234, 54, 233, 28, 212, 131, 24, 140,
+    128, 12, 237, 51, 154, 25, 4, 223, 55, 90, 105, 79, 213, 28, 160, 41, 199, 188,
+    180, 31, 71, 223, 242, 117, 250, 183, 212, 99, 184, 63, 48, 24, 7, 114, 109,
+    255, 193, 75, 200, 253, 24, 91, 91, 128, 7, 222, 129, 44, 212, 87, 97, 57, 120,
+    51, 72, 93, 133, 173, 4, 92, 51, 31, 127, 56, 116, 250, 96, 223, 19, 180, 163,
+    210, 121, 110, 159, 206, 219, 96, 121, 102, 221, 195, 24, 154, 114, 85, 184,
+    121, 221, 121, 55, 58, 57, 129, 24, 168, 105, 76, 28, 18, 31, 240, 109, 231,
+    221, 19, 24, 250, 50, 56, 97, 138, 58, 149, 196, 18, 104, 195
+};
+
+const unsigned char xor_keyA[256] =
 {
     0x9b, 0x94, 0xf6, 0x9e, 0x2f, 0x0a, 0x40, 0xfd, 0x9a, 0x78, 0x2c, 0xdd, 0x4f, 0x96, 0x5e, 0xdd,
     0xc9, 0x01, 0xd3, 0x9d, 0x71, 0x8f, 0xda, 0xbb, 0xc1, 0xdf, 0x5f, 0x01, 0xaa, 0x35, 0x6f, 0xdc,
@@ -36,6 +54,10 @@ const unsigned char xor_key[512] =
     0xee, 0x63, 0x33, 0xe7, 0x52, 0xae, 0x34, 0x88, 0xc9, 0x7b, 0x74, 0x0f, 0x9f, 0xf9, 0x3b, 0x35,
     0xf8, 0xc9, 0x74, 0xc9, 0xb7, 0x56, 0xb2, 0xa6, 0x9f, 0x65, 0x72, 0xe3, 0xb8, 0xed, 0xa0, 0x49,
     0xf5, 0x28, 0x5c, 0x0a, 0x13, 0xea, 0xfd, 0xaf, 0xc4, 0x32, 0x56, 0x53, 0x0d, 0xfe, 0x39, 0x0f,
+};
+
+const unsigned char xor_keyB[256] =
+{
     0xed, 0x64, 0x3a, 0xb5, 0x3f, 0xdf, 0xb5, 0xc1, 0xe1, 0xe7, 0x13, 0x8c, 0x16, 0xc4, 0x48, 0xc3,
     0x29, 0xa3, 0xa0, 0x18, 0x54, 0xea, 0xbc, 0x37, 0xdf, 0xc9, 0xd7, 0xfc, 0x8c, 0x11, 0x4f, 0xe3,
     0x33, 0x4a, 0x60, 0xc0, 0xaa, 0x00, 0x32, 0xb0, 0xe7, 0x5d, 0x16, 0x4f, 0x69, 0xfd, 0x0c, 0x2b,
@@ -73,12 +95,40 @@ static void perm_it(unsigned char *data, int length)
     }
 }
 
+static void inverse_perm_it(unsigned char* data, int length)
+{
+    int i, j;
+    for(i = 0; (i + 12) < length; i += 12)
+    {
+        unsigned char perm[8];
+        perm[0] = data[i + 4];
+        perm[1] = data[i + 0];
+        perm[2] = data[i + 2];
+        perm[3] = data[i + 6];
+        perm[4] = data[i + 3];
+        perm[5] = data[i + 7];
+        perm[6] = data[i + 5];
+        perm[7] = data[i + 1];
+        for(j = 0; j < 8; j++)
+            data[i + j] = perm[j];
+    }
+}
+
 static void xor_it(unsigned char *data, int length)
 {
     int i, j;
     for(i = 0; i < length; i += 4)
     {
-        unsigned char Ekey = xor_key[xor_key[data[i]] + 256];
+#if 0
+        unsigned char Ekey = xor_keyB[xor_keyA[data[i]]];
+#else
+        unsigned char Ekey = xor_key[data[i]];
+#endif
+        for(j = 1; j < 4; j++)
+            data[i + j] ^= Ekey;
+    }
+}
+
         for(j = 1; j < 4; j++)
             data[i + j] ^= Ekey;
     }
@@ -91,6 +141,17 @@ int encrypt(unsigned char *data, int length)
 
      xor_it(data, length);
      perm_it(data, length);
+
+     return 0;
+}
+
+int decrypt(unsigned char* data, int length)
+{
+     if (length % 512)
+         return -1;
+
+     inverse_perm_it(data, length);
+     xor_it(data, length);
 
      return 0;
 }
