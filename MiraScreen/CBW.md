@@ -337,6 +337,8 @@ the response has in its first two bytes the length of the info response.
        00 00 80 00 1c
        6a 00 01 00 00 00
 ```
+
+```
 0000   52 45 43 4f 56 45 52 20 42 49 4e 00 00 00 00 00   RECOVER BIN.....
 0010   10 00 00 00 00 76 00 00 10 75 00 00 ab ad eb cd   .....v...u..«.ëÍ
 0020   46 4d 43 4f 56 45 52 20 42 49 4e 00 00 00 00 00   FMCOVER BIN.....
