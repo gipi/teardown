@@ -416,11 +416,32 @@ see from this snippet:
 000002c0: 4d46 5020 2020 2020 4b4f 2000 0032 0000 d802 0000 0022 0000 6020 0000 97d4 e393  MFP     KO ..2......."..` ......
 ```
 
-It's possible to extract the elements in this partition using [this script](extract_decrypted_partitions.py).
+It's possible to extract the elements in this partition using [this script](extract_decrypted_partitions.py)
+after decrypted it
+
+```
+$ ./decrypt spiflash.img > decrypted.bin
+$ ./extract_decrypted_partitions.py decrypted.bin
+FWINFO  BIN: 0x2000-0x2200
+OEMO    BIN: 0x2200-0x2600
+OEM     KO : 0x2600-0x4600
+OEM     SO : 0x4600-0x6200
+SYSCFG  SYS: 0x6200-0x4f000
+FS      KO : 0x4f000-0x5b000
+MFP     KO : 0x5b000-0x5d200
+ ...
+GPIO_CFGBIN: 0xb4da00-0xb4dc00
+MIN_GPIOBIN: 0xb4dc00-0xb4de00
+CONFIG  BIN: 0xb4de00-0xb56c00
+OEM     BIN: 0xb56c00-0xb57400
+```
+
+use the ``--outdir`` option to dump them.
 
 Some interesting files here are 
 
  - ``SYSCFG.BIN``: it's the kernel, probably ``u-cos II``
+ - ``BOOT_PIC.BIN`` is a (800x480) ``RGB565`` little endian image with a 32bytes header
 
 There are a couple of ``ELF`` files with compressed segments that the
 ``brecf03.bin`` calls ``ZLF``.
