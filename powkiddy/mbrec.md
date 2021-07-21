@@ -10,9 +10,12 @@ since it's in the ``SPI`` flash and the actual user data is in
 the SD card it's assumed that the former remains untouched
 and varies only in a new revision.
 
+**Note:** after working for a while on this dump it seems that the datasheet
+with the most useful information is the ``ATJ2227x`` one.
+
 ## booting process
 
-the boot process: loading the first 512 bytes
+the boot process: looking at the first 512 bytes of the dump
 
 ```
 00000000: 0900 0010 0000 0000 1000 0000 0100 0000  ................
@@ -314,6 +317,13 @@ The most important is the ``brec`` one, it sets a jump table at address
 ``0xc3080e00`` that is called from the other binaries to perform common service;
 take note that the tenth entry is the ``log`` function!
 
+It configures the serial port with the values stored at offset (from the start
+of the flash) ``0x1e60`` (baudrate) and ``0x1e64`` (which ``UART`` to use).
+
+**Note:** the function configuring the baudarate via the ``CMU_UART1CLK`` seems
+to not enable the ``UART``'s clock itself (i.e. it doesn't set the ``U1EN``
+bit).
+
 ## ``storage.bin``
 
 It's loaded by ``brec`` and from the code contained into it is possible to
@@ -391,5 +401,27 @@ Use [decrypt.c](decrypt.c) to extract such part of the file from the flash dump.
 It looks for ``/mnt/udisk/us227a.upg``, probably the code indicates the specific
 version of ``SDK`` used to build the system.
 
- - https://github.com/Pachouli/2819p
- - 
+## Second stage partition
+
+The "second stage" partition is different from the one above, as it's easy to
+see from this snippet:
+
+```
+00000200: 4657 494e 464f 2020 4249 4e00 0000 0000 1000 0000 0002 0000 0002 0000 448d 47c3  FWINFO  BIN.................D.G.
+00000220: 4f45 4d4f 2020 2020 4249 4e00 0000 0000 1100 0000 0004 0000 0004 0000 4595 e110  OEMO    BIN.................E...
+00000240: 4f45 4d20 2020 2020 4b4f 2000 0000 0000 1300 0000 0020 0000 241f 0000 aa94 429d  OEM     KO .......... ..$.....B.
+00000260: 4f45 4d20 2020 2020 534f 2000 0000 0000 2300 0000 001c 0000 781a 0000 86de cd8e  OEM     SO .....#.......x.......
+00000280: 5359 5343 4647 2020 5359 5300 0000 0000 3100 0000 008e 0400 c08c 0400 7948 3ab3  SYSCFG  SYS.....1...........yH:.
+000002a0: 4653 2020 2020 2020 4b4f 2000 0032 0100 7802 0000 00c0 0000 84bf 0000 67df 350e  FS      KO ..2..x...........g.5.
+000002c0: 4d46 5020 2020 2020 4b4f 2000 0032 0000 d802 0000 0022 0000 6020 0000 97d4 e393  MFP     KO ..2......."..` ......
+```
+
+It's possible to extract the elements in this partition using [this script](extract_decrypted_partitions.py).
+
+Some interesting files here are 
+
+ - ``SYSCFG.BIN``: it's the kernel, probably ``u-cos II``
+
+There are a couple of ``ELF`` files with compressed segments that the
+``brecf03.bin`` calls ``ZLF``.
+

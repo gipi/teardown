@@ -46,3 +46,33 @@ If instead you keep pressed the volume up button on startup you obtain
 ```
 
 that seems to be the ADFU mode.
+
+## Q700
+
+It exists another device very similar that is the ``Powkiddy x16``, named also
+``Q700`` that has an upgrade firmware and it seems to use the ``ATJ2279B``.
+
+It's possible to transform the ``Q700.fw`` into ``Q700.afi`` using the
+``atjboottool`` from the Rockbox project.
+
+What is obtained is an ``sqlite3`` database containing files(?)
+
+```
+sqlite> select Filename, printf('%08x', NumberB), printf('%08x', NumberC) from ADFUS;
+ADFUS.BIN|ffffffffc0000000|00000000
+adec09_1.bin|ffffffffb4060000|00000000
+```
+
+You can dump the file in the following way
+
+```
+$ sqlite3 Q700.afi 'select quote(File) from FileTable WHERE FileName LIKE "adec09_1.bin"' | xxd -r -p > Q700/adec09_1.bin
+```
+
+and also decrypt it
+
+```
+$ ../meta/actions/adfuload decrypt Q700/adec09_1.bin > Q700/adec09_1.bin_decrypted
+```
+
+Analyzing this module is possible to dump the internal memory using [this script](Q700/q700.py).
