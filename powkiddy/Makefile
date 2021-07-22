@@ -23,4 +23,4 @@ startup.o: startup.S
 
 
 clean:
-	rm uart.bin.encrypted uart.bin startup.o
+	rm -f uart.bin.encrypted uart.bin startup.o

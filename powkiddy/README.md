@@ -17,6 +17,57 @@
 As usual not a lot is known about the internal of this SOC, some
 progress about [reversing its boot process](mbrec.md) are in the way.
 
+## Serial
+
+The ``UART1_TX`` signal is at pin 128, this pin is not connected to anything so
+soldering skills are needed to connect a wire (or you can use a micro probe);
+it's possible to see a message when enters ``ADFU`` mode (baudrate 115200)
+
+```
+[BOOT] Jun  8 2012 14:58:27 brec_entry.c module_entry 283
+[BOOT] brec_entry.c module_entry
+[Storage] (SNOR) Drv entry
+[BOOT] boot_size = 1024
+SPINOR ID ----------------: 0xef.40.18
+[BOOT] nand inithw ok
+[BOOT] nand boot's page size 0x1 in sectors
+SPINOR ID ----------------: 0xef.40.18
+[BOOT]
+```
+
+[This code](uart.c) outputs the ``ASCII`` charset from the serial (the ``adfu``
+python module is in the [``meta/actions/``](../meta/actions/) subdirectory of this repo):
+
+```
+$ make uart.bin.encrypted
+mips-linux-gnu-gcc -march=4kec -EL -Wall -fno-plt -fno-pic -c uart.c
+mips-linux-gnu-ld -EL -Tadfu.ld startup.o uart.o -o uart.elf
+mips-linux-gnu-objcopy -O binary uart.elf uart.bin
+../meta/actions/adfuload encrypt uart.bin > uart.bin.encrypted
+[info]: original size: 1072 rounded size: 1536
+[info]: encrypting binary
+rm uart.bin
+$ python3 -m adfu.exe --device 10d6:10d6  --binary uart.bin.encrypted
+ERROR - usb.libloader:libloader.py:127 - Libusb 1 (/usr/lib/libusb-1.0.so) could not be loaded
+Traceback (most recent call last):
+  File ".local/lib/python3.9/site-packages/usb/libloader.py", line 116, in load_library
+    return ctypes.CDLL(lib)
+  File "/usr/lib/python3.9/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /usr/lib/libusb-1.0.so: cannot open shared object file: No such file or directory
+ERROR - usb.backend.libusb1:libusb1.py:948 - Error loading libusb 1.0 backend
+INFO - usb.core:core.py:1260 - find(): using backend "usb.backend.libusb1"
+INFO:usb.core:find(): using backend "usb.backend.libusb1"
+INFO:__main__:uploading binary 'uart.bin.encrypted' and executing it
+ [+] ADECadfus
+INFO:adfu.cbw.app:ADECadfus
+ [+] uploading
+INFO:adfu.cbw.app:uploading
+3072it [00:00, 785185.98it/s]
+ [+] executing at b4060000
+INFO:adfu.cbw.app:executing at b4060000
+```
+
 ## USB
 
 If you connect the device powered on via the mini USB port you obtain the
