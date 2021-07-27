@@ -322,7 +322,7 @@ of the flash) ``0x1e60`` (baudrate) and ``0x1e64`` (which ``UART`` to use).
 
 **Note:** the function configuring the baudarate via the ``CMU_UART1CLK`` seems
 to not enable the ``UART``'s clock itself (i.e. it doesn't set the ``U1EN``
-bit).
+bit). However in practice this doesn't seem necessary.
 
 ## ``storage.bin``
 
