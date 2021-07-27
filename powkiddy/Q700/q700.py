@@ -43,18 +43,22 @@ def q700_read(ep_r, ep_w, address, size):
     return response
 
 
+def argparse_auto_int(value):
+    return int(value, 0)
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description='interact with the ADFU mode of the Q700')
     parser.add_argument('--adec', help='adec09_1.bin file', required=True)
 
-    subparsers = parser.add_subparsers(dest='cmd', help='commands help')
+    subparsers = parser.add_subparsers(dest='cmd', help='raw or hex dump')
     subparsers.required = True
 
     parser_dump = subparsers.add_parser('dump')
     parser_hexdump = subparsers.add_parser('hexdump')
 
-    parser.add_argument('address', help='starting address')
-    parser.add_argument('size')
+    parser.add_argument('address', type=argparse_auto_int, help='starting address')
+    parser.add_argument('size', type=argparse_auto_int, help='number of bytes to dump')
 
     return parser.parse_args()
 
@@ -69,5 +73,11 @@ if __name__ == '__main__':
 
     adfu.cbw.ADECadfus(args.adec, endpoint_read, endpoint_write, address=0xb4060000)
 
-    q700_read(endpoint_read, endpoint_write, args.address, args.size)
+    logger.info(f"dumping from {args.address:x} for {args.size} bytes, interval {args.address:x}-{args.address + args.size:x}")
+    response = q700_read(endpoint_read, endpoint_write, args.address, args.size)
 
+    if args.cmd == "hexdump":
+        response = hexdump(response, result='return')
+        print(response)
+    else:
+        sys.stdout.buffer.write(response)
