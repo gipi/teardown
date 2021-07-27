@@ -14,8 +14,13 @@
 | OS | Free Open Source microC / OS (as the Powkiddy X16 / X19 consoles) |
 | Emulators | CPS1, CPS2, MVS, MD (without SVP support), SNES (without special chips), NES, GB / GBC and GBA. Master System, Game Gear and PC Engine a through the GBA scene |
 
-As usual not a lot is known about the internal of this SOC, some
-progress about [reversing its boot process](mbrec.md) are in the way.
+## Reversing
+
+The SoC used for this device has not publicly available information, so
+reverse engineering is the only way to know about its internal design.
+
+ - [BROM](BROM.md)
+ - [booting process](mbrec.md)
 
 ## Serial
 
