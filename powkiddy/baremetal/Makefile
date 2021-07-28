@@ -1,4 +1,5 @@
-
+# COMPILE BARE METAL BINARIES#
+#
 # NOTE: use -fno-plt -fno-pic bc otherwise at linking time it tries to put
 #       somewhere the relocations as globals.
 #
@@ -20,6 +21,9 @@ startup.o: startup.S
 
 %.encrypted: %
 	../../meta/actions/adfuload encrypt $< > $@
+
+upload_%: %.bin.encrypted
+	PYTHONPATH=../../meta/actions/ python3 -m adfu.exe --device 10d6:10d6  --binary $<
 
 
 clean:
