@@ -7,6 +7,7 @@ import sys
 import argparse
 import logging
 from hexdump import hexdump
+from functools import partial
 
 
 logging.basicConfig()
@@ -50,6 +51,7 @@ def argparse_auto_int(value):
 def parse_args():
     parser = argparse.ArgumentParser(description='interact with the ADFU mode of the Q700')
     parser.add_argument('--adec', help='adec09_1.bin file', required=True)
+    parser.add_argument('--adec-address', help='adec loading address', type=argparse_auto_int, default=0xb4060000)
 
     subparsers = parser.add_subparsers(dest='cmd', help='raw or hex dump')
     subparsers.required = True
@@ -71,7 +73,7 @@ if __name__ == '__main__':
     if not dev:
         raise Exception("device not found")
 
-    adfu.cbw.ADECadfus(args.adec, endpoint_read, endpoint_write, address=0xb4060000)
+    adfu.cbw.ADECadfus(args.adec, endpoint_read, endpoint_write, address=args.adec_address)
 
     logger.info(f"dumping from {args.address:x} for {args.size} bytes, interval {args.address:x}-{args.address + args.size:x}")
     response = q700_read(endpoint_read, endpoint_write, args.address, args.size)
