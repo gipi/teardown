@@ -19,7 +19,7 @@ startup.o: startup.S
 	$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -fno-plt -fno-pic -c $<
 
 %.encrypted: %
-	../meta/actions/adfuload encrypt $< > $@
+	../../meta/actions/adfuload encrypt $< > $@
 
 
 clean:
