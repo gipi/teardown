@@ -1,0 +1,36 @@
+#define IRAM_START 0xb4060000
+#define STACK_SIZE 0x400
+
+#define CODE_START (IRAM_START + STACK_SIZE)
+#define CODE_SIZE 0x1000
+
+#define EIQR_START CODE_START + CODE_SIZE
+#define EIRQ_SIZE 0x800
+
+MEMORY {
+    stack (RW) : ORIGIN = IRAM_START, LENGTH = STACK_SIZE
+    code  (RX) : ORIGIN = CODE_START, LENGTH = CODE_SIZE
+    exception_irq (RX) : ORIGIN = EIQR_START, LENGTH = EIQR_START + EIRQ_SIZE
+}
+
+SECTIONS
+{
+    .init :
+    {
+        *(.startup.text)
+    } > stack
+    .stack :
+    {
+        FILL(0xDEADBEEF);
+    } > stack
+    .text :
+    {
+        _stack_start = .;
+        *(.text*)
+    } > code
+    .exceptions_and_irqs :
+    {
+        _ebase = .;
+        *(.eirq.text)
+    } > exception_irq
+}
