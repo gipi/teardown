@@ -44,5 +44,9 @@ int main() {
 
     log(BANNER);
 
+    flash_read(0, 0x200, tmp);
+
+    hexdump(tmp, 0x200);
+
     while (1);
 }
