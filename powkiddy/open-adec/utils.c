@@ -52,15 +52,12 @@ u16 hex(u8 c) {
 }
 
 /*
- * Simple function to hexdump stuff. Since stack space
- * is a luxury a fixed space of 32 bytes is used and dumped
- * each time
+ * Simple function to hexdump stuff.
  */
 #define CHUNK_SIZE 16
-#define TMP_SIZE   ((CHUNK_SIZE * 2) + 1)
 
 void hexdump(void* buffer, size_t size) {
-    char tmp[TMP_SIZE]; /* 32 + NULL byte */
+    static char tmp[3]; /* 2 hex digit plus the terminating null byte*/
 
     u8* _buffer = (u8*)buffer;
     /* 
@@ -72,26 +69,31 @@ void hexdump(void* buffer, size_t size) {
 
     while (count--) {
         unsigned int n = 0;
-        char* ref = tmp;
         for (n = 0 ; n < CHUNK_SIZE; n++) {
+            char* ref = tmp;
+
             *(u16*)ref = hex(*_buffer++);
             ref += 2;
-        }
-        *ref = '\0'; /* terminate the temporary buffer */
+            *ref = '\0';
 
-        serial_puts(tmp); /* dump the string so we can empty it afterwards */
+            serial_puts(tmp);
+            serial_putc(' ');
+        }
+
         serial_putc('\n');
     }
 
-    char* ref = tmp;
     while (remain--) {
+        char* ref = tmp;
         *(u16*)ref = hex(*_buffer++);
+
         ref += 2;
+        *ref = '\0';
+
+        serial_puts(tmp);
+        serial_putc(' ');
     }
 
-    *ref = '\0';
-
-    serial_puts(tmp);
     serial_putc('\n');
 }
 
