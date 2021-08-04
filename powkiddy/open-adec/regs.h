@@ -176,12 +176,21 @@
 #	define	EP1_OUT_IRQ	(1<<1)
 #	define	EP0_OUT_IRQ	(1<<0)
 
-/*mask for USBIRQ*/
-#	define	USBIRQ_HS	        	(1<<5)
-#	define	USBIRQ_URES			(1<<4)
-#	define	USBIRQ_SUSP			(1<<3)
-#	define	USBIRQ_SUTOK		(1<<2)
-#	define	USBIRQ_SOF			(1<<1)
-#	define	USBIRQ_SUDAV		(1<<0)
+/*mask for USBEIRQ*/
+#	define	USBEIRQ_WUIRQEN	       		(1<<7)
+#	define	USBEIRQ_USBIRQEN			(1<<6)
+#	define	USBEIRQ_WUIRQ				(1<<5)
+#	define	USBEIRQ_USBIRQ				(1<<4)
+#	define	USBEIRQ_WUDPEN			(1<<2)
+#	define	USBEIRQ_WUIDEN				(1<<1)
+#	define	USBEIRQ_WUVBUSEN			(1<<0)
+
+/*mask for USBIEN*/
+#	define	USBIEN_HS	        (1<<5)
+#	define	USBIEN_URES	(1<<4)
+#	define	USBIEN_SUSP	(1<<3)
+#	define	USBIEN_SUTOK	(1<<2)
+#	define	USBIEN_SOF	(1<<1)
+#	define	USBIEN_SUDAV	(1<<0)
 
 #endif
