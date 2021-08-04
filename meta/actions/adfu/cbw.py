@@ -113,6 +113,38 @@ def cbw_write_(interface, cmd, tag, size, arg0, arg1=None, subCmd=0x0, flags=0x0
     return cbw
 
 
+# USE THIS!!!
+def _cbw_write(interface, cmd, size, arg0, arg1, arg2, tag=0x0, flags=0x0, cmdLength=0x10):
+    tag_hex = struct.pack('I', tag).hex()
+    size_hex = struct.pack('I', size).hex()
+    flags = struct.pack('B', flags).hex()
+    cmdLength_hex = struct.pack('B', cmdLength).hex()
+
+    cmd_hex = struct.pack('B', cmd).hex()
+    arg0_hex = struct.pack('I', arg0).hex()
+    arg1_hex = struct.pack('I', arg1).hex()
+    arg2_hex = struct.pack('I', arg2).hex()
+
+    cbw_fmt = f'''55 53 42 43
+    {tag_hex}
+    {size_hex}
+    {flags}
+    00
+    {cmdLength_hex}
+    {cmd_hex} {arg0_hex}
+    {arg1_hex}
+    {arg2_hex} 00 00 00'''
+    logger.debug(cbw_fmt)
+
+    cbw = bytes.fromhex(cbw_fmt.replace('\n', ' '))
+
+    logger.debug(cbw)
+
+    interface.write(cbw)
+
+    return cbw
+
+
 def cbw_write(interface, cmd, tag, cmdLength, dstAddr, size, subCmd):
     cmd_hex = struct.pack('B', cmd).hex()
     tag_hex = struct.pack('I', tag).hex()
@@ -314,13 +346,12 @@ def fwsc(path, r, w):
     hwsc_get_info(r, w, size)
 
 
-def ADECadfus(path, r, w):
+def ADECadfus(path, r, w, address=0xb4040000):
     '''
     cmd 05 tag 88 address b4040000 subCmd 00 -> upload
     cmd 10 tag 00 address b4040000 subCmd 00 -> execute
     '''
     logger.info('ADECadfus')
-    address = 0xb4040000
     # from the USB dump seems that the tag is not correctly returned in this case
     upload(path, r, w, address, checkTag=False)
     execute_adfus(r, w, address, 0x00)
@@ -383,7 +414,7 @@ def usage(progname):
     sys.exit(1)
 
 
-if __name__ == '__main__':
+def old_main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "d:h", [
             'device=',
@@ -437,3 +468,65 @@ if __name__ == '__main__':
     mbrc_dump(endpoint_read, endpoint_write)
 
     disconnect(endpoint_read, endpoint_write)
+
+
+def argparse_vendor_product(value):
+    vendor, product = tuple(value.split(":"))
+
+    return int(vendor, 16), int(product, 16)
+
+
+def args_parse():
+    import argparse
+    import functools
+
+    parser = argparse.ArgumentParser(
+        description='''swiss knife tool to create CBW packet on the fly
+
+    55 53 42 43 signature
+    xx xx xx xx tag
+    yy yy yy yy transferLength
+    ww          flags
+    zz          LUN
+    1f          cmdLength
+    <cmd>       cmd
+    AA AA AA AA arg0
+    BB BB BB BB arg1
+    CC CC CC CC arg2
+    kk kk       padding
+        ''',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        '--device',
+        type=argparse_vendor_product,
+        required=True,
+        help="vendor:product of the device you want to interact with")
+    parser.add_argument('--cmd', type=functools.partial(int, base=0), required=True)
+    parser.add_argument('--size', type=functools.partial(int, base=0), required=True)
+    parser.add_argument('--arg0', type=functools.partial(int, base=0), required=True)
+    parser.add_argument('--arg1', type=functools.partial(int, base=0), required=True)
+    parser.add_argument('--arg2', type=functools.partial(int, base=0), required=True)
+    parser.add_argument('--expected-response',
+        type=functools.partial(int, base=0),
+        help='is expected to have a response of X bytes',
+    )
+
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = args_parse()
+
+    # configure the endpoint for the bulk transfers
+    dev, endpoint_read, endpoint_write = usb_conf(*args.device)
+    if not dev:
+        logger.critical('no device found')
+        sys.exit(2)
+
+    _cbw_write(endpoint_write, args.cmd, args.size, args.arg0, args.arg1, args.arg2)
+
+    if (args.expected_response):
+        endpoint_read.read(args.expected_response)
+
+    cbw_read_response(endpoint_read)
