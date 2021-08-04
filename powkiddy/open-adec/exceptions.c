@@ -21,6 +21,12 @@
 #include "log.h"
 
 void _handle_exception(struct eframe* ef) {
+    u8 cause = (ef-> cause >> 2) & 0x1f;
+    log("EXCEPTION\n");
+    log(" cause: ");
+    log(exc_code_description[cause]);
+    log("\n");
+
     dump_exception_frame(ef);
     log("PANICKING!!!");
 
