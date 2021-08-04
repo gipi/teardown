@@ -68,6 +68,8 @@ __general_eirq:
     nop
     ex_exit
 
+/* remove this entry since the previous is overlapping this entry */
+#if 0
 .align 9 /* there is a 0x200 offset */
 .global __eirq0
 __eirq0:
@@ -77,7 +79,7 @@ __eirq0:
     jr $t0
     eret
     .byte 0xaa
-
+#endif
 .align 8 /* 0x300 */
 .global __eirq1
 __eirq1:
