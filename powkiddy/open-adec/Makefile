@@ -34,7 +34,7 @@ ENTRY_ADDRESS = 0xb4060000
 
 # GENERAL COMPILER OPTIONS
 MIPSEL_PREFIX = mips-linux-gnu-
-MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls 
+MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g
 MIPSEL_LD_OPTIONS = -EL
 
 # Avoid to:
