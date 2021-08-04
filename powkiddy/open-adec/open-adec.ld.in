@@ -1,0 +1,74 @@
+/*
+ * Copyright 2021 Gianluca Pacchiella <gp@ktln2.org>
+ *
+ * This file is part of open-adec.
+ *
+ * open-adec is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * open-adec is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * The firmware is mapped above 0xb4060c00 to leave enough space to map the
+ * routines from the BROM.
+ */
+#define IRAM_START 0xb4060000
+#define STACK_SIZE 0x400
+
+#define SETUP_START 0xb4060400
+#define SETUP_SIZE  0x800
+
+#define CODE_START 0xb4061000
+#define CODE_SIZE 0x2000
+
+#define EIRQ_START CODE_START + CODE_SIZE
+#define EIRQ_SIZE 0x1800
+
+#define BSS_START EIRQ_START + EIRQ_SIZE
+#define BSS_SIZE  0xa00
+
+MEMORY {
+    stack (RW)         : ORIGIN = IRAM_START, LENGTH = STACK_SIZE
+    setup (RW)        : ORIGIN = SETUP_START, LENGTH = SETUP_SIZE
+    code  (RX)         : ORIGIN = CODE_START, LENGTH = CODE_SIZE
+    exception_irq (RX) : ORIGIN = EIRQ_START, LENGTH = EIRQ_SIZE
+    bss   (RW)         : ORIGIN = BSS_START,  LENGTH = BSS_SIZE
+}
+
+SECTIONS
+{
+    .init :
+    {
+        *(.startup.text)
+    } > stack
+    .stack :
+    {
+        FILL(0xDEADBEEF);
+    } > stack
+    .setup :
+    {
+        FILL(0xcafebabe);
+    } > setup
+    .text :
+    {
+        _stack_start = .;
+        *(.text)
+    } > code
+    .exceptions_and_irqs :
+    {
+        _ebase = .;
+        *(.eirq.text)
+    } > exception_irq
+    .bss :
+    {
+        *(.data)
+    } > bss
+}
