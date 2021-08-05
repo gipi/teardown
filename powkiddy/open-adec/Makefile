@@ -29,6 +29,7 @@ DEPS := $(OBJS_FROM_C:.o=.d)
 
 
 LD_SCRIPT = $(BUILD_DIR)/open-adec.ld
+ADFULOAD  = ../../meta/actions/adfuload
 
 ENTRY_ADDRESS = 0xb4060000
 
@@ -50,15 +51,19 @@ Q = @
 all: $(BUILD_DIR) $(BUILD_DIR)/open-adec.bin.encrypted check-build
 
 # FIXME: sometimes the encryption fails for the last dword :P
-check-build: $(BUILD_DIR)/open-adec.bin.encrypted
+check-build: $(BUILD_DIR)/open-adec.bin.encrypted $(ADFULOAD)
 	@echo "CHECK	$@"
-	$(Q)diff -Nur <(../../meta/actions/adfuload decrypt $^ | xxd) <(xxd $(^:.encrypted=))
+	$(Q)diff -Nur <($(ADFULOAD) decrypt $< | xxd) <(xxd $(<:.encrypted=))
 
 -include $(DEPS)
 
 # TARGETS ###########################
 $(BUILD_DIR):
 	mkdir $@
+
+$(ADFULOAD):
+	@echo "ADFULOAD"
+	$(Q)make -C $(dir $@)
 
 $(BUILD_DIR)/open-adec.elf: $(OBJS_FROM_C) $(OBJS_FROM_S)
 	@echo "ELF	$@"
@@ -83,9 +88,9 @@ $(BUILD_DIR)/%.o: %.c
 	@echo "c -> o: $@"
 	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -MMD -c $< -o $@
 
-$(BUILD_DIR)/%.encrypted: $(BUILD_DIR)/%
+$(BUILD_DIR)/%.encrypted: $(BUILD_DIR)/% $(ADFULOAD)
 	@echo "ENCRYPTION	$@"
-	$(Q)../../meta/actions/adfuload encrypt $< > $@
+	$(Q)$(ADFULOAD) encrypt $< > $@
 
 upload: $(BUILD_DIR)/open-adec.bin.encrypted
 	@echo "UPLOAD	$^"
