@@ -135,9 +135,10 @@ __eirq5:
 .align 8 /* 0x800 */
 .global __eirq6
 __eirq6:
+    ex_entry
     lui $t0, %hi(usb_handle_irq)
     ori $t0, $t0, %lo(usb_handle_irq)
     jalr $t0
     nop
     nop
-    eret /* eret must be far away from delay slot! */
+    ex_exit
