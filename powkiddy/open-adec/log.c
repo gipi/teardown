@@ -17,8 +17,4 @@
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "log.h"
-#include "uart.h"
 
-void log(const char* msg, ...) {
-    serial_puts(msg);
-}

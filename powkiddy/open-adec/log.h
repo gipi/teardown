@@ -18,7 +18,8 @@
  */
 #ifndef __LOG_H__
 #define __LOG_H__
+#include "string.h"
 
-void log(const char*, ...);
+#define log(...) printf(__VA_ARGS__)
 
 #endif

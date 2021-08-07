@@ -19,6 +19,7 @@ SOURCES_C += exceptions.c
 SOURCES_C += log.c
 SOURCES_C += brom.c
 SOURCES_C += assert.c
+SOURCES_C += string.c
 
 SOURCES_S  = crt0.S
 SOURCES_S += eirq.S

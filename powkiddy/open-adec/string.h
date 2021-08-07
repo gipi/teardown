@@ -16,24 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef __UTILS_H__
-#define __UTILS_H__
-#include "regs_io.h"
-#include "ex_frame.h"
-#include <stddef.h>
+#ifndef __STRING_H__
+#define __STRING_H__
+#include "string.h"
+#include <unistd.h>
 
-enum hd_mode {
-    HD_MODE_8 = 0,
-    HD_MODE_16 = 1,
-    HD_MODE_32 = 3
-};
-
-char* int2hex(u32 value, enum hd_mode mode);
-size_t strlen(const char* str);
-void _delay(unsigned int delay);
-void hexdump(void* buffer, size_t size);
-void dump_exception_frame(struct eframe* ef);
-void hd32le(u32 value, void* out);
-void* memcpy(void* dest, void* src, size_t size);
+int vsnprintf(char* str, size_t size, const char* format, ...);
+int printf(const char* format, ...);
 
 #endif

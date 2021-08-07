@@ -20,6 +20,7 @@
 #include "uart.h"
 #include "ex_frame.h"
 #include "log.h"
+#include "assert.h"
 
 void _delay(unsigned int count) {
     while(count-- > 0);
@@ -108,6 +109,23 @@ void hd32le(u32 value, void* out) {
     }
 }
 
+char* int2hex(u32 value, enum hd_mode mode) {
+    ASSERT(mode <= 3);
+
+    static char out[9]; /* 2*4 + 1 */
+
+    u8* p_value = (u8*)&value;
+    u16* p_out  = (u16*)out;
+
+    int index;
+    for (index = mode ; index >= 0 ; index--) {
+        *(p_out+index) = hex(*p_value++);
+    }
+
+    out[(mode + 1) * 2] = '\0';
+
+    return out;
+}
 char* registers_names[32] = {
     "a0", "a1", "a2", "a3",
     "t0", "t1", "t2", "t3",
