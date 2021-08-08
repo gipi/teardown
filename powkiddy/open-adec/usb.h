@@ -24,6 +24,8 @@
 #define setup_get_type(x)      (((x.bmRequestType) >> 5) & 0x3)
 #define setup_get_recipient(x) ((x.bmRequestType) & 0xf)
 
+void usb_setup();
+void usb_handle_ep1out();
 
 enum bRequest_enum {
     GET_STATUS = 0x00,
@@ -41,4 +43,24 @@ struct usb_setup_packet {
     u16 wLength;
 };
 
+struct usb_cbw_packet {
+    u32 signature;
+    u32 tag;
+    u32 transferLength;
+    u8  flags;
+    u8  LUN;
+    u8  cmdLength;
+    u8  cmd;
+    u32 arg0;
+    u32 arg1;
+    u32 arg2;
+    u32 padding;
+};
+
+struct usb_csw_packet {
+    u32 signature;
+    u32 tag;
+    u32 residue;
+    u8  status;
+};
 #endif
