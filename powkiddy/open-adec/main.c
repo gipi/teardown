@@ -22,6 +22,7 @@
 #include "regs_io.h"
 #include "regs.h"
 #include "brom.h"
+#include "usb.h"
 
 #define VERSION "0.1"
 
@@ -33,20 +34,16 @@ void rtc_configuration() {
           w32(RTC_WDCTL, rtc_value | 1);
 }
 
-u8* tmp[0x200];
-
 int main() {
     hal_hardware_setup();
+    log(BANNER);
 
     rtc_configuration();
     map_setup();
+    usb_setup();
+
     _delay(10000);
 
-    log(BANNER);
-
-    flash_read(0, 0x200, tmp);
-
-    hexdump(tmp, 0x200);
 
     while (1);
 }
