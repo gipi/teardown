@@ -33,14 +33,9 @@
 
 .align 12 /* this MUST be 4k aligned */
 .global __irq_base
+/* for TLB refill */
 __irq_base:
-    li $a0, 'A'
-    lui $t0, %hi(serial_putc)
-    ori $t0, $t0, %lo(serial_putc)
-    jr $t0
-    nop
-    nop
-    eret
+    b __general_eirq
 
     .end __irq_base;
     .size __irq_base, .-__irq_base;
