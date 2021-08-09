@@ -23,5 +23,6 @@
 
 void map_setup();
 void flash_read(u32 address, size_t size, void* buffer);
+extern void (*reset_to_adfu)();
 
 #endif

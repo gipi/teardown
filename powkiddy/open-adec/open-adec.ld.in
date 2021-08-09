@@ -33,7 +33,7 @@
 #define EIRQ_SIZE 0x1800
 
 #define BSS_START EIRQ_START + EIRQ_SIZE
-#define BSS_SIZE  0xa00
+#define BSS_SIZE  0xc00
 
 MEMORY {
     stack (RW)         : ORIGIN = IRAM_START, LENGTH = STACK_SIZE

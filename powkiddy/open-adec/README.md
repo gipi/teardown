@@ -26,8 +26,26 @@ $ make upload
 
 it's possible to upload it into an Action's device in ``ADFU`` mode.
 
+It exists a tools, named [``oa``](tools/oa) that can be used to interact with
+``open-adec``, for example to dump the flash of the PowKiddy J6 you can do
+
+```
+$ tools/oa --device 10d6:10d6 --binary build/open-adec.bin.encrypted flashdump --output spidump.bin
+```
+
+this tools uploads the firmware and issues the necessary commands (at the end
+reset the board to ``ADFU`` mode again).
+
+The dependency can be installed via ``pip3``
+
+```
+$ pip3 install -r tools/requirements.txt
+```
+
 ## Functionalities
 
-It's a work in progress, for now there is the ``UART`` working (but in the
-PowKiddy it's not easily accessible), exception handling and ``USB`` is
-hopefully in the way.
+ - [x] ``UART``
+ - [ ] ``USB`` (work in progress)
+   - [x] custom CBW commands
+     - [x] flash dump
+     - [ ] memory dump

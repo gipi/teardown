@@ -18,10 +18,14 @@
  */
 /*
  * Routines that interact with the BROM.
+ *
+ * NOTE: this is all code ATS3603 specific.
  */
 #include "brom.h"
 #include "utils.h"
 #include "log.h"
+
+#define ADDRESS_BROM_ADFU ((u32*)0xbfc001c0)
 
 #define ADDRESS_BROM_SETUP ((u32*)0xbfc073fc)
 #define SIZE_SETUP    0x800
@@ -29,6 +33,7 @@
 #define ADDRESS_DEST_SETUP ((u32*)0xb4060400)
 
 static void (*_setup)(u32 address, size_t size, void* buffer) = (void (*)())ADDRESS_DEST_SETUP;
+void (*reset_to_adfu)() = (void(*)())ADDRESS_BROM_ADFU;
 
 /*
  * Into the BROM exists a block of code that is used to interact (minimally)

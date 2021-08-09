@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+"""
+Script to interact with open-adec.
+
+It uploads the open-adec binary and it's possible to interact via USB packets.
+"""
+import os
+import sys
+import logging
+import argparse
+import functools
+
+# import our module
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "meta", "actions"))
+
+from adfu.cbw import usb_conf, ADECadfus, _cbw_write, cbw_read_response
+
+
+logging.basicConfig()
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+
+def argparse_vendor_product(value):
+    vendor, product = tuple(value.split(":"))
+
+    return int(vendor, 16), int(product, 16)
+
+
+def parse_args():
+    args = argparse.ArgumentParser(description='open-adec swiss knife tool')
+
+    args.add_argument(
+        '--device',
+        type=argparse_vendor_product,
+        required=True,
+        help="vendor:product of the device you want to interact with")
+    args.add_argument('--binary', required=True)
+    args.add_argument('--address', type=functools.partial(int, base=0), default=0xb4060000)
+    args.add_argument('--output', type=argparse.FileType('wb'), required=True)
+
+    args.add_argument('command', choices=['flashdump',], help='actions available')
+
+    return args.parse_args()
+
+
+if __name__ == '__main__':
+    args = parse_args()
+
+    dev, endpoint_read, endpoint_write = usb_conf(*args.device)
+
+    if not dev:
+        raise Exception("device not found")
+
+    _cbw_write(endpoint_write, 0xcc, 0x00, 0x00, 0x00, 0x00)
+
+    endpoint_read.read(0x12)
+
+    cbw_read_response(endpoint_read)
+
+    logger.info(f"uploading binary '{args.binary}' and executing it at {args.address:x}")
+    # try to use the standard code from Actions
+    ADECadfus(args.binary, endpoint_read, endpoint_write, address=args.address)
+
+    logger.info("asking for a flash dump")
+    _cbw_write(endpoint_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
+
+
+    flash_size = 0x10 * 1024 * 1024;
+    npackets = flash_size >> 9;
+
+    logger.info(f'write dump of {npackets} sectors to "{args.output}"')
+    while npackets > 0:
+        data = endpoint_read.read(0x200)
+        npackets -= 1
+
+        args.output.write(data)
+
+    cbw_read_response(endpoint_read)
+
+    # reset the board (if we disconnect it's not possible to reconnect
+    # and issue commands, it's not clear if a problem with the firmware,
+    # pyusb or the USB controller)
+    _cbw_write(endpoint_write, 0xff, 0x00, 0x00, 0x00, 0x00)
+    cbw_read_response(endpoint_read)

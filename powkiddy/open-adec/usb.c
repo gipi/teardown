@@ -18,17 +18,26 @@
  */
 
 /*
- * FIFOxDAT simply overwrites the data when receives it from outside
+ * NOTES
+ * -----
+ *
+ * FIFOxDAT simply overwrites the internal buffer when receives it from outside
  *
  * Probably OUT1CS, when you write 0 into it, reset the internal index pointing
- * to what has been read last and 
+ * to what has been read last: when to the ADFU in the BROM is sent first an
+ * upload command (05) (followed by the open-adec firmware itself) and the the
+ * execute command (10) that is a simple CBW packet you have the following
+ * reading the FIFO1DAT register:
  *
- * reading FIFO1DAT
  * 55 53 42 43 00 00 00 00 00 00 00 00 00 00 00 10   <--- last cmd 10 packet
  * 00 00 06 b4 00 00 00 00 00 00 00 00 00 00 00 01
- *
  * b0 89 ce 7c 1a 35 5d b8 b4 87 ef c0 bc 20 67 d5   <--- last remainder of the cmd 05 packet
  * 09 b0 4e c4 c0 02 fc 45 c8 3e 79 cb 21 17 66 d0
+ *
+ *
+ * It's not clear if it's a problem from the firmware, the USB controller or the
+ * pyusb library, but after a connection/deconnection to the device, it doesn't
+ * receive nothing anymore (no UIV_EP1OUT irq is triggered).
  *
  */
 #include "usb.h"
@@ -36,6 +45,8 @@
 #include "regs_io.h"
 #include "utils.h"
 #include "log.h"
+#include "brom.h"
+
 
 #define DUMP_REG(r) log(#r ": %x\n", *(r))
 #define DUMP8REG(r) log(#r ": %hhx\n", *(u8*)(r))
@@ -107,6 +118,37 @@ static void usb_handle_irq_sudav() {
 
 }
 
+
+void usb_write_fifo(void* buffer, size_t size) {
+    u8  remain = size & 3;
+    u32 nwords = (size >> 2) + ((remain) ? 1 : 0);
+
+    u32* ref = (u32*)buffer;
+
+    /*
+     * we are going to write into the FIFO
+     * aligned to four but we'll send only "size"
+     * bytes, in this way is simpler :)
+     *
+     * It's not going to fail (buffer is read and should be aligned to 4)
+     * and it's not leaking.
+     */
+    while (nwords--) {
+        w32(FIFO2DAT, *ref++);
+    }
+
+    w8(IN2BCL, size & 0xff);
+    w8(IN2BCH, size >> 8);
+
+    w8(IN2CS, 0x0);
+
+    u8 in2cs;
+    do {
+        in2cs = r8(IN2CS);
+    } while ((in2cs & EPCS_BUSY) != 0);
+}
+
+
 void usb_handle_ep1out() {
     log("EP1 received packet\n");
     w8(OUT07IRQ, EP1_OUT_IRQ); /*clear ep1out irq */
@@ -135,8 +177,34 @@ void usb_handle_ep1out() {
 
     hexdump(&packet, sizeof(struct usb_cbw_packet));
 
+    /* re-arm for the next OUT transaction */
     w8(OUT1CS, 0x0);
     w8(USBEIRQ, 0x88);
+
+    int reset = 0;
+
+    /* parse the command */
+    switch (packet.cmd) {
+        case 0xa:
+        { /* dump flash */
+            log("starting dumping flash\n");
+            static u8 buffer[0x200];
+            u32 flash_size = 0x10 * 1024 * 1024;
+            u32 nsectors = flash_size >> 9;
+            for (u32 sector = 0 ; sector < nsectors ; sector++) {
+                u32 offset = sector * 0x200;
+                flash_read(offset, 0x200, buffer);
+                usb_write_fifo(buffer, 0x200);
+            }
+            break;
+        }
+        case 0xff: /* reset to ADFU */
+            log("requested reset board to ADFU mode again\n");
+            reset = 1;
+            break;
+        default:
+            log("CBW command not recognized\n");
+    }
 
     /* answer to it */
     struct usb_csw_packet response = {
@@ -160,6 +228,9 @@ void usb_handle_ep1out() {
     do {
         in2cs = r8(IN2CS);
     } while ((in2cs & EPCS_BUSY) != 0);
+
+    if (reset)
+        reset_to_adfu();
 
     return;
 }
