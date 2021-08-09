@@ -25,8 +25,10 @@
 #include "usb.h"
 
 #define VERSION "0.1"
+#define BOARD   "PowKiddy J6"
 
-const char* BANNER = "OPEN ADEC "VERSION"\n";
+const char* BANNER = "OPEN ADEC "VERSION" for "BOARD"\n";
+
 
 void rtc_configuration() {
           u32 rtc_value = r32(RTC_WDCTL);
