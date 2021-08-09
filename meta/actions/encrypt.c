@@ -129,10 +129,28 @@ static void xor_it(unsigned char *data, int length)
     }
 }
 
+#if 0
+static unsigned char get_inverse_xor(unsigned char c)
+{
+    int i;
+    for (i = 0 ; i < 256 ; i++) {
+        if (c == xor_key[i])
+            return i;
+    }
+    //fprintf(stderr, "[fatal] unable to reverse xor\n");
+}
+
+static void inverse_xor_it(unsigned char *data, int length)
+{
+    int i, j;
+    for(i = 0; i < length; i += 4)
+    {
+        unsigned char Ekey = xor_key[data[i]];
         for(j = 1; j < 4; j++)
             data[i + j] ^= Ekey;
     }
 }
+#endif
 
 int encrypt(unsigned char *data, int length)
 {
