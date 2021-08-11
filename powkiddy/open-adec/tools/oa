@@ -9,6 +9,7 @@ import sys
 import logging
 import argparse
 import functools
+import tqdm
 
 # import our module
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "meta", "actions"))
@@ -44,6 +45,24 @@ def parse_args():
     return args.parse_args()
 
 
+def flashdump(ep_read, ep_write, output):
+
+    logger.info("asking for a flash dump")
+    _cbw_write(ep_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
+
+
+    flash_size = 0x10 * 1024 * 1024;
+    npackets = flash_size >> 9;
+
+    logger.info(f'write dump of {npackets} sectors to "{output}"')
+    for _ in  tqdm.trange(npackets):
+        data = ep_read.read(0x200)
+
+        output.write(data)
+
+    cbw_read_response(ep_read)
+
+
 if __name__ == '__main__':
     args = parse_args()
 
@@ -62,21 +81,8 @@ if __name__ == '__main__':
     # try to use the standard code from Actions
     ADECadfus(args.binary, endpoint_read, endpoint_write, address=args.address)
 
-    logger.info("asking for a flash dump")
-    _cbw_write(endpoint_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
-
-
-    flash_size = 0x10 * 1024 * 1024;
-    npackets = flash_size >> 9;
-
-    logger.info(f'write dump of {npackets} sectors to "{args.output}"')
-    while npackets > 0:
-        data = endpoint_read.read(0x200)
-        npackets -= 1
-
-        args.output.write(data)
-
-    cbw_read_response(endpoint_read)
+    if args.command == 'flashdump':
+        flashdump(endpoint_read, endpoint_write, args.output)
 
     # reset the board (if we disconnect it's not possible to reconnect
     # and issue commands, it's not clear if a problem with the firmware,
