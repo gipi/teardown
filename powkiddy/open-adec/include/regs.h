@@ -19,6 +19,7 @@
 #ifndef __REGS_H__
 #define __REGS_H__
 #include <stdint.h>
+#include "ats3603_base.h"
 
 #define ATSREG(reg) ((uint32_t*)(reg))
 
@@ -43,7 +44,6 @@
 #define FIFO_FULL      1
 #define FIFO_EMPTY     0
 
-#define UART_BASE      (0xb0168000)
 
 #define SERIAL_CTL     ATSREG(UART_BASE + 0x00)
 #define SERIAL_TX      ATSREG(UART_BASE + 0x08)
@@ -60,7 +60,6 @@
 /**********
      USB
 ***********/
-#define OTG_BASE       0xb0290000
 #define OTGREG(v)      ((uint32_t*)(OTG_BASE + v))
 
 #define EP0CS          OTGREG(0x0002)

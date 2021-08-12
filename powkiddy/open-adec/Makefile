@@ -7,6 +7,7 @@
 # change the shell to avoid weird syntax errors
 # from command substitutions
 SHELL := bash
+SOURCE_DIR = src
 BUILD_DIR = build
 
 SOURCES_C  = main.c
@@ -37,7 +38,7 @@ ENTRY_ADDRESS = 0xb4060000
 
 # GENERAL COMPILER OPTIONS
 MIPSEL_PREFIX = mips-linux-gnu-
-MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g
+MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/
 MIPSEL_LD_OPTIONS = -EL
 
 # Avoid to:
@@ -82,11 +83,11 @@ $(BUILD_DIR)/%.ld: %.ld.in
 	@echo "LDS	$@"
 	$(Q)$(MIPSEL_PREFIX)cpp -x assembler-with-cpp -P -D__ASSEMBLY__  -o $@ $<
 
-$(BUILD_DIR)/%.o: %.S
+$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.S
 	@echo "S -> o: $@"
 	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
 
-$(BUILD_DIR)/%.o: %.c
+$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.c
 	@echo "c -> o: $@"
 	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -MMD -c $< -o $@
 
