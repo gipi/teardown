@@ -18,25 +18,19 @@
  */
 #ifndef __REGS_H__
 #define __REGS_H__
+
 #include <stdint.h>
-#include "ats3603_base.h"
 
-#define ATSREG(reg) ((uint32_t*)(reg))
+#define HWREG(reg) ((uint32_t*)(reg))
 
-#define PMU_VDD_CTL    ATSREG(0xb0000010)
-#define PMU_CTL1       ATSREG(0xb0000018)
-#define PMU_UNKNOWN    ATSREG(0xb0000020)
-#define PMU_USB_UNK    ATSREG(0xb000002c)
+#if defined(ATS3603)
+    #include "ats3603_base.h"
+#elif defined(AM8252)
+    #include "am8252_base.h"
+#else
+#error SOC not defined in the config file
+#endif
 
-#define CMU_DEVCLKEN   ATSREG(0xb0010080)
-#define CMU_DEVRST     ATSREG(0xb0010084)
-#define CMU_FOO        ATSREG(0xb001008c)
-#define UART1_CLK      ATSREG(0xb0010048)
-
-#define CMU_COREPLL    ATSREG(0xb0010000)
-#define CMU_SDRCLK     ATSREG(0xb0010010)
-
-#define GPIO_MFCTL1    ATSREG(0xb01c001c)
 
 #define U1EN           16
 #define TFFU           6 /* TX FIFO Full */
@@ -45,9 +39,9 @@
 #define FIFO_EMPTY     0
 
 
-#define SERIAL_CTL     ATSREG(UART_BASE + 0x00)
-#define SERIAL_TX      ATSREG(UART_BASE + 0x08)
-#define SERIAL_STAT    ATSREG(UART_BASE + 0x0c)
+#define SERIAL_CTL     HWREG(UART_BASE + 0x00)
+#define SERIAL_TX      HWREG(UART_BASE + 0x08)
+#define SERIAL_STAT    HWREG(UART_BASE + 0x0c)
 
 /**************
  *
@@ -55,7 +49,7 @@
  *
  * ************/
 
-#define RTC_WDCTL      ATSREG(0xb001801c)
+#define RTC_WDCTL      HWREG(0xb001801c)
 
 /**********
      USB

@@ -17,6 +17,7 @@
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "hal.h"
+#include <uart.h>
 #include "utils.h"
 #include "log.h"
 #include "regs_io.h"
@@ -30,17 +31,11 @@
 const char* BANNER = "OPEN ADEC "VERSION" for "BOARD"\n";
 
 
-void rtc_configuration() {
-          u32 rtc_value = r32(RTC_WDCTL);
-          rtc_value &= 0xffffffef;
-          w32(RTC_WDCTL, rtc_value | 1);
-}
-
 int main() {
     hal_hardware_setup();
+    serial_init();
     log(BANNER);
 
-    rtc_configuration();
     map_setup();
     usb_setup();
 

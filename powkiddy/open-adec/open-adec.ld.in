@@ -20,13 +20,13 @@
  * The firmware is mapped above 0xb4060c00 to leave enough space to map the
  * routines from the BROM.
  */
-#define IRAM_START 0xb4060000
+#define IRAM_START ENTRY_ADDRESS
 #define STACK_SIZE 0x400
 
-#define SETUP_START 0xb4060400
+#define SETUP_START ENTRY_ADDRESS + 0x400
 #define SETUP_SIZE  0x800
 
-#define CODE_START 0xb4061000
+#define CODE_START ENTRY_ADDRESS + 0x1000
 #define CODE_SIZE 0x2000
 
 #define EIRQ_START CODE_START + CODE_SIZE

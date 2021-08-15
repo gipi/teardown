@@ -26,7 +26,7 @@
  * datasheets of similar chips and believing that the registers
  * are the same.
  */
-static void setup() {
+static void hw_register_setup() {
     // this line below skews the clock,
     // the original adec's code sets this register
     // after having checked some values at bfc00012
@@ -52,7 +52,56 @@ static void setup() {
     *PMU_CTL1 |= 0x400000;
 }
 
+void rtc_configuration() {
+          u32 rtc_value = r32(RTC_WDCTL);
+          rtc_value &= 0xffffffef;
+          w32(RTC_WDCTL, rtc_value | 1);
+}
+
+struct uart_t uart;
+
+
+/*
+ * This appears to be necessary from the datasheet but the serial
+ * works anyway if this it's not invoked.
+ */
+static void enable_uart() {
+    *CMU_UART1CLK |= (1 << U1EN); /* this seems to be missing from the brec code */
+}
+
+
+static reg get_uart_clk() {
+    return CMU_UART1CLK;
+}
+
+static void set_baudrate(uint32_t baudrate, uint32_t clock) {
+    u32* uartclk = get_uart_clk();
+    w32(uartclk,(uint16_t)((clock * 1000000UL)/(baudrate * 8UL)) - 1);
+}
+
+/*
+ * UART configuration.
+ *
+ * Some registers are unknown, simply copied from reversing
+ * the powkiddy brec code.
+ */
+void uart_init(int baudrate) {
+    *CMU_DEVRST = *CMU_DEVRST | 0x10;
+    *CMU_FOO = (*CMU_FOO & 0xffffffef) | 0x10;
+    *GPIO_MFCTL1 = (*GPIO_MFCTL1 & 0xffff9fff) | 0x80002000;
+    *SERIAL_CTL = (1 << 15) | (1 << 1) | (1 << 0); /* enable UART1, 8bit, 1 stop */
+
+    set_baudrate(baudrate, 24);
+    //enable_uart();
+}
+
+static void uart_setup() {
+    uart.base = (struct uart_reg_t*)UART_BASE;
+    uart.init = uart_init;
+}
+
 void hal_hardware_setup() {
-    setup();
-    serial_init();
+    hw_register_setup();
+    rtc_configuration();
+    uart_setup();
 }
