@@ -17,33 +17,15 @@
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "uart.h"
+#include <hal.h>
+#include <regs_io.h>
 
-static void set_baudrate(uint32_t baudrate, uint32_t clock) {
-    *UART1_CLK = (uint16_t)((clock * 1000000UL)/(baudrate * 8UL)) - 1;
-}
 
-/*
- * This appears to be necessary from the datasheet but the serial
- * works anyway if this it's not invoked.
- */
-static void enable_uart() {
-    *UART1_CLK |= (1 << U1EN); /* this seems to be missing from the brec code */
-}
+#define serial_write(c)  (uart.base->tx = (c))
+#define is_serial_free() ((uart.base->stat & (1 << TFFU)) == FIFO_EMPTY)
 
-/*
- * UART configuration.
- *
- * Some registers are unknown, simply copied from reversing
- * the powkiddy brec code.
- */
 void serial_init() {
-    *CMU_DEVRST = *CMU_DEVRST | 0x10;
-    *CMU_FOO = (*CMU_FOO & 0xffffffef) | 0x10;
-    *GPIO_MFCTL1 = (*GPIO_MFCTL1 & 0xffff9fff) | 0x80002000;
-    *SERIAL_CTL = (1 << 15) | (1 << 1) | (1 << 0); /* enable UART1, 8bit, 1 stop */
-
-    set_baudrate(115200, 24);
-    //enable_uart();
+    uart.init(115200);
 }
 
 

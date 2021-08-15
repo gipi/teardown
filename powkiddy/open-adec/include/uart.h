@@ -20,9 +20,6 @@
 #define __UART_H__
 #include "regs.h"
 
-#define serial_write(c)  (*SERIAL_TX = (c))
-#define is_serial_free() ((*SERIAL_STAT & (1 << TFFU)) == FIFO_EMPTY)
-
 void serial_init();
 void serial_putc(unsigned char c);
 void serial_puts(const char*);

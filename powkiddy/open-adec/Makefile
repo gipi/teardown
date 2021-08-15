@@ -1,44 +1,54 @@
 # Makefile for building the project
 #
 # Large inspired by this answer about dependencies
-#  <https://stackoverflow.com/a/30142139/1935366>.
+#  <https://stackoverflow.com/a/30142139>.
+# and this one about subdirectory rules
+#  <https://stackoverflow.com/a/43227047>
 #
+ifeq ($(BOARD),)
+$(error "please indicate a board with BOARD=")
+endif
+
+CONFIG = config/$(BOARD)
+
+include $(CONFIG)
 
 # change the shell to avoid weird syntax errors
 # from command substitutions
 SHELL := bash
 SOURCE_DIR = src
-BUILD_DIR = build
+BUILD_DIR = build_$(BOARD)
 
-SOURCES_C  = main.c
-SOURCES_C += regs_io.c
-SOURCES_C += usb.c
-SOURCES_C += uart.c
-SOURCES_C += hal.c
-SOURCES_C += utils.c
-SOURCES_C += exceptions.c
-SOURCES_C += log.c
-SOURCES_C += brom.c
-SOURCES_C += assert.c
-SOURCES_C += string.c
+SOURCES_C  = $(SOURCE_DIR)/main.c
+SOURCES_C += $(SOURCE_DIR)/regs_io.c
+SOURCES_C += $(SOURCE_DIR)/usb.c
+SOURCES_C += $(SOURCE_DIR)/uart.c
+SOURCES_C += $(SOURCE_DIR)/utils.c
+SOURCES_C += $(SOURCE_DIR)/exceptions.c
+SOURCES_C += $(SOURCE_DIR)/log.c
+SOURCES_C += $(SOURCE_DIR)/assert.c
+SOURCES_C += $(SOURCE_DIR)/string.c
+SOURCES_C += $(SOURCE_DIR)/socs/$(shell echo $(SOC) | tr A-Z a-z)/hal.c
+SOURCES_C += $(SOURCE_DIR)/socs/$(shell echo $(SOC) | tr A-Z a-z)/brom.c
 
-SOURCES_S  = crt0.S
-SOURCES_S += eirq.S
+SOURCES_S  = $(SOURCE_DIR)/crt0.S
+SOURCES_S += $(SOURCE_DIR)/eirq.S
 
-OBJS_FROM_C = $(SOURCES_C:%.c=$(BUILD_DIR)/%.o)
-OBJS_FROM_S = $(SOURCES_S:%.S=$(BUILD_DIR)/%.o)
+OBJS_FROM_C = $(addprefix $(BUILD_DIR)/,$(SOURCES_C:%.c=%.o))
+OBJS_FROM_S = $(addprefix $(BUILD_DIR)/,$(SOURCES_S:%.S=%.o))
+OBJECTS = $(OBJS_FROM_C) $(OBJS_FROM_S)
 
 DEPS := $(OBJS_FROM_C:.o=.d)
+
 
 
 LD_SCRIPT = $(BUILD_DIR)/open-adec.ld
 ADFULOAD  = ../../meta/actions/adfuload
 
-ENTRY_ADDRESS = 0xb4060000
 
 # GENERAL COMPILER OPTIONS
 MIPSEL_PREFIX = mips-linux-gnu-
-MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/
+MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/ -D$(SOC)=1
 MIPSEL_LD_OPTIONS = -EL
 
 # Avoid to:
@@ -48,13 +58,20 @@ MIPSEL_LD_OPTIONS = -EL
 #MAKEFLAGS += --no-builtin-variables
 #MAKEFLAGS += --no-print-directory
 
+
 # override this if you want visualized the command while executed
 Q = @
 
-all: $(BUILD_DIR) $(BUILD_DIR)/open-adec.bin.encrypted check-build
+
+
+$(info #################### Building for $(BOARD) ##############################)
+
+all: $(BUILD_DIR) $(OPEN_ADEC) check-build
+
+OPEN_ADEC = $(BUILD_DIR)/open-adec_$(BOARD).bin.encrypted
 
 # FIXME: sometimes the encryption fails for the last dword :P
-check-build: $(BUILD_DIR)/open-adec.bin.encrypted $(ADFULOAD)
+check-build: $(OPEN_ADEC) $(ADFULOAD)
 	@echo "CHECK	$@"
 	$(Q)diff -Nur <($(ADFULOAD) decrypt $< | xxd) <(xxd $(<:.encrypted=))
 
@@ -68,28 +85,31 @@ $(ADFULOAD):
 	@echo "ADFULOAD"
 	$(Q)make -C $(dir $@)
 
-$(BUILD_DIR)/open-adec.elf: $(OBJS_FROM_C) $(OBJS_FROM_S)
+$(BUILD_DIR)/open-adec_$(BOARD).elf: $(OBJECTS)
 	@echo "ELF	$@"
 	$(Q)$(MIPSEL_PREFIX)ld $(MIPSEL_LD_OPTIONS) -T$(LD_SCRIPT) $^ -o $@
 
-$(BUILD_DIR)/open-adec.elf: .EXTRA_PREREQS = $(LD_SCRIPT)
+$(BUILD_DIR)/open-adec_$(BOARD).elf: .EXTRA_PREREQS = $(LD_SCRIPT)
 
-$(BUILD_DIR)/open-adec.bin: $(BUILD_DIR)/open-adec.elf
+$(OBJS_FROM_S): $(BUILD_DIR)/%.o: %.S
+	@echo "S -> O: $@"
+	mkdir -p $(@D)
+	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
+
+$(OBJS_FROM_C): $(BUILD_DIR)/%.o: %.c
+	@echo "C -> O: $@"
+	mkdir -p $(@D)
+	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
+
+
+$(BUILD_DIR)/open-adec_$(BOARD).bin: $(BUILD_DIR)/open-adec_$(BOARD).elf
 	@echo "BIN	$@"
 	$(Q)$(MIPSEL_PREFIX)objcopy -O binary $< $@
 
 # allow for the linker script to use #defines
 $(BUILD_DIR)/%.ld: %.ld.in
 	@echo "LDS	$@"
-	$(Q)$(MIPSEL_PREFIX)cpp -x assembler-with-cpp -P -D__ASSEMBLY__  -o $@ $<
-
-$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.S
-	@echo "S -> o: $@"
-	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
-
-$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.c
-	@echo "c -> o: $@"
-	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -MMD -c $< -o $@
+	$(Q)$(MIPSEL_PREFIX)cpp -x assembler-with-cpp -P -D__ASSEMBLY__ -DENTRY_ADDRESS=$(ENTRY_ADDRESS) -o $@ $<
 
 $(BUILD_DIR)/%.encrypted: $(BUILD_DIR)/% $(ADFULOAD)
 	@echo "ENCRYPTION	$@"

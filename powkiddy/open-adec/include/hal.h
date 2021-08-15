@@ -18,7 +18,23 @@
  */
 #ifndef __HAL_H__
 #define __HAL_H__
+#include <regs.h>
+#include <regs_io.h>
 
 void hal_hardware_setup();
+
+struct uart_reg_t {
+    u32 ctl;
+    u32 rx;
+    u32 tx;
+    u32 stat;
+};
+
+struct uart_t {
+    struct uart_reg_t* base;
+    void (*init)(int);
+};
+
+extern struct uart_t uart;
 
 #endif
