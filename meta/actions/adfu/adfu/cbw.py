@@ -20,6 +20,7 @@ import usb
 from pathlib import Path
 from tqdm import tqdm
 from hexdump import hexdump
+from .utils import argparse_vendor_product
 
 USB_wMaxPacketSize = 0x200  # TODO: extract info from USB itself
 
@@ -28,7 +29,7 @@ USB_wMaxPacketSize = 0x200  # TODO: extract info from USB itself
 usb_logger = logging.getLogger("usb")
 # usb_logger.setLevel(logging.DEBUG)
 logger = logging.getLogger(f'{__name__}.app')  # application level logger
-# logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG)
 app_stream = logging.StreamHandler()
 low_stream = logging.StreamHandler()
 
@@ -114,9 +115,9 @@ def cbw_write_(interface, cmd, tag, size, arg0, arg1=None, subCmd=0x0, flags=0x0
 
 
 # USE THIS!!!
-def _cbw_write(interface, cmd, size, arg0, arg1, arg2, tag=0x0, flags=0x0, cmdLength=0x10):
+def cbw_send(interface, cmd, transferLength, arg0, arg1, arg2, tag=0x0, flags=0x0, cmdLength=0x10):
     tag_hex = struct.pack('I', tag).hex()
-    size_hex = struct.pack('I', size).hex()
+    tranferLength_hex = struct.pack('I', transferLength).hex()
     flags = struct.pack('B', flags).hex()
     cmdLength_hex = struct.pack('B', cmdLength).hex()
 
@@ -127,7 +128,7 @@ def _cbw_write(interface, cmd, size, arg0, arg1, arg2, tag=0x0, flags=0x0, cmdLe
 
     cbw_fmt = f'''55 53 42 43
     {tag_hex}
-    {size_hex}
+    {tranferLength_hex}
     {flags}
     00
     {cmdLength_hex}
@@ -178,10 +179,14 @@ def cbw_read_response(endpoint, tag=None, size=0x0d):
     with exactly 13 (0Dh) bytes transferred. Fields appear aligned to byte
     offsets equal to a multiple of their byte size. All CSW transfers shall be
     ordered with the LSB (byte 0) first (little endian).'''
-    response = endpoint.read(size)
-    logger.debug(f'CBW response (len={len(response)}): {response}')
+    if size != 0x0d:
+        logger.warning(f"{size=} is not compliant")
 
-    signature, responseTag, residue, status, = struct.unpack('4sIIB', response)
+    response = endpoint.read(size)
+    logger.debug(f'CBW response (len={len(response)}): {bytearray(response)}')
+
+    # unpack it as a normal CSW packet ignoring the "size" parameter
+    signature, responseTag, residue, status, = struct.unpack('4sIIB', response[:0x0d])
 
     if signature != b'USBS':
         raise ValueError(f'wrong signature: {signature}')
@@ -264,7 +269,7 @@ def upload(path, e_read, e_write, address, checkTag=True):
     logger.info('uploading')
     stat = os.stat(path)
     logger.debug(f'size={stat.st_size}')
-    cbw_write_(e_write, 0x05, 0x88, 0x10, address, stat.st_size, 0x0000)
+    cbw_write_(e_write, 0x05, 0x88, stat.st_size, address, stat.st_size, 0x0000)
 
     count = 0
     progress = tqdm(total=stat.st_size)
@@ -368,18 +373,86 @@ def ADFUadfus(path, r, w):
     execute_adfus(r, w, address, 0x00)
 
 
-def flash_dump(r, w):
+def flash_dump(r, w, output):
     logger.info('dump flash')
-    cbw_write_(w, 0xb0, 0xcafebabe, 0x0200, 0x00, 0x00, subCmd=0x6f36)
-    response = r.read(r.wMaxPacketSize)
+    size = 0x80000
+    cbw_write_(w, 0xb0, 0xcafebabe, size, 0x00, 0x00, subCmd=0x2e9f)
+
+    size_packet = r.wMaxPacketSize
+    with output.open(mode='wb') as fout:
+        while size > 0:
+            response = r.read(size_packet)
+            logger.debug('\n' + hexdump(response, result='return'))
+            fout.write(response)
+            size -= size_packet
+
+    cbw_read_response(r, 0xcafebabe)
+
+
+def smth_dump(r, w, path_output):
+    '''Try cmd 6 with arg0 equal to the size of the dump'''
+    logger.info('dump something from address 0xa00080000')
+    size = 0x20000
+    cbw_write_(w, 0x06, 0xcafebabe, size, 0x00, 0x00)
+
+    size_packet = r.wMaxPacketSize
+    with path_output.open(mode='wb') as file_out:
+        while size > 0:
+            response = r.read(size_packet)
+            logger.debug('\n' + hexdump(response, result='return'))
+            file_out.write(response)
+            size -= size_packet
+
+    cbw_read_response(r, 0xcafebabe)
+
+
+def cmd06_dump(r, w, size, path_output):
+    '''From disassembly seems that this command returns something
+    from address a0080000
+
+        if (cmd == 6) {
+            usb_otg->OTG_OUT1CS = 0;
+            usb_send((dword *)&DAT_a0080000,usb_otg->OTG_FIFO1DAT,usb_otg);
+        }
+    '''
+    logger.info(f'dump something with command 06 using size {size:x}')
+
+    cbw_write_(w, 0x06, 0xcafebabe, size=size, arg0=size, arg1=0)
+
+    size_packet = r.wMaxPacketSize
+    with path_output.open(mode='wb') as file_out:
+        while size > 0:
+            response = r.read(size_packet)
+            logger.debug('\n' + hexdump(response, result='return'))
+            file_out.write(response)
+            size -= size_packet
+
+    cbw_read_response(r, 0xcafebabe)
+
+
+def _6f80_dump(r, w):
+    logger.info('dump something from sub command 6f80')
+    size_packet = r.wMaxPacketSize
+    cbw_write_(w, 0xb0, 0xcafebabe, size=10, arg0=size_packet, arg1=0,subCmd=0x6f80)
+
+    response = r.read(size_packet)
+    logger.info('\n' + hexdump(response, result='return'))
+
+    cbw_read_response(r, 0xcafebabe)
+
+
+def brc_dump(r, w):
+    logger.info('dumping brc ???')
+    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, subCmd=0x6f36)
+    response = r.read(0x200)
 
     logger.info('\n' + hexdump(response, result='return'))
-    cbw_read_response(r, 0xcafebabe)
+    cbw_read_response(r, 0xffffffff)
 
 
 def mbrc_dump(r, w):
     logger.info('dumping mbrc')
-    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, subCmd=0x6f36)
+    cbw_write_(w, 0xb0, 0xffffffff, 0x0200, 0x00, 0x00, subCmd=0x6f37)
     response = r.read(0x200)
 
     logger.info('\n' + hexdump(response, result='return'))
@@ -394,6 +467,59 @@ def mbr_dump(r, w):
 
     logger.info('\n' + hexdump(response, result='return'))
     cbw_read_response(r, tag)
+
+
+def FW_dump(r, w):
+    '''
+    0040   55 aa f2 0f 31 32 38 30 30 2e 35 35 30 34 2e 73   U...12800.5504.s
+    0050   64 6b 00 00 00 00 00 00 e1 1d 01 11 34 0f ec 26   dk..........4..&
+    0060   61 63 74 69 6f 6e 73 00 00 00 00 00 00 00 00 00   actions.........
+    0070   61 63 74 69 6f 6e 73 00 00 00 00 00 00 00 00 00   actions.........
+    0080   61 63 74 69 6f 6e 73 00 00 00 00 00 00 00 00 00   actions.........
+    0090   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    00a0   6d 65 64 69 61 20 70 6c 61 79 65 72 00 00 00 00   media player....
+    00b0   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    00c0   80 47 00 00 00 00 00 00 00 00 00 00 00 00 00 00   .G..............
+    00d0   00 70 00 00 00 00 00 00 00 00 00 00 00 00 00 00   .p..............
+    00e0   00 d8 03 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    00f0   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0100   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0110   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0120   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0130   46 77 3a 32 30 31 34 2d 31 31 2d 31 37 00 00 00   Fw:2014-11-17...
+    0140   47 45 4e 45 52 49 43 00 55 53 42 20 44 49 53 4b   GENERIC.USB DISK
+    0150   20 44 45 56 49 43 45 00 31 2e 30 30 00 00 00 00    DEVICE.1.00....
+    0160   30 03 55 00 53 00 42 00 20 00 4d 00 41 00 53 00   0.U.S.B. .M.A.S.
+    0170   53 00 20 00 53 00 54 00 4f 00 52 00 41 00 47 00   S. .S.T.O.R.A.G.
+    0180   45 00 20 00 43 00 4c 00 41 00 53 00 53 00 00 00   E. .C.L.A.S.S...
+    0190   1b 41 63 74 69 6f 6e 73 20 4d 69 63 72 6f 45 6c   .Actions MicroEl
+    01a0   74 72 6f 6e 69 63 73 20 4c 74 64 2e 00 00 00 00   tronics Ltd.....
+    01b0   00 17 41 63 74 69 6f 6e 73 20 41 4d 37 58 20 44   ..Actions AM7X D
+    01c0   50 46 20 44 65 76 69 63 65 00 00 00 00 00 00 00   PF Device.......
+    01d0   00 00 0a 76 32 2e 30 30 2e 30 30 30 30 00 00 00   ...v2.00.0000...
+    01e0   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    01f0   00 00 00 00 e1 1d 00 22 00 00 00 00 00 00 00 00   ......."........
+    0200   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0210   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0220   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+    0230   00 00 00 00 00 00 00 00 00 00 00 00 00 00 f8 6f   ...............o
+    '''
+    logger.info('FW generic usb disk device')
+    dump_from(r, w, 0x0000, 0x20000)
+
+
+def dump_from(r, w, start, size):
+    logger.debug(f'dump from {start:x} for {size:x}')
+    tag = 0x88
+    cbw_write_(w, 0x08, tag, size, start, arg1=size << 7, subCmd=0x80, subCmd2=0x8000)
+    response = r.read(size)
+
+    logger.info('\n' + hexdump(response, result='return'))
+    cbw_read_response(r, tag)
+
+
+def dump_native_mbr(r, w):
+    dump_from(r, w, 0x7000, 0x200)
 
 
 def upload_adfus(r, w, path_fw):
@@ -416,11 +542,15 @@ def usage(progname):
 
 def old_main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h", [
+        opts, args = getopt.getopt(sys.argv[1:], "rd:h", [
             'device=',
             'help',
             'logger-usb=',
             'logger-app=',
+            'dump=',
+            'dump-smth=',
+            'dump-cmd06=',
+            'reset'
         ])
     except getopt.GetoptError as err:
         print(err)
@@ -428,6 +558,11 @@ def old_main():
         sys.exit(1)
 
     id_vendor, id_product = None, None
+
+    dump_flash = False
+    dump_smth = False
+    dump_cmd06 = False
+    reset = False
 
     for option, value in opts:
         if option in ('-d', '--device'):
@@ -440,6 +575,16 @@ def old_main():
         elif option in ('--logger-usb',):
             print(f'LOGGING USB set to {value}')
             usb_logger.setLevel(value)
+        elif option in ('--reset',):
+            pass
+        elif option in ('--dump-smth',):
+            dump_smth = Path(value)
+        elif option in ('--dump',):
+            dump_flash = Path(value)
+        elif option in ('--dump-cmd06',):
+            dump_cmd06 = Path(value)
+        elif option in ('-r', '--reset'):
+            reset = True
         elif option in ('-h', '--help'):
             usage(sys.argv[0])
             sys.exit(1)
@@ -464,16 +609,22 @@ def old_main():
     # isActions(endpoint_read, endpoint_write)
     # isSwitchToAdfu(endpoint_read, endpoint_write)
     # getSysInfo(endpoint_read, endpoint_write)
-    time.sleep(3)
+
+    # mbrc/brc order must be preserved
     mbrc_dump(endpoint_read, endpoint_write)
+    brc_dump(endpoint_read, endpoint_write)
+    if dump_flash:
+        flash_dump(endpoint_read, endpoint_write, dump_flash)
+
+    if dump_smth:
+        smth_dump(endpoint_read, endpoint_write, dump_smth)
+
+    FW_dump(endpoint_read, endpoint_write)
+    dump_native_mbr(endpoint_read, endpoint_write)
+    if dump_cmd06:
+        cmd06_dump(endpoint_read, endpoint_write, 0xf8000, dump_cmd06)
 
     disconnect(endpoint_read, endpoint_write)
-
-
-def argparse_vendor_product(value):
-    vendor, product = tuple(value.split(":"))
-
-    return int(vendor, 16), int(product, 16)
 
 
 def args_parse():
@@ -511,6 +662,11 @@ def args_parse():
         type=functools.partial(int, base=0),
         help='is expected to have a response of X bytes',
     )
+    parser.add_argument('--expected-csw-size',
+        type=functools.partial(int, base=0),
+        help='is expected to have a CSW response of X bytes',
+        default=0xd,
+    )
 
     return parser.parse_args()
 
@@ -527,6 +683,15 @@ if __name__ == '__main__':
     _cbw_write(endpoint_write, args.cmd, args.size, args.arg0, args.arg1, args.arg2)
 
     if (args.expected_response):
-        endpoint_read.read(args.expected_response)
+        response_data = endpoint_read.read(args.expected_response)
+        logger.info('response:\n' + hexdump(response_data, result='return'))
 
-    cbw_read_response(endpoint_read)
+    try:
+        cbw_read_response(endpoint_read, size=args.expected_csw_size)
+    except usb.USBError as e:
+        if e.backend_error_code == usb.backend.libusb1.LIBUSB_ERROR_OVERFLOW:
+            logger.info(
+                f"the endpoint sent more bytes that you requested (try to modify {args.expected_csw_size=})")
+        else:
+            logger.info(f"encountered {e.backend_error_code=}")
+            raise e

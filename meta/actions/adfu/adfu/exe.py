@@ -1,7 +1,7 @@
 import logging
 import argparse
 import functools
-from .cbw import usb_conf, ADECadfus
+from .cbw import usb_conf, ADECadfus, _cbw_write, cbw_read_response
 
 
 logging.basicConfig()
@@ -37,6 +37,19 @@ if __name__ == '__main__':
     if not dev:
         raise Exception("device not found")
 
+    _cbw_write(endpoint_write, 0xcc, 0x00, 0x00, 0x00, 0x00)
+
+    endpoint_read.read(0x12)
+
+    cbw_read_response(endpoint_read)
+
     logger.info(f"uploading binary '{args.binary}' and executing it")
     # try to use the standard code from Actions
     ADECadfus(args.binary, endpoint_read, endpoint_write, address=args.address)
+
+    import time
+
+    while True:
+        _cbw_write(endpoint_write, 0xab, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
+        cbw_read_response(endpoint_read)
+        time.sleep(1)
