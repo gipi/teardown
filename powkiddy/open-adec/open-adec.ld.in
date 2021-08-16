@@ -16,59 +16,31 @@
  * You should have received a copy of the GNU General Public License
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
-/*
- * The firmware is mapped above 0xb4060c00 to leave enough space to map the
- * routines from the BROM.
- */
-#define IRAM_START ENTRY_ADDRESS
-#define STACK_SIZE 0x400
-
-#define SETUP_START ENTRY_ADDRESS + 0x400
-#define SETUP_SIZE  0x800
-
-#define CODE_START ENTRY_ADDRESS + 0x1000
-#define CODE_SIZE 0x2000
-
-#define EIRQ_START CODE_START + CODE_SIZE
-#define EIRQ_SIZE 0x1800
-
-#define BSS_START EIRQ_START + EIRQ_SIZE
-#define BSS_SIZE  0xc00
 
 MEMORY {
-    stack (RW)         : ORIGIN = IRAM_START, LENGTH = STACK_SIZE
-    setup (RW)        : ORIGIN = SETUP_START, LENGTH = SETUP_SIZE
-    code  (RX)         : ORIGIN = CODE_START, LENGTH = CODE_SIZE
-    exception_irq (RX) : ORIGIN = EIRQ_START, LENGTH = EIRQ_SIZE
-    bss   (RW)         : ORIGIN = BSS_START,  LENGTH = BSS_SIZE
+    IRAM (RW) : ORIGIN = ENTRY_ADDRESS, LENGTH = IRAM_SIZE
 }
 
 SECTIONS
 {
-    .init :
+    .text : ALIGN(4)
     {
         *(.startup.text)
-    } > stack
-    .stack :
-    {
-        FILL(0xDEADBEEF);
-    } > stack
-    .setup :
-    {
-        FILL(0xcafebabe);
-    } > setup
-    .text :
-    {
-        _stack_start = .;
         *(.text)
-    } > code
-    .exceptions_and_irqs :
-    {
+        . = ALIGN(12);
         _ebase = .;
         *(.eirq.text)
-    } > exception_irq
-    .bss :
-    {
         *(.data)
-    } > bss
+        *(.rodata)
+    } > IRAM
+    /* 
+     * HOW THE FUCK YOU TELL THE LINKER TO NOT INCLUDE
+     * THESE FUCKING SECTIONS (NO ONE ASKED ABOUT) IN THE
+     * PRECEEDING .text SECTION?
+     */
+    .porcodio (NOLOAD) :
+    {
+        *(.reginfo)
+        *(.MIPS.abiflags)
+    }
 }

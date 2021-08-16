@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with open-adec.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include <hal.h>
 #include "regs.h"
 #include "uart.h"
 #include "utils.h"
