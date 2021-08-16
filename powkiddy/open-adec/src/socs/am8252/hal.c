@@ -28,35 +28,64 @@
  * Pretty much copied from the ADECadfus.
  */
 static void hw_register_setup() {
-    w32(CMU_COREPLL,0x86a90dd);
-    w32(CMU_BUSCLK,0x390);
-    w32(CMU_DEVCLKEN,0xfffffff);
-    w32(CMU_SPCLK,8);
-    w32(SDR_PD_REG,0);
-    u32 dVar1 = r32(MU_REG1);
-    w32(MU_REG1,dVar1 & 0xffffc0ff);
-    w32(SDR_CLKDLY,0xc0000014);
-    w32(SDR_CTL,0xc0150);
-    w32(SDR_INITD,53000);
-    w32(SDR_TIMING,0xc92814a);
-    w32(SDR_RFSH,0x4fc);
-    w32(SDR_MODE,0x32);
-    w32(SDR_EMODE,0);
-    w32(SDR_WEIGHT,0x211);
-    w32(SDR_PD,80000000);
-    w32(SDR_SR,40000000);
+    int counter;
+    u32 sdr_stat;
+    u32 cmu_devrst;
+
+    w32(CMU_BUSCLK,0x2000034c);
+
+    counter = 200;
+    do {
+        counter = counter + -1;
+    } while (counter != 0);
+    // _DAT_b0038008 = 0;
+
+    w32(CMU_COREPLL,0x388d94b);
+    w32(CMU_BUSCLK,0x2000038c);
+    w32(CMU_DEVCLKEN,0xffffffff);
+    w32(CMU_DDRPLL,0x2c333fc);
+
+    counter = 100000;
+    do {
+        counter = counter + -1;
+    } while (counter != 0);
+
+    cmu_devrst = r32(CMU_DEVRST);
+    w32(CMU_DEVRST, cmu_devrst & 0xfffffffe);
+    w32(CMU_DEVRST, (cmu_devrst & 0xfffffffe) | 1);
+
+    w32(SDR_CTL,0x30166);
+    w32(SDR_PADCTRL1,0x1fe0066);
+    w32(SDR_PADCTRL2,0x24152415);
+    w32(SDR_PADCTRL3,0x2660266);
+    w32(SDR_CLKDLY,0x20a0000);
+    w32(SDR_TIMING,0x25aa7377);
+    w32(SDR_MSTDLY,0x51000);
+    w32(CMU_DDRPLL2,0x51);
+    w32(SDR_UNKNOWN,0x1808080);
+    w32(SDR_MODE,0x521);
+    w32(SDR_EMODE1,4);
+    w32(SDR_EMODE2,0x200);
+    w32(SDR_EMODE3,0);
     w32(SDR_EN,1);
+    w32(SDR_LATENCY,0x8000605);
+    w32(SDR_RFSH,0xd00);
     w32(SDR_CMD,0);
     w32(SDR_CMD,0xa0);
+    w32(SDR_CMD,0);
+
     do {
-        dVar1 = r32(SDR_STAT);
-    } while ((dVar1 & 1) == 0);
-    w32(SDR_CTL,0xc0150);
+        sdr_stat = r32(SDR_STAT);
+    } while ((sdr_stat & 1) == 0);
+
+    w32(SDR_ADDRSWAP,0xc05);
+    w32(SDR_WEIGHT,0x10);
+    w32(SDR_CLKDLY,0x10a0000);
 }
 
 struct uart_t uart;
 
-u32 recover_clock_maybe() {
+u32 recover_divider_maybe() {
     u32 busclk = r32(CMU_BUSCLK);
     switch((busclk << 1) >> 0x1d) {
         default:
@@ -77,26 +106,24 @@ u32 recover_clock_maybe() {
 }
 
 
-void uart_set_baudrate(int baudrate) {
+static void uart_set_baudrate(int baudrate) {
 
-    u32 corepll =r32(CMU_COREPLL);
-    u32 divider = recover_clock_maybe();
+    u32 corepll = r32(CMU_COREPLL);
+    u32 divider = recover_divider_maybe();
     u32 _baudrate = divider * 0x10 * baudrate;
     w32(CMU_UART2CLK,((corepll >> 2 & 0x7f) * 12000000) / _baudrate | 0x10000);
 }
 
-static void uart_init() {
+static void uart_init(int baudrate) {
     u32 devclken = r32(CMU_DEVCLKEN);
     w32(CMU_DEVCLKEN,devclken | 0x400000);
 
-    u32 mfctl3 = r32(GPIO_MFCTL3);
-    w32(GPIO_MFCTL3, (mfctl3 & 0xffe3ffff) | 0x100000);
-    mfctl3 = r32(GPIO_MFCTL3);
-    w32(GPIO_MFCTL3, (mfctl3 & 0xff1fffff) | 0x800000);
+    u32 gpio_mfctl3 = r32(GPIO_MFCTL3);
+    w32(GPIO_MFCTL3, (gpio_mfctl3 & 0xff03ffff) | 0x900000);
 
     w32(&uart.base->ctl,0xc8403);
 
-    uart_set_baudrate(115200);
+    uart_set_baudrate(baudrate);
 }
 
 static void uart_setup() {
@@ -107,8 +134,4 @@ static void uart_setup() {
 void hal_hardware_setup() {
     hw_register_setup();
     uart_setup();
-}
-
-reg get_uart_clk() {
-    return CMU_UART2CLK;
 }

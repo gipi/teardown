@@ -52,7 +52,7 @@
 #define DUMP8REG(r) log(#r ": %hhx\n", *(u8*)(r))
 
 void usb_setup() {
-    DUMP_REG(PMU_USB_UNK);
+    // DUMP_REG(PMU_USB_UNK);
     DUMP8REG(IN2CON); /* this registers need to be accessed ALIGNED and read by 8 byte */
     DUMP8REG(IN2CS);
     DUMP8REG(OUT1CON);

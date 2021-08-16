@@ -37,12 +37,15 @@
     .ent     _entry;
 
 
+#define _stack_start 0xb4048000 /* FIXME: use config variable */
+
 .align 4
 _entry:
     di
     lui $sp, %hi(_stack_start)
     ori $sp, $sp, %lo(_stack_start)
 
+#ifdef EXCEPTIONS
     # set BEV to 1
     mfc0 $k0, c0_status
     or $k0, $k0, (1 << STATUS_BEV)
@@ -59,7 +62,7 @@ _entry:
     mfc0 $k0, c0_status
     xor $k0, $k0, (1 << STATUS_BEV)
     mtc0 $k0, c0_status
-
+#endif
     ei
 
     j main

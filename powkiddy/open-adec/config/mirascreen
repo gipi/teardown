@@ -1,2 +1,7 @@
 SOC=AM8252
-ENTRY_ADDRESS=0xb4040000
+USB=y
+EXCEPTIONS=y
+
+IRAM_SIZE=0x8000
+ENTRY_ADDRESS=0xb4043000 # the space before is used by the BROM's USB routines
+
