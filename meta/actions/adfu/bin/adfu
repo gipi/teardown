@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""
+Command line interface to ADFU library
+"""
+import logging
+from adfu.boards import mirascreen
+from adfu.utils import argparse_vendor_product
+from adfu.cbw import usb_conf, ADECadfus
+
+
+logger = logging.getLogger(__name__)
+
+
+def args_parse():
+    import argparse
+    import functools
+
+    parser = argparse.ArgumentParser(
+        description='''swiss knife tool to create CBW packet on the fly
+
+    55 53 42 43 signature
+    xx xx xx xx tag
+    yy yy yy yy transferLength
+    ww          flags
+    zz          LUN
+    1f          cmdLength
+    <cmd>       cmd
+    AA AA AA AA arg0
+    BB BB BB BB arg1
+    CC CC CC CC arg2
+    kk kk       padding
+        ''',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        '--device',
+        type=argparse_vendor_product,
+        required=True,
+        help="vendor:product of the device you want to interact with")
+    parser.add_argument('--adec', type=str, required=True)
+    parser.add_argument('--output', type=argparse.FileType('wb'), required=True)
+
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = args_parse()
+
+    # configure the endpoint for the bulk transfers
+    dev, endpoint_read, endpoint_write = usb_conf(*args.device)
+    if not dev:
+        logger.critical('no device found')
+        sys.exit(2)
+
+    # upload the adec
+    ADECadfus(args.adec, endpoint_read, endpoint_write)
+
+    # and the issue the dump
+    memory = mirascreen.adec_memory_dump(endpoint_read, endpoint_write,
+    0xbfc00000, 0x10000)
+
+    args.output.write(memory)
