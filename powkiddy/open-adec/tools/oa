@@ -12,9 +12,11 @@ import functools
 import tqdm
 
 # import our module
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "meta", "actions"))
+sys.path.insert(0, 
+    os.path.join(os.path.dirname(__file__), "..", "..", "..",
+    "meta", "actions", "adfu"))
 
-from adfu.cbw import usb_conf, ADECadfus, _cbw_write, cbw_read_response
+from adfu.cbw import usb_conf, ADECadfus, cbw_send, cbw_read_response
 
 
 logging.basicConfig()
@@ -48,7 +50,7 @@ def parse_args():
 def flashdump(ep_read, ep_write, output):
 
     logger.info("asking for a flash dump")
-    _cbw_write(ep_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
+    cbw_send(ep_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
 
 
     flash_size = 0x10 * 1024 * 1024;
@@ -71,12 +73,6 @@ if __name__ == '__main__':
     if not dev:
         raise Exception("device not found")
 
-    _cbw_write(endpoint_write, 0xcc, 0x00, 0x00, 0x00, 0x00)
-
-    endpoint_read.read(0x12)
-
-    cbw_read_response(endpoint_read)
-
     logger.info(f"uploading binary '{args.binary}' and executing it at {args.address:x}")
     # try to use the standard code from Actions
     ADECadfus(args.binary, endpoint_read, endpoint_write, address=args.address)
@@ -87,5 +83,5 @@ if __name__ == '__main__':
     # reset the board (if we disconnect it's not possible to reconnect
     # and issue commands, it's not clear if a problem with the firmware,
     # pyusb or the USB controller)
-    _cbw_write(endpoint_write, 0xff, 0x00, 0x00, 0x00, 0x00)
+    cbw_send(endpoint_write, 0xff, 0x00, 0x00, 0x00, 0x00)
     cbw_read_response(endpoint_read)
