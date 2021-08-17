@@ -58,6 +58,12 @@ _entry:
     ori $k0, $k0, %lo(__irq_base)
     mtc0 $k0, c0_ebase
 
+    # set the vector spacing to 0x200
+    mfc0 $k0, c0_intctl
+    and $k0, $k0, INTCTL_MASK_VS
+    ori $k0, $k0, (0x8 << INTCTL_VS)
+    mtc0 $k0, c0_intctl
+
     # set BEV to 0
     mfc0 $k0, c0_status
     xor $k0, $k0, (1 << STATUS_BEV)
