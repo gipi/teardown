@@ -20,7 +20,11 @@
 #define c0_ebase     $15, 1
 #define c0_epc       $14, 0
 #define c0_cause     $13, 0
-#define STATUS_BEV   22
+#define c0_intctl    $12, 1
+
+#define STATUS_BEV             22
+#define INTCTL_VS               5
+#define INTCTL_MASK_VS 0xfffffc1f
 
 /* 
  * dump the registers into the stack.
