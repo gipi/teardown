@@ -19,17 +19,17 @@
 #ifndef __ASSERT_H__
 #define __ASSERT_H__
 #include "regs_io.h"
+#include <log.h>
 
 
 
 #define ASSERT(expr) \
   do {                                          \
     if (!(expr)) {                              \
-      _assert(__FILE__, __LINE__, #expr);       \
+      log("ASSERT failed at '%s':%d:%s\n", __FILE__, __LINE__, #expr); \
+      __asm("break");                           \
     }                                           \
   } while (0)
 
-
-void _assert(const char* filename, u32 linenum, const char* expr);
 
 #endif

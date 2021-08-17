@@ -20,8 +20,3 @@
 #include "assert.h"
 #include "log.h"
 
-void _assert(const char* filename, u32 linenum, const char* expr) {
-    log("ASSERT failed at ");log(filename);log(":");/*log(linenum);*/log(":");log(expr);log("\n");
-
-    __asm("break");
-}
