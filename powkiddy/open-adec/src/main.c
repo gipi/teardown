@@ -26,9 +26,8 @@
 #include "usb.h"
 
 #define VERSION "0.1"
-#define BOARD   "PowKiddy J6"
 
-const char* BANNER = "OPEN ADEC "VERSION" for "BOARD"\n";
+const char* BANNER = "\n\nOPEN ADEC "VERSION" for "BOARD"\n";
 
 
 int main() {
@@ -41,6 +40,13 @@ int main() {
 
     _delay(10000);
 
+    char looper[] = "|\\-/";
 
-    while (1);
+    u32 counter = 0;
+
+    while (1) {
+        serial_putc(looper[counter++ % 4]);
+        serial_putc('\r');
+        _delay(10000);
+    }
 }

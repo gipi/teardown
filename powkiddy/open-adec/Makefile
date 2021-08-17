@@ -48,7 +48,7 @@ ADFULOAD  = ../../meta/actions/adfuload
 
 # GENERAL COMPILER OPTIONS
 MIPSEL_PREFIX = mips-linux-gnu-
-MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/ -D$(SOC)=1 #-ffunction-sections -fdata-sections
+MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/ -D$(SOC)=1 -DBOARD=\"$(SOC)\"
 MIPSEL_LD_OPTIONS = -EL -static -nostdlib #--gc-sections
 
 # Avoid to:
@@ -69,6 +69,11 @@ $(info #################### Building for $(BOARD) ##############################
 all: $(BUILD_DIR) $(OPEN_ADEC) check-build
 
 OPEN_ADEC = $(BUILD_DIR)/open-adec_$(BOARD).bin.encrypted
+
+
+config.h: $(CONFIG)
+	sed 's/^\(.*\)=\(.*\)/#define \1 \2/' $< > $@
+
 
 # FIXME: sometimes the encryption fails for the last dword :P
 check-build: $(OPEN_ADEC) $(ADFULOAD)
