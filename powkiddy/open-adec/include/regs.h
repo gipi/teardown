@@ -58,18 +58,26 @@
 
 #define EP0CS          OTGREG(0x0002)
 
+/* EP0 OUT */
 #define OUT1BCL        OTGREG(0x0008)
 #define OUT1BCH        OTGREG(0x0009)
 #define OUT1CON        OTGREG(0x000a) /* configuration */
 #define OUT1CS         OTGREG(0x000b)
 
+/* EP1 IN */
+#define IN1BCL         OTGREG(0x00c)
+#define IN1BCH         OTGREG(0x00d)
+#define IN1CON         OTGREG(0x00e)
+#define IN1CS          OTGREG(0x00f)
+
+/* EP2 IN */
 #define IN2BCL         OTGREG(0x0014)
 #define IN2BCH         OTGREG(0x0015)
 #define IN2CON         OTGREG(0x0016)
 #define IN2CS          OTGREG(0x0017)
 
-#define FIFO1DAT       OTGREG(0x0084)
-#define FIFO2DAT       OTGREG(0x0088)
+#define FIFO1DAT0      OTGREG(0x0084)
+#define FIFO2DAT0      OTGREG(0x0088)
 
 /* SETUP */
 #define SETUPDAT0      OTGREG(0x180) 

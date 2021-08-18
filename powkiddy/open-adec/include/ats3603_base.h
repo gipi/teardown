@@ -5,6 +5,14 @@
 #define UART_BASE      0xb0168000
 #define OTG_BASE       0xb0290000
 
+/* the PowKiddy ADFU mode configure endpoint 1 as IN and endpoint 2 as OUT */
+#define INxBCL         IN2BCL
+#define INxBCH         IN2BCH
+#define INxCS          IN2CS
+
+/* and it's using the different FIFOxDAT0 to receive/transmit data */
+#define FIFO_IN_DAT    FIFO2DAT0
+#define FIFO_OUT_DAT   FIFO1DAT0
 
 #define PMU_VDD_CTL    HWREG(0xb0000010)
 #define PMU_CTL1       HWREG(0xb0000018)

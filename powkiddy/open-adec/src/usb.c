@@ -51,7 +51,10 @@
 #define DUMP_REG(r) log(#r ": %x\n", *(r))
 #define DUMP8REG(r) log(#r ": %hhx\n", *(u8*)(r))
 
+/* TODO: move to brom */
+/* FIXME: reset and define new USB device */
 void usb_setup() {
+#ifdef DEBUG
     // DUMP_REG(PMU_USB_UNK);
     DUMP8REG(IN2CON); /* this registers need to be accessed ALIGNED and read by 8 byte */
     DUMP8REG(IN2CS);
@@ -64,8 +67,7 @@ void usb_setup() {
     DUMP8REG(OUT1MAXPCKL);
     DUMP8REG(OUT1MAXPCKH);
     DUMP8REG(OUT1STARTADDRESS);
-
-
+#endif
     w8(OUT1CS, 0);
     w8(OTG_OUT04IEN, 2);
 }
@@ -134,17 +136,17 @@ void usb_write_fifo(void* buffer, size_t size) {
      * and it's not leaking.
      */
     while (nwords--) {
-        w32(FIFO2DAT, *ref++);
+        w32(FIFO_IN_DAT, *ref++);
     }
 
-    w8(IN2BCL, size & 0xff);
-    w8(IN2BCH, size >> 8);
+    w8(INxBCL, size & 0xff);
+    w8(INxBCH, size >> 8);
 
-    w8(IN2CS, 0x0);
+    w8(INxCS, 0x0);
 
     u8 in2cs;
     do {
-        in2cs = r8(IN2CS);
+        in2cs = r8(INxCS);
     } while ((in2cs & EPCS_BUSY) != 0);
 }
 
@@ -166,14 +168,14 @@ void usb_handle_ep1out() {
     static struct usb_cbw_packet packet;
     u32* ref = (u32*)&packet;
 
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
-    *ref++ = r32(FIFO1DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
+    *ref++ = r32(FIFO_OUT_DAT);
 
     hexdump(&packet, sizeof(struct usb_cbw_packet));
 
@@ -200,6 +202,8 @@ void usb_handle_ep1out() {
         }
         case 0xff: /* reset to ADFU */
             log("requested reset board to ADFU mode again\n");
+            // TODO: restore Coprocessor registers as in ADFU mode
+            //       in the BROM
             reset = 1;
             break;
         default:
@@ -215,18 +219,18 @@ void usb_handle_ep1out() {
     };
 
     ref = (u32*)&response;
-    w32(FIFO2DAT, *ref++);
-    w32(FIFO2DAT, *ref++);
-    w32(FIFO2DAT, *ref++);
-    w32(FIFO2DAT, *ref++);
+    w32(FIFO_IN_DAT, *ref++);
+    w32(FIFO_IN_DAT, *ref++);
+    w32(FIFO_IN_DAT, *ref++);
+    w32(FIFO_IN_DAT, *ref++);
 
-    w8(IN2BCL, 0xd);
-    w8(IN2BCH, 0x0);
-    w8(IN2CS, 0x0);
+    w8(INxBCL, 0xd);
+    w8(INxBCH, 0x0);
+    w8(INxCS, 0x0);
 
     u8 in2cs;
     do {
-        in2cs = r8(IN2CS);
+        in2cs = r8(INxCS);
     } while ((in2cs & EPCS_BUSY) != 0);
 
     if (reset)
