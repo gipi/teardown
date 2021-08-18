@@ -49,3 +49,42 @@ $ pip3 install -r tools/requirements.txt
    - [x] custom CBW commands
      - [x] flash dump
      - [ ] memory dump
+
+
+## Porting
+
+This should be considered as a skeleton to implement basic functionalities in
+order to interact with these kinds of devices, it's not intended to be in future
+a bootloader with driver support, for that is more useful (in my opinion) port
+something like ``u-boot``.
+
+if you are interested in porting a new board you have to write a new file
+describing the device into ``config/``, like the following
+
+```
+SOC=ATS3603
+
+BUILD_USB=y
+USB_ID=10d6:10d6
+
+BUILD_EXCEPTIONS=y
+# FIXME: I don't know the actual size
+CONFIG_IRAM_SIZE=0x8000
+CONFIG_STACK_START_ADDRESS=0xb4061000
+CONFIG_ENTRY_ADDRESS=0xb4061000
+```
+
+All what's starting with ``CONFIG_something=foobar`` will end into
+``include/config.h`` as ``#define something foobar`` and will be used by the
+``C``/``asm`` and the linker. The ``SOC`` variable will indicate the
+subdirectory inside ``src/socs/`` where to look for the architecture dependent
+files (``brom.c`` and ``hal.c``).
+
+The hard part is finding information in order to write these files: the main
+approach is to reverse engineer the available ``adec`` for the board in question
+and from that discover a way to dump the boot ROM.
+
+Generally the BROM has a way of reading the storage of the board itself, mapping
+that part "locally" and then calling a couple of times the functions defined
+there to read the flash or whatever is needed to boot the board. To see an
+example see the [``brom.c``](src/socs/ats3603/brom.c) for the PowKiddy.
