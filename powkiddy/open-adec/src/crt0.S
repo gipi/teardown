@@ -22,6 +22,7 @@
  * defined corretly.
  */
 #include "asm.h"
+#include <config.h>
 /*****************************************
  *
  * Entry point
@@ -37,13 +38,11 @@
     .ent     _entry;
 
 
-#define _stack_start 0xb4048000 /* FIXME: use config variable */
-
 .align 4
 _entry:
     di
-    lui $sp, %hi(_stack_start)
-    ori $sp, $sp, %lo(_stack_start)
+    lui $sp, %hi(STACK_START_ADDRESS)
+    ori $sp, $sp, %lo(STACK_START_ADDRESS)
 
 #ifdef EXCEPTIONS
     # set BEV to 1
