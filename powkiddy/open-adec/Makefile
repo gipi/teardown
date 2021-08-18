@@ -48,7 +48,27 @@ ADFULOAD  = ../../meta/actions/adfuload
 
 # GENERAL COMPILER OPTIONS
 MIPSEL_PREFIX = mips-linux-gnu-
-MIPSEL_OPTIONS = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/ -D$(SOC)=1 -DBOARD=\"$(SOC)\"
+
+MIPSEL_OPTIONS  = -march=4kec -EL -Wall -fno-builtin -fno-plt -fno-pic -mno-abicalls -g -Iinclude/ -D$(SOC)=1 -DBOARD=\"$(SOC)\"
+MIPSEL_OPTIONS += -EL
+MIPSEL_OPTIONS += -Wall
+MIPSEL_OPTIONS += -fno-builtin
+MIPSEL_OPTIONS += -fno-plt
+MIPSEL_OPTIONS += -fno-pic
+MIPSEL_OPTIONS += -mno-abicalls
+MIPSEL_OPTIONS += -g
+MIPSEL_OPTIONS += -Iinclude/
+MIPSEL_OPTIONS += -D$(SOC)=1
+MIPSEL_OPTIONS += -DBOARD=\"$(SOC)\"
+
+ifeq ($(USB),y)
+MIPSEL_OPTIONS += -DUSB=1
+endif
+
+ifeq ($(EXCEPTIONS),y)
+MIPSEL_OPTIONS += -DEXCEPTIONS=1
+endif
+
 MIPSEL_LD_OPTIONS = -EL -static -nostdlib #--gc-sections
 
 # Avoid to:
@@ -101,7 +121,7 @@ $(BUILD_DIR)/open-adec_$(BOARD).elf: .EXTRA_PREREQS = $(LD_SCRIPT)
 $(OBJS_FROM_S): $(BUILD_DIR)/%.o: %.S
 	@echo "S -> O: $@"
 	mkdir -p $(@D)
-	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -DEXCEPTIONS=$(EXCEPTIONS) -c $< -o $@
+	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
 
 
 $(OBJS_FROM_C): $(BUILD_DIR)/%.o: %.c
