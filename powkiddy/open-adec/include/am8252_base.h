@@ -23,6 +23,15 @@
 #define UART_BASE      0xb0190020
 #define OTG_BASE       0xb00e0000
 
+/* the Mirascreen ADFU mode configure endpoint 1 as IN and OUT */
+#define INxBCL         IN1BCL
+#define INxBCH         IN1BCH
+#define INxCS          IN1CS
+
+/* and it's using the same FIFOxDAT0 to receive/transmit data */
+#define FIFO_IN_DAT    FIFO1DAT0
+#define FIFO_OUT_DAT   FIFO1DAT0
+
 #define CMU_BASE       0xb0010000
 #define SDR_BASE       0xb0070000
 #define GPIO_BASE      0xb01c0000

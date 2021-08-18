@@ -36,7 +36,9 @@ int main() {
     log(BANNER);
 
     map_setup();
+#ifdef USB
     usb_setup();
+#endif
 
     _delay(10000);
 

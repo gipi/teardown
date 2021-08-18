@@ -45,7 +45,7 @@ $ pip3 install -r tools/requirements.txt
 ## Functionalities
 
  - [x] ``UART``
- - [ ] ``USB`` (work in progress)
+ - [x] ``USB``: reusing the endpoints as configured by the BROM
    - [x] custom CBW commands
      - [x] flash dump
      - [ ] memory dump
