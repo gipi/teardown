@@ -21,10 +21,10 @@ BUILD_DIR = build_$(BOARD)
 
 SOURCES_C-y             = $(SOURCE_DIR)/main.c
 SOURCES_C-y            += $(SOURCE_DIR)/regs_io.c
-SOURCES_C-$(USB)       += $(SOURCE_DIR)/usb.c
+SOURCES_C-$(BUILD_USB) += $(SOURCE_DIR)/usb.c
 SOURCES_C-y            += $(SOURCE_DIR)/uart.c
 SOURCES_C-y            += $(SOURCE_DIR)/utils.c
-SOURCES_C-$(EXCEPTIONS) += $(SOURCE_DIR)/exceptions.c
+SOURCES_C-$(BUILD_EXCEPTIONS) += $(SOURCE_DIR)/exceptions.c
 SOURCES_C-y            += $(SOURCE_DIR)/log.c
 SOURCES_C-y            += $(SOURCE_DIR)/assert.c
 SOURCES_C-y            += $(SOURCE_DIR)/string.c
@@ -32,7 +32,7 @@ SOURCES_C-y            += $(SOURCE_DIR)/socs/$(shell echo $(SOC) | tr A-Z a-z)/h
 SOURCES_C-y            += $(SOURCE_DIR)/socs/$(shell echo $(SOC) | tr A-Z a-z)/brom.c
 
 SOURCES_S-y             = $(SOURCE_DIR)/crt0.S
-SOURCES_S-$(EXCEPTIONS)+= $(SOURCE_DIR)/eirq.S
+SOURCES_S-$(BUILD_EXCEPTIONS)+= $(SOURCE_DIR)/eirq.S
 
 OBJS_FROM_C = $(addprefix $(BUILD_DIR)/,$(SOURCES_C-y:%.c=%.o))
 OBJS_FROM_S = $(addprefix $(BUILD_DIR)/,$(SOURCES_S-y:%.S=%.o))
@@ -61,11 +61,11 @@ MIPSEL_OPTIONS += -Iinclude/
 MIPSEL_OPTIONS += -D$(SOC)=1
 MIPSEL_OPTIONS += -DBOARD=\"$(SOC)\"
 
-ifeq ($(USB),y)
+ifeq ($(BUILD_USB),y)
 MIPSEL_OPTIONS += -DUSB=1
 endif
 
-ifeq ($(EXCEPTIONS),y)
+ifeq ($(BUILD_EXCEPTIONS),y)
 MIPSEL_OPTIONS += -DEXCEPTIONS=1
 endif
 
@@ -86,13 +86,14 @@ Q = @
 
 $(info #################### Building for $(BOARD) ##############################)
 
-all: $(BUILD_DIR) $(OPEN_ADEC) check-build
+all: $(BUILD_DIR) include/config.h $(OPEN_ADEC) check-build
 
 OPEN_ADEC = $(BUILD_DIR)/open-adec_$(BOARD).bin.encrypted
 
 
-config.h: $(CONFIG)
-	sed 's/^\(.*\)=\(.*\)/#define \1 \2/' $< > $@
+include/config.h: $(CONFIG)
+	@echo '$@'
+	$(Q)cat $< | grep CONFIG_ | sed 's/CONFIG_\([^=]*\)=\(.*\)/\#define \1 \2/' > $@
 
 
 # FIXME: sometimes the encryption fails for the last dword :P
@@ -121,7 +122,7 @@ $(BUILD_DIR)/open-adec_$(BOARD).elf: .EXTRA_PREREQS = $(LD_SCRIPT)
 $(OBJS_FROM_S): $(BUILD_DIR)/%.o: %.S
 	@echo "S -> O: $@"
 	mkdir -p $(@D)
-	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -c $< -o $@
+	$(Q)$(MIPSEL_PREFIX)gcc $(MIPSEL_OPTIONS) -MMD -c $< -o $@
 
 
 $(OBJS_FROM_C): $(BUILD_DIR)/%.o: %.c
@@ -139,15 +140,12 @@ $(BUILD_DIR)/open-adec_$(BOARD).bin: $(BUILD_DIR)/open-adec_$(BOARD).elf
 
 
 # allow for the linker script to use #defines
-$(BUILD_DIR)/%.ld: %.ld.in
+$(BUILD_DIR)/%.ld: %.ld.in include/config.h
 	@echo "LDS	$@"
-	$(Q)$(MIPSEL_PREFIX)cpp -x assembler-with-cpp -P \
+	$(Q)$(MIPSEL_PREFIX)cpp $(MIPSEL_OPTIONS) \
+		-x assembler-with-cpp -P \
 		-D__ASSEMBLY__ \
-		-DENTRY_ADDRESS=$(ENTRY_ADDRESS) \
-		-DIRAM_SIZE=$(IRAM_SIZE)         \
 		-o $@ $<
-
-$(BUILD_DIR)/%.ld: $(CONFIG)
 
 
 $(BUILD_DIR)/%.encrypted: $(BUILD_DIR)/% $(ADFULOAD)
@@ -157,8 +155,8 @@ $(BUILD_DIR)/%.encrypted: $(BUILD_DIR)/% $(ADFULOAD)
 
 upload: $(BUILD_DIR)/open-adec.bin.encrypted
 	@echo "UPLOAD	$^"
-	$(Q)PYTHONPATH=../../meta/actions/ python3 -m adfu.exe --device 10d6:10d6 --address $(ENTRY_ADDRESS) --binary $<
+	$(Q)PYTHONPATH=../../meta/actions/ python3 -m adfu.exe --device 10d6:10d6 --address $(CONFIG_ENTRY_ADDRESS) --binary $<
 
 clean:
 	@echo "CLEANING BUILD DIRECTORY"
-	$(Q)rm -rf $(BUILD_DIR)/
+	$(Q)rm -rf $(BUILD_DIR)/ include/config.h
