@@ -200,6 +200,24 @@ void usb_handle_ep1out() {
             }
             break;
         }
+        case 0xb:
+        { /* dump memory */
+            log("dumping memory... ");
+            u8* addr = (u8*)packet.arg0;
+            size_t length = packet.arg1;
+
+            size_t sent = 0;
+
+            while (sent < length) {
+                size_t delta = length - sent;
+                size_t packet_size = delta > 0x200 ? 0x200 : delta;
+
+                usb_write_fifo(addr + sent, packet_size);
+
+                sent += packet_size;
+            }
+            log("done\n");
+        }
         case 0xff: /* reset to ADFU */
             log("requested reset board to ADFU mode again\n");
             // TODO: restore Coprocessor registers as in ADFU mode

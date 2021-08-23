@@ -38,11 +38,21 @@ def parse_args():
         type=argparse_vendor_product,
         required=True,
         help="vendor:product of the device you want to interact with")
+    # FIXME: some args are mandatory depending on the command
     args.add_argument('--binary', required=True)
     args.add_argument('--address', type=functools.partial(int, base=0), default=0xb4060000)
-    args.add_argument('--output', type=argparse.FileType('wb'), required=True)
+    args.add_argument('--output', type=argparse.FileType('wb'))
+    args.add_argument('--memory', type=functools.partial(int, base=0))
+    args.add_argument('--length', type=functools.partial(int, base=0))
 
-    args.add_argument('command', choices=['flashdump',], help='actions available')
+    args.add_argument(
+        'command',
+        choices=[
+            'flashdump',
+            'memdump',
+        ],
+        help='actions available',
+    )
 
     return args.parse_args()
 
@@ -61,6 +71,17 @@ def flashdump(ep_read, ep_write, output):
         data = ep_read.read(0x200)
 
         output.write(data)
+    cbw_read_response(ep_read)
+
+
+def memdump(ep_read, ep_write, address, length, output):
+    logger.info(f"asking for memory dump of {length:x} bytes, starting from {address:x}")
+
+    cbw_send(ep_write, 0xb, 0x00, address, length, 0x00)
+
+    data = ep_read.read(length)
+
+    output.write(data)
 
     cbw_read_response(ep_read)
 
@@ -79,6 +100,8 @@ if __name__ == '__main__':
 
     if args.command == 'flashdump':
         flashdump(endpoint_read, endpoint_write, args.output)
+    elif args.command == 'memdump':
+        memdump(endpoint_read, endpoint_write, args.memory, args.length, args.output)
 
     # reset the board (if we disconnect it's not possible to reconnect
     # and issue commands, it's not clear if a problem with the firmware,
