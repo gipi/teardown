@@ -81,6 +81,17 @@ static void hw_register_setup() {
     w32(SDR_ADDRSWAP,0xc05);
     w32(SDR_WEIGHT,0x10);
     w32(SDR_CLKDLY,0x10a0000);
+
+    /* 
+     * this part is tricky: since the BROM's code for the NAND is going to touch
+     * some GPIO configuration, here the choice is to set it here and remove the
+     * original instructions otherwise USB and UART are not going to work.
+     */
+    u32 gpio_mfctl2 = r32(GPIO_MFCTL2);
+    w32(GPIO_MFCTL2, gpio_mfctl2 | 0x2c00000);
+
+    u32 gpio_mfctl3 = r32(GPIO_MFCTL3);
+    w32(GPIO_MFCTL3, gpio_mfctl3 | 0xa4);
 }
 
 struct uart_t uart;
