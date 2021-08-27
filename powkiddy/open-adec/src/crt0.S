@@ -41,8 +41,7 @@
 .align 4
 _entry:
     di
-    lui $sp, %hi(STACK_START_ADDRESS)
-    ori $sp, $sp, %lo(STACK_START_ADDRESS)
+    la $sp, STACK_START_ADDRESS
 
 #ifdef EXCEPTIONS
     # set BEV to 1
