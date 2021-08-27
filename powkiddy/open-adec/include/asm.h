@@ -163,6 +163,8 @@
 // setup the exception entry
 .macro ex_entry
     dump_regs
+    la $t0, last_frame
+    sw $sp, 0x0($t0)
     ehb // wait until exe hazard have been cleared
 .endm
 

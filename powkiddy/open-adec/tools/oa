@@ -50,6 +50,7 @@ def parse_args():
         choices=[
             'flashdump',
             'memdump',
+            'stacktrace',
         ],
         help='actions available',
     )
@@ -86,6 +87,13 @@ def memdump(ep_read, ep_write, address, length, output):
     cbw_read_response(ep_read)
 
 
+def stacktrace(ep_read, ep_write):
+    logger.info("asking for a stacktrace (look at the UART output to see it)")
+    cbw_send(ep_write, 0xab, 0x00, 0x00, 0x00, 0x00)
+
+    cbw_read_response(ep_read)
+
+
 if __name__ == '__main__':
     args = parse_args()
 
@@ -102,6 +110,8 @@ if __name__ == '__main__':
         flashdump(endpoint_read, endpoint_write, args.output)
     elif args.command == 'memdump':
         memdump(endpoint_read, endpoint_write, args.memory, args.length, args.output)
+    elif args.command == 'stacktrace':
+        stacktrace(endpoint_read, endpoint_write)
 
     # reset the board (if we disconnect it's not possible to reconnect
     # and issue commands, it's not clear if a problem with the firmware,
