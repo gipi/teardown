@@ -46,6 +46,7 @@
 #include "utils.h"
 #include "log.h"
 #include "brom.h"
+#include <exceptions.h>
 
 
 #define DUMP_REG(r) log(#r ": %x\n", *(r))
@@ -217,7 +218,12 @@ void usb_handle_ep1out() {
                 sent += packet_size;
             }
             log("done\n");
+            break;
         }
+        case 0xab: /* dump stack frame */
+            log("requested to dump the actual stack frame\n");
+            dump_exception_frame(last_frame);
+            break;
         case 0xff: /* reset to ADFU */
             log("requested reset board to ADFU mode again\n");
             // TODO: restore Coprocessor registers as in ADFU mode
