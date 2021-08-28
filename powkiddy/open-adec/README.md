@@ -6,31 +6,32 @@ some provided binary blobs, the principal ones named something like
 order to flash some new firmware or get info about hardware and software.
 
 This project's aim is to provide a general purpose firmware that allows to
-interact in a similar way. For now the code is tailored around the ``ATS3603``
-but should work (hopefully with minimal modification) for any chip of the family
-``ATJ27xx``.
+interact in a similar way.
+
+The supported devices are the following
+
+| Device      | SoC         | config         | load address   |UART | USB | Storage |
+|-------------|-------------|----------------|----------------|-----|-----|---------|
+| PowKiddy J6 | ``ATS3603`` | ``powkiddy``   | ``0xb4061000`` | Y   | Y   | Y       |
+| Mirascreen  | ``AM8252``  | ``mirascreen`` | ``0xb4043000`` | Y   | Y   | Y       |
 
 ## Build
 
 From this directory run
 
 ```
-$ make
+$ make BOARD=<board>
 ```
 
-you should find in the ``build/`` directory the output files. With
-
-```
-$ make upload
-```
-
-it's possible to upload it into an Action's device in ``ADFU`` mode.
+you should find in the ``build_<board>/`` directory the output files. For now
+the supported boards are ``powkiddy`` and ``mirascreen``.
 
 It exists a tools, named [``oa``](tools/oa) that can be used to interact with
 ``open-adec``, for example to dump the flash of the PowKiddy J6 you can do
 
 ```
-$ tools/oa --device 10d6:10d6 --binary build/open-adec.bin.encrypted flashdump --output spidump.bin
+$ make BOARD=powkiddy
+$ tools/oa --device 10d6:10d6 --address 0xb4041000 --binary build_powkiddy/open-adec_powkiddy.bin.encrypted flashdump --output spidump.bin
 ```
 
 this tools uploads the firmware and issues the necessary commands (at the end
@@ -42,36 +43,40 @@ The dependency can be installed via ``pip3``
 $ pip3 install -r tools/requirements.txt
 ```
 
+(it uses the ``adfu`` module contained in a subdirectory of this repository).
+
 ## Functionalities
 
  - [x] ``UART``
  - [x] ``USB``: reusing the endpoints as configured by the BROM
    - [x] custom CBW commands
      - [x] flash dump
-     - [ ] memory dump
+     - [x] memory dump
+     - [x] stacktrace
 
 
 ## Porting
 
 This should be considered as a skeleton to implement basic functionalities in
 order to interact with these kinds of devices, it's not intended to be in future
-a bootloader with driver support, for that is more useful (in my opinion) port
+a bootloader with drivers support, for that is more useful (in my opinion) port
 something like ``u-boot``.
 
 if you are interested in porting a new board you have to write a new file
 describing the device into ``config/``, like the following
 
 ```
-SOC=ATS3603
-
+SOC=AM8252
 BUILD_USB=y
-USB_ID=10d6:10d6
-
+USB_ID=1de1:1205
 BUILD_EXCEPTIONS=y
-# FIXME: I don't know the actual size
+
 CONFIG_IRAM_SIZE=0x8000
-CONFIG_STACK_START_ADDRESS=0xb4061000
-CONFIG_ENTRY_ADDRESS=0xb4061000
+# the space before is used by the BROM's USB routines
+CONFIG_ENTRY_ADDRESS=0xb4043000
+CONFIG_STACK_START_ADDRESS=0xb4048000
+# the NAND is 1GB
+CONFIG_NAND_SIZE=1073741824
 ```
 
 All what's starting with ``CONFIG_something=foobar`` will end into
