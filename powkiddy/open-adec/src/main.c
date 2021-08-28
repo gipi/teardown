@@ -27,7 +27,7 @@
 
 #define VERSION "0.1"
 
-const char* BANNER = "\n\nOPEN ADEC "VERSION" for "BOARD"\n";
+const char* BANNER = "\n\n#### OPEN ADEC "VERSION" for "BOARD" ####\n";
 
 
 int main() {
