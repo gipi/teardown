@@ -56,6 +56,7 @@ MIPSEL_OPTIONS += -fno-builtin
 MIPSEL_OPTIONS += -fno-plt
 MIPSEL_OPTIONS += -fno-pic
 MIPSEL_OPTIONS += -mno-abicalls
+MIPSEL_OPTIONS += -fstack-usage
 MIPSEL_OPTIONS += -g
 MIPSEL_OPTIONS += -Iinclude/
 MIPSEL_OPTIONS += -D$(SOC)=1
@@ -69,7 +70,11 @@ ifeq ($(BUILD_EXCEPTIONS),y)
 MIPSEL_OPTIONS += -DEXCEPTIONS=1
 endif
 
-MIPSEL_LD_OPTIONS = -EL -static -nostdlib #--gc-sections
+MIPSEL_LD_OPTIONS  = -EL
+MIPSEL_LD_OPTIONS += -static
+MIPSEL_LD_OPTIONS += -nostdlib
+# MIPSEL_LD_OPTIONS += --gc-sections
+MIPSEL_LD_OPTIONS += --print-memory-usage
 
 # Avoid to:
 # o  use make's built-in rules and variables
