@@ -10,6 +10,7 @@ import logging
 import argparse
 import functools
 import tqdm
+import struct
 
 # import our module
 sys.path.insert(0, 
@@ -63,15 +64,18 @@ def flashdump(ep_read, ep_write, output):
     logger.info("asking for a flash dump")
     cbw_send(ep_write, 0xa, 0x00, 0xcafebabe, 0xdeadbeef, 0xbadc0de)
 
+    # receive the size of the flash
+    str_size = ep_read.read(0x4)
+    npackets = struct.unpack("I", str_size)[0]
 
-    flash_size = 0x10 * 1024 * 1024;
-    npackets = flash_size >> 9;
+    size_packet = ep_read.wMaxPacketSize
 
-    logger.info(f'write dump of {npackets} sectors to "{output}"')
+    logger.info(f'write dump of {npackets} sectors ({size_packet=}) to "{output}"')
     for _ in  tqdm.trange(npackets):
         data = ep_read.read(0x200)
 
         output.write(data)
+
     cbw_read_response(ep_read)
 
 
