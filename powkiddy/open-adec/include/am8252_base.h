@@ -27,6 +27,8 @@
 #define INxBCL         IN1BCL
 #define INxBCH         IN1BCH
 #define INxCS          IN1CS
+#define OUTxMAXPCKL    OUT1MAXPCKL
+#define OUTxMAXPCKH    OUT1MAXPCKH
 
 /* and it's using the same FIFOxDAT0 to receive/transmit data */
 #define FIFO_IN_DAT    FIFO1DAT0

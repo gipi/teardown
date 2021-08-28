@@ -40,6 +40,7 @@
  * receive nothing anymore (no UIV_EP1OUT irq is triggered).
  *
  */
+#include <config.h>
 #include "usb.h"
 #include "regs.h"
 #include "regs_io.h"
@@ -47,6 +48,7 @@
 #include "log.h"
 #include "brom.h"
 #include <exceptions.h>
+#include <assert.h>
 
 
 #define DUMP_REG(r) log(#r ": %x\n", *(r))
@@ -121,34 +123,49 @@ static void usb_handle_irq_sudav() {
 
 }
 
-
+/*
+ * The USB cannot send more than wMaxPacketSize at once
+ * so we have to split the transmission if size is more
+ * than that.
+ */
 void usb_write_fifo(void* buffer, size_t size) {
-    u8  remain = size & 3;
-    u32 nwords = (size >> 2) + ((remain) ? 1 : 0);
 
     u32* ref = (u32*)buffer;
 
-    /*
-     * we are going to write into the FIFO
-     * aligned to four but we'll send only "size"
-     * bytes, in this way is simpler :)
-     *
-     * It's not going to fail (buffer is read and should be aligned to 4)
-     * and it's not leaking.
-     */
-    while (nwords--) {
-        w32(FIFO_IN_DAT, *ref++);
+    size_t size_max = r8(OUTxMAXPCKL) | (r8(OUTxMAXPCKH) << 8);
+
+    while (size > 0) {
+        size_t size_packet = size > size_max ? size_max : size;
+
+        u8  remain = size_packet & 3;
+        u32 nwords = (size_packet >> 2) + ((remain) ? 1 : 0);
+
+        /*
+         * we are going to write into the FIFO
+         * aligned to four but we'll send only "size"
+         * bytes, in this way is simpler :)
+         *
+         * It's not going to fail (buffer is read and should be aligned to 4)
+         * and it's not leaking.
+         */
+        while (nwords--) {
+            w32(FIFO_IN_DAT, *ref++);
+        }
+
+        /* inform the controller we want to send this much data */
+        w8(INxBCL, size_packet & 0xff);
+        w8(INxBCH, size_packet >> 8);
+
+        w8(INxCS, 0x0);
+
+        u8 in2cs;
+        do {
+            in2cs = r8(INxCS);
+        } while ((in2cs & EPCS_BUSY) != 0);
+
+        /* update the remaining length of the data to send */
+        size -= size_packet;
     }
-
-    w8(INxBCL, size & 0xff);
-    w8(INxBCH, size >> 8);
-
-    w8(INxCS, 0x0);
-
-    u8 in2cs;
-    do {
-        in2cs = r8(INxCS);
-    } while ((in2cs & EPCS_BUSY) != 0);
 }
 
 
@@ -189,16 +206,28 @@ void usb_handle_ep1out() {
     /* parse the command */
     switch (packet.cmd) {
         case 0xa:
-        { /* dump flash */
-            log("starting dumping flash\n");
+        { /*
+           * dump flash: first sends 4 bytes indicating the actual number
+           * of packets of the transmission and then the packets with the
+           * content of the flash.
+           */
+            log("flashdump... ");
             static u8 buffer[0x200];
-            u32 flash_size = 0x10 * 1024 * 1024;
+            u32 flash_size = NAND_SIZE;
             u32 nsectors = flash_size >> 9;
+
+            log("sending #packets... ");
+            ASSERT(sizeof(nsectors) == 4);
+
+            usb_write_fifo(&nsectors, 4);
+
+            log("sending data...");
             for (u32 sector = 0 ; sector < nsectors ; sector++) {
                 u32 offset = sector * 0x200;
                 flash_read(offset, 0x200, buffer);
                 usb_write_fifo(buffer, 0x200);
             }
+            log(" ok\n");
             break;
         }
         case 0xb:
