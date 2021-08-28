@@ -28,11 +28,11 @@ SECTIONS
     {
         *(.startup.text)
         *(.text)
+        *(.data)
+        *(.rodata)
         . = ALIGN(12);
         _ebase = .;
         *(.eirq.text)
-        *(.data)
-        *(.rodata)
     } > IRAM
     /* 
      * HOW THE FUCK YOU TELL THE LINKER TO NOT INCLUDE
