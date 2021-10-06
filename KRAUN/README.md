@@ -2,7 +2,41 @@
 
 [This](https://www.manualslib.com/manual/788619/Kraun-Wireless-Modem-Router-Adsl2-2Plus.html) seems to be the user manual.
 
-Connect the ethernet cable
+The flash is recognized by flashrom (using hydrabus)
+
+```
+$ flashrom -p serprog:dev=/dev/ttyACM0 -r kr.yl.bin
+flashrom v1.2 on Linux 5.10.0-1029-oem (x86_64)
+flashrom is free software, get the source code at https://flashrom.org
+
+Using clock_gettime for delay loops (clk_id: 1, resolution: 1ns).
+serprog: Programmer name is "Hydrabus"
+serprog: requested mapping AT45CS1282 is incompatible: 0x1080000 bytes at 0x00000000fef80000.
+Found Eon flash chip "EN25F16" (2048 kB, SPI) on serprog.
+ ...
+Reading flash... done.
+$ binwalk ~/kr.yl.bin
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+65536         0x10000         ZyXEL rom-0 configuration block, name: "dbgarea", compressed size: 0, uncompressed size: 0, data offset from start of block: 16
+131092        0x20014         ZyXEL rom-0 configuration block, name: "spt.dat", compressed size: 0, uncompressed size: 0, data offset from start of block: 16
+131112        0x20028         ZyXEL rom-0 configuration block, name: "autoexec.net", compressed size: 25972, uncompressed size: 11886, data offset from start of block: 16
+256048        0x3E830         ZyXEL rom-0 configuration block, name: "dbgarea", compressed size: 0, uncompressed size: 0, data offset from start of block: 16
+256308        0x3E934         ZyXEL rom-0 configuration block, name: "dbgarea", compressed size: 0, uncompressed size: 0, data offset from start of block: 16
+281651        0x44C33         LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 66824 bytes
+314644        0x4CD14         Unix path: /usr/share/tabset/vt100:\
+315412        0x4D014         ZyXEL rom-0 configuration block, name: "spt.dat", compressed size: 0, uncompressed size: 0, data offset from start of block: 16
+315432        0x4D028         ZyXEL rom-0 configuration block, name: "autoexec.net", compressed size: 25972, uncompressed size: 11886, data offset from start of block: 16
+324610        0x4F402         GIF image data, version "89a", 200 x 50
+332802        0x51402         GIF image data, version "89a", 560 x 50
+438539        0x6B10B         Neighborly text, "neighbor of your ADSL Router that will forward the packet to the destination. On the LAN, the gateway </font>e destination. On the LAN, the gateway </font>"
+516183        0x7E057         Copyright string: "Copyright (c) 2001 - 2011 CDC POINT S.p.a."
+546867        0x85833         LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 229804 bytes
+612403        0x95833         LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 3959684 bytes
+```
+
+It is possible to connect via ethernet cable
 
 ```
 $ telnet 192.168.1.1
