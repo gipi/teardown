@@ -1,4 +1,6 @@
-# KRAUN
+# KRAUN KR.YL
+
+[This](https://www.manualslib.com/manual/788619/Kraun-Wireless-Modem-Router-Adsl2-2Plus.html) seems to be the user manual.
 
 Connect the ethernet cable
 
