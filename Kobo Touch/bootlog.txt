@@ -1,0 +1,99 @@
+U-Boot 2009.08-dirty-svn (11月 20 2012 - 16:46:21)
+
+CPU:   Freescale i.MX50 family 1.1V at 800 MHz
+mx50 pll1: 800MHz
+mx50 pll2: 400MHz
+mx50 pll3: 216MHz
+ipg clock     : 66666666Hz
+ipg per clock : 66666666Hz
+uart clock    : 24000000Hz
+ahb clock     : 133333333Hz
+axi_a clock   : 400000000Hz
+axi_b clock   : 200000000Hz
+weim_clock    : 100000000Hz
+ddr clock     : 200000000Hz
+esdhc1 clock  : 80000000Hz
+esdhc2 clock  : 80000000Hz
+esdhc3 clock  : 80000000Hz
+esdhc4 clock  : 80000000Hz
+Board: MX50 RDP board
+Boot Reason: [POR]
+Boot Device: SD
+I2C:   ready
+DRAM:  256 MB
+MMC:   FSL_ESDHC: 0, FSL_ESDHC: 1, FSL_ESDHC: 2
+In:    serial
+Out:   serial
+Err:   serial
+[_get_sd_number] g_sd_number:0
+
+MMC read: dev # 0, block # 1023, count 1 partition # 0 ...
+1 blocks read: OK
+
+MMC read: dev # 0, block # 1024, count 1 partition # 0 ...
+1 blocks read: OK
+ram p=70000000,size=268435456
+
+MMC read: dev # 0, block # 18431, count 1 partition # 0 ...
+1 blocks read: OK
+no "logo" bin header
+
+MMC read: dev # 0, block # 14335, count 1 partition # 0 ...
+1 blocks read: OK
+
+MMC read: dev # 0, block # 14336, count 3330 partition # 0 ...
+3330 blocks read: OK
+Kernel RAM visiable size=254M->254M
+init TPS65185 power ...
+Hit any key to stop autoboot:  0
+
+MMC read: dev # 0, block # 2047, count 1 partition # 0 ...
+1 blocks read: OK
+no kernel image signature !
+
+MMC read: dev # 0, block # 2048, count 8192 partition # 0 ...
+8192 blocks read: OK
+## Booting kernel from Legacy Image at 70800000 ...
+   Image Name:   r7834_#619 Dec 22 15:29:00
+   Created:      2016-12-22   7:32:05 UTC
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    1927244 Bytes =  1.8 MB
+   Load Address: 70008000
+   Entry Point:  70008000
+   Loading Kernel Image ... OK
+OK
+
+Starting kernel ...
+
+Uncompressing Linux... done, booting the kernel.
+[zForce_ir_touch_recv_data-176] command BootComplete (0)...
+NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+1+0 records in
+1+0 records out
+512 bytes (512B) copied, 0.000278 seconds, 1.8MB/s
+NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+cannot open /dev/null
+[PROGRESS_BAR-2857] No progess ...
+fsck.fat 4.1+git (2017-01-24)
+/dev/mmcblk0p3: 1040 files, 69210/348630 clusters
+
+kobo login: NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+NtxHwCfg_GetCfgFldStrVal:[WARNING]Config version too old !! Please update config file !!
+/usr/local/Kobo/nickel: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/Kobo/libnickel.so.1)
+/usr/local/Kobo/nickel: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/Kobo/libnickel.so.1)
+/usr/local/Kobo/nickel: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/Kobo/libnickel.so.1)
+/usr/local/Kobo/nickel: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/Kobo/libnickel.so.1)
+sh: you need to specify whom to kill
+killall: wpa_supplicant: no process killed
+dhcpcd[970]: version 6.6.6 starting
+dhcpcd[970]: eth0: using /sys hwaddr: 70:25:59:25:47:b1
+dhcpcd[970]: eth0: executing `/libexec/dhcpcd-run-hooks' PREINIT
+dhcpcd[970]: eth0: executing `/libexec/dhcpcd-run-hooks' NOCARRIER
+dhcpcd[970]: no interfaces have a carrier
+dhcpcd[970]: forking to background
+dhcpcd[970]: forked to background, child pid 982
+
+kobo login:
+
