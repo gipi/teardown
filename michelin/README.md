@@ -2,6 +2,8 @@
 
 I named this after the brand on it.
 
+![pcb scan](images/pcb_front.jpg)
+
 https://4pda.ru/forum/index.php?showtopic=708093&st=3080
 
 https://www.transcend-info.com/Support/No-311
