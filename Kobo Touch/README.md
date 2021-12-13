@@ -7,6 +7,7 @@ N905J36205687
 | core | MCIMX50 |
 | architecture | ARM Cortex-A8 |
 | Display power supply | TPS65185 [product page](https://www.ti.com/product/TPS65185) |
+| Memory | SAMSUNG K4X2G323PD-8GD8, 2Gb (64Mx32) [LPDDR1](https://en.wikipedia.org/wiki/LPDDR) 90-FBGA, 200Mhz at 1.8V |
 | Optical touch controller | NN1001 |
 
  - https://www.nxp.com/docs/en/data-sheet/IMX50CEC.pdf

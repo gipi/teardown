@@ -26,6 +26,12 @@ internal(?) RAM and executed, in order
 | ``0xbfc00800``   | ``0x1000`` | ``0xb4062c00`` | probably looks for the ``mbrec`` and execute what is described [here](mbrec.md) |
 | ``0xbfc05400``   | ``0x1df8`` | ``0xb4066000`` | builtin ADFU mode |
 
+## Boot from storage
+
+The code starting from ``0xb4062c00`` copy another ``0x800`` bytes from
+``0xbfc073fc`` to address ``0xb4060400``: this is some routines used to interact
+with the flash
+
 ## Builting ADFU
 
 This enables the hardware interrupt 4 and connects it with the ``USB`` subsystem; set the exception
