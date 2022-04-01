@@ -5,6 +5,8 @@
 | Component | Description |
 |-----------|-------------|
 | core | ATJ2127 LQFP-64 (7x7mm) |
+| Flash | GD25Q128C (16M) |
+| FM Radio tuner | RDA5807M |
 
 The 7th pin from the right, on the side of the battery, is the reset signal connected
 to a button on the side of the device.
